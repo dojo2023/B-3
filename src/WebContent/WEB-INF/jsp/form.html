@@ -1,0 +1,124 @@
+<!--<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>-->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="UTF-8">
+<title>日程調整フォーム | Hydrangea</title>
+<link rel="stylesheet" href="css/common.css"><!--css名やパス、要チェック-->
+</head>
+<body>
+<!--ここからヘッダー-->
+<header class = header>
+        <h1 class="logo"><a href="menu.html"><img src="img/logo.png" alt="アプリロゴ" width="100"></a></h1>
+        <div class="hamburger-menu"> <!--ハンバーガーメニュー-->
+            <input type="checkbox" id="menu-btn-check">
+            <label for="menu-btn-check" class="menu-btn"><span></span></label>
+            <!--ここからメニュー-->
+            <div class="menu-content">
+                <ul>
+                    <li>
+                        <a href="">トップ</a>
+                    </li>
+                    <li>
+                        <a href="">登録</a>
+                    </li>
+                    <li>
+                        <a href="">履歴</a>
+                    </li>
+                    <li>
+                        <a href="">役職メモ</a>
+                    </li>
+                    <li>
+                        <a href="">メモ</a>
+                    </li>
+                    <li>
+                        <a href="">カレンダー</a>
+                    </li>
+            <li>
+                        <a href="">通知文テンプレート</a>
+                    </li>
+            <li>
+                        <a href="">経費申請書テンプレート</a>
+                    </li>
+            <li>
+                        <a href="">ログアウト</a>
+                    </li>
+                </ul>
+            </div>
+            <!--ここまでメニュー-->
+        </div>
+</header>
+<!--ここから内容-->
+<div class="contents">
+    <p><a href="">前のページに戻る</a></p><br> <!--カレンダー画面に戻る-->
+    <h2>日程調整フォーム</h2>
+    <!--<form name="sendmail" method="POST" action="mailto:megatenkomori@gmail.com?subject=日程調整のお願い" onSubmit="addtitle()">
+    <form name="sendmail" method="POST" action="">servlet名、要チェック-->
+    <table>
+        <tr>
+            <th>イベント名</th>
+            <td><input type = "text" name="event_name" value="イベント名"></input></td>
+        </tr>
+        <tr>
+            <th>イベント内容</th>
+            <td><input type = "textarea" name="event_detail" value="イベント内容"></input></td>
+        </tr>
+        <tr>
+            <th>候補日選択</th>
+            <td><input type = "text" name="time" value="入力してください"></input></td>
+        </tr>
+        <tr>
+            <th>作成者</th>
+            <td><c:out value="${e.user_name}"/></td><!--usersDBから-->
+        </tr>
+        <tr><td>
+        <button class="open"><label  for="pop-up">フォームを作成する</label></button>
+        <!--<input type="checkbox" id="pop-up">
+            <div class="overlay">
+              <div class="search_pop-up">
+                <label class="close" for="pop-up">×</label>
+                <p class="detail_search"><!--ポップアップの中身-->
+                    <!--<form method="post" action="mailto:megatenkomori@gmail.com?subject=日程調整のお願い" enctype="text/plain">
+                        回答者<br>
+                        <input type="text"><br>
+                        所属<br>
+                        <input type="text"><br>
+                        イベント名<br>
+                        <input type="text"><br>
+                        イベント内容<br>
+                        <input type="textarea"><br>
+                        候補日(可能な日にチェックを入れてください)<br>
+                        <input type ="date" name="tyosei" value="tyousei"><br>
+                        作成者<br>
+                        <c:out value="${e.user_name}"/>
+                        <input type="submit" name="send_form" value="フォームを送信する">
+                    </form>
+                </p>
+                </div>
+            </div>-->
+            
+        </td></tr>
+        
+    </table>
+    </form>
+</div>
+<!--ここからフッター-->
+<footer class="footer">
+    <!--管理者へのメッセージ-->
+    <!--<form class="contact">
+        <p>お問い合わせ</p>
+        <input type="textbox" value="問い合わせ内容を記入してください" name="otoiawase">  
+        <input type="button" value="送信" name="send">
+    </form>-->
+    <!--著作権-->
+    <p>Copyright &copy; 2023 Hydrangea All Rights Reserved.</p>
+        
+
+</footer>
+   
+
+</body>
+</html>

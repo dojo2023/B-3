@@ -1,0 +1,189 @@
+<!--<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>-->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="UTF-8">
+<title>更新 | Hydrangea</title>
+<link rel="stylesheet" href="css/common.css"><!--css名やパス、要チェック-->
+</head>
+<body>
+<!--ここからヘッダー-->
+<header class = header>
+    <h1 class="logo"><a href="menu.html"><img src="img/logo.png" alt="アプリロゴ" width="100"></a></h1>
+    <div class="hamburger-menu"> <!--ハンバーガーメニュー-->
+        <input type="checkbox" id="menu-btn-check">
+        <label for="menu-btn-check" class="menu-btn"><span></span></label>
+        <!--ここからメニュー-->
+        <div class="menu-content">
+            <ul>
+                <li>
+                    <a href="">トップ</a>
+                </li>
+                <li>
+                    <a href="">登録</a>
+                </li>
+                <li>
+                    <a href="">履歴</a>
+                </li>
+                <li>
+                    <a href="">役職メモ</a>
+                </li>
+                <li>
+                    <a href="">メモ</a>
+                </li>
+                <li>
+                    <a href="">カレンダー</a>
+                </li>
+        <li>
+                    <a href="">通知文テンプレート</a>
+                </li>
+        <li>
+                    <a href="">経費申請書テンプレート</a>
+                </li>
+        <li>
+                    <a href="">ログアウト</a>
+                </li>
+            </ul>
+        </div>
+        <!--ここまでメニュー-->
+    </div>
+</header>
+<!--ここから内容-->
+<div class="contents">
+    <p><a href="shopdetail.html">前のページに戻る</a></p> <!--店詳細画面に戻る-->
+    <h2>更新</h2>
+
+    <c:forEach var="e" items="${cardList}">
+        <form method="POST" action="/simpleBC/UpdateDeleteServlet"><!--サーブレット、要チェック-->
+        </head>
+        <table class="koumoku">
+        <tr>
+         <th>店名</th>
+         <td><input type="text" name="shop_name" value="${e.shop_name}"></td>
+        </tr>
+        <tr>
+         <th>ジャンル</th>
+         <td><input type="text" name="genre" value="${e.genre}"></td>
+        </tr>
+        <tr> 
+         <th>形態</th>
+         <td><input type="text" name="genre_form" value="${e.genre_form}" size="15"></td>
+        <tr>
+         <th>価格帯</th>
+         <td><input type="text" name="price_max" value="${e.price_max}">～ <input type="text" name="price_min" value="${e.price_min}"></td>
+        </tr>
+        <tr>
+         <th>平日営業時間</th>
+         <td><input type="text" name="open_hei" value="${e.open_hei}">～ <input type="text" name="close_hei" value="${e.close_hei}"></td>
+        <tr>
+         <th>休日営業時間</th>
+         <td><input type="text" name="open_kyu" value="${e.open_kyu}">～ <input type="text" name="close_kyu" value="${e.close_kyu}"></td>
+        </tr>
+        <tr>
+         <th>休業日</th>
+         <td>
+         <input type="checkbox" name="holiday_mon" value="${e.holiday_mon}">月
+         <input type="checkbox" name="holiday_tue" value="${e.holiday_tue}">火
+         <input type="checkbox" name="holiday_wed" value="${e.holiday_wed}">水
+         <input type="checkbox" name="holiday_thu" value="${e.holiday_thu}">木
+         <input type="checkbox" name="holiday_fri" value="${e.holiday_fri}">金
+         <input type="checkbox" name="holiday_sat" value="${e.holiday_sat}">土
+         <input type="checkbox" name="holiday_sun" value="${e.holiday_sun}">日<br>
+         <input type="checkbox" name="holiday_syuku" value="${e.holiday_syuku}">祝日
+         <input type="checkbox" name="holiday_nenmatsu" value="${e.holiday_nenmatsu}">年末年始
+         <input type="checkbox" name="holiday_other" value="${e.holiday_other}">その他<input type="text" name="holiday_other" value="${e.holiday_other}"></td>
+        </tr>
+        <tr>
+         <th>会社からの距離</th>
+         <td><input type="text" name="distance" value="${e.distance}"></td>
+        </tr>
+        <tr>
+         <th>住所</th>
+         <td><input type="text" name="adress" value="${e.adress}"></td>
+        </tr>
+        <tr>
+         <th>喫煙</th>
+         <td>
+         <input type="radio" name="tabaco_y" value="${e.tabaco}" checked>可
+         <input type="radio" name="tabaco_n" value="${e.tabaco}">不可
+        </td>
+        </tr>
+        <tr>
+         <th>座席</th>
+         <td>
+         <input type="checkbox" name="sheet_table" value="${e.sheet_table}">テーブル
+         <input type="checkbox" name="sheet_tatami" value="${e.sheet_tatam}">座敷
+         <input type="checkbox" name="sheet_other" value="${e.sheet_other}">その他<input type="text" name="sheet_other" value="${e.sheet_other}"></td>
+         </tr>
+         <tr>
+        <tr>
+         <th>規模</th>
+         <td><input type="text" name="capacity" value="${e.capacity}"></td>
+        </tr>
+         <th>食べ放題・飲み放題</th>
+         <td>
+         <input type="radio" name="eat_drink_e" value="${e.eat_drink}">食べ放題のみ
+         <input type="radio" name="eat_drink_d" value="${e.eat_drink}">飲み放題のみ<br>
+         <input type="radio" name="eat_drink_b" value="${e.eat_drink}">両方用意あり
+         <input type="radio" name="eat_drink_n" value="${e.eat_drink}" checked>どちらもなし
+        </td> 
+        </tr>
+        <tr>
+         <th>評価</th>
+         <td>
+         <select id="kind" name="score" value="${e.score}">
+            <option value="10">10</option>
+            <option value="9">9</option>
+            <option value="8">8</option>
+            <option value="7">7</option>
+            <option value="6">6</option>
+            <option value="5">5</option>
+            <option value="4">4</option>
+            <option value="3">3</option>
+            <option value="2">2</option>
+            <option value="1">1</option>
+         </select>
+         /10点
+         </td>
+        </tr>
+        <tr>
+         <th>連絡先</th>
+         <td>
+         <input type="text" name="tel" value="${e.tel}"><br>
+         <input type="text" name="homepage" value="${e.homepage}"><br>
+         <input type="text" name="other" value="${e.other}"></td>
+        </tr>
+        <tr>
+         <th>画像</th>  
+         <td><input type="text" name="photo" value="${e.photo}"></td>
+        </tr>
+        <tr>
+         <th>備考</th>
+         <td><input type="textarea" name="remarks" value="${e.remarks_shop}"></td>        
+        </tr>
+        <tr><td>
+            <input type="submit" name="SUBMIT" value="更新">
+        </td></tr>
+        </table>
+        </form>
+
+        </c:forEach>
+</div>
+<!--ここからフッター-->
+<footer class="footer">
+    <!--管理者へのメッセージ-->
+    <!--<form class="contact">
+        <p>お問い合わせ</p>
+        <input type="textbox" value="問い合わせ内容を記入してください" name="otoiawase">  
+        <input type="button" value="送信" name="send">
+    </form>-->
+    <!--著作権-->
+    <p>Copyright &copy; 2023 Hydrangea All Rights Reserved.</p>
+        
+
+</footer>
+</body>
+</html>
