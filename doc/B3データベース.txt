@@ -1,0 +1,658 @@
+CREATE TABLE USERS (
+id_users 	int auto_increment primary key,
+created_at 	timestamp,
+updated_at 	timestamp,
+name 		varchar(20) not null,
+mail 		varchar(30) not null,
+pass 		varchar(20) not null,
+department 	varchar(10) not null
+);
+
+CREATE TABLE SHOPS (
+id_shops	int auto_increment primary key,	
+created_at	timestamp,	
+updated_at	timestamp,	
+shop_name	varchar(30) not null,
+genre		varchar(30) not null,
+genre_form	varchar(30) not null,
+price_max	int,
+price_min	int,	
+open_hei	time,	
+close_hei	time,	
+open_kyu	time,	
+close_kyu	time,	
+holiday_mon	boolean,	
+holiday_tue	boolean,
+holiday_wed	boolean,
+holiday_thu	boolean,
+holiday_fri	boolean,
+holiday_sat	boolean,	
+holiday_sun	boolean,	
+holiday_syuku	boolean,	
+holiday_nenmatsu	boolean,
+holiday_other	varchar(10),
+distance	int,	
+address		varchar(50),
+tabaco		varchar(5),
+sheet_table	boolean,
+sheet_tatami	boolean,	
+sheet_other	varchar(10),
+capacity	int,
+eat_drink	varchar(10),
+score		int,	
+tel		varchar(20),
+homepage	varchar(100),
+other		varchar(100),
+photo		varchar(50),
+remarks_shop	varchar(200),
+id_users	int,
+FOREIGN KEY(id_users) REFERENCES users(id_users)
+);
+
+CREATE TABLE APPOINTMENTS (
+id_appointments	int auto_increment primary key,	
+created_at	timestamp,	
+updated_at	timestamp,
+id_users	int,
+appointment_date	date not null,	
+appointment_time	time not null,
+id_shops	int,
+department	varchar(10),	
+people		int not null,	
+remarks_reserve	varchar(200),
+FOREIGN KEY(id_users) REFERENCES users(id_users),
+FOREIGN KEY(id_shops) REFERENCES shops(id_shops)
+);
+
+CREATE TABLE MESSAGES ( 
+id_messages	int auto_increment primary key,	
+created_at	timestamp,	
+updated_at	timestamp,	
+date		date not null,	
+id_users	int,
+title		varchar(20) not null,
+message		varchar(200) not null,
+FOREIGN KEY(id_users) REFERENCES users(id_users)
+);
+
+CREATE TABLE MEMOS (
+id_memos	int auto_increment primary key,
+created_at	timestamp,
+updated_at	timestamp,
+id_users	int,
+memo_title	varchar(20),
+memo		varchar(200),
+FOREIGN KEY(id_users) REFERENCES users(id_users)
+);
+
+CREATE TABLE POSITION_MEMOS (
+id_position_memos	int auto_increment primary key,
+created_at		timestamp,
+updated_at		timestamp,
+id_users		int,
+name_position		varchar(20),
+position		varchar(10),
+tabaco_position		varchar(5),
+favorite1		varchar(20),
+favorite2		varchar(20),
+ng			varchar(20),
+remarks_position	varchar(20),
+FOREIGN KEY(id_users) REFERENCES users(id_users)
+);
+
+CREATE TABLE ADMIN_MESSAGES (
+id_admin_messages	int auto_increment primary key,
+created_at		timestamp,	
+updated_at		timestamp,	
+information_title	varchar(15) not null,
+information_subtitle	varchar(15),
+information_photo	varchar(50),
+information		varchar(500) not null
+);
+
+CREATE TABLE PRESETS (
+id_presets	int auto_increment primary key,
+created_at	timestamp,
+updated_at	timestamp,	
+preset_name	varchar(15) not null,
+freeword	varchar(30),
+price_max	int,
+price_min	int,	
+sheet		varchar(10),
+capacity	int,
+tabaco		varchar(5),
+distance	int,
+eat_drink	varchar(10),
+open		time,	
+close		time,
+id_users	int,
+FOREIGN KEY(id_users) REFERENCES users(id_users)
+);
+
+CREATE TABLE SCORES (
+id_scores	int auto_increment primary key,
+id_shops	int,
+score		int not null,
+id_users	int,
+FOREIGN KEY(id_shops) REFERENCES shops(id_shops),
+FOREIGN KEY(id_users) REFERENCES users(id_users)
+);
+
+
+INSERT INTO users(created_at,updated_at,name,mail,pass,department) VALUES (
+CURRENT_TIMESTAMP,
+CURRENT_TIMESTAMP,
+'茶柱 辰子',
+'ahco-apahhco@gmail.com',
+'chaohpa',
+'営業課'
+);
+
+INSERT INTO users(created_at,updated_at,name,mail,pass,department) 
+VALUES (
+CURRENT_TIMESTAMP,
+CURRENT_TIMESTAMP,
+'橘 葵',
+'aoittachibana@gmail.com',
+'a32o239i3',
+'営業課'
+);
+
+
+
+
+
+
+INSERT INTO shops(
+created_at,
+updated_at,
+shop_name,
+genre,
+genre_form,
+price_max,
+price_min,
+open_hei,
+close_hei,
+open_kyu,
+close_kyu,
+holiday_mon,
+holiday_tue,
+holiday_wed,
+holiday_thu,
+holiday_fri,
+holiday_sat,
+holiday_sun,
+holiday_syuku,
+holiday_nenmatsu,
+holiday_other,
+distance,
+address,
+tabaco,
+sheet_table,
+sheet_tatami,
+sheet_other,
+capacity,
+eat_drink,
+score,
+tel,
+homepage,
+other,
+photo,
+remarks_shop,
+id_users
+) 
+
+VALUES (
+CURRENT_TIMESTAMP,
+CURRENT_TIMESTAMP,
+'居酒屋酒々井',
+'和食',
+'居酒屋',
+'4000',
+'2000',
+CURRENT_TIMESTAMP,
+CURRENT_TIMESTAMP,
+CURRENT_TIMESTAMP,
+CURRENT_TIMESTAMP,
+'false',
+'false',
+'false',
+'false',
+'true',
+'false',
+'true',
+'true',
+'false',
+'第二土曜日休業',
+'600',
+'東京都練馬区光が丘1-2-3',
+'喫煙ok',
+'true',
+'false',
+'a',
+'10',
+'飲み放題有',
+'10',
+'123-456-7890',
+'https://sisui.sake.com',
+'a',
+'gazou',
+'注文はパネルで操作',
+'1'
+);
+
+INSERT INTO shops(
+created_at,
+updated_at,
+shop_name,
+genre,
+genre_form,
+price_max,
+price_min,
+open_hei,
+close_hei,
+open_kyu,
+close_kyu,
+holiday_mon,
+holiday_tue,
+holiday_wed,
+holiday_thu,
+holiday_fri,
+holiday_sat,
+holiday_sun,
+holiday_syuku,
+holiday_nenmatsu,
+holiday_other,
+distance,
+address,
+tabaco,
+sheet_table,
+sheet_tatami,
+sheet_other,
+capacity,
+eat_drink,
+score,
+tel,
+homepage,
+other,
+photo,
+remarks_shop,
+id_users
+) 
+
+VALUES (
+CURRENT_TIMESTAMP,
+CURRENT_TIMESTAMP,
+'アードフッド',
+'洋食',
+'レストラン',
+'7000',
+'4000',
+CURRENT_TIMESTAMP,
+CURRENT_TIMESTAMP,
+CURRENT_TIMESTAMP,
+CURRENT_TIMESTAMP,
+'true',
+'false',
+'false',
+'false',
+'false',
+'true',
+'false',
+'true',
+'false',
+'第一土曜日休業',
+'400',
+'東京都練馬区光が丘4-5-6',
+'喫煙ok',
+'true',
+'false',
+'a',
+'20',
+'飲み放題有',
+'10',
+'111-222-3333',
+'https://addfood.com',
+'a',
+'gazou',
+'10人以上で割引有',
+'2'
+);
+
+
+
+
+
+
+
+
+
+
+INSERT INTO appointments(
+created_at,
+updated_at,
+id_users,
+appointment_date,
+appointment_time,
+id_shops,
+department,
+people,
+remarks_reserve
+) 
+
+VALUES (
+CURRENT_TIMESTAMP,
+CURRENT_TIMESTAMP,
+'1',
+'2023-6-15',
+CURRENT_TIMESTAMP,
+'1',
+'営業課',
+'10',
+'当日1名欠席の可能性有'
+);
+
+INSERT INTO appointments(
+created_at,
+updated_at,
+id_users,
+appointment_date,
+appointment_time,
+id_shops,
+department,
+people,
+remarks_reserve
+) 
+
+VALUES (
+CURRENT_TIMESTAMP,
+CURRENT_TIMESTAMP,
+'2',
+'2023-6-15',
+CURRENT_TIMESTAMP,
+'2',
+'営業課',
+'5',
+''
+);
+
+
+
+
+
+
+INSERT INTO messages(
+created_at,
+updated_at,
+date,
+id_users,
+title,
+message
+) 
+
+VALUES (
+CURRENT_TIMESTAMP,
+CURRENT_TIMESTAMP,
+CURRENT_TIMESTAMP,
+'1',
+'居酒屋酒々井の削除依頼',
+'居酒屋酒々井が一週間後に閉店するためデータの更削除をお願いします。'
+);
+
+INSERT INTO messages(
+created_at,
+updated_at,
+date,
+id_users,
+title,
+message
+) 
+
+VALUES (
+CURRENT_TIMESTAMP,
+CURRENT_TIMESTAMP,
+CURRENT_TIMESTAMP,
+'2',
+'アードフッドの更新依頼',
+'アードフッドに新メニューが登場したためデータの更新をお願いします。'
+);
+
+
+
+
+
+
+
+
+INSERT INTO memos(
+created_at,
+updated_at,
+id_users,
+memo_title,
+memo
+) 
+
+VALUES (
+CURRENT_TIMESTAMP,
+CURRENT_TIMESTAMP,
+'1',
+'居酒屋酒々井のメニュー',
+'魚介類は毎朝市場から直送された素材を使用しているそう。'
+);
+
+INSERT INTO memos(
+created_at,
+updated_at,
+id_users,
+memo_title,
+memo
+) 
+
+VALUES (
+CURRENT_TIMESTAMP,
+CURRENT_TIMESTAMP,
+'2',
+'アードフッドの向かい',
+'近々新しい飲み屋ができるらしい。'
+);
+
+
+
+
+
+
+INSERT INTO position_memos(
+created_at,
+updated_at,
+id_users,
+name_position,
+position,
+tabaco_position,
+favorite1,
+favorite2,
+ng,
+remarks_position
+) 
+
+VALUES (
+CURRENT_TIMESTAMP,
+CURRENT_TIMESTAMP,
+'1',
+'高田 塔示',
+'社長',
+'喫煙有',
+'もつ鍋',
+'すじこ',
+'揚げ物',
+'飲みの席で仕事の話は嫌い'
+);
+
+INSERT INTO position_memos(
+created_at,
+updated_at,
+id_users,
+name_position,
+position,
+tabaco_position,
+favorite1,
+favorite2,
+ng,
+remarks_position
+) 
+
+VALUES (
+CURRENT_TIMESTAMP,
+CURRENT_TIMESTAMP,
+'1',
+'御代川 昭夫',
+'部長',
+'喫煙無',
+'焼き鳥',
+'イカの刺身',
+'牡蠣',
+'スポーツの話で盛り上がる。'
+);
+
+
+
+
+
+INSERT INTO ADMIN_MESSAGES(
+created_at,
+updated_at,
+information_title,
+information_subtitle,
+information_photo,
+information
+) 
+
+VALUES (
+CURRENT_TIMESTAMP,
+CURRENT_TIMESTAMP,
+'6月開催の飲み会情報',
+'和食好きにおすすめ',
+'gazou',
+'6月は新設された飲み屋をリサーチした相田さんおすすめの場所で
+飲み会が開催されます。
+部署を問わず参加できるので希望の方は営業課の橘までご連絡ください。'
+);
+
+INSERT INTO ADMIN_MESSAGES(
+created_at,
+updated_at,
+information_title,
+information_subtitle,
+information_photo,
+information
+) 
+
+VALUES (
+CURRENT_TIMESTAMP,
+CURRENT_TIMESTAMP,
+'7月開催予定の飲み会情報',
+'飲み放題有りです。',
+'gazou',
+'7月は皆さんご存じstrand bonzで大規模な飲み会が開催されます。
+繁忙期手前のこの時期に皆で気合を入れましょう！
+予約のため今月末までに参加の可否をご連絡ください。'
+);
+
+
+
+
+
+
+INSERT INTO presets(
+created_at,
+updated_at,
+preset_name,
+freeword,
+price_max,
+price_min,
+sheet,
+capacity,
+tabaco,
+distance,
+eat_drink,
+open,
+close,
+id_users
+) 
+
+VALUES (
+CURRENT_TIMESTAMP,
+CURRENT_TIMESTAMP,
+'高田社長',
+'フリーワード',
+'7000',
+'4000',
+'席',
+'12',
+'喫煙有',
+'500',
+'飲み放題有り',
+CURRENT_TIMESTAMP,
+CURRENT_TIMESTAMP,
+'1'
+);
+
+INSERT INTO presets(
+created_at,
+updated_at,
+preset_name,
+freeword,
+price_max,
+price_min,
+sheet,
+capacity,
+tabaco,
+distance,
+eat_drink,
+open,
+close,
+id_users
+) 
+
+VALUES (
+CURRENT_TIMESTAMP,
+CURRENT_TIMESTAMP,
+'御代川部長',
+'フリーワード',
+'5000',
+'4000',
+'席',
+'10',
+'喫煙無',
+'800',
+'食べ放題有',
+CURRENT_TIMESTAMP,
+CURRENT_TIMESTAMP,
+'2'
+);
+
+
+
+
+INSERT INTO scores(
+id_shops,
+score,
+id_users
+) 
+
+VALUES (
+'1',
+'10',
+'1'
+);
+
+INSERT INTO scores(
+id_shops,
+score,
+id_users
+) 
+
+VALUES (
+'2',
+'5',
+'2'
+);
