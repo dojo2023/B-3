@@ -46,6 +46,33 @@
     </div>
 </header>
 <body>
+<h1>メモ</h1>
+<hr>
+<form method="POST" action="/B1/RegistServlet">
+<table id="regist_table">
+    <input type="submit" name="SUBMIT" value="メモ一覧">
+<br>
+<tr>
+    <tr>
+        <td>
+                <input type="text" size="40"><br>
+        </td>
+    </tr>
 
+
+    <tr>
+        <td>
+            <textarea cols="100" rows="10"></textarea><br>
+        </td>
+    </tr>
+
+
+
+</table>
+
+</form>
 </body>
+<footer>
+    <p>Copyright &copy; 2023 Hydrangea All Rights Reserved.</p>
+</footer>
 </html>

@@ -50,32 +50,25 @@
 <hr>
 <form method="POST" action="/B1/RegistServlet">
 <table id="regist_table">
-<tr>
-<th>名前</th>
-<td><input type="text" name="NAME"></td>
 
-<th>役職</th>
+    <input type="submit" name="SUBMIT" value="追加">
+	<input type="submit" name="SUBMIT" value="削除"><br>
+<tr><th>名前</th><th>役職</th><th>喫煙</th><th>好物1</th><th>好物2</th><th>NG</th><th>備考</th></tr>
+
+<tr><td><input type="text" name="NAME"></td>
+
 <td><input type="text" name="POSITION"></td>
-</tr>
-<tr>
-<th>喫煙</th>
+
 <td><input type="text" name="SMOKING"></td>
 
-<th>好物1</th>
+
 <td><input type="text" name="FAVORITE1"></td>
-</tr>
-<tr>
-<th>好物2</th>
+
 <td><input type="text" name="FAVORITE2"></td>
-</tr>
-<tr>
-<th>NG</th>
+
 <td><input type="text" name="NG"></td>
-</tr>
-<tr>
-<th>備考</th>
-<td><input type="text" name="REMARKS"></td>
-</tr>
+
+<td><input type="text" name="REMARKS"></td></tr>
 </table>
 
 </form>

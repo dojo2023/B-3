@@ -46,41 +46,35 @@
     </div>
 </header>
 <body>
-<h1>役職メモ</h1>
+<h1>メモ新規作成</h1>
 <hr>
 <form method="POST" action="/B1/RegistServlet">
 <table id="regist_table">
-<tr>
-<th>名前</th>
-<td><input type="text" name="NAME"></td>
+    <nav>
+        <ul>
+            <a href="fruit/メモ一覧.html"><input type="submit" name="SUBMIT" value="メモ一覧"></a>
+        </ul>
+    </nav>
 
-<th>役職</th>
-<td><input type="text" name="POSITION"></td>
-</tr>
-<tr>
-<th>喫煙</th>
-<td><input type="text" name="SMOKING"></td>
 
-<th>好物1</th>
-<td><input type="text" name="FAVORITE1"></td>
-</tr>
-<tr>
-<th>好物2</th>
-<td><input type="text" name="FAVORITE2"></td>
-</tr>
-<tr>
-<th>NG</th>
-<td><input type="text" name="NG"></td>
-</tr>
-<tr>
-<th>備考</th>
-<td><input type="text" name="REMARKS"></td>
-</tr>
+    <tr>
+        <td>
+                <input type="text" size="40"><br>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td>
+            <textarea cols="100" rows="10"></textarea><br>
+        </td>
+    </tr>
+
+
 </table>
 
 </form>
 </body>
-
 <footer>
     <p>Copyright &copy; 2023 Hydrangea All Rights Reserved.</p>
 </footer>
