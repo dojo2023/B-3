@@ -81,6 +81,19 @@
                 <p id="informationResult"></p>
 
                 <button type="button" onclick="editInfo()">訂正</button>
+                <button type="button" onclick="submitForm()">投稿</button>
+            </div>
+            <!-- ローディング表示 -->
+            <div id="loading" class="loading" style="display: none;">
+            <img src="loading-37-1.gif" alt="ローディング">
+            <p>投稿中...</p>
+            </div>
+
+            <!-- 送信完了画面 -->
+            <div id="thank-you" style="display: none;">
+                <!-- サーブレットで、ここは表示を変更するイメージ -->
+            <h2>送信が完了しました。</h2>
+            <p>お問い合わせいただき、ありがとうございました。</p>
             </div>
         
         </main>

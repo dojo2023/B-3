@@ -13,9 +13,20 @@ function displayInfo() {
     // 入力フォームを非表示にし、結果を表示
     document.getElementById("inputForm").style.display = "none";
     document.getElementById("result").style.display = "block"; }
-    
+
   function editInfo() {
     // 入力フォームを表示し、結果を非表示にする
     document.getElementById("inputForm").style.display = "block";
     document.getElementById("result").style.display = "none"; }
+
+    function submitForm() {
+        // 送信処理（ここではダミーの処理として3秒待機して送信完了画面に遷移）
+        // 実際の送信処理はサーバーサイドで行う必要があります
+        document.getElementById("loading").style.display = "block";
+        document.getElementById("result").style.display = "none"; 
+        setTimeout(function() {
+          document.getElementById('loading').style.display = 'none'; // 確認表示を非表示に
+          document.getElementById('thank-you').style.display = 'block'; // 送信完了画面を表示
+        }, 3000);
+      }
   
