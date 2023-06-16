@@ -1,0 +1,41 @@
+<!--<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>-->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="UTF-8">
+<title>作成フォーム | Hydrangea</title>
+<link rel="stylesheet" href="css/common.css"><!--css名やパス、要チェック-->
+</head>
+<body>
+    <p id="created_form">
+        <p>イベント名：<div id="ch_event_name"> </div> </p>
+        <p>イベント内容：<input type="text" id="ch_event_detail"></p> 
+        <p>イベント日程：<input type="text" id="ch_event_detail"></p>    
+        作った人  橘
+    </p>
+    
+<script>
+    'use strict'
+    window.onload = function(){
+    // 親ウィンドウの存在チェック
+    if(!window.opener || window.opener.closed){
+       window.alert('親ウィンドウがありません。');
+       return false;
+    }else{
+        window.alert('親ウィンドウあり。');
+        return true;
+    }
+
+    // 子ウィンドから親ウィンドウへ値を渡す
+    document.getElementById("ch_event_name").value = window.opener.document.getElementById("event_name").innerHTML;
+    document.getElementById("ch_event_detail").value = window.opener.document.getElementById("event_detail").innerHTML;
+ 
+  }
+ 
+</script>
+
+</body>
+</html>

@@ -56,54 +56,34 @@
     <p><a href="">前のページに戻る</a></p><br> <!--カレンダー画面に戻る-->
     <h2>日程調整フォーム</h2>
     <!--<form name="sendmail" method="POST" action="mailto:megatenkomori@gmail.com?subject=日程調整のお願い" onSubmit="addtitle()">
-    <form name="sendmail" method="POST" action="">servlet名、要チェック-->
+    form name="sendmail" method="POST" action="">servlet名、要チェック-->
+   
     <table>
         <tr>
             <th>イベント名</th>
-            <td><input type = "text" name="event_name" value="イベント名"></input></td>
+            <td><input type = "text" id="event_name" name="event_name" value="イベント名"></input></td>
         </tr>
         <tr>
             <th>イベント内容</th>
-            <td><input type = "textarea" name="event_detail" value="イベント内容"></input></td>
+            <td><input type = "textarea" id="event_detail" name="event_detail" value="イベント内容"></input></td>
         </tr>
         <tr>
             <th>候補日選択</th>
-            <td><input type = "text" name="time" value="入力してください"></input></td>
+            <td><input type = "date" name="event_date" id="event_date" value="入力してください"></input></td>
         </tr>
         <tr>
             <th>作成者</th>
-            <td><c:out value="${e.user_name}"/></td><!--usersDBから-->
+            <td><c:out value="${e.user_name}"/>橘</td><!--usersDBから-->
         </tr>
         <tr><td>
-        <button class="open"><label  for="pop-up">フォームを作成する</label></button>
-        <!--<input type="checkbox" id="pop-up">
-            <div class="overlay">
-              <div class="search_pop-up">
-                <label class="close" for="pop-up">×</label>
-                <p class="detail_search"><!--ポップアップの中身-->
-                    <!--<form method="post" action="mailto:megatenkomori@gmail.com?subject=日程調整のお願い" enctype="text/plain">
-                        回答者<br>
-                        <input type="text"><br>
-                        所属<br>
-                        <input type="text"><br>
-                        イベント名<br>
-                        <input type="text"><br>
-                        イベント内容<br>
-                        <input type="textarea"><br>
-                        候補日(可能な日にチェックを入れてください)<br>
-                        <input type ="date" name="tyosei" value="tyousei"><br>
-                        作成者<br>
-                        <c:out value="${e.user_name}"/>
-                        <input type="submit" name="send_form" value="フォームを送信する">
-                    </form>
-                </p>
-                </div>
-            </div>-->
-            
+            <input type="button" id="formcreate"value="フォームを作成する">     
+            <p><a href="javascript:void(0);" onclick="openWindow2('created_form.html', 'child_window')">子ウィンドウ２を開く</a></p>
+
         </td></tr>
         
     </table>
-    </form>
+    
+
 </div>
 <!--ここからフッター-->
 <footer class="footer">
@@ -114,11 +94,34 @@
         <input type="button" value="送信" name="send">
     </form>-->
     <!--著作権-->
-    <p>Copyright &copy; 2023 Hydrangea All Rights Reserved.</p>
-        
-
+    <p>Copyright &copy; 2023 Hydrangea All Rights Reserved.</p>        
 </footer>
+<script>
+'use strict'
+
+let formcreate = document.getElementById('formcreate');
+    formcreate.addEventListener('click', buttonClick);
+ 
+function buttonClick(){
    
+    window.open("created_form.html");
+    // windowオブジェクトを変数に格納 
+    var obj_window = window.open("created_form.html");
+  // 親ウィンドウから子ウィンドウへ値を渡す
+  obj_window.document.getElementById("ch_event_name").value = document.getElementById("event_name").innerHTML;
+  obj_window.document.getElementById("ch_event_detail").value  = document.getElementById("event_detail").innerHTML;
+}
+
+function openWindow(url, name) {
+  // windowオブジェクトを変数に格納
+  var obj_window = window.open(url, name, 'width=400,height=300');
+  // 親ウィンドウから子ウィンドウへ値を渡す
+  obj_window.document.getElementById("chl_name").value = document.getElementById("pr_name").innerHTML;
+  obj_window.document.getElementById("chl_age").value  = document.getElementById("pr_age").innerHTML;
+}*/
+
+ </script>  
+
 
 </body>
 </html>

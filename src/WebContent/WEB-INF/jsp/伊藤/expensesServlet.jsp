@@ -46,6 +46,50 @@
     </div>
 </header>
 <body>
+<h1>経費申請書テンプレート</h1>
+<hr>
+<form method="POST" action="/B1/RegistServlet">
+<table id="regist_table">
 
+
+    <p>経費申請書</p>
+
+    <tr>
+        <td>
+            <label>更新日：
+                <input type="date" id="start" name="trip-start"
+                value="2023-06-01"
+                min="2023-01-01" max="2100-12-31"><br>
+            </label>
+        </td>
+    </tr>
+
+    <tr>
+        <td>
+            <label>申請者：
+                <input type="text" name="APPLICANT" value=""><br>
+            </label>
+        </td>
+    </tr>
+
+
+<tr><th>日付</th><th>内容</th><th>支払先</th><th>金額</th><th>備考</th></tr>
+
+<tr><td><input type="text" name="DATE"></td>
+
+<td><input type="text" name="CONTENT"></td>
+
+<td><input type="text" name="PAYABLE"></td>
+
+
+<td><input type="text" name="MONEY"></td>
+
+<td><input type="text" name="REMARKS"></td></tr>
+</table>
+
+</form>
 </body>
+<footer>
+    <p>Copyright &copy; 2023 Hydrangea All Rights Reserved.</p>
+</footer>
 </html>

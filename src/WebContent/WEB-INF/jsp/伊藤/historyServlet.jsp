@@ -46,6 +46,33 @@
     </div>
 </header>
 <body>
+<h1>履歴</h1>
+<hr>
+<form method="POST" action="/B1/RegistServlet">
+<table id="regist_table">
 
+    <p>最近閲覧したお店</p>
+
+    <ul>
+      <li><a href="https://example.com">おいしいお店</a></li>
+      <li><a href="https://example.com">焼肉屋</a></li>
+      <li><a href="https://example.com">寿司屋</a></li>
+    </ul>
+
+    <p>最近予約されたお店</p>
+
+	<ul>
+  		<li><a href="https://example.com">よく行く店</a></li>
+  		<li><a href="https://example.com">イタリアン</a></li>
+ 		 <li><a href="https://example.com">中華料理</a></li>
+	</ul>
+
+
+</table>
+
+</form>
 </body>
+<footer>
+    <p>Copyright &copy; 2023 Hydrangea All Rights Reserved.</p>
+</footer>
 </html>

@@ -5,6 +5,7 @@
 <meta charset="UTF-8">
 <title>問い合わせ結果 | Hydrangea</title>
 <link rel="stylesheet" href="css/common.css"><!--cssのリンク-->
+
 <!--サーブレットのリンク--><!--削除の申請結果コメント-->
 </head>
 <body>
@@ -51,11 +52,12 @@
 </header>
 <!--ここから内容-->
 <div class="contents">
-        <h2><c:out value="${result.title}" /></h2>
+        <h2><c:out value="${result.title}" /></h2>店名
         <div class ="result">
         <form method="POST" action="/simpleBC/RegistServlet" autocomplete="off">
         <p><c:out value="${result.message}" /></p>
         </form>
+        の削除を申請しました。/削除を申請できませんでした。
         </div>
 
 
@@ -70,7 +72,10 @@
     </form>-->
     <!--著作権-->
     <p>Copyright &copy; 2023 Hydrangea All Rights Reserved.</p>
-        
+
+<script>
+    
+</script>
 
 </footer>
 </body>
