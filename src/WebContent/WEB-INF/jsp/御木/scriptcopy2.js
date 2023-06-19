@@ -82,23 +82,25 @@ function displayConfirmation() {
 
 
 
+
+
+
+//更新
   // 入力フォームを非表示にし、結果を表示
-  document.getElementById("registForm").style.display = "none";
-  document.getElementById("register_confir").style.display = "block";
+  document.getElementById("updateForm").style.display = "none";
+  document.getElementById("update_confir").style.display = "block";
 }
 
 function editInfo() {
   // 入力フォームを表示し、結果を非表示にする
-  document.getElementById("registForm").style.display = "block";
-  document.getElementById("register_confir").style.display = "none";
+  document.getElementById("updateForm").style.display = "block";
+  document.getElementById("update_confir").style.display = "none";
 }
 
 
-function register() {
-  // 確認画面を非表示にし、登録完了画面を表示
-  document.getElementById("register_confir").style.display = "none";
+function update() {
+  // 確認画面を非表示にし、更新完了画面を表示
+  document.getElementById("update_confir").style.display = "none";
   document.getElementById("success").style.display = "block";
 }
-
-
 

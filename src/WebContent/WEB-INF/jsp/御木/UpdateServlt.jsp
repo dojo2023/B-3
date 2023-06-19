@@ -386,11 +386,11 @@
                 <p id="remarks_shopResult"></p>
                 
                 <button type="button" onclick="editInfo()">訂正</button>
-                <button type="button" onclick="register()">登録</button>
+                <button type="button" onclick="update()">更新</button>
             </div>
 
 
-            <div id="update_success" style="display: none;">
+            <div id="success" style="display: none;">
                 <h2>
                 <ol class="open_page">
                     <li >店舗情報入力</li>
@@ -409,7 +409,7 @@
     </footer>
 
 
-    <script src="scriptcopy.js"></script>
+    <script src="scriptcopy2.js"></script>
 </body>
 
 
