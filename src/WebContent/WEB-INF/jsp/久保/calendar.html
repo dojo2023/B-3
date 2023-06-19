@@ -132,6 +132,14 @@
     color: blue;
 }
 
+
+
+
+
+
+
+
+
 .calendar-container {
   width: 500px;
   margin: 0 auto;
@@ -150,7 +158,8 @@ h1 {
   padding: 0 30px 30px 30px;
 }
 table {
-  width: 100%;
+  width: 500%;
+  height: 100%;
 }
 th, td {
   text-align: center;
@@ -169,70 +178,125 @@ td {
 .day *:last-child {
   color: #6fb5ff;
 }
+
+#calendar {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+section {
+    margin: 10px;
+}
+
+h1 {
+    font-size: 18px;
+}
+
+table {
+    border-spacing: 0;
+    border-collapse: collapse;
+}
+
+td {
+    border: 1px solid #ddd;
+    padding: 5px;
+    text-align: center;
+}
+
+td:first-child {
+    color: red;
+}
+
+td:last-child {
+    color: royalblue;
+}
+
+td.is-disabled {
+    color: #ccc;
+}
 </style>
 </header>
 <body>
 <h1>カレンダー</h1>
-  <div class="calendar-container">
-    <h1>2023年6月</h1>
-    <table class="calendar">
-      <tr>
-        <th>日</th>
-        <th>月</th>
-        <th>火</th>
-        <th>水</th>
-        <th>木</th>
-        <th>金</th>
-        <th>土</th>
-      </tr>
-      <tr class="day">
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td>1</td>
-        <td>2</td>
-        <td>3</td>
-      </tr>
-      <tr class="day">
-        <td>4</td>
-        <td>5</td>
-        <td>6</td>
-        <td>7</td>
-        <td>8</td>
-        <td>9</td>
-        <td>10</td>
-      </tr>
-      <tr class="day">
-        <td>11</td>
-        <td>12</td>
-        <td>13</td>
-        <td>14</td>
-        <td>15</td>
-        <td>16</td>
-        <td>17</td>
-      </tr>
-      <tr class="day">
-        <td>18</td>
-        <td>19</td>
-        <td>20</td>
-        <td>21</td>
-        <td>22</td>
-        <td>23</td>
-        <td>24</td>
-      </tr>
-      <tr class="day">
-        <td>25</td>
-        <td>26</td>
-        <td>27</td>
-        <td>28</td>
-        <td>29</td>
-        <td>30</td>
-        <td></td>
-      </tr>
-    </table>
-  </div>
+<div id="calendar"  style="margin-left: 5%; margin-right: 5%;"></div>
+<script>
+  const weeks = ['日', '月', '火', '水', '木', '金', '土']
+const date = new Date()
+let year = date.getFullYear()
+let month = date.getMonth() + 1
+const config = {
+    show: 1,
+}
+
+function showCalendar(year, month) {
+    for ( i = 0; i < config.show; i++) {
+        const calendarHtml = createCalendar(year, month)
+        const sec = document.createElement('section')
+        sec.innerHTML = calendarHtml
+        document.querySelector('#calendar').appendChild(sec)
+
+        month++
+        if (month > 12) {
+            year++
+            month = 1
+        }
+    }
+}
+
+function createCalendar(year, month) {
+    const startDate = new Date(year, month - 1, 1) // 月の最初の日を取得
+    const endDate = new Date(year, month,  0) // 月の最後の日を取得
+    const endDayCount = endDate.getDate() // 月の末日
+    const lastMonthEndDate = new Date(year, month - 2, 0) // 前月の最後の日の情報
+    const lastMonthendDayCount = lastMonthEndDate.getDate() // 前月の末日
+    const startDay = startDate.getDay() // 月の最初の日の曜日を取得
+    let dayCount = 1 // 日にちのカウント
+    let calendarHtml = '' // HTMLを組み立てる変数
+
+    calendarHtml += '<h1>' + year  + '/' + month + '</h1>'
+    calendarHtml += '<table>'
+
+    // 曜日の行を作成
+    for (let i = 0; i < weeks.length; i++) {
+        calendarHtml += '<td>' + weeks[i] + '</td>'
+    }
+
+    for (let w = 0; w < 6; w++) {
+        calendarHtml += '<tr>'
+
+        for (let d = 0; d < 7; d++) {
+            if (w == 0 && d < startDay) {
+                // 1行目で1日の曜日の前
+                let num = lastMonthendDayCount - startDay + d + 1
+                calendarHtml += '<td class="is-disabled">' + num + '</td>'
+            } else if (dayCount > endDayCount) {
+                // 末尾の日数を超えた
+                let num = dayCount - endDayCount
+                calendarHtml += '<td class="is-disabled">' + num + '</td>'
+                dayCount++
+            } else {
+                calendarHtml += `<td class="calendar_td" data-date="${year}/${month}/${dayCount}">${dayCount}</td>`
+                dayCount++
+            }
+        }
+        calendarHtml += '</tr>'
+    }
+    calendarHtml += '</table>'
+
+    return calendarHtml
+}
+
+
+document.addEventListener("click", function(e) {
+    if(e.target.classList.contains("calendar_td")) {
+        alert('クリックした日付は' + e.target.dataset.date + 'です')
+    }
+})
+
+showCalendar(year, month)
+</script>
 </body>
+
 <footer>
   <p>Copyright &copy; 2023 Hydrangea All Rights Reserved.</p>
 </footer> 
