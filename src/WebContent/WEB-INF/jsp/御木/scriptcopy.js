@@ -19,19 +19,25 @@ function displayConfirmation() {
   var holiday_nenmatsu= document.getElementById("holiday_nenmatsu").checked;
   var holiday_other= document.getElementById("holiday_other").checked;
   var holiday_other_text= document.getElementById("holiday_other_text").value;
+  var holiday_other= document.getElementById("holiday_other").checked;
+  var distance = document.getElementById("distance").value;
+  var address = document.getElementById("address").value;
+  var tabaco = document.querySelector('input[name="tabaco"]:checked');
+  var sheet_table= document.getElementById("sheet_table").checked;
+  var sheet_tatami= document.getElementById("sheet_tatami").checked;
+  var sheet_other= document.getElementById("sheet_other").checked;
+  var sheet_other_text= document.getElementById("sheet_other_text").value;
+
+
+  //var = document.getElementById("").value;
   if (shop_name === "") {
     alert("名前は必須です。");
     return;
-}
-if (genre === "") {
+}else if (genre === "選択してください") {
   alert("ジャンルは必須です。");
   return;
 }
-if (genre_form === "") {
-  alert("形態は必須です。");
-  return;
-}
-  // 入力結果を表示
+// 入力結果を表示
   document.getElementById("shop_nameResult").textContent = "店名: " +  shop_name;
   document.getElementById("genreResult").innerHTML = "ジャンル " + genre;
   document.getElementById("genre_formResult").innerHTML = "形態: " + genre_form;
@@ -48,6 +54,20 @@ if (genre_form === "") {
   document.getElementById("holiday_syukuReselt").textContent =  (holiday_syuku ? "祝日" : "");
   document.getElementById("holiday_nenmatsuReselt").textContent =  (holiday_nenmatsu ? "年末年始" : "");
   document.getElementById("holiday_otherReselt").textContent =  (holiday_other ? "その他" : "");
+  document.getElementById("holiday_other_textReselt").textContent =  holiday_other_text ;
+  document.getElementById("distanceReselt").textContent = "会社からの距離: " +  distance ;
+  document.getElementById("addressReselt").textContent = "住所: " +  address ;
+  document.getElementById("tabacoReselt").textContent = "喫煙: " + (tabaco ? tabaco.value : "");
+  document.getElementById("sheet_tableReselt").textContent = "座席: " + (sheet_table ? "テーブル" : "")
+  document.getElementById("sheet_tatamiReselt").textContent =(sheet_tatami ? "座敷" : "");
+  document.getElementById("sheet_otherReselt").textContent =(sheet_other ? "その他" : "");
+  document.getElementById("sheet_other_textReselt").textContent =  sheet_other_text ;
+  
+  
+  
+  
+
+  
 
 
 
@@ -67,17 +87,4 @@ function editInfo() {
     document.getElementById("register_confir").style.display = "none";
     document.getElementById("success").style.display = "block"; }
   
-/*
-    function toggleOutput() {
-      //チェックボックス処理
-      var checkbox = document.getElementById("holiday_mon");
-      var output = document.getElementById("output");
-    
-      if (checkbox.checked) {
-        output.innerHTML = "月";
-      } else {
-        output.innerHTML = "";
-      }
-    }
-    */
-
+  
