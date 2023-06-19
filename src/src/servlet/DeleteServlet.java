@@ -64,11 +64,11 @@ public class DeleteServlet extends HttpServlet {
 				MessageDAO bDao = new MessageDAO();
 				if (bDao.insert(new Bc(id_messages, created_at, date, id_users, title, message))) {	// 登録成功
 					request.setAttribute("deleteresult",
-					new DeleteResult( "の削除を申請しました。", "/simpleBC/MenuServlet"));
+					new DeleteResult( "の削除を申請しました。"));
 				}
 				else {	// 登録失敗
 					request.setAttribute("deleteresult",
-					new DeleteResult("の削除を申請できませんでした。", "/simpleBC/MenuServlet"));
+					new DeleteResult("の削除を申請できませんでした。"));
 				}
 
 				// 結果ページにフォワードする

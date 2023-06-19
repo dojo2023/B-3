@@ -6,11 +6,10 @@ function showConfirmation() {
     document.getElementById('confirmation').style.display = 'block';
   }
 
-// 修正ボタン用、修正画面に遷移
-function redirectToServlet() {
-  window.location.href = "別のサーブレットのURL";
-}
-
+// function showConfirmation() {
+//     // 削除確認画面を表示
+//     document.getElementById('confirmation').style.display = 'block';
+//   }
 
   function hideConfirmation() {
     // 削除確認画面を非表示
