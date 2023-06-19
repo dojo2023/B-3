@@ -52,10 +52,11 @@
 </header>
 <!--ここから内容-->
 <div class="contents">
-        <h2><c:out value="${result.title}" /></h2>店名
+        <h2><c:out value="${shop_name}" /></h2>店名
         <div class ="result">
         <form method="POST" action="/simpleBC/RegistServlet" autocomplete="off">
-        <p><c:out value="${result.message}" /></p>
+        <p><c:out value="${shop_name}" /></p><!--「の」-->
+        <p><c:out value="${deleteresult}" /></p>
         </form>
         の削除を申請しました。/削除を申請できませんでした。
         </div>
