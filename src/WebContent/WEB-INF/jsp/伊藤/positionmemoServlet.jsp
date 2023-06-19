@@ -50,12 +50,15 @@
 <hr>
 <form method="POST" action="/B1/RegistServlet">
 <table id="regist_table">
-
+    <div>
+        <button onclick="add()">行追加</button>
+        <button onclick="del()">行削除</button>
+      </div>
     <input type="submit" name="SUBMIT" value="追加">
-	<input type="submit" name="SUBMIT" value="削除"><br>
+	<br>
 <tr><th>名前</th><th>役職</th><th>喫煙</th><th>好物1</th><th>好物2</th><th>NG</th><th>備考</th></tr>
 
-<tr><td><input type="text" name="NAME"></td>
+<!--<tr><td><input type="text" name="NAME"></td>
 
 <td><input type="text" name="POSITION"></td>
 
@@ -68,10 +71,25 @@
 
 <td><input type="text" name="NG"></td>
 
-<td><input type="text" name="REMARKS"></td></tr>
+<td><input type="text" name="REMARKS"></td></tr>-->
 </table>
 
 </form>
+<script>
+    'use strict'
+    const tbl = document.getElementById("tbl");
+    function add(){
+    let tr = document.createElement("tsr"); 
+
+    for(let i=0;i<3;i++){
+    let td = document.createElement("td");      //新しいtd要素を作って変数tdに格納
+  　let inp = document.createElement("input");  //tdに何か追加。ここは例としてinput
+  　td.appendChild(inp);        //tdにinpを追加
+    tr.appendChild(td);         //trにtdを追加
+  }
+  tbl.appendChild(tr);  
+}
+</script>
 </body>
 
 <footer>
