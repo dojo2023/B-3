@@ -76,18 +76,19 @@
         <h1><label>店舗情報更新</label></h1><br>
 
 
-        <h2>
-            <ol class="open_page">
-                <li class="current">店舗情報入力</li>
-                <li>更新情報確認</li>
-                <li>更新完了</li>
-            </ol>
-        </h2>
+       
 
 
 
         <form>
-            <div id="registForm">
+            <div id="updateForm">
+                <h2>
+                    <ol class="open_page">
+                        <li class="current">店舗情報入力</li>
+                        <li>更新情報確認</li>
+                        <li>更新完了</li>
+                    </ol>
+                </h2>
                 <table class="">
 
 
@@ -336,7 +337,13 @@
                 </table>
             </div>
             <div id="update_confir" style="display: none;">
-                <h2>入力内容確認:</h2>
+                <h2>
+                    <ol class="open_page">
+                        <li >店舗情報入力</li>
+                        <li class="current">更新情報確認</li>
+                        <li>更新完了</li>
+                    </ol>
+                </h2>
                 <p id="shop_nameResult"></p>
                 <p id="genreResult"></p>
                 <p id="genre_formResult"></p>
@@ -379,12 +386,18 @@
                 <p id="remarks_shopResult"></p>
                 
                 <button type="button" onclick="editInfo()">訂正</button>
-                <button type="button" onclick="register()">更新</button>
+                <button type="button" onclick="register()">登録</button>
             </div>
 
 
-            <div id="success" style="display: none;">
-                <h2>更新完了</h2>
+            <div id="update_success" style="display: none;">
+                <h2>
+                <ol class="open_page">
+                    <li >店舗情報入力</li>
+                    <li >更新情報確認</li>
+                    <li class="current">更新完了</li>
+                </ol>
+                </h2>
                 <p>更新が完了しました。</p>
             </div>
 
