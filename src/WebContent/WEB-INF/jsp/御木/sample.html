@@ -252,14 +252,10 @@
                     <tr>
                         <td>
                             <label>飲み放題・食べ放題
-                                <input type="radio" name="eat_ok_drink_no" id="eat_ok_drink_no" value=""
-                                    placeholder="">飲み放題のみ
-                                <input type="radio" name="eat_ok_drink_no" id="eat_ok_drink_no" value=""
-                                    placeholder="">食べ放題のみ
-                                <input type="radio" name="eat_ok_drink_ok" id="eat_ok_drink_ok" value=""
-                                    placeholder="">両方あり
-                                <input type="radio" name="eat_no_drink_no" id="eat_no_drink_no" value=""
-                                    placeholder="">両方なし<br>
+                                <input type="radio" name="eat_drink" id="eat_ok_drink_no" value="飲み放題のみ">飲み放題のみ
+                                <input type="radio" name="eat_drink" id="eat_ok_drink_no" value="食べ放題のみ" >食べ放題のみ
+                                <input type="radio" name="eat_drink" id="eat_ok_drink_ok" value="両方あり">両方あり
+                                <input type="radio" name="eat_drink" id="eat_no_drink_no" value="両方なし">両方なし<br>
                             </label>
                         </td>
                     </tr>
@@ -267,18 +263,18 @@
                     <tr>
                         <td>
                             <label>評価
-                                <select type="text" name="score" id="score" value="" placeholder="ジャンル">
+                                <select type="text" name="score" id="score" >
                                     <option hidden>選択して下さい</option>
-                                    <option name="score_10" value="">10:殿堂入り</option>
-                                    <option name="score_9" value="">9:名店</option>
-                                    <option name="score_8" value="">8:優良</option>
-                                    <option name="score_7" value="">7:おすすめ</option>
-                                    <option name="score_6" value="">6:それなり</option>
-                                    <option name="score_5" value="">5:普通</option>
-                                    <option name="score_4" value="">4:いまいち</option>
-                                    <option name="score_3" value="">3:おすすめしない</option>
-                                    <option name="score_2" value="">2:まずい</option>
-                                    <option name="score_1" value="">1:地雷</option>
+                                    <option name="score_10" value="10:殿堂入り">10:殿堂入り</option>
+                                    <option name="score_9" value="9:名店">9:名店</option>
+                                    <option name="score_8" value="8:優良">8:優良</option>
+                                    <option name="score_7" value="7:おすすめ">7:おすすめ</option>
+                                    <option name="score_6" value="6:それなり">6:それなり</option>
+                                    <option name="score_5" value="5:普通">5:普通</option>
+                                    <option name="score_4" value="4:いまいち">4:いまいち</option>
+                                    <option name="score_3" value="3:おすすめしない">3:おすすめしない</option>
+                                    <option name="score_2" value="2:まずい">2:まずい</option>
+                                    <option name="score_1" value="1:地雷">1:地雷</option>
                                 </select> /10点<br>
                             </label>
                         </td>
@@ -372,21 +368,15 @@
                     <li id="sheet_other_textReselt"></li>
                 </ol>
 
-                <p id=""></p>
-                <p id=""></p>
-                <p id=""></p>
-                <p id=""></p>
-                <p id=""></p>
-                <p id=""></p>
-                <p id=""></p>
-                <p id=""></p>
-                <p id=""></p>
-                <p id=""></p>
-                <p id=""></p>
-                <p id=""></p>
-                <p id=""></p>
-                <p id=""></p>
-                <p id=""></p>
+                <p id="capacityReselt"></p>
+                <p id="eat_drinkReselt"></p>
+                <p id="scoreResult"></p>
+                <p id="telResult"></p>
+                <p id="homepageResult"></p>
+                <p id="other_telResult"></p>
+                <p id="photoResult"></p>
+                <p id="remarks_shopResult"></p>
+                
                 <button type="button" onclick="editInfo()">訂正</button>
                 <button type="button" onclick="register()">登録</button>
             </div>
