@@ -1,4 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%
+	String name=(String)request.getAttribute("name");
+	String word=(String)request.getAttribute("word");
+	String filename=(String)request.getAttribute("filename");
+%>
 <!DOCTYPE html>
 <html>
 
@@ -80,7 +85,7 @@
 
 
 
-        <form>
+        <form action="/hydrangea/RegistServlet" method="post" enctype="multipart/form-data">
             <div id="registForm">
                 <h2>
                     <ol class="open_page">
@@ -312,6 +317,7 @@
                                 <input type="file" name="photo" id="photo" value="" multiple="multiple" alt=""
                                     accept="image/*" onchange="previewImage(this);">
 
+
                             </label>
                         </td>
                     </tr>
@@ -336,6 +342,8 @@
 
                 </table>
             </div>
+
+
             <div id="register_confir" style="display: none;">
                 <h2>
                     <ol class="open_page">
@@ -383,13 +391,15 @@
                 <p id="homepageResult"></p>
                 <p id="other_telResult"></p>
                 <p id="photoResult"></p>
+                <p><img src="/hydrangea/upload/<%=filename %>"></p>
                 <p id="remarks_shopResult"></p>
 
                 <button type="button" onclick="editInfo()">訂正</button>
-                <button type="button" onclick="register()">登録</button>
+                <input type="submit" onclick="register()">登録</input>
             </div>
 
-
+        </form>
+        <form>
             <div id="success" style="display: none;">
                 <h2>
                 <ol class="open_page">
@@ -408,6 +418,8 @@
     <footer>
         <p>Copyright &copy; 2023 Hydrangea All Rights Reserved.</p>
     </footer>
+
+
 
 
     <script src="/hydrangea/js/scriptcopy.js"></script>
