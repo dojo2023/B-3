@@ -72,8 +72,40 @@ public class RegistServlet extends HttpServlet {
 		String open_kyu = request.getParameter("open_kyu");
 		String close_kyu = request.getParameter("close_kyu");
 		String holiday_mon = request.getParameter("holiday_mon");
-		String note = request.getParameter("NOTE");
-		String id = request.getParameter("ID");
+		String holiday_tue = request.getParameter("holiday_tue");
+		String holiday_wed = request.getParameter("holiday_wed");
+		String holiday_thu = request.getParameter("holiday_thu");
+		String holiday_fri = request.getParameter("holiday_fri");
+		String holiday_sat = request.getParameter("holiday_sat");
+		String holiday_sun = request.getParameter("holiday_sun");
+		String holiday_syuku = request.getParameter("holiday_syuku");
+		String holiday_nenmatsu = request.getParameter("holiday_nenmatsu");
+		String holiday_other = request.getParameter("holiday_other");
+		String holiday_other_text = request.getParameter("holiday_other_text");
+		String distance = request.getParameter("distance");
+		String address = request.getParameter("address");
+		String tabaco = request.getParameter("tabaco");
+		String sheet_table = request.getParameter("sheet_table");
+		String sheet_tatami = request.getParameter("sheet_tatami");
+		String sheet_other = request.getParameter("sheet_other");
+		String capacity = request.getParameter("capacity");
+		String eat_drink = request.getParameter("eat_drink");
+		String  = request.getParameter("");
+		String  = request.getParameter("");
+		String  = request.getParameter("");
+		String  = request.getParameter("");
+		String  = request.getParameter("");
+		String  = request.getParameter("");
+		String  = request.getParameter("");
+		String  = request.getParameter("");
+
+
+
+
+
+
+
+
 		String number = request.getParameter("NUMBER");
 		String name = request.getParameter("NAME");
 		String zipcode = request.getParameter("ZIPCODE");
@@ -84,7 +116,7 @@ public class RegistServlet extends HttpServlet {
 		String email = request.getParameter("EMAIL");
 		String tel = request.getParameter("TEL");
 		String day = request.getParameter("DAY");
-		String note = request.getParameter("NOTE");
+		String  = request.getParameter("");
 
 
 
