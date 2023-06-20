@@ -29,6 +29,18 @@ public class RegistServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+		/*	// もしもログインしていなかったらログインサーブレットにリダイレクトする
+		HttpSession session = request.getSession();
+		if (session.getAttribute("id") == null) {
+			response.sendRedirect("/hydrangea/LoginServlet");
+			return;
+		}
+*/
+
+		//リクエストパラメータの取得
+		request.setCharacterEncoding("UTF-8");
+
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/Registe.jsp");
 		dispatcher.forward(request, response);
 	}
@@ -37,6 +49,35 @@ public class RegistServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+		/*	// もしもログインしていなかったらログインサーブレットにリダイレクトする
+		HttpSession session = request.getSession();
+		if (session.getAttribute("id") == null) {
+			response.sendRedirect("/hydrangea/LoginServlet");
+			return;
+		}
+*/
+		if (request.getParameter("SUBMIT").equals("削除申請")) {
+			/*	// 登録処理を行う
+				MessageDAO bDao = new MessageDAO();
+				if (bDao.insert(new Bc(id_messages, created_at, date, id_users, title, message))) {	// 登録成功
+					request.setAttribute("deleteresult",
+					new DeleteResult( "の削除を申請しました。"));
+				}
+				else {	// 登録失敗
+					request.setAttribute("deleteresult",
+					new DeleteResult("の削除を申請できませんでした。"));
+				}*/
+
+				// 結果ページにフォワードする
+				RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/deleteresult.jsp");
+				dispatcher.forward(request, response);
+	}
+
+
+
+
+
 		request.setCharacterEncoding("utf-8");
 		String name=request.getParameter("name");
 		String word=request.getParameter("word");
