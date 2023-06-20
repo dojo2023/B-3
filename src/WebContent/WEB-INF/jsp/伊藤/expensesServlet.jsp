@@ -48,8 +48,8 @@
 <body>
 <h1>経費申請書テンプレート</h1>
 <hr>
-<form method="POST" action="/B1/RegistServlet">
-<table id="regist_table">
+<form method="POST" action="">
+<table id="">
 
 
     <p>経費申請書</p>
@@ -71,8 +71,8 @@
             </label>
         </td>
     </tr>
-
-
+</table>
+<table>
 <tr><th>日付</th><th>内容</th><th>支払先</th><th>金額</th><th>備考</th></tr>
 
 <tr><td><input type="text" name="DATE"></td>
@@ -85,6 +85,22 @@
 <td><input type="text" name="MONEY"></td>
 
 <td><input type="text" name="REMARKS"></td></tr>
+
+</table>
+
+<table>
+
+<tr><th>領収書添付欄</th></tr>
+    <tr>
+        <td>
+            <textarea cols="50" rows="10"></textarea>
+        </td>
+    </tr>
+
+    <tr>
+        <td><input type="submit" name="SUBMIT" value="送信"><br></td>
+    </tr>
+
 </table>
 
 </form>

@@ -11,7 +11,7 @@
 <form style="border: solid 3px; height: 40%;">
 <p style="margin-top: 10px; margin-bottom: 3px;">ID・メールアドレス</p><input type="text" style="width: 50%;"><br>
 パスワード<br><input type="password" style="width: 50%;"><br><br>
-<a href="">アカウント登録はこちら</a><br>
+<a href="http://localhost:8080/hydrangea/AccountServlet">アカウント登録はこちら</a><br>
 <button style="margin-top: 10px;">ログイン</button>
 </form>
 </body>
