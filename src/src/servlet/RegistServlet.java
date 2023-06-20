@@ -11,6 +11,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.Part;
 
+
+
 /**
  * Servlet implementation class RegistServlet
  */
@@ -40,7 +42,7 @@ public class RegistServlet extends HttpServlet {
 
 		//リクエストパラメータの取得
 		request.setCharacterEncoding("UTF-8");
-
+		// 登録ページにフォワードする
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/Registe.jsp");
 		dispatcher.forward(request, response);
 	}
@@ -57,21 +59,47 @@ public class RegistServlet extends HttpServlet {
 			return;
 		}
 */
-		if (request.getParameter("SUBMIT").equals("削除申請")) {
-			/*	// 登録処理を行う
-				MessageDAO bDao = new MessageDAO();
-				if (bDao.insert(new Bc(id_messages, created_at, date, id_users, title, message))) {	// 登録成功
-					request.setAttribute("deleteresult",
-					new DeleteResult( "の削除を申請しました。"));
-				}
-				else {	// 登録失敗
-					request.setAttribute("deleteresult",
-					new DeleteResult("の削除を申請できませんでした。"));
-				}*/
+		// リクエストパラメータを取得する
+		request.setCharacterEncoding("UTF-8");
+		String id = request.getParameter("ID");
+		String shop_name = request.getParameter("shop_name");
+		String genre = request.getParameter("genre");
+		String genre_form = request.getParameter("genre_form");
+		String price_min = request.getParameter("price_min");
+		String price_max= request.getParameter("price_max");
+		String open_hei = request.getParameter("open_hei");
+		String close_hei = request.getParameter("close_hei");
+		String open_kyu = request.getParameter("open_kyu");
+		String close_kyu = request.getParameter("close_kyu");
+		String holiday_mon = request.getParameter("holiday_mon");
+		String note = request.getParameter("NOTE");
+		String id = request.getParameter("ID");
+		String number = request.getParameter("NUMBER");
+		String name = request.getParameter("NAME");
+		String zipcode = request.getParameter("ZIPCODE");
+		String address = request.getParameter("ADDRESS");
+		String company= request.getParameter("COMPANY");
+		String department = request.getParameter("DEPARTMENT");
+		String position = request.getParameter("POSITION");
+		String email = request.getParameter("EMAIL");
+		String tel = request.getParameter("TEL");
+		String day = request.getParameter("DAY");
+		String note = request.getParameter("NOTE");
 
-				// 結果ページにフォワードする
-				RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/deleteresult.jsp");
-				dispatcher.forward(request, response);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 	}
 
 
