@@ -89,7 +89,7 @@ public class SerchResultServlet extends HttpServlet {
 				String remarks_shop = request.getParameter("remarks_shop");
 
 				// 検索処理を行う
-				ShopsDAO bDao = new ShopsDAO(); //DB,listしてね 確認6/16
+				BcDAO bDao = new BcDAO(); //DB,listしてね 確認6/16
 				List<Bc> cardList =
 			bDao.select(new Bc(shop_name, genre, genre_form, price_max,price_min, open_hei, close_hei, open_kyu, close_kyu,
 					//holiday_mon,holiday_tue, holiday_wed, holiday_thu, holiday_fri, holiday_sat, holiday_sun, holiday_syuku, holiday_nenmatsu, holiday_other,

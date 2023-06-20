@@ -8,7 +8,6 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
 /**
  * Servlet implementation class DeleteServlet
@@ -22,19 +21,19 @@ public class DeleteServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-		// もしもログインしていなかったらログインサーブレットにリダイレクトする
+	/*	// もしもログインしていなかったらログインサーブレットにリダイレクトする
 			HttpSession session = request.getSession();
 			if (session.getAttribute("id") == null) {
 				response.sendRedirect("/hydrangea/LoginServlet");
 				return;
 			}
-
+*/
 			//リクエストパラメータの取得
 			request.setCharacterEncoding("UTF-8");
 			String shop_name = request.getParameter("shop_name");
 
 			// 削除ページにフォワードする
-			RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/regist.jsp");
+			RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/delete.jsp");
 			dispatcher.forward(request, response);
 	}
 
@@ -42,13 +41,13 @@ public class DeleteServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// もしもログインしていなかったらログインサーブレットにリダイレクトする
+	/*	// もしもログインしていなかったらログインサーブレットにリダイレクトする
 				HttpSession session = request.getSession();
 				if (session.getAttribute("id") == null) {
 					response.sendRedirect("/hydrangea/LoginServlet");
 					return;
 				}
-
+*/
 				//MessageDaoに干渉
 				// リクエストパラメータを取得する
 				request.setCharacterEncoding("UTF-8");
@@ -60,7 +59,8 @@ public class DeleteServlet extends HttpServlet {
 				String message = request.getParameter("message");
 
 
-				// 登録処理を行う
+  if (request.getParameter("SUBMIT").equals("削除申請")) {
+			/*	// 登録処理を行う
 				MessageDAO bDao = new MessageDAO();
 				if (bDao.insert(new Bc(id_messages, created_at, date, id_users, title, message))) {	// 登録成功
 					request.setAttribute("deleteresult",
@@ -69,11 +69,12 @@ public class DeleteServlet extends HttpServlet {
 				else {	// 登録失敗
 					request.setAttribute("deleteresult",
 					new DeleteResult("の削除を申請できませんでした。"));
-				}
+				}*/
 
 				// 結果ページにフォワードする
 				RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/deleteresult.jsp");
 				dispatcher.forward(request, response);
 	}
 
+}
 }

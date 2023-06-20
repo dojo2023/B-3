@@ -1,7 +1,6 @@
 package servlet;
 
 import java.io.IOException;
-import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -9,14 +8,9 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
-
-
-import dao.ShopDAO;
-import model.Shop;
 
 /**
- * Servlet implementation class ShopDetailServlet
+ * Servlet implementation class DeleteServlet
  */
 @WebServlet("/ShopDetailServlet")
 public class ShopDetailServlet extends HttpServlet {
@@ -27,16 +21,16 @@ public class ShopDetailServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
+		/*	// もしもログインしていなかったらログインサーブレットにリダイレクトする
 		HttpSession session = request.getSession();
-
-		// もしもログインしていなかったらログインサーブレットにリダイレクトする
 		if (session.getAttribute("id") == null) {
 			response.sendRedirect("/hydrangea/LoginServlet");
 			return;
 		}
-
+*/
 		//リクエストパラメータの取得
 		request.setCharacterEncoding("UTF-8");
+		String shop_id = request.getParameter("shop_id");
 		String shop_name = request.getParameter("shop_name");
 		String genre = request.getParameter("genre");
 		String genre_form = request.getParameter("genre_form");
@@ -72,60 +66,51 @@ public class ShopDetailServlet extends HttpServlet {
 		String remarks_shop = request.getParameter("remarks_shop");
 
 		// 検索処理を行う
-		if (request.getParameter("SUBMIT").equals("検索")) {
-		ShopsDAO bDao = new ShopsDAO(); //DB,listしてね 確認6/16
+		/*if (request.getParameter("SUBMIT").equals("検索")) {
+		/*ShopsDAO bDao = new ShopsDAO(); //DB,listしてね 確認6/16
 		List<Bc> cardList =
 			bDao.select(new Bc(shop_name, genre, genre_form, price_max,price_min, open_hei, close_hei, open_kyu, close_kyu,
-			holiday_mon,holiday_tue, holiday_wed, holiday_thu, holiday_fri, holiday_sat, holiday_sun, holiday_syuku, holiday_nenmatsu, holiday_other,
-			distance, address, tabaco, sheet_table, sheet_tatami, sheet_other, capacity, eat_drink, score, tel, homepage, other, photo, remarks_shop));
+				holiday_mon,holiday_tue, holiday_wed, holiday_thu, holiday_fri, holiday_sat, holiday_sun, holiday_syuku, holiday_nenmatsu, holiday_other,
+				distance, address, tabaco, sheet_table, sheet_tatami, sheet_other, capacity, eat_drink, score, tel, homepage, other, photo, remarks_shop));
+				}
+						// 検索結果をリクエストスコープに格納する
+						request.setAttribute("cardList", cardList);//リスト名確認
+				*/
 
-		// 検索結果をリクエストスコープに格納する
-		request.setAttribute("cardList", cardList);//リスト名確認
-
-		// 結果ページにフォワードする
-		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/serchresult.jsp");
-		dispatcher.forward(request, response);
-		}else {
-		// 一覧表示処理を行う
-		Shop bDao = new ShopDAO();
-		List<Bc> detaList = bDao.findAll();//
-
-
+		// 店舗詳細ページにフォワードする
+					RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/shopdetail.jsp");
+					dispatcher.forward(request, response);
 	}
-
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// もしもログインしていなかったらログインサーブレットにリダイレクトする
-				HttpSession session = request.getSession();
-				if (session.getAttribute("id") == null) {
-					response.sendRedirect("/hydrangea/LoginServlet");
-					return;
-				}
+		/*	// もしもログインしていなかったらログインサーブレットにリダイレクトする
+		HttpSession session = request.getSession();
+		if (session.getAttribute("id") == null) {
+			response.sendRedirect("/hydrangea/LoginServlet");
+			return;
+		}
+*/
+		// 更新を行う
+/*		BcDAO bDao = new BcDAO();
+		if (request.getParameter("SUBMIT").equals("更新")) {
 
-				// 更新を行う
-				BcDAO bDao = new BcDAO();
-				if (request.getParameter("SUBMIT").equals("更新")) {
+				RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/UpdateServlt.jsp");
+				dispatcher.forward(request, response);
+			}*/
+		//削除を行う
+			 if(request.getParameter("SUBMIT").equals("削除申請")) {
+				RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/delete.jsp");
+				dispatcher.forward(request, response);
+			}
 
-						RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/UpdateServlt.jsp");
-						dispatcher.forward(request, response);
-					}
-				//削除を行う
-					else if(request.getParameter("SUBMIT").equals("削除申請")) {
-						RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/DeleteServlt.jsp");
-						dispatcher.forward(request, response);
-					}
-				}
-				//開催する
-				else if(request.getParameter("SUBMIT").equals("開催する")){
-					RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/ReserveServlt.jsp");
-					dispatcher.forward(request, response);
-					}
-
-				}
-
+		//開催する
+		else if(request.getParameter("SUBMIT").equals("開催する")){
+			RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/reserve.jsp");
+			dispatcher.forward(request, response);
 	}
-
+	}
+}
 
