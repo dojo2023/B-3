@@ -73,20 +73,20 @@
 
 <body>
     <main>
-        <h1><label>店舗情報登録</label></h1><br>
+        <h1><label>店舗情報更新</label></h1><br>
 
 
-
+       
 
 
 
         <form>
-            <div id="registForm">
+            <div id="updateForm">
                 <h2>
                     <ol class="open_page">
                         <li class="current">店舗情報入力</li>
-                        <li>登録情報確認</li>
-                        <li>登録完了</li>
+                        <li>更新情報確認</li>
+                        <li>更新完了</li>
                     </ol>
                 </h2>
                 <table class="">
@@ -328,20 +328,20 @@
                     <tr>
                         <td>
 
-                            <button type="button" onclick="displayConfirmation()" name="register_confir_b"
-                                id="register_confir_b">登録確認</button><br>
+                            <button type="button" onclick="displayConfirmation()" name="update_confir_b"
+                                id="update_confir_b">更新確認</button><br>
 
                         </td>
                     </tr>
 
                 </table>
             </div>
-            <div id="register_confir" style="display: none;">
+            <div id="update_confir" style="display: none;">
                 <h2>
                     <ol class="open_page">
                         <li >店舗情報入力</li>
-                        <li class="current">登録情報確認</li>
-                        <li>登録完了</li>
+                        <li class="current">更新情報確認</li>
+                        <li>更新完了</li>
                     </ol>
                 </h2>
                 <p id="shop_nameResult"></p>
@@ -384,9 +384,9 @@
                 <p id="other_telResult"></p>
                 <p id="photoResult"></p>
                 <p id="remarks_shopResult"></p>
-
+                
                 <button type="button" onclick="editInfo()">訂正</button>
-                <button type="button" onclick="register()">登録</button>
+                <button type="button" onclick="update()">更新</button>
             </div>
 
 
@@ -394,11 +394,11 @@
                 <h2>
                 <ol class="open_page">
                     <li >店舗情報入力</li>
-                    <li >登録情報確認</li>
-                    <li class="current">登録完了</li>
+                    <li >更新情報確認</li>
+                    <li class="current">更新完了</li>
                 </ol>
                 </h2>
-                <p>登録が完了しました。</p>
+                <p>更新が完了しました。</p>
                 <button type="button" onclick="">メニューへ戻る</button>
             </div>
 
@@ -410,7 +410,7 @@
     </footer>
 
 
-    <script src="/hydrangea/js/scriptcopy.js"></script>
+    <script src="scriptcopy2.js"></script>
 </body>
 
 
