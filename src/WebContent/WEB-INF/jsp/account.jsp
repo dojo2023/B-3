@@ -13,7 +13,7 @@
 <p style="margin-top: 5px; margin-bottom: 3px;">名前</p><input type="text" style="width: 50%;">
 <p style="margin-top: 5px; margin-bottom: 3px;">メールアドレス</p><input type="text" style="width: 50%;">
 <p style="margin-top: 5px; margin-bottom: 3px;">パスワード</p><input type="password" style="width: 50%; margin-bottom: 5px;"><br>
-<a href="">ログインはこちら</a><br>
+<a href="http://localhost:8080/hydrangea/LoginServlet">ログインはこちら</a><br>
 <button style="margin-top: 10px;">登録</button>
 </form>
 </body>

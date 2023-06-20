@@ -207,10 +207,10 @@
         </form>
         <br>
         <div id="yoko"></div>
-        <button onclick="location.href='/hydrangea/CalendarServlet.java'" id="button2">カレンダー</button>
+        <button onclick="location.href='http://localhost:8080/hydrangea/CalendarServlet'" id="button2">カレンダー</button>
         <button onclick="location.href=''" id="button2">履歴</button>
         <button onclick="location.href=''" id="button2">メモ</button>
-        <a href="/hydrangea/CalendarServlet.java">link</a>
+        <a href="http://localhost:8080/hydrangea/LoginServlet">link</a>
 </body>
 <footer>
     <p>Copyright &copy; 2023 Hydrangea All Rights Reserved.</p>
