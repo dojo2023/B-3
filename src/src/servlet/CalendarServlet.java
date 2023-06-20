@@ -10,16 +10,16 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Servlet implementation class AccountServlet
+ * Servlet implementation class CalendarServlet
  */
-@WebServlet("/AccountServlet")
-public class AccountServlet extends HttpServlet {
+@WebServlet("/CalendarServlet")
+public class CalendarServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public AccountServlet() {
+    public CalendarServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -28,10 +28,9 @@ public class AccountServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
-		// アカウント登録ページにフォワードする
-				RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/account.jsp");
-				dispatcher.forward(request, response);
+		// カレンダーページにフォワードする
+		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/calendar.jsp");
+		dispatcher.forward(request, response);
 	}
 
 	/**
