@@ -90,57 +90,16 @@ public class RegistServlet extends HttpServlet {
 		String sheet_other = request.getParameter("sheet_other");
 		String capacity = request.getParameter("capacity");
 		String eat_drink = request.getParameter("eat_drink");
-		String  = request.getParameter("");
-		String  = request.getParameter("");
-		String  = request.getParameter("");
-		String  = request.getParameter("");
-		String  = request.getParameter("");
-		String  = request.getParameter("");
-		String  = request.getParameter("");
-		String  = request.getParameter("");
+		String score = request.getParameter("score");
+		String tel = request.getParameter("tel");
+		String homepage = request.getParameter("homepage");
+		String other_tel = request.getParameter("other_tel");
+		String remarks_shop = request.getParameter("remarks_shop");
 
 
 
 
 
-
-
-
-		String number = request.getParameter("NUMBER");
-		String name = request.getParameter("NAME");
-		String zipcode = request.getParameter("ZIPCODE");
-		String address = request.getParameter("ADDRESS");
-		String company= request.getParameter("COMPANY");
-		String department = request.getParameter("DEPARTMENT");
-		String position = request.getParameter("POSITION");
-		String email = request.getParameter("EMAIL");
-		String tel = request.getParameter("TEL");
-		String day = request.getParameter("DAY");
-		String  = request.getParameter("");
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-	}
-
-
-
-
-
-		request.setCharacterEncoding("utf-8");
-		String name=request.getParameter("name");
-		String word=request.getParameter("word");
 		//name属性がpictのファイルをPartオブジェクトとして取得
 		Part part=request.getPart("pict");
 		//ファイル名を取得
@@ -152,13 +111,12 @@ public class RegistServlet extends HttpServlet {
 		System.out.println(path);
 		//書き込み
 		part.write(path+File.separator+filename);
-		request.setAttribute("name",name);
-		request.setAttribute("word", word);
 		request.setAttribute("filename", filename);
 		RequestDispatcher rd=request.getRequestDispatcher("/WEB-INF/jsp/Registe.jsp");
 		rd.forward(request, response);
 	}
 
-}
+
+	}
 
 
