@@ -1,5 +1,5 @@
-<!--<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>-->
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+
 
 <!DOCTYPE html>
 <html>
@@ -54,11 +54,10 @@
 </header>
 <!--ここから内容-->
 <div class="contents">
-    
 <div class="page_left">
-     <!--プチ検索窓-->    
+     <!--プチ検索窓-->
     <div class ="search_window">
-        <form method="POST" action="/simpleBC/SearchServlet" autocomplete="off"> <!--servlet名、要チェック-->
+        <form method="POST" action="/hydrangea/SearchResultServlet" autocomplete="off"> <!--servlet名、要チェック-->
         <table class="koumoku">
             <tr>
              <td><label>ジャンル・店名・フリーワード<br>
@@ -81,26 +80,28 @@
              <input type="text" name="distance" value="">
              </label></td>
             </tr>
+            <tr>
              <td>
              <input type="submit" name="REGIST" value="検索">
              </td>
+             </tr>
         </table>
         </form>
         <!--検索ウィンドウの表示-->
-        <button class="open"><label  for="pop-up">詳細検索</label></button>
+        <div><label  for="pop-up"><button class="open">詳細検索</button></label>
         <input type="checkbox" id="pop-up">
             <div class="overlay">
               <div class="search_pop-up">
                 <label class="close" for="pop-up">×</label>
-                <p class="detail_search"><!--ポップアップの中身-->
-                    <form method="POST" action="/simpleBC/SearchServlet" autocomplete="off"> <!--servlet名、要チェック-->
+                <div class="detail_search"><!--ポップアップの中身-->
+                    <form method="POST" action="/hydrangea/SearchResultServlet" autocomplete="off"> <!--servlet名、要チェック-->
                         <table class="koumoku">
                             <tr>
                              <td><label>ジャンル・店名・フリーワード<br>
                              <input type="text" name="NUMBER" value="${e.shop_name}">
                              </label></td>
                              <td><label>プリセット<br>
-                             <select name="NUMBER" value="${e.shop_name}">
+                             <select name="NUMBER" value="${プリセット}">
                                 <option value="reservation">営業部</option>
                                 <option value="event">営業1課</option>
                                 <option value="contact">営業1課4班</option>
@@ -109,7 +110,7 @@
                             <tr>
                              <td><label>価格帯<br>
                              <input type="text" name="price_max" value="${e.price_max}">～<input type="text" name="price_min" value="${e.price_min}">
-                             </label></td>                                
+                             </label></td>
                              <td><label>座席
                              <select name="sheet" value="${e.shop_name}">
                                 <option value="reservation">飲み放題のみ</option>
@@ -120,7 +121,7 @@
                              <td><label>人数<br>
                              <input type="text" name="capacity" value="${e.capacity}">
                              </label></td>
-                
+
                              <td><label>たばこ
                              <select name="sheet" value="${e.shop_name}">
                                 <option value="reservation">喫煙</option>
@@ -147,21 +148,24 @@
                              <td class="preset"><label>
                              <input type="checkbox" name="keep_preset" value="keep">現在の条件を保存する<br>
                              プリセット名<input type="text" name="preset_name" value="記入してください">
-                             </label></td>  
+                             </label></td>
                             </tr>
+                            <tr>
                              <td>
                              <input type="submit" name="REGIST" value="検索">
                              </td>
+                             </tr>
                         </table>
                         </form>
-                </p>
+                 </div>
               </div>
             </div>
+		</div>
 	</div>
-</div>
+	</div>
 <div class="page_right">
-    <!--デフォルト部分--> 
-    <p><a href="menu.html">前のページに戻る</a></p> <!--メニュー画面に戻る-->       
+    <!--デフォルト部分-->
+    <p><a href="menu.html">前のページに戻る</a></p> <!--メニュー画面に戻る-->
     <div><p>検索結果</p> <p>oo件</p><!--shop DBのカウントアップで表示-->
     <select id="sort" name="sort">
             <option value="reservation">更新日順</option>
@@ -177,9 +181,9 @@
     <div class ="search_result">
         <c:if test = "${empty cardList}"> <!--list名、要チェック-->
                     <p>お探しの店は見つかりませんでした</p></c:if>
-                <!--データ一個分-->    
+                <!--データ一個分-->
         <c:forEach var="e" items="${cardList}"> <!--list名、要チェック-->
-            <form method="POST" action="/hydrangea/UpdateDeleteServlet"> <!--servlet名、要チェック-->
+            <form method="Get" action="/hydrangea/ShopDetailServlet"> <!--servlet名、要チェック-->
             <table class="koumoku">
                 <tr class="shop_photo">
                     <td><label>
@@ -212,28 +216,28 @@
                 </tr>
                 <tr>
                     <td>
-                        <a href="shopdetail.html"><input type="button" name=more_detail value="もっと見る"></a>
-                     </td>
+                      <input type="submit" name=more_detail value="もっと見る">
+                    </td>
                 </tr>
             </table>
             </form>
         </c:forEach>
     </div>
 </div>
-</div>   
- 
-   
+</div>
+
+
 <!--ここからフッター-->
 <footer class="footer">
     <!--管理者へのメッセージ-->
     <!--<form class="contact">
         <p>お問い合わせ</p>
-        <input type="textbox" value="問い合わせ内容を記入してください" name="otoiawase">  
+        <input type="textbox" value="問い合わせ内容を記入してください" name="otoiawase">
         <input type="button" value="送信" name="send">
     </form>-->
     <!--著作権-->
     <p>Copyright &copy; 2023 Hydrangea All Rights Reserved.</p>
-        
+
 
 </footer>
 

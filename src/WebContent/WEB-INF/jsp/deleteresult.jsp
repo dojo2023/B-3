@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"  pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 
@@ -56,13 +55,14 @@
 <div class="contents">
         <h3><c:out value="${shop_name}" /></h3>店名
         <div class ="result">
-        <form method="POST" action="/simpleBC/RegistServlet" autocomplete="off">
+        <form method="POST" action="/hydrangea/DeleteServlet" autocomplete="off">
         <p><c:out value="${shop_name}" /></p><!--「の」-->
         <p><c:out value="${deleteresult}" /></p>
         </form>
         の削除を申請しました。/削除を申請できませんでした。
         </div>
 
+<p><a href="menu.html">メニューに戻る</a></p> <!--メニュー画面に戻る-->
 
 </div>
 <!--ここからフッター-->

@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"  pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 
@@ -52,12 +51,12 @@
 </header>
 <!--ここから内容-->
 <div class="contents">
-    <p><a href="shopdetail.html">前のページに戻る</a></p> <!--店詳細画面に戻る-->
+    <p><a href="/hydrangea/ShopDetailServlet">前のページに戻る</a></p> <!--店詳細画面に戻る-->
     <h2>削除申請</h2>
-    <form>
+    <form method="post" action="/hydrangea/DeleteServlet">
         <h3><c:out value="${e.shop_name}" />店名</h3>
         <p>を削除する理由を記入してください</p>
-        <input type="textarea" value="reason" name="${e.message}">
+        <input type="text" value="reason" name="${e.message}">
         <br>
         <input type="submit" value="削除申請" name="submit">
     </form>

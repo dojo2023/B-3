@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Servlet implementation class DeleteServlet
+ * Servlet implementation class ShopDetailServlet
  */
 @WebServlet("/ShopDetailServlet")
 public class ShopDetailServlet extends HttpServlet {
@@ -94,23 +94,19 @@ public class ShopDetailServlet extends HttpServlet {
 		}
 */
 		// 更新を行う
-/*		BcDAO bDao = new BcDAO();
+/*		BcDAO bDao = new BcDAO();*/
 		if (request.getParameter("SUBMIT").equals("更新")) {
-
-				RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/UpdateServlt.jsp");
-				dispatcher.forward(request, response);
-			}*/
+				//更新ページに遷移する
+			RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/Update.jsp");
+			dispatcher.forward(request, response);
+			}
 		//削除を行う
-			 if(request.getParameter("SUBMIT").equals("削除申請")) {
-				RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/delete.jsp");
-				dispatcher.forward(request, response);
+		if(request.getParameter("SUBMIT").equals("削除申請")) {
+				//削除ページに遷移する
+			RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/delete.jsp");
+			dispatcher.forward(request, response);
 			}
 
-		//開催する
-		else if(request.getParameter("SUBMIT").equals("開催する")){
-			RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/reserve.jsp");
-			dispatcher.forward(request, response);
-	}
 	}
 }
 

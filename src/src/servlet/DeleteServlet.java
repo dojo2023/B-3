@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+
 /**
  * Servlet implementation class DeleteServlet
  */
@@ -59,7 +60,7 @@ public class DeleteServlet extends HttpServlet {
 				String message = request.getParameter("message");
 
 
-  if (request.getParameter("SUBMIT").equals("削除申請")) {
+  if (request.getParameter("submit").equals("削除申請")) {
 			/*	// 登録処理を行う
 				MessageDAO bDao = new MessageDAO();
 				if (bDao.insert(new Bc(id_messages, created_at, date, id_users, title, message))) {	// 登録成功
