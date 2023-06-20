@@ -76,7 +76,7 @@
         <h1><label>店舗情報更新</label></h1><br>
 
 
-       
+
 
 
 
@@ -384,7 +384,7 @@
                 <p id="other_telResult"></p>
                 <p id="photoResult"></p>
                 <p id="remarks_shopResult"></p>
-                
+
                 <button type="button" onclick="editInfo()">訂正</button>
                 <button type="button" onclick="update()">更新</button>
             </div>
@@ -410,7 +410,7 @@
     </footer>
 
 
-    <script src="scriptcopy2.js"></script>
+    <script src="/hydrangea/js/scriptcopy2.js"></script>
 </body>
 
 
