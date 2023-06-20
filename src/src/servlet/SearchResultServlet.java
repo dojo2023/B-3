@@ -1,7 +1,6 @@
 package servlet;
 
 import java.io.IOException;
-import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -11,16 +10,16 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Servlet implementation class SerchResultServlet
+ * Servlet implementation class SearchResultServlet
  */
-@WebServlet("/SerchResultServlet")
-public class SerchResultServlet extends HttpServlet {
+@WebServlet("/SearchResultServlet")
+public class SearchResultServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public SerchResultServlet() {
+    public SearchResultServlet() {
     }
 
 	/**
@@ -36,7 +35,7 @@ public class SerchResultServlet extends HttpServlet {
 				}*/
 
 				// 検索ページにフォワードする
-				RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/serchresult.jsp");
+				RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/searchresult.jsp");
 				dispatcher.forward(request, response);
 	}
 
@@ -87,19 +86,19 @@ public class SerchResultServlet extends HttpServlet {
 			//	String other = request.getParameter("other");
 			//	String photo = request.getParameter("photo");
 				String remarks_shop = request.getParameter("remarks_shop");
-
+/*
 				// 検索処理を行う
 				BcDAO bDao = new BcDAO(); //DB,listしてね 確認6/16
 				List<Bc> cardList =
 			bDao.select(new Bc(shop_name, genre, genre_form, price_max,price_min, open_hei, close_hei, open_kyu, close_kyu,
 					//holiday_mon,holiday_tue, holiday_wed, holiday_thu, holiday_fri, holiday_sat, holiday_sun, holiday_syuku, holiday_nenmatsu, holiday_other,
-					distance, address, tabaco, sheet_table, sheet_tatami, sheet_other, capacity, eat_drink, /*score, tel, homepage, other, photo,*/ remarks_shop));
+					distance, address, tabaco, sheet_table, sheet_tatami, sheet_other, capacity, eat_drink, /*score, tel, homepage, other, photo, remarks_shop));*/
 
 				// 検索結果をリクエストスコープに格納する
-				request.setAttribute("cardList", cardList);//リスト名確認
+				//request.setAttribute("cardList", cardList);//リスト名確認
 
 				// 結果ページにフォワードする
-				RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/serchresult.jsp");
+				RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/searchresult.jsp");
 				dispatcher.forward(request, response);
 	}
 
