@@ -175,7 +175,7 @@ CURRENT_TIMESTAMP,
 'a32o239i3',
 '営業課'
 );
-//ログイン検証用
+//テストログイン用
 INSERT INTO users(created_at,updated_at,name,mail,pass,department) VALUES (
 CURRENT_TIMESTAMP,
 CURRENT_TIMESTAMP,
