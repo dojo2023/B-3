@@ -204,7 +204,7 @@
                             <label><input type="checkbox" name="holiday_nenmatsu" id="holiday_nenmatsu">年末年始</label>
 
                             <label for="holiday_other">:</label>
-
+                            <label>その他</label>
                             <input type="text" name="holiday_other_text" id="holiday_other_text"><br>
 
                         </td>
@@ -428,7 +428,7 @@
 
 
 
-    <script src="/hydrangea/js/scriptcopy.js"></script>
+    <script src="/hydrangea/js/RegistScript.js"></script>
 </body>
 
 

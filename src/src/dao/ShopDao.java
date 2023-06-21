@@ -23,16 +23,16 @@ public boolean insert(Shops param) {
 		// データベースに接続する
 		conn = DriverManager.getConnection("jdbc:h2:file:C:/dojo6Data/B3", "sa", "");
 
-		// SQL文を準備する
+		// SQL文を準備する・(created_at,updated_atを含めて３６こ
 		String sql ="INSERT INTO "
 				+ "(created_at,updated_at,shop_name,genre,genre_form,price_max,price_min,"
-				+ "open_hei	time,lose_hei,open_kyu,close_kyu,"
+				+ "open_hei,lose_hei,open_kyu,close_kyu,"
 				+ "holiday_mon,holiday_tue,holiday_wed,holiday_thu,holiday_fri,holiday_sat,holiday_sun,holiday_syuku,"
 				+ "holiday_nenmatsu,holiday_other,distance,address,tabaco,sheet_table,sheet_tatami,sheet_other,"
 				+ "capacity,eat_drink,score,tel,homepage,other,photo,remarks_shop,id_users) "
 				+ "VALES"
-				+ "(CURRENT_TIMESTAMP,CURRENT_TIMESTAMP,?,?,?,?,?,?,?,?)";
-	
+				+ "(CURRENT_TIMESTAMP,CURRENT_TIMESTAMP,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+
 
 		// SQL文を完成させる
 
@@ -53,8 +53,8 @@ public boolean insert(Shops param) {
 			pStmt.setString(2, null);
 		}
 
-		if (card.getName() != null && !card.getName().equals("")) {
-			pStmt.setString(3, card.getName());
+		if (card.getShop_name() != null && !card.getShop_name().equals("")) {
+			pStmt.setString(3, card.getShop_name());
 		}
 		else {
 			pStmt.setString(3, null);
