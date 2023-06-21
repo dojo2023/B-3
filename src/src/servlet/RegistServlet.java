@@ -19,7 +19,11 @@ import javax.servlet.http.Part;
  * Servlet implementation class RegistServlet
  */
 @WebServlet("/RegistServlet")
-@MultipartConfig
+@MultipartConfig(
+		//maxFileSize = 1000000,
+		//maxRequestSize = 1000000
+	)
+
 public class RegistServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
@@ -44,9 +48,6 @@ public class RegistServlet extends HttpServlet {
 		}
 */
 
-
-		//リクエストパラメータの取得
-		request.setCharacterEncoding("UTF-8");
 		// 登録ページにフォワードする
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/Registe.jsp");
 		dispatcher.forward(request, response);
@@ -108,13 +109,18 @@ public class RegistServlet extends HttpServlet {
 
 		String name=request.getParameter("name");
 		String word=request.getParameter("word");
+
 		//name属性がpictのファイルをPartオブジェクトとして取得
+
 		Part part=request.getPart("pict");
+
 		//ファイル名を取得
 		//String filename=part.getSubmittedFileName();//ie対応が不要な場合
 		String filename=Paths.get(part.getSubmittedFileName()).getFileName().toString();
+
 		//アップロードするフォルダ
 		String path=getServletContext().getRealPath("/upload");
+
 		//実際にファイルが保存されるパス確認
 		System.out.println(path);
 		//書き込み
