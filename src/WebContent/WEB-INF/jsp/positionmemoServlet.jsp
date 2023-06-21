@@ -173,7 +173,7 @@
     <hr>
     <form method="POST" action="/hydrangea/PositionmemoServlet">
 
-            <a href="/hydrangea/PositionmemoServlet"><input type="submit" name="SUBMIT" value="追加"></a>
+            <a href="/hydrangea/NewpositionmemoServlet"><input type="submit" name="SUBMIT" value="追加"></a>
             <input type="submit" name="SUBMIT" value="削除">
             <input type="submit" name="SUBMIT" value="更新"><br>
 
