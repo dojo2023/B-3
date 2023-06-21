@@ -316,9 +316,7 @@
                             <label>画像
                                 <input type="file" name="photo" id="photo" value="" multiple="multiple" alt=""
                                     accept="image/*" onchange="previewImage(this);">
-名前:<input type="text" name="name"><br>
-好きな言葉:<input type="text" name="word"><br>
-好きな写真:<input type="file" name="pict"><br>
+ <input type="file" name="pict"><br>
 
 
                             </label>
