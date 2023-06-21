@@ -143,9 +143,9 @@
 <body>
 <h1>メモ内容</h1>
 <hr>
-<form method="POST" action="/hydrangea/memoServlet">
+<form method="POST" action="/hydrangea/MemoServlet">
 <table id="">
-    <a href="/hydrangea/memoServlet">＜メモ一覧</a>
+    <a href="/hydrangea/MemoServlet">＜メモ一覧</a>
 <br>
 <tr>
     <tr>
