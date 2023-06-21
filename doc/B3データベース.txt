@@ -2,6 +2,9 @@
 JDBC URL　　　：jdbc:h2:file:C:/dojo6Data/B3
 
 
+//あとからユニーク制約つける
+alter table テーブル名 add unique(カラム名);
+
 
 
 
@@ -191,8 +194,6 @@ CURRENT_TIMESTAMP,
 'jj',
 '営業課'
 );
-
-
 
 
 
@@ -697,3 +698,5 @@ VALUES (
 '5',
 '2'
 );
+
+
