@@ -169,7 +169,7 @@
 
 <body>
     <h2>役職メモ入力</h2>
-  <form method="POST" action="/hydrangea/Newpositionmemo">
+  <form method="POST" action="/hydrangea/NewpositionmemoServlet">
     <table>
       <tr>
         <td>
