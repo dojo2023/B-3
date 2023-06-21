@@ -171,7 +171,7 @@
 
     <h1>役職メモ</h1>
     <hr>
-    <form method="POST" action="/hydrangea/PositionmemoServlet">
+    <form method="POST" action="/hydrangea/Newpositionmemo">
 
             <input type="submit" name="SUBMIT" value="追加">
             <input type="submit" name="SUBMIT" value="削除">
