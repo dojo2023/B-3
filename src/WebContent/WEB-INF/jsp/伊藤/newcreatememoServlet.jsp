@@ -143,11 +143,11 @@
 
 <h1>メモ新規作成</h1>
 <hr>
-<form method="POST" action="/hydrangea/memoServlet">
+<form method="POST" action="/hydrangea/MemoServlet">
 <table>
     <nav>
         <ul>
-            <a href="/hydrangea/memoServlet">＜メモ一覧</a>
+            <a href="/hydrangea/MemoServlet">＜メモ一覧</a>
         </ul>
     </nav>
 
