@@ -15,31 +15,31 @@
         <div class="menu-content">
             <ul>
                 <li>
-                    <a href="">トップ</a>
+                    <a href="/hydrangea/MenuServlet">トップ</a>
                 </li>
                 <li>
-                    <a href="">登録</a>
+                    <a href="/hydrangea/RegistServlet">登録</a>
                 </li>
                 <li>
-                    <a href="">履歴</a>
+                    <a href="/hydrangea/HistoryServlet">履歴</a>
                 </li>
                 <li>
-                    <a href="">役職メモ</a>
+                    <a href="/hydrangea/PositionmemoServlet">役職メモ</a>
                 </li>
                 <li>
-                    <a href="">メモ</a>
+                    <a href="/hydrangea/MemoServlet">メモ</a>
                 </li>
                 <li>
-                    <a href="">カレンダー</a>
+                    <a href="/hydrangea/CalenderServlet">カレンダー</a>
                 </li>
         <li>
-                    <a href="">通知文テンプレート</a>
+                    <a href="/hydrangea/NotificationServlet">通知文テンプレート</a>
                 </li>
         <li>
-                    <a href="">経費申請書テンプレート</a>
+                    <a href="/hydrangea/ExpensesServlet">経費申請書テンプレート</a>
                 </li>
         <li>
-                    <a href="">ログアウト</a>
+                    <a href="/hydrangea/LoginServlet">ログアウト</a>
                 </li>
             </ul>
         </div>
@@ -145,16 +145,17 @@
 
 <h1>メモ一覧</h1>
 <hr>
-<form method="POST" action="/hydrangea/NewcreateServlet">
-<table class="memo">
-    <a href="/hydrangea/NewcreateServlet">新規作成</a><br>
+<a href="/hydrangea/NewcreatememoServlet">新規作成</a>
+<form method="POST" action="/hydrangea/DetailmemoServlet">
 
+
+<table class="memo">
     <tr><th>日付</th><th>タイトル</th></tr>
 
     <tr><td><input type="text" name="DATE"></td>
 
         <td><input type="text" name="TITLE" size="100"></td></tr>
-
+	<tr><td><input type="submit" name="detail" value="詳細"></td></tr>
 
 
 
