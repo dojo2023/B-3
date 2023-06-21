@@ -1,6 +1,8 @@
 package servlet;
 
 import java.io.IOException;
+
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -19,15 +21,34 @@ public class NewpositionmemoServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		// 役職新規作成ページにフォワードする
+		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/newpositionmemo.jsp");
+		dispatcher.forward(request, response);
 	}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
-	}
+
+		// もしもログインしていなかったらログインサーブレットにリダイレクトする
+				//HttpSession session = request.getSession();
+				//if (session.getAttribute("id") == null) {
+					//response.sendRedirect("/hydrangea/LoginServlet");
+					//return;
+				//}
+
+		// リクエストパラメータを取得する
+				request.setCharacterEncoding("UTF-8");
+
+			// 保存またはリセットを行う
+			//BcDAO bDao = new BcDAO();
+			if (request.getParameter("SUBMIT").equals("保存")) {
+				// 結果ページにフォワードする
+				RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/positionmemoServlet.jsp");
+				dispatcher.forward(request, response);
+			}
+
+		}
 
 }
