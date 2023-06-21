@@ -45,6 +45,7 @@ public class NewpositionmemoServlet extends HttpServlet {
 			//BcDAO bDao = new BcDAO();
 			if (request.getParameter("SUBMIT").equals("保存")) {
 				// 役職メモページにフォワードする
+				System.out.println(request.getParameter("SUBMIT"));
 				RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/positionmemoServlet.jsp");
 				dispatcher.forward(request, response);
 			}

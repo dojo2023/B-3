@@ -193,7 +193,8 @@
     </tr>
 
     <tr>
-        <td><input type="submit" name="SUBMIT" value="送信"><br></td>
+		<td><input type="submit" name="SUBMIT" value="作成"><br></td>
+		<td><input type="submit" name="SUBMIT" value="戻る"><br></td>
     </tr>
 
 </table>

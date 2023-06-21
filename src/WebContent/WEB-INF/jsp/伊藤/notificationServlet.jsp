@@ -240,10 +240,9 @@
     </tr>
 
 
-    <td><p>恐れ入りますが出席のお返事は出席確認フォームにてお知らせください。</p></td>
-
 <tr>
-<td><input type="submit" name="SUBMIT" value="送信"><br></td>
+<td><input type="submit" name="SUBMIT" value="作成"><br></td>
+<td><input type="submit" name="SUBMIT" value="戻る"><br></td>
 </tr>
 
 </table>
