@@ -89,7 +89,7 @@
            </table>
            </form>
            <!--検索ウィンドウの表示-->
-           <div><label  for="pop-up"><button class="open">詳細検索</button></label>
+           <div><button class="open"><label  for="pop-up">詳細検索</label></button>
            <input type="checkbox" id="pop-up">
                <div class="overlay">
                  <div class="search_pop-up">
@@ -99,13 +99,14 @@
                            <table class="koumoku">
                                <tr>
                                 <td><label>ジャンル・店名・フリーワード<br>
-                                <input type="text" name="NUMBER" value="${e.shop_name}">
+                                <input type="text" name="shop_name" value="${e.shop_name}">
                                 </label></td>
                                 <td><label>プリセット<br>
-                                <select name="NUMBER" value="${e.shop_name}">
+                                <select name="" value="${e.preset}">
                                    <option value="reservation">営業部</option>
                                    <option value="event">営業1課</option>
                                    <option value="contact">営業1課4班</option>
+                                </select>
                                    </label></td>
                                </tr>
                                <tr>
@@ -113,31 +114,34 @@
                                 <input type="text" name="price_max" value="${e.price_max}">～<input type="text" name="price_min" value="${e.price_min}">
                                 </label></td>
                                 <td><label>座席
-                                <select name="sheet" value="${e.shop_name}">
+                                <select name="sheet" value="${e.sheet}">
                                    <option value="reservation">飲み放題のみ</option>
                                    <option value="event">食べ放題のみ</option>
                                    <option value="contact">両方用意あり</option>
+                                </select>
                                 </label></td>
                                <tr>
                                 <td><label>人数<br>
-                                <input type="text" name="capacity" value="${e.capacity}">
+                                <input type="text" name="capacity" value="e.capacity">
                                 </label></td>
 
                                 <td><label>たばこ
-                                <select name="sheet" value="${e.shop_name}">
+                                <select name="sheet" value="e.shop_name">
                                    <option value="reservation">喫煙</option>
                                    <option value="event">禁煙</option>
+                                </select>
                                 </label></td>
                                </tr>
                                <tr>
                                 <td><label>会社からの距離<br>
-                                <input type="text" name="distance" value="${e.distance}">
+                                <input type="text" name="distance" value="distance">
                                 </label></td>
                                 <td><label>放題メニュー
-                                <select name="sheet" value="${e.shop_name}">
+                                <select name="sheet" value="e.shop_name">
                                    <option value="reservation">飲み放題のみ</option>
                                    <option value="event">食べ放題のみ</option>
                                    <option value="contact">両方用意あり</option>
+                                </select>
                                 </label></td>
                                </tr>
                                <tr>
@@ -171,158 +175,155 @@
 </div>
 <div class="page_right">
     <p><a href="/hydrangea/SearchResultServlet">前のページに戻る</a></p> <!--検索結果画面に戻る-->
-    <c:if test = "${empty detaList}">
+    <!-- <c:if test = "${empty detaList}">
         データが読み込めませんでした<br>
-    </c:if>
-    <c:forEach var="e" items="${detaList}"> <!--list名、要チェック-->
+     </c:if> -->
+    <!-- <c:forEach var="e" items="${detaList}"> --> <!--list名、要チェック-->
     <label><a href="/hydrangea/ReserveServlet"><button>開催する</button></a></label>
-        <form method="POST" action="/hydrangea/ShopDetailServlet"><!--servlet名、要チェック-->
+        <form method="POST" action="/hydrangea/ShopDetailServlet">
 		<table class="syousai">
             <tr>
                 <td>
-                  <h2><c:out value="${e.shop_name}"/></h2><!--店名-->
+                  <h2>店名<!--<c:out value="${e.shop_name}"/>--></h2>
                 </td>
             </tr>
             <tr>
                  <td>
-                    <c:out value="${e.homepage}"/><!--ホームページリンク-->
+                    <!--<c:out value="${e.homepage}"/>-->ホームページ
                  </td>
             </tr>
             <tr>
                 <td>
-                    <c:out value="${e.photo}"/><!--写真-->
-                </td>
-            </tr>
-                <td>
-                    <c:out value="${e.genre}"/><!--ジャンル--> ／
-                </td>
-                <td>
-                    <c:out value="${e.genre_form}"/><!--形態-->
+                    <!--<c:out value="${e.photo}"/>-->写真
                 </td>
             </tr>
             <tr>
                 <td>
-                    <c:out value="${e.score}"/><!--評価-->
+                    <!--<c:out value="${e.genre}"/>-->ジャンル ／
+                </td>
+                <td>
+                    <!--<c:out value="${e.genre_form}"/>-->形態
                 </td>
             </tr>
             <tr>
                 <td>
-                    <c:out value="${e.open_hei}"/><!--平日オープン--> ～
-                </td><br>
-                <td>
-                    <c:out value="${e.close_hei}"/><!--平日クローズ-->
+                    <!--<c:out value="${e.score}"/>-->評価
                 </td>
             </tr>
             <tr>
                 <td>
-                    <c:out value="${e.open_kyu}"/><!--休日オープン--> ～
-                </td><br>
+                    <!--<c:out value="${e.open_hei}"/>-->平日オープン ～
+                </td>
                 <td>
-                    <c:out value="${e.close_kyu}"/><!--休日クローズ-->
+                    <!--<c:out value="${e.close_hei}"/>-->平日クローズ
                 </td>
             </tr>
             <tr>
                 <td>
-                    <c:out value="${e.holiday_mon}"/><!--休業日(月)-->
+                    <!--<c:out value="${e.open_kyu}"/>-->休日オープン ～
                 </td>
                 <td>
-                    <c:out value="${e.holiday_tue}"/><!--休業日(火)-->
-                </td>
-                <td>
-                    <c:out value="${e.holiday_wed}"/><!--休業日(水)-->
-                </td>
-                <td>
-                    <c:out value="${e.holiday_thu}"/><!--休業日(木)-->
-                </td>
-                <td>
-                    <c:out value="${e.holiday_fri}"/><!--休業日(金)-->
-                </td>
-                <td>
-                    <c:out value="${e.holiday_sat}"/><!--休業日(土)-->
-                </td>
-                <td>
-                    <c:out value="${e.holiday_sun}"/><!--休業日(日)-->
-                </td>
-                <td>
-                    <c:out value="${e.holiday_syuku}"/><!--休業日(祝日)-->
-                </td>
-                <td>
-                    <c:out value="${e.holiday_nenmatsu}"/><!--休業日(年末年始)-->
-                </td>
-                <td>
-                    <c:out value="${e.holiday_other}"/><!--休業日(その他)-->
+                    <!--<c:out value="${e.close_kyu}"/>-->休日クローズ
                 </td>
             </tr>
             <tr>
                 <td>
-                    <c:out value="${e.address}"/><!--住所-->
+                    <!--<c:out value="${e.holiday_mon}"/>-->休業日(月)
+                </td>
+                <td>
+                    <!--<c:out value="${e.holiday_tue}"/>-->休業日(火)
+                </td>
+                <td>
+                    <!--<c:out value="${e.holiday_wed}"/>-->休業日(水)
+                </td>
+                <td>
+                    <!--<c:out value="${e.holiday_thu}"/>-->休業日(木)
+                </td>
+                <td>
+                    <!--<c:out value="${e.holiday_fri}"/>-->休業日(金)
+                </td>
+                <td>
+                    <!--<c:out value="${e.holiday_sat}"/>-->休業日(土)
+                </td>
+                <td>
+                    <!--<c:out value="${e.holiday_sun}"/>-->休業日(日)
+                </td>
+                <td>
+                    <!--<c:out value="${e.holiday_syuku}"/>-->休業日(祝日)
+                </td>
+                <td>
+                    <!--<c:out value="${e.holiday_nenmatsu}"/>-->休業日(年末年始)
+                </td>
+                <td>
+                    <!--<c:out value="${e.holiday_other}"/>-->休業日(その他)
                 </td>
             </tr>
             <tr>
                 <td>
-                    <c:out value="${e.distance}"/><!--会社からの距離-->
+                    <!--<c:out value="${e.address}"/>-->住所
                 </td>
             </tr>
             <tr>
                 <td>
-                    <c:out value="${e.capacity}"/><!--人数規模-->
+                    <!--<c:out value="${e.distance}"/>-->会社からの距離
                 </td>
             </tr>
             <tr>
                 <td>
-                    <c:out value="${e.price_max}"/><!--価格帯（大）--> ～
+                    <!--<c:out value="${e.capacity}"/>-->人数規模
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <!--<c:out value="${e.price_max}"/>-->価格帯（大） ～
                 </td><td>
-                    <c:out value="${e.price_min}"/><!--価格帯（小）-->
+                    <!--<c:out value="${e.price_min}"/>-->価格帯（小）
                 </td>
             </tr>
             <tr>
                 <td>
-                    <c:out value="${e.tabaco}"/><!--喫煙の可否--> ／
+                    <!--<c:out value="${e.tabaco}"/>-->喫煙の可否 ／
                 </td>
                 <td>
-                    <c:out value="${e.sheet_table}"/><!--座席　テーブル-->
+                   <!-- <c:out value="${e.sheet_table}"/>-->座席　テーブル
                 </td>
                 <td>
-                    <c:out value="${e.sheet_tatami}"/><!--座席　座敷-->
+                    <!--<c:out value="${e.sheet_tatami}"/>-->座席　座敷
                 </td>
                 <td>
-                    <c:out value="${e.sheet_other}"/><!--座席　その他-->
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <c:out value="${e.eat_drink}"/><!--放題メニュー-->
+                    <!--<c:out value="${e.sheet_other}"/>-->座席　その他
                 </td>
             </tr>
             <tr>
                 <td>
-                    <c:out value="${e.homepage}"/><!--ホームページリンク-->
+                    <!--<c:out value="${e.eat_drink}"/>-->放題メニュー
                 </td>
             </tr>
             <tr>
                 <td>
-                    <c:out value="${e.tel}"/><!--電話番号-->
+                    <!--<c:out value="${e.homepage}"/>-->ホームページリンク
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <!--<c:out value="${e.tel}"/>-->電話番号
                 </td>
             </tr>
             <tr>
                 <td><label>
-                    <c:out value="${e.other}"/><!--その他連絡先-->
+                   <!-- <c:out value="${e.other}"/>-->その他連絡先
                 </label></td>
             </tr>
             <tr>
                 <td>
-                    <c:out value="${e.remarks_shop}"/><!--備考-->
+                    <!--<c:out value="${e.remarks_shop}"/>-->備考
                 </td>
             </tr>
-            <tr>
-                <td>
+            </table>
                     <input type="submit" name="SUBMIT" value="更新">
                     <input type="submit" name="SUBMIT" value="削除申請">
-                </td>
-            </tr>
-        </table>
 		</form>
-    </c:forEach>
+     <!--</c:forEach>-->
      <label><a href="/hydrangea/ReserveServlet"><button>開催する</button></a></label>
 </div>
 </div>
