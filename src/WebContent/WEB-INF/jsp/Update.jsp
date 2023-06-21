@@ -1,4 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%
+	String name=(String)request.getAttribute("name");
+	String word=(String)request.getAttribute("word");
+	String filename=(String)request.getAttribute("filename");
+%>
 <!DOCTYPE html>
 <html>
 
@@ -8,7 +13,7 @@
     <link rel="stylesheet" href="/simpleBC/css/style.css">
 
     <style>
-        .sheet_list li {
+        .sheet_list li {=Z
             display: inline;
         }
 
@@ -79,8 +84,8 @@
 
 
 
+        <form action="/hydrangea/UpdateServlet" method="post" enctype="multipart/form-data">
 
-        <form>
             <div id="updateForm">
                 <h2>
                     <ol class="open_page">
@@ -199,7 +204,7 @@
                             <label><input type="checkbox" name="holiday_nenmatsu" id="holiday_nenmatsu">年末年始</label>
 
                             <label for="holiday_other">:</label>
-                            <label><input type="checkbox" name="holiday_other" id="holiday_other">その他</label>
+                            <label>その他</label>
                             <input type="text" name="holiday_other_text" id="holiday_other_text"><br>
 
                         </td>
@@ -237,7 +242,7 @@
                             <label>座席様式</label>
                             <label><input type="checkbox" name="sheet_table" id="sheet_table">テーブル</label>
                             <label><input type="checkbox" name="sheet_tatami" id="sheet_tatami">座敷</label>
-                            <label><input type="checkbox" name="sheet_other" id="sheet_other">その他</label>
+                            <label>その他</label>
                             <input type="text" name="sheet_other_text" id="sheet_other_text"><br>
                             </label>
                         </td>
@@ -310,7 +315,8 @@
                         <td>
                             <label>画像
                                 <input type="file" name="photo" id="photo" value="" multiple="multiple" alt=""
-                                    accept="image/*" onchange="previewImage(this);">
+                                    accept="image/*">
+
 
                             </label>
                         </td>
@@ -328,20 +334,22 @@
                     <tr>
                         <td>
 
-                            <button type="button" onclick="displayConfirmation()" name="update_confir_b"
-                                id="update_confir_b">更新確認</button><br>
+                            <button type="button" onclick="displayConfirmation()" name="register_confir_b"
+                                id="register_confir_b">登録確認</button><br>
 
                         </td>
                     </tr>
 
                 </table>
             </div>
+
+
             <div id="update_confir" style="display: none;">
                 <h2>
                     <ol class="open_page">
                         <li >店舗情報入力</li>
-                        <li class="current">更新情報確認</li>
-                        <li>更新完了</li>
+                        <li class="current">登録情報確認</li>
+                        <li>登録完了</li>
                     </ol>
                 </h2>
                 <p id="shop_nameResult"></p>
@@ -361,7 +369,7 @@
                     <li id="holiday_sunReselt"></li>
                     <li id="holiday_syukuReselt"></li>
                     <li id="holiday_nenmatsuReselt"></li>
-                    <li id="holiday_otherReselt"></li>
+
                     <li id="holiday_other_textReselt"></li>
                 </ol>
 
@@ -372,7 +380,7 @@
                 <ol class="sheet_list">
                     <li id="sheet_tableReselt"></li>
                     <li id="sheet_tatamiReselt"></li>
-                    <li id="sheet_otherReselt"></li>
+
                     <li id="sheet_other_textReselt"></li>
                 </ol>
 
@@ -387,8 +395,9 @@
 
                 <button type="button" onclick="editInfo()">訂正</button>
                 <button type="button" onclick="update()">更新</button>
+                 <button type="submit">送信</button>
             </div>
-
+</form>
 
             <div id="success" style="display: none;">
                 <h2>
@@ -411,7 +420,7 @@
     </footer>
 
 
-    <script src="/hydrangea/js/scriptcopy2.js"></script>
+    <script src="/hydrangea/js/UpdateScript.js"></script>
 </body>
 
 

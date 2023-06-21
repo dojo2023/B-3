@@ -315,8 +315,7 @@
                         <td>
                             <label>画像
                                 <input type="file" name="photo" id="photo" value="" multiple="multiple" alt=""
-                                    accept="image/*" onchange="previewImage(this);">
- <input type="file" name="pict"><br>
+                                    accept="image/*">
 
 
                             </label>

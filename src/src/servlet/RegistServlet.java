@@ -111,7 +111,7 @@ public class RegistServlet extends HttpServlet {
 
 		//name属性がpictのファイルをPartオブジェクトとして取得
 
-		Part part=request.getPart("pict");
+		Part part=request.getPart("photo");
 
 		//ファイル名を取得
 		//String filename=part.getSubmittedFileName();//ie対応が不要な場合
