@@ -20,34 +20,34 @@
             <!--ここからメニュー-->
             <div class="menu-content">
                 <ul>
-                    <li>
-                        <a href="">トップ</a>
-                    </li>
-                    <li>
-                        <a href="">登録</a>
-                    </li>
-                    <li>
-                        <a href="">履歴</a>
-                    </li>
-                    <li>
-                        <a href="">役職メモ</a>
-                    </li>
-                    <li>
-                        <a href="">メモ</a>
-                    </li>
-                    <li>
-                        <a href="">カレンダー</a>
-                    </li>
-            <li>
-                        <a href="">通知文テンプレート</a>
-                    </li>
-            <li>
-                        <a href="">経費申請書テンプレート</a>
-                    </li>
-            <li>
-                        <a href="">ログアウト</a>
-                    </li>
-                </ul>
+                <li>
+                    <a href="/hydrangea/MenuServlet">トップ</a>
+                </li>
+                <li>
+                    <a href="/hydrangea/RegistServlet">登録</a>
+                </li>
+                <li>
+                    <a href="/hydrangea/HistoryServlet">履歴</a>
+                </li>
+                <li>
+                    <a href="/hydrangea/PositionmemoServlet">役職メモ</a>
+                </li>
+                <li>
+                    <a href="/hydrangea/MemoServlet">メモ</a>
+                </li>
+                <li>
+                    <a href="/hydrangea/CalenderServlet">カレンダー</a>
+                </li>
+        <li>
+                    <a href="/hydrangea/RegistServlet">通知文テンプレート</a>
+                </li>
+        <li>
+                    <a href="/hydrangea/RegistServlet">経費申請書テンプレート</a>
+                </li>
+        <li>
+                    <a href="/hydrangea/LoginServlet">ログアウト</a>
+                </li>
+            </ul>
             </div>
             <!--ここまでメニュー-->
         </div>
