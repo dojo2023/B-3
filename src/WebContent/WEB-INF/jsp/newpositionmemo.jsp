@@ -168,59 +168,77 @@
 </header>
 
 <body>
-
-    <h1>役職メモ</h1>
-    <hr>
-    <form method="POST" action="/hydrangea/PositionmemoServlet">
-
-            <a href="/hydrangea/PositionmemoServlet"><input type="submit" name="SUBMIT" value="追加"></a>
-            <input type="submit" name="SUBMIT" value="削除">
-            <input type="submit" name="SUBMIT" value="更新"><br>
-
-            <table>
-                <tr>
-                  <td>
-                    <label>名前<br>
-                    <input type="text" name="NAME" >
-                    </label>
-                  </td>
-                  <td>
-                    <label>役職<br>
-                    <input type="text" name="POSITION">
-                    </label>
-                  </td>
-                  <td>
-                    <label>喫煙<br>
-                    <input type="text" name="SMOKING">
-                    </label>
-                  </td>
-                  <td>
-                    <label>好物1<br>
-                    <input type="text" name="FAVORITE1">
-                    </label>
-                  </td>
-                  <td>
-                    <label>好物2<br>
-                    <input type="text" name="FAVORITE2">
-                    </label>
-                  </td>
-                  <td>
-                    <label>NG<br>
-                    <input type="text" name="NG">
-                    </label>
-                  </td>
-                  <td>
-                    <label>備考<br>
-                    <input type="text" name="REMARKS">
-                    </label>
-                  </td>
-                  </tr>
-            </table>
+    <h2>役職メモ入力</h2>
+  <form method="POST" action="/hydrangea/Newpositionmemo">
+    <table>
+      <tr>
+        <td>
+          <label>名前<br>
+          <input type="text" name="NAME" >
+          </label>
+        </td>
+        <td>
+          <label>役職<br>
+          <input type="text" name="POSITION">
+          </label>
+        </td>
+        <td>
+          <label>喫煙<br>
+          <input type="text" name="SMOKING">
+          </label>
+        </td>
+        <td>
+          <label>好物1<br>
+          <input type="text" name="FAVORITE1">
+          </label>
+        </td>
+        <td>
+          <label>好物2<br>
+          <input type="text" name="FAVORITE2">
+          </label>
+        </td>
+        <td>
+          <label>NG<br>
+          <input type="text" name="NG">
+          </label>
+        </td>
+        <td>
+          <label>備考<br>
+          <input type="text" name="REMARKS">
+          </label>
+        </td>
 
 
-    </form>
+        <tr>
+        <td>
+          <input type="submit" id="register" name="SUBMIT" value="保存">
+          <input type="reset" name="reset" value="リセット">
+          <span id="error_message"></span>
+        </td>
+      </tr>
+    </table>
+  </form>
+  <!-- メイン（ここまで） -->
 
-
+<!-- JavaScript（ここから） -->
+<script>
+var formObj = document.getElementById('register_form');
+var errorMessageObj = document.getElementById('error_message');
+/* [実行]ボタンをクリックしたときの処理 */
+formObj.onsubmit = function() {
+  /* 氏名を必須入力項目とします */
+  if (!formObj.NAME.value) {
+    errorMessageObj.textContent = '※氏名を入力してください！';
+    return false;
+  }
+  errorMessageObj.textContent = null;
+};
+/* [リセット]ボタンをクリックしたときの処理 */
+formObj.onreset = function() {
+  errorMessageObj.textContent = null;
+};
+</script>
+<!-- JavaScript（ここまで） -->
 </body>
 
 <footer>
