@@ -19,7 +19,7 @@
             <label for="menu-btn-check" class="menu-btn"><span></span></label>
             <!--ここからメニュー-->
             <div class="menu-content">
-                <ul>
+                  <ul>
                 <li>
                     <a href="/hydrangea/MenuServlet">トップ</a>
                 </li>
@@ -39,10 +39,10 @@
                     <a href="/hydrangea/CalenderServlet">カレンダー</a>
                 </li>
         <li>
-                    <a href="/hydrangea/RegistServlet">通知文テンプレート</a>
+                    <a href="/hydrangea/NotificationServlet">通知文テンプレート</a>
                 </li>
         <li>
-                    <a href="/hydrangea/RegistServlet">経費申請書テンプレート</a>
+                    <a href="/hydrangea/ExpensesServlet">経費申請書テンプレート</a>
                 </li>
         <li>
                     <a href="/hydrangea/LoginServlet">ログアウト</a>

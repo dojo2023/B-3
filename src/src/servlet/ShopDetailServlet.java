@@ -107,7 +107,7 @@ public class ShopDetailServlet extends HttpServlet {
 			}
 
 		if(request.getParameter("SUBMIT").equals("削除申請")) {//削除を行う
-				//削除サーブレットを起動する
+				//削除ページに遷移する
 			RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/delete.jsp");
 			dispatcher.forward(request, response);
 			}
