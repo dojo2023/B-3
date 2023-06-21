@@ -1,0 +1,15 @@
+2023-06-21 16:33:40 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: テーブル "USERS" が見つかりません
+Table "USERS" not found; SQL statement:
+INSERT INTO users(created_at,updated_at,name,mail,pass,department) VALUES (
+CURRENT_TIMESTAMP,
+CURRENT_TIMESTAMP,
+'サンプル',
+'ff',
+'jj',
+'営業課'
+) [42102-200]
+2023-06-21 16:34:50 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: SQLステートメントに文法エラーがあります "折りたたむ[*]"
+Syntax error in SQL statement "折りたたむ[*]"; SQL statement:
+折りたたむ [42000-200]
