@@ -87,13 +87,12 @@
              </tr>
         </table>
         </form>
-        <!--検索ウィンドウの表示-->
-        <div><label  for="pop-up"><button class="open">詳細検索</button></label>
+<button class="open"> <label  for="pop-up">詳細検索</label></button>
         <input type="checkbox" id="pop-up">
             <div class="overlay">
               <div class="search_pop-up">
                 <label class="close" for="pop-up">×</label>
-                <div class="detail_search"><!--ポップアップの中身-->
+                <p class="detail_search"><!--ポップアップの中身-->
                     <form method="POST" action="/hydrangea/SearchResultServlet" autocomplete="off"> <!--servlet名、要チェック-->
                         <table class="koumoku">
                             <tr>
@@ -101,10 +100,11 @@
                              <input type="text" name="NUMBER" value="${e.shop_name}">
                              </label></td>
                              <td><label>プリセット<br>
-                             <select name="NUMBER" value="${プリセット}">
+                             <select name="NUMBER" id="プリセット">
                                 <option value="reservation">営業部</option>
                                 <option value="event">営業1課</option>
                                 <option value="contact">営業1課4班</option>
+                             </select>
                                 </label></td>
                             </tr>
                             <tr>
@@ -112,10 +112,11 @@
                              <input type="text" name="price_max" value="${e.price_max}">～<input type="text" name="price_min" value="${e.price_min}">
                              </label></td>
                              <td><label>座席
-                             <select name="sheet" value="${e.shop_name}">
+                             <select name="sheet" id="sheet">
                                 <option value="reservation">飲み放題のみ</option>
                                 <option value="event">食べ放題のみ</option>
                                 <option value="contact">両方用意あり</option>
+                            </select>
                              </label></td>
                             <tr>
                              <td><label>人数<br>
@@ -123,9 +124,10 @@
                              </label></td>
 
                              <td><label>たばこ
-                             <select name="sheet" value="${e.shop_name}">
+                             <select name="tabaco" id="tabaco">
                                 <option value="reservation">喫煙</option>
                                 <option value="event">禁煙</option>
+                            </select>
                              </label></td>
                             </tr>
                             <tr>
@@ -133,10 +135,11 @@
                              <input type="text" name="distance" value="${e.distance}">
                              </label></td>
                              <td><label>放題メニュー
-                             <select name="sheet" value="${e.shop_name}">
+                             <select name="hodai" id="hodai" >
                                 <option value="reservation">飲み放題のみ</option>
                                 <option value="event">食べ放題のみ</option>
                                 <option value="contact">両方用意あり</option>
+                             </select>
                              </label></td>
                             </tr>
                             <tr>
@@ -157,10 +160,9 @@
                              </tr>
                         </table>
                         </form>
-                 </div>
+
               </div>
             </div>
-		</div>
 	</div>
 	</div>
 <div class="page_right">
@@ -183,7 +185,7 @@
                     <p>お探しの店は見つかりませんでした</p></c:if>
                 <!--データ一個分-->
         <c:forEach var="e" items="${cardList}"> <!--list名、要チェック-->
-            <form method="Get" action="/hydrangea/ShopDetailServlet"> <!--servlet名、要チェック-->
+            <form method="GET" action="/hydrangea/ShopDetailServlet">
             <table class="koumoku">
                 <tr class="shop_photo">
                     <td><label>
@@ -214,12 +216,8 @@
                         <c:out value="${e.address}" /><!--住所-->
                      </label></td>
                 </tr>
-                <tr>
-                    <td>
-                      <input type="submit" name=more_detail value="もっと見る">
-                    </td>
-                </tr>
-            </table>
+       			</table>
+          			<input type="submit" name="more_detail" value="もっと見る">
             </form>
         </c:forEach>
     </div>

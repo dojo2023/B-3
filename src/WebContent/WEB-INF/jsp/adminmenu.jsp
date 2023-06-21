@@ -199,17 +199,17 @@
     </header>
 <body style="text-align: center;">
 <h1>管理者用ページ</h1>
-        <button onclick="location.href='http://localhost:8080/hydrangea/NewShopServlet'" id="button1" class="retu" style="vertical-align: middle;">ページ作成<br>編集</button>
-        <button onclick="location.href='http://localhost:8080/hydrangea/InformationCreateServlet'" id="button1" class="retu">通知</button>
-        <button onclick="location.href='http://localhost:8080/hydrangea/RegistServlet'" id="button1" class="retu">登録</button>
+        <button onclick="location.href='/hydrangea/NewShopServlet'" id="button1" class="retu" style="vertical-align: middle;">ページ作成<br>編集</button>
+        <button onclick="location.href='/hydrangea/InformationCreateServlet'" id="button1" class="retu">通知</button>
+        <button onclick="location.href='/hydrangea/RegistServlet'" id="button1" class="retu">登録</button>
         <form action="submit" class="retu" id="form" style="vertical-align: middle;"><input type="text" style="margin-right: 3px; border: solid 2px cornflowerblue; height: 26%;" placeholder="フリーワード検索"><button style="border: solid 2px cornflowerblue">検索</button>
             <br><p style="border: solid 2px cornflowerblue;">喫煙&nbsp;&nbsp;<input type="radio" name="ke" value="">可<input type="radio" name="ke" value="">不可</p>
         </form>
         <br>
         <div id="yoko"></div>
-        <button onclick="location.href='http://localhost:8080/hydrangea/CalendarServlet'" id="button2">カレンダー</button>
-        <button onclick="location.href='http://localhost:8080/hydrangea/HistoryServlet'" id="button2">履歴</button>
-        <button onclick="location.href='http://localhost:8080/hydrangea/MemoServlet'" id="button2">メモ</button>
+        <button onclick="location.href='/hydrangea/CalendarServlet'" id="button2">カレンダー</button>
+        <button onclick="location.href='/hydrangea/HistoryServlet'" id="button2">履歴</button>
+        <button onclick="location.href='/hydrangea/MemoServlet'" id="button2">メモ</button>
 </body>
 <footer>
     <p>Copyright &copy; 2023 Hydrangea All Rights Reserved.</p>
