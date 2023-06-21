@@ -145,9 +145,9 @@
 
 <h1>メモ一覧</h1>
 <hr>
-<form method="POST" action="/hydrangea/newcreateServlet">
+<form method="POST" action="/hydrangea/NewcreateServlet">
 <table class="memo">
-    <a href="/hydrangea/newcreateServlet">新規作成</a><br>
+    <a href="/hydrangea/NewcreateServlet">新規作成</a><br>
 
     <tr><th>日付</th><th>タイトル</th></tr>
 
