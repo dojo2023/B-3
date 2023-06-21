@@ -400,6 +400,7 @@
                 </h2>
                 <p>更新が完了しました。</p>
                 <button type="button" onclick="">メニューへ戻る</button>
+
             </div>
 
         </form>

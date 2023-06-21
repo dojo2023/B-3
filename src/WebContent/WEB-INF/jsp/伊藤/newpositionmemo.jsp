@@ -171,9 +171,9 @@
 
     <h1>役職メモ</h1>
     <hr>
-    <form method="POST" action="役職メモ.html">
+    <form method="POST" action="/hydrangea/PositionmemoServlet">
 
-            <a href="役職メモ.html"><input type="submit" name="SUBMIT" value="追加"></a>
+            <a href="/hydrangea/PositionmemoServlet"><input type="submit" name="SUBMIT" value="追加"></a>
             <input type="submit" name="SUBMIT" value="削除">
             <input type="submit" name="SUBMIT" value="更新"><br>
 
