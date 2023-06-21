@@ -7,7 +7,7 @@
 <head>
 <meta charset="UTF-8">
 <title>予約確認 | Hydrangea</title>
-<link rel="stylesheet" href="css/common.css"><!--css名やパス、要チェック-->
+<link rel="stylesheet" href="css/menu.css"><!--css名やパス、要チェック-->
 </head>
 <body>
 <!--ここからヘッダー-->

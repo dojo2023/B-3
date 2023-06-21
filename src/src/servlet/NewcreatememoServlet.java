@@ -30,7 +30,15 @@ public class NewcreatememoServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
+		request.setCharacterEncoding("UTF-8");
 
+		// メモ一覧ページにフォワードする
+				if(request.getParameter("SUBMIT").equals("保存")){
+					//内容保存処理を行う
+
+				RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/memoServlet.jsp");
+					dispatcher.forward(request, response);
+				}
 	}
 
 }

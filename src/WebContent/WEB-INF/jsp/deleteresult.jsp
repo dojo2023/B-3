@@ -5,7 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>問い合わせ結果 | Hydrangea</title>
-<link rel="stylesheet" href="css/common.css"><!--cssのリンク-->
+<link rel="stylesheet" href="css/menu.css"><!--cssのリンク-->
 
 <!--サーブレットのリンク--><!--削除の申請結果コメント-->
 </head>
@@ -62,7 +62,7 @@
         の削除を申請しました。/削除を申請できませんでした。
         </div>
 
-<p><a href="menu.html">メニューに戻る</a></p> <!--メニュー画面に戻る-->
+<p><a href="/hydrangea/MenuServlet">メニューに戻る</a></p> <!--メニュー画面に戻る-->
 
 </div>
 <!--ここからフッター-->

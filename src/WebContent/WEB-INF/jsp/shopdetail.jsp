@@ -7,7 +7,7 @@
 <meta charset="UTF-8">
 <title>店詳細 | Hydrangea</title>
 <link rel="stylesheet" href="css/search_result.css"><!--css名やパス、要チェック-->
-<link rel="stylesheet" href="css/common.css">
+<link rel="stylesheet" href="css/menu.css">
 
 
 </head>

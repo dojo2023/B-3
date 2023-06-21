@@ -8,7 +8,7 @@
 <meta charset="UTF-8">
 <title>検索結果 | Hydrangea</title>
 <link rel="stylesheet" href="css/search_result.css">
-<link rel="stylesheet" href="css/common.css"><!--css名やパス、要チェック-->
+<link rel="stylesheet" href="css/menu.css"><!--css名やパス、要チェック-->
 </head>
 <body>
 <!--ここからヘッダー-->
@@ -167,7 +167,7 @@
 	</div>
 <div class="page_right">
     <!--デフォルト部分-->
-    <p><a href="menu.html">前のページに戻る</a></p> <!--メニュー画面に戻る-->
+    <p><a href="/hydrangea/MenuServlet">前のページに戻る</a></p> <!--メニュー画面に戻る-->
     <div><p>検索結果</p> <p>oo件</p><!--shop DBのカウントアップで表示-->
     <select id="sort" name="sort">
             <option value="reservation">更新日順</option>

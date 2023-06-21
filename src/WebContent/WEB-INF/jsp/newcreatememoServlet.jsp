@@ -5,6 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>幹事サポート</title>
+<link rel="stylesheet" href="css/menu.css">
 </head>
 <header>
     <div class="hamburger-menu">
@@ -144,14 +145,14 @@
 <h1>メモ新規作成</h1>
 <hr>
 <form method="POST" action="/hydrangea/NewcreatememoServlet">
-<table>
+
     <nav>
-        <ul>
+
             <a href="/hydrangea/MemoServlet">＜メモ一覧</a>
-        </ul>
+
     </nav>
 
-
+<table>
     <tr>
         <td>
                 <input type="text" size="40"><br>
