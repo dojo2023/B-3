@@ -45,21 +45,24 @@ public class PositionmemoServlet extends HttpServlet {
 		String ng = request.getParameter("NG");
 		String remarks = request.getParameter("REMARKS");
 
-		// 更新または削除を行う
+		// 追加、更新または削除を行う
 		//BcDAO bDao = new BcDAO();
 		if (request.getParameter("SUBMIT").equals("更新")) {
 			// 結果ページにフォワードする
+			System.out.println(request.getParameter("SUBMIT"));
 			RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/positionmemoServlet.jsp");
 			dispatcher.forward(request, response);
 		}
 		else if (request.getParameter("SUBMIT").equals("追加")) {
 			// 結果ページにフォワードする
+			System.out.println(request.getParameter("SUBMIT"));
 			RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/newpositionmemo.jsp");
 			dispatcher.forward(request, response);
 
 			}
 		else if (request.getParameter("SUBMIT").equals("削除")){
 			// 結果ページにフォワードする
+			System.out.println(request.getParameter("SUBMIT"));
 			RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/positionmemoServlet.jsp");
 			dispatcher.forward(request, response);
 			}

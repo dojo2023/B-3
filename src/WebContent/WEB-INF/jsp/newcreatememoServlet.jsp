@@ -5,6 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>幹事サポート</title>
+<link rel="stylesheet" href="css/menu.css">
 </head>
 <header>
     <div class="hamburger-menu">
@@ -14,31 +15,31 @@
         <div class="menu-content">
             <ul>
                 <li>
-                    <a href="">トップ</a>
+                    <a href="/hydrangea/MenuServlet">トップ</a>
                 </li>
                 <li>
-                    <a href="">登録</a>
+                    <a href="/hydrangea/RegistServlet">登録</a>
                 </li>
                 <li>
-                    <a href="">履歴</a>
+                    <a href="/hydrangea/HistoryServlet">履歴</a>
                 </li>
                 <li>
-                    <a href="">役職メモ</a>
+                    <a href="/hydrangea/PositionmemoServlet">役職メモ</a>
                 </li>
                 <li>
-                    <a href="">メモ</a>
+                    <a href="/hydrangea/MemoServlet">メモ</a>
                 </li>
                 <li>
-                    <a href="">カレンダー</a>
+                    <a href="/hydrangea/CalenderServlet">カレンダー</a>
                 </li>
         <li>
-                    <a href="">通知文テンプレート</a>
+                    <a href="/hydrangea/NotificationServlet">通知文テンプレート</a>
                 </li>
         <li>
-                    <a href="">経費申請書テンプレート</a>
+                    <a href="/hydrangea/ExpensesServlet">経費申請書テンプレート</a>
                 </li>
         <li>
-                    <a href="">ログアウト</a>
+                    <a href="/hydrangea/LoginServlet">ログアウト</a>
                 </li>
             </ul>
         </div>
@@ -137,17 +138,21 @@
         color: blue;
     }
 
-
     </style>
 </header>
 <body>
-<h1>メモ内容</h1>
+
+<h1>メモ新規作成</h1>
 <hr>
-<form method="POST" action="/hydrangea/MemoServlet">
-<table id="">
-    <a href="/hydrangea/MemoServlet">＜メモ一覧</a>
-<br>
-<tr>
+<form method="POST" action="/hydrangea/NewcreatememoServlet">
+
+    <nav>
+
+            <a href="/hydrangea/MemoServlet">＜メモ一覧</a>
+
+    </nav>
+
+<table>
     <tr>
         <td>
                 <input type="text" size="40"><br>
@@ -161,7 +166,10 @@
         </td>
     </tr>
 
+    <tr>
+        <td><input type="submit" name="SUBMIT" value="保存"><br></td>
 
+    </tr>
 
 </table>
 
