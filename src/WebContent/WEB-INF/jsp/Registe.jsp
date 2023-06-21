@@ -204,7 +204,7 @@
                             <label><input type="checkbox" name="holiday_nenmatsu" id="holiday_nenmatsu">年末年始</label>
 
                             <label for="holiday_other">:</label>
-                            <label><input type="checkbox" name="holiday_other" id="holiday_other">その他</label>
+
                             <input type="text" name="holiday_other_text" id="holiday_other_text"><br>
 
                         </td>
@@ -242,7 +242,7 @@
                             <label>座席様式</label>
                             <label><input type="checkbox" name="sheet_table" id="sheet_table">テーブル</label>
                             <label><input type="checkbox" name="sheet_tatami" id="sheet_tatami">座敷</label>
-                            <label><input type="checkbox" name="sheet_other" id="sheet_other">その他</label>
+                            <label>その他</label>
                             <input type="text" name="sheet_other_text" id="sheet_other_text"><br>
                             </label>
                         </td>
@@ -372,7 +372,7 @@
                     <li id="holiday_sunReselt"></li>
                     <li id="holiday_syukuReselt"></li>
                     <li id="holiday_nenmatsuReselt"></li>
-                    <li id="holiday_otherReselt"></li>
+
                     <li id="holiday_other_textReselt"></li>
                 </ol>
 
@@ -383,7 +383,7 @@
                 <ol class="sheet_list">
                     <li id="sheet_tableReselt"></li>
                     <li id="sheet_tatamiReselt"></li>
-                    <li id="sheet_otherReselt"></li>
+
                     <li id="sheet_other_textReselt"></li>
                 </ol>
 

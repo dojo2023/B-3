@@ -14,7 +14,6 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.Part;
 
 
-
 /**
  * Servlet implementation class RegistServlet
  */
@@ -67,7 +66,7 @@ public class RegistServlet extends HttpServlet {
 */
 		// リクエストパラメータを取得する
 		request.setCharacterEncoding("UTF-8");
-		String id = request.getParameter("ID");
+		
 		String shop_name = request.getParameter("shop_name");
 		String genre = request.getParameter("genre");
 		String genre_form = request.getParameter("genre_form");
@@ -132,7 +131,7 @@ public class RegistServlet extends HttpServlet {
 		rd.forward(request, response);
 	}
 	// 登録処理を行う
-	//		BcDAO bDao = new BcDAO();
+	//	ShopDao bDao = new ShopDao();
 		//	if (bDao.insert(new Bc(id, number, name, zipcode, address,
 		//			company,department,position,email,tel,day,note))) {	// 登録成功
 	//			request.setAttribute("result",
