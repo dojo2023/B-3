@@ -66,7 +66,7 @@ public class RegistServlet extends HttpServlet {
 */
 		// リクエストパラメータを取得する
 		request.setCharacterEncoding("UTF-8");
-		
+
 		String shop_name = request.getParameter("shop_name");
 		String genre = request.getParameter("genre");
 		String genre_form = request.getParameter("genre_form");
@@ -85,20 +85,20 @@ public class RegistServlet extends HttpServlet {
 		String holiday_sun = request.getParameter("holiday_sun");
 		String holiday_syuku = request.getParameter("holiday_syuku");
 		String holiday_nenmatsu = request.getParameter("holiday_nenmatsu");
-		String holiday_other = request.getParameter("holiday_other");
 		String holiday_other_text = request.getParameter("holiday_other_text");
 		String distance = request.getParameter("distance");
 		String address = request.getParameter("address");
 		String tabaco = request.getParameter("tabaco");
 		String sheet_table = request.getParameter("sheet_table");
 		String sheet_tatami = request.getParameter("sheet_tatami");
-		String sheet_other = request.getParameter("sheet_other");
+		String sheet_other_text = request.getParameter("sheet_other_text");
 		String capacity = request.getParameter("capacity");
 		String eat_drink = request.getParameter("eat_drink");
 		String score = request.getParameter("score");
 		String tel = request.getParameter("tel");
 		String homepage = request.getParameter("homepage");
 		String other_tel = request.getParameter("other_tel");
+		String photo = request.getParameter("photo");
 		String remarks_shop = request.getParameter("remarks_shop");
 
 
