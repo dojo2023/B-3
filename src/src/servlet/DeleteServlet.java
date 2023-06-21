@@ -29,9 +29,10 @@ public class DeleteServlet extends HttpServlet {
 				return;
 			}
 */
-			//リクエストパラメータの取得
 			request.setCharacterEncoding("UTF-8");
-			String shop_name = request.getParameter("shop_name");
+			//リクエストパラメータの取得
+		/*
+			String shop_name = request.getParameter("shop_name");*/
 
 			// 削除ページにフォワードする
 			RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/delete.jsp");
@@ -47,17 +48,19 @@ public class DeleteServlet extends HttpServlet {
 				if (session.getAttribute("id") == null) {
 					response.sendRedirect("/hydrangea/LoginServlet");
 					return;
-				}
-*/
+				}*/
+
+				request.setCharacterEncoding("UTF-8");
+
 				//MessageDaoに干渉
 				// リクエストパラメータを取得する
-				request.setCharacterEncoding("UTF-8");
+		/*		request.setCharacterEncoding("UTF-8");
 				String id_messages = request.getParameter("id_messages");
 				String created_at = request.getParameter("created_at");
 				String date = request.getParameter("date");
 				String id_users = request.getParameter("id_users");
 				String title = request.getParameter("title");
-				String message = request.getParameter("message");
+				String message = request.getParameter("message");*/
 
 
   if (request.getParameter("submit").equals("削除申請")) {

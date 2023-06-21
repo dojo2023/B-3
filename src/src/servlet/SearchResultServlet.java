@@ -62,16 +62,7 @@ public class SearchResultServlet extends HttpServlet {
 				String close_hei = request.getParameter("close_hei");
 				String open_kyu = request.getParameter("open_kyu");
 				String close_kyu = request.getParameter("close_kyu");
-			//	String holiday_mon = request.getParameter("holiday_mon");
-			//	String holiday_tue = request.getParameter("holiday_tue");
-			//	String holiday_wed = request.getParameter("holiday_wed");
-			//	String holiday_thu = request.getParameter("holiday_thu");
-			//	String holiday_fri = request.getParameter("holiday_fri");
-			//	String holiday_sat = request.getParameter("holiday_sat");
-			//	String holiday_sun = request.getParameter("holiday_sun");
-			//	String holiday_syuku = request.getParameter("holiday_syuku");
-			//	String holiday_nenmatsu = request.getParameter("holiday_nenmatsu");
-			//	String holiday_other = request.getParameter("holiday_other");
+
 				String distance = request.getParameter("distance");
 				String address = request.getParameter("address");
 				String tabaco = request.getParameter("tabaco");
@@ -80,11 +71,7 @@ public class SearchResultServlet extends HttpServlet {
 				String sheet_other = request.getParameter("sheet_other");
 				String capacity = request.getParameter("capacity");
 				String eat_drink = request.getParameter("eat_drink");
-			//	String score = request.getParameter("score");
-			//	String tel = request.getParameter("tel");
-			//	String homepage = request.getParameter("homepage");
-			//	String other = request.getParameter("other");
-			//	String photo = request.getParameter("photo");
+
 				String remarks_shop = request.getParameter("remarks_shop");
 /*
 				// 検索処理を行う

@@ -29,7 +29,7 @@ public class ShopDetailServlet extends HttpServlet {
 		}
 */
 		//リクエストパラメータの取得
-		request.setCharacterEncoding("UTF-8");
+	/*	request.setCharacterEncoding("UTF-8");
 		String shop_id = request.getParameter("shop_id");
 		String shop_name = request.getParameter("shop_name");
 		String genre = request.getParameter("genre");
@@ -63,7 +63,7 @@ public class ShopDetailServlet extends HttpServlet {
 		String homepage = request.getParameter("homepage");
 		String other = request.getParameter("other");
 		String photo = request.getParameter("photo");
-		String remarks_shop = request.getParameter("remarks_shop");
+		String remarks_shop = request.getParameter("remarks_shop");*/
 
 		// 検索処理を行う
 		/*if (request.getParameter("SUBMIT").equals("検索")) {
@@ -91,18 +91,23 @@ public class ShopDetailServlet extends HttpServlet {
 		if (session.getAttribute("id") == null) {
 			response.sendRedirect("/hydrangea/LoginServlet");
 			return;
-		}
-*/
-		// 更新を行う
+		}*/
+
+		request.setCharacterEncoding("UTF-8");
+
+//		System.out.println(request.getParameter("SUBMIT"));本当に押せているのかチェック
+
+
 /*		BcDAO bDao = new BcDAO();*/
-		if (request.getParameter("SUBMIT").equals("更新")) {
+		if (request.getParameter("SUBMIT").equals("更新")) {// 更新を行う
+
 				//更新ページに遷移する
 			RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/Update.jsp");
 			dispatcher.forward(request, response);
 			}
-		//削除を行う
-		if(request.getParameter("SUBMIT").equals("削除申請")) {
-				//削除ページに遷移する
+
+		if(request.getParameter("SUBMIT").equals("削除申請")) {//削除を行う
+				//削除サーブレットを起動する
 			RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/delete.jsp");
 			dispatcher.forward(request, response);
 			}
