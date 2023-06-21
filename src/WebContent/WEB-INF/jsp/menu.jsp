@@ -215,10 +215,10 @@
 
 <div style="text-align: center;">
 <table border="1" style="float: left; width: 25%; height: 35%; text-align: center;">
-<tr><th>第１位</th><td><a href="http://localhost:8080/hydrangea/ShopDetailServlet">居屋酒々井</a></td></tr>
-<tr><th>第２位</th><td><a href="http://localhost:8080/hydrangea/ShopDetailServlet">アードフッド</a></td></tr>
-<tr><th>第３位</th><td><a href="http://localhost:8080/hydrangea/ShopDetailServlet">パンロマガジン</a></td></tr>
-<tr><th>第４位</th><td><a href="http://localhost:8080/hydrangea/ShopDetailServlet">Knight&Witch</a></td></tr>
+<tr><th>第１位</th><td><a href="/hydrangea/ShopDetailServlet">居屋酒々井</a></td></tr>
+<tr><th>第２位</th><td><a href="/hydrangea/ShopDetailServlet">アードフッド</a></td></tr>
+<tr><th>第３位</th><td><a href="/hydrangea/ShopDetailServlet">パンロマガジン</a></td></tr>
+<tr><th>第４位</th><td><a href="/hydrangea/ShopDetailServlet">Knight&Witch</a></td></tr>
 </table>
 </div>
 
@@ -231,7 +231,7 @@
 </table>
 </div>
 
-<a href="http://localhost:8080/hydrangea/CalendarServlet" id="calend">カレンダー</a>
+<a href="/hydrangea/CalendarServlet" id="calend">カレンダー</a>
 
 
 <br><br><br><br>
@@ -341,7 +341,7 @@
                         </label></td>
                     </tr>
                         <td>
-                         input type="submit" name="REGIST" value="検索">
+                         <input type="submit" name="REGIST" value="検索">
                         </td>
                 </table>
                 </form>
