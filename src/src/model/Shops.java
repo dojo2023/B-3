@@ -3,18 +3,44 @@ package model;
 import java.io.Serializable;
 
 public class Shops implements Serializable {
-	private String id;
-	private String number;
-	private String name;
-	private String zipcode;
-	private String address;
-	private String company;
-	private String department;
-	private String position;
-	private String email;
-	private String tel;
-	private String day;
-	private String note;
+	private String shop_name;
+	private String genre;
+
+	shop_name	varchar(30) not null,
+	genre		varchar(30) not null,
+	genre_form	varchar(30) not null,
+	price_max	int,
+	price_min	int,
+	open_hei	time,
+	close_hei	time,
+	open_kyu	time,
+	close_kyu	time,
+	holiday_mon	boolean,
+	holiday_tue	boolean,
+	holiday_wed	boolean,
+	holiday_thu	boolean,
+	holiday_fri	boolean,
+	holiday_sat	boolean,
+	holiday_sun	boolean,
+	holiday_syuku	boolean,
+	holiday_nenmatsu	boolean,
+	holiday_other	varchar(10),
+	distance	int,
+	address		varchar(50),
+	tabaco		varchar(5),
+	sheet_table	boolean,
+	sheet_tatami	boolean,
+	sheet_other	varchar(10),
+	capacity	int,
+	eat_drink	varchar(10),
+	score		int,
+	tel		varchar(20),
+	homepage	varchar(100),
+	other		varchar(100),
+	photo		varchar(50),
+	remarks_shop	varchar(200),
+	id_users	int,
+
 
 
 	public Shops(String id, String number, String name, String zipcode, String address, String company, String department,
@@ -49,126 +75,6 @@ public class Shops implements Serializable {
 		this.tel = "";
 		this.day = "";
 		this.note = "";
-	}
-
-
-	public String getId() {
-		return id;
-	}
-
-
-	public void setId(String id) {
-		this.id = id;
-	}
-
-
-	public String getNumber() {
-		return number;
-	}
-
-
-	public void setNumber(String number) {
-		this.number = number;
-	}
-
-
-	public String getName() {
-		return name;
-	}
-
-
-	public void setName(String name) {
-		this.name = name;
-	}
-
-
-	public String getZipcode() {
-		return zipcode;
-	}
-
-
-	public void setZipcode(String zipcode) {
-		this.zipcode = zipcode;
-	}
-
-
-	public String getAddress() {
-		return address;
-	}
-
-
-	public void setAddress(String address) {
-		this.address = address;
-	}
-
-
-	public String getCompany() {
-		return company;
-	}
-
-
-	public void setCompany(String company) {
-		this.company = company;
-	}
-
-
-	public String getDepartment() {
-		return department;
-	}
-
-
-	public void setDepartment(String department) {
-		this.department = department;
-	}
-
-
-	public String getPosition() {
-		return position;
-	}
-
-
-	public void setPosition(String position) {
-		this.position = position;
-	}
-
-
-	public String getEmail() {
-		return email;
-	}
-
-
-	public void setEmail(String email) {
-		this.email = email;
-	}
-
-
-	public String getTel() {
-		return tel;
-	}
-
-
-	public void setTel(String tel) {
-		this.tel = tel;
-	}
-
-
-	public String getDay() {
-		return day;
-	}
-
-
-	public void setDay(String day) {
-		this.day = day;
-	}
-
-
-	public String getNote() {
-		return note;
-	}
-
-
-	public void setNote(String note) {
-		this.note = note;
 	}
 
 

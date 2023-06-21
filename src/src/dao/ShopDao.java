@@ -3,16 +3,18 @@ package dao;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.List;
 
 import model.Shops;
 
-public List<Shops> select(Shops param) {
+public class ShopDao {
+	// 引数paramで検索項目を指定し、検索結果のリストを返す
+
+
+
+public boolean insert(Shops param) {
 	Connection conn = null;
-	List<Bc> cardList = new ArrayList<Bc>();
+	boolean result=false;
 
 	try {
 		// JDBCドライバを読み込む
@@ -22,59 +24,116 @@ public List<Shops> select(Shops param) {
 		conn = DriverManager.getConnection("jdbc:h2:file:C:/dojo6Data/B3", "sa", "");
 
 		// SQL文を準備する
-		String sql ="select * from BC WHERE NAME LIKE ? AND NUMBER LIKE ? AND ADDRESS LIKE ? ORDER BY ID";
-		PreparedStatement pStmt = conn.prepareStatement(sql);
+		String sql ="INSERT INTO "
+				+ "(created_at,updated_at,shop_name,genre,genre_form,price_max,price_min,"
+				+ "open_hei	time,lose_hei,open_kyu,close_kyu,"
+				+ "holiday_mon,holiday_tue,holiday_wed,holiday_thu,holiday_fri,holiday_sat,holiday_sun,holiday_syuku,"
+				+ "holiday_nenmatsu,holiday_other,distance,address,tabaco,sheet_table,sheet_tatami,sheet_other,"
+				+ "capacity,eat_drink,score,tel,homepage,other,photo,remarks_shop,id_users) "
+				+ "VALES"
+				+ "(CURRENT_TIMESTAMP,CURRENT_TIMESTAMP,?,?,?,?,?,?,?,?)";
+	
 
 		// SQL文を完成させる
 
-		if (param.getName() != null) {
-			pStmt.setString(1, "%" + param.getName() + "%");
+		PreparedStatement pStmt = conn.prepareStatement(sql);
+
+		// SQL文を完成させる
+		if (card.getId() != null && !card.getId().equals("")) {
+			pStmt.setString(1, card.getId());
 		}
 		else {
-			pStmt.setString(1, "%");
-		}
-		if (param.getNumber() != null) {
-			pStmt.setString(2, "%" + param.getNumber() + "%");
-		}
-		else {
-			pStmt.setString(2, "%");
-		}
-		if (param.getAddress() != null) {
-			pStmt.setString(3, "%" + param.getAddress() + "%");
-		}
-		else {
-			pStmt.setString(3, "%");
+			pStmt.setString(1, null);
 		}
 
-		// SQL文を実行し、結果表を取得する
-		ResultSet rs = pStmt.executeQuery();
+		if (card.getNumber() != null && !card.getNumber().equals("")) {
+			pStmt.setString(2, card.getNumber());
+		}
+		else {
+			pStmt.setString(2, null);
+		}
 
-		// 結果表をコレクションにコピーする
-		while (rs.next()) {
-			Bc card = new Bc(
-			rs.getString("ID"),
-			rs.getString("NUMBER"),
-			rs.getString("NAME"),
-			rs.getString("ZIPCODE"),
-			rs.getString("ADDRESS"),
-			rs.getString("COMPANY"),
-			rs.getString("DEPARTMENT"),
-			rs.getString("POSITION"),
-			rs.getString("EMAIL"),
-			rs.getString("TEL"),
-			rs.getString("DAY"),
-			rs.getString("NOTE")
-			);
-			cardList.add(card);
+		if (card.getName() != null && !card.getName().equals("")) {
+			pStmt.setString(3, card.getName());
+		}
+		else {
+			pStmt.setString(3, null);
+		}
+
+		if (card.getZipcode() != null && !card.getZipcode().equals("")) {
+			pStmt.setString(4, card.getZipcode());
+		}
+		else {
+			pStmt.setString(4, null);
+		}
+
+		if (card.getAddress() != null && !card.getAddress().equals("")) {
+			pStmt.setString(5, card.getAddress());
+		}
+		else {
+			pStmt.setString(5, null);
+		}
+
+		if (card.getCompany() != null && !card.getCompany().equals("")) {
+			pStmt.setString(6, card.getCompany());
+		}
+		else {
+			pStmt.setString(6, null);
+		}
+
+		if (card.getDepartment() != null && !card.getDepartment().equals("")) {
+			pStmt.setString(7, card.getDepartment());
+		}
+		else {
+			pStmt.setString(7, null);
+		}
+
+		if (card.getPosition() != null && !card.getPosition().equals("")) {
+			pStmt.setString(8, card.getPosition());
+		}
+		else {
+			pStmt.setString(8, null);
+		}
+
+		if (card.getEmail() != null && !card.getEmail().equals("")) {
+			pStmt.setString(9, card.getEmail());
+		}
+		else {
+			pStmt.setString(9, null);
+		}
+
+		if (card.getTel() != null && !card.getTel().equals("")) {
+			pStmt.setString(10, card.getTel());
+		}
+		else {
+			pStmt.setString(10, null);
+		}
+
+		if (card.getDay() != null && !card.getDay().equals("")) {
+			pStmt.setString(11, card.getDay());
+		}
+		else {
+			pStmt.setString(11, null);
+		}
+
+		if (card.getNote() != null && !card.getNote().equals("")) {
+			pStmt.setString(12, card.getNote());
+		}
+		else {
+			pStmt.setString(12, null);
+		}
+
+
+		// SQL文を実行する
+		if (pStmt.executeUpdate() == 1) {
+			result = true;
 		}
 	}
 	catch (SQLException e) {
 		e.printStackTrace();
-		cardList = null;
 	}
 	catch (ClassNotFoundException e) {
 		e.printStackTrace();
-		cardList = null;
 	}
 	finally {
 		// データベースを切断
@@ -84,13 +143,12 @@ public List<Shops> select(Shops param) {
 			}
 			catch (SQLException e) {
 				e.printStackTrace();
-				cardList = null;
 			}
 		}
 	}
 
 	// 結果を返す
-	return cardList;
+	return result;
 }
 
 // 引数cardで指定されたレコードを登録し、成功したらtrueを返す
