@@ -316,6 +316,9 @@
                             <label>画像
                                 <input type="file" name="photo" id="photo" value="" multiple="multiple" alt=""
                                     accept="image/*" onchange="previewImage(this);">
+名前:<input type="text" name="name"><br>
+好きな言葉:<input type="text" name="word"><br>
+好きな写真:<input type="file" name="pict"><br>
 
 
                             </label>
@@ -395,7 +398,8 @@
                 <p id="remarks_shopResult"></p>
 
                 <button type="button" onclick="editInfo()">訂正</button>
-                <input type="submit" onclick="register()">登録</input>
+               <button type="button" onclick="register()">登録</button>
+               <button type="submit">送信</button>
             </div>
 
         </form>
@@ -409,7 +413,9 @@
                 </ol>
                 </h2>
                 <p>登録が完了しました。</p>
-                <button type="button" onclick="">メニューへ戻る</button>
+
+                 <button onclick="location.http://localhost:8080/hydrangea/MenuServlet" ">メニューに戻る</button>
+
             </div>
 
         </form>
