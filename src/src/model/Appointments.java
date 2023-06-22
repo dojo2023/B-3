@@ -2,6 +2,15 @@ package model;
 import java.io.Serializable;
 
 public class  Appointments implements Serializable {
+
+	//他テーブルから引っ張ってくるもの
+	private String  id_users;
+	private String  id_shops;
+
+
+	private String  id_appointments;
+	private String  created_at;
+	private String  updated_at;
 	private String  appointment_date;
 	private String  appointment_time;
 	private String  department;
@@ -9,10 +18,15 @@ public class  Appointments implements Serializable {
 	private String  remarks_reserve
 ;
 	//入力された値を引数とするメソッド
-	public Appointments(String appointment_date, String appointment_time, String department,
+	public Appointments(String id_users, String id_shops, String id_appointments, String created_at, String updated_at, String appointment_date, String appointment_time, String department,
 			 String people, String remarks_reserve) {
 
 		super();
+		this.id_users = id_users;
+		this.id_shops = id_shops;
+		this.id_appointments = id_appointments;
+		this.created_at = created_at;
+		this.updated_at = updated_at;
 		this.appointment_date = appointment_date;
 		this.appointment_time = appointment_time;
 		this.department = department;
@@ -23,7 +37,11 @@ public class  Appointments implements Serializable {
 	//引数がない場合は空欄にするメソッド
 	public Appointments() {
 		super();
-
+		this.id_users = "";
+		this.id_shops = "";
+		this.id_appointments = "";
+		this.created_at = "";
+		this.updated_at = "";
 		this.appointment_date = "";
 		this.appointment_time = "";
 		this.department = "";
@@ -31,6 +49,41 @@ public class  Appointments implements Serializable {
 		this.remarks_reserve = "";
 
 }
+	public String getIdUsers() {
+		return id_users;
+	}
+	public void setIdUsers(String id_users) {
+		this.id_users = id_users;
+	}
+
+	public String getIdShops() {
+		return id_shops;
+	}
+	public void setIdShops(String id_shops) {
+		this.id_shops = id_shops;
+	}
+
+	public String getIdAppointments() {
+		return id_appointments;
+	}
+	public void setIdAppointments(String id_appointments) {
+		this.id_appointments = id_appointments;
+	}
+
+	public String getCreatedAt() {
+		return created_at;
+	}
+	public void setCreatedAt(String created_at) {
+		this.created_at = created_at;
+	}
+
+	public String getUpdatedAt() {
+		return updated_at;
+	}
+	public void setUpdatedAt(String updated_at) {
+		this.updated_at = updated_at;
+	}
+
 
 	public String getAppointmentDate() {
 		return appointment_date;
