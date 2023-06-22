@@ -396,7 +396,7 @@
 
                 <button type="button" onclick="editInfo()">訂正</button>
                <!--  <button type="button" onclick="register()">登録</button>-->
-               <button type="submit" name="regist">登録</button>
+               <button type="submit" name="regist" value="登録">登録</button>
             </div>
 
         </form>
