@@ -113,6 +113,9 @@ public boolean insert(Shops card) {
 		if (pStmt.executeUpdate() == 1) {
 			result = true;
 		}
+		//else(pStmt.executeUpdate() == 2) {
+		//	result = false;
+
 	}
 	catch (SQLException e) {
 		e.printStackTrace();
