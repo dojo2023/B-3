@@ -46,6 +46,7 @@
 
 </header>
 <body>
+	<form method="POST" action="/hydrangea/NotificationServlet">
     <div id="result" style="display: none;">
         <h2>入力結果:</h2>
 
@@ -61,7 +62,7 @@
         <p id="textarea2Result"></p>
 
         <button type="button" onclick="correctInfo()">訂正</button>
-        <button type="button" onclick="backForm()">戻る</button>
+        <a hirf="/hydrangea/NotificationServlet"><button type="button" onclick="backForm()">戻る</button></a>
     </div>
 
 

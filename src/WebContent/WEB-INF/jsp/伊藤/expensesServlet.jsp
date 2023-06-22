@@ -46,6 +46,7 @@
 
 </header>
 <body>
+	<form method="POST" action="/hydrangea/ExpensesServlet">
     <div id="result" style="display: none;">
         <h2>入力結果:</h2>
 
@@ -60,7 +61,7 @@
 
 
         <button type="button" onclick="correct2Info()">訂正</button>
-        <button type="button" onclick="back2Form()">戻る</button>
+        <a href="/hydrangea/ExpensesServlet"><button type="button" onclick="back2Form()">戻る</button></a>
     </div>
 
 <div id="expenseTemplate">
