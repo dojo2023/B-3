@@ -83,7 +83,7 @@
 
 
 
-
+<!--  -->
 
         <form action="/hydrangea/RegistServlet" method="post" enctype="multipart/form-data">
             <div id="registForm">
@@ -391,12 +391,12 @@
                 <p id="homepageResult"></p>
                 <p id="other_telResult"></p>
                 <p id="photoResult"></p>
-                <p><img src="/hydrangea/upload/<%=filename %>"></p>
+
                 <p id="remarks_shopResult"></p>
 
                 <button type="button" onclick="editInfo()">訂正</button>
                <!--  <button type="button" onclick="register()">登録</button>-->
-               <button type="submit" name="regist" value="登録">登録</button>
+               <input type="submit" name="regist" value="登録"></input>
             </div>
 
         </form>

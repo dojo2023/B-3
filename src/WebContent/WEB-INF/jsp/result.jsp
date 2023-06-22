@@ -1,10 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%
-	String name=(String)request.getAttribute("name");
-	String word=(String)request.getAttribute("word");
-	String filename=(String)request.getAttribute("filename");
-%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -12,6 +7,7 @@
 <title>fileupload</title>
 </head>
 <body>
-<p>好きな写真:<br><img src="/hydrangea/upload/<%=filename %>"></p>
+<h1>完了しました</h1>
+<button onclick="location.http://localhost:8080/hydrangea/MenuServlet" >メニューに戻る</button>
 </body>
 </html>
