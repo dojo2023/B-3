@@ -10,7 +10,7 @@
 <head>
     <meta charset="UTF-8">
     <title>幹事サポート</title>
-    <link rel="stylesheet" href="/simpleBC/css/style.css">
+    <link rel="stylesheet" href="//hydrangea/css/menu.css">
 
     <style>
         .sheet_list li {=Z

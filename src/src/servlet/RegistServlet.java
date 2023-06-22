@@ -106,47 +106,56 @@ public class RegistServlet extends HttpServlet {
 
 
 
-		String name=request.getParameter("name");
-		String word=request.getParameter("word");
-
 		//name属性がpictのファイルをPartオブジェクトとして取得
 
 		Part part=request.getPart("photo");
 
 		//ファイル名を取得
-		//String filename=part.getSubmittedFileName();//ie対応が不要な場合
-		String filename=Paths.get(part.getSubmittedFileName()).getFileName().toString();
+		String photo1= part.getSubmittedFileName();
 
 		//アップロードするフォルダ
 		String path=getServletContext().getRealPath("/upload");
 
+		System.out.println("画像パス"+path);
+		System.out.println("画像パス２photo；"+photo1);
+
+
+			part.write(path+File.separator+photo1);
+
+		System.out.println("画像パス２photo；"+photo1);
+
+
+
 		//実際にファイルが保存されるパス確認
-		System.out.println(path);
+		//System.out.println(path);
 		//書き込み
-		part.write(path+File.separator+filename);
-		request.setAttribute("name",name);
-		request.setAttribute("word", word);
+		//part.write(path+File.separator+filename);
+
 		request.setAttribute("filename", filename);
 		RequestDispatcher rd=request.getRequestDispatcher("/WEB-INF/jsp/result.jsp");
 		rd.forward(request, response);
 	}
 	// 登録処理を行う
-	//	ShopDao bDao = new ShopDao();
-		//	if (bDao.insert(new Bc(id, number, name, zipcode, address,
-		//			company,department,position,email,tel,day,note))) {	// 登録成功
-	//			request.setAttribute("result",
-	//			new Result("登録成功！", "レコードを登録しました。", "/simpleBC/MenuServlet"));
-	//		}
-	//		else {												// 登録失敗
-	//			request.setAttribute("result",
-		//		new Result("登録失敗！", "レコードを登録できませんでした。", "/simpleBC/MenuServlet"));
+		ShopDao bDao = new ShopDao();
+			if (bDao.insert(new Shops("shop_name,genre,genre_form,price_max,price_min,"
+					+ "open_hei,lose_hei,open_kyu,close_kyu,"
+					+ "holiday_mon,holiday_tue,holiday_wed,holiday_thu,holiday_fri,holiday_sat,holiday_sun,holiday_syuku,"
+					+ "holiday_nenmatsu,holiday_other,distance,address,tabaco,sheet_table,sheet_tatami,sheet_other,"
+					+ "capacity,eat_drink,score,tel,homepage,other,photo,remarks_shop")) ==1){
+					// 登録成功
+				     request.setAttribute("result",
+		              new Result("登録成功！", "レコードを登録しました。", "/hydrangea/ResultServlet"));
+		}
+			else {												// 登録失敗
+				request.setAttribute("result",
+				new Result("登録失敗！", "レコードを登録できませんでした。", "/hydrangea/ResultServlet"));
 			}
 
 			// 結果ページにフォワードする
-	//		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/result.jsp");
-	//		dispatcher.forward(request, response);
+			RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/result.jsp");
+			dispatcher.forward(request, response);
 
 
-	//}
+	}
 
 
