@@ -57,6 +57,11 @@ public class LoginServlet extends HttpServlet {
 			response.sendRedirect("/hydrangea/MenuServlet");
 		}else{
 			//失敗した時
+			request.setAttribute("message", "IDまたはPWに間違いがあります。");
+
+			// 結果ページにフォワードする
+			RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/login.jsp");
+			dispatcher.forward(request, response);
 
 		}
 
