@@ -2,7 +2,6 @@ package servlet;
 
 import java.io.File;
 import java.io.IOException;
-import java.nio.file.Paths;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -28,7 +27,7 @@ public class UpdateServlet extends HttpServlet {
      * @see HttpServlet#HttpServlet()
      */
     public UpdateServlet() {
-        super();
+
         // TODO Auto-generated constructor stub
     }
 
@@ -85,50 +84,51 @@ public class UpdateServlet extends HttpServlet {
 		String holiday_sun = request.getParameter("holiday_sun");
 		String holiday_syuku = request.getParameter("holiday_syuku");
 		String holiday_nenmatsu = request.getParameter("holiday_nenmatsu");
-		String holiday_other_text = request.getParameter("holiday_other_text");
+		String holiday_other = request.getParameter("holiday_other_text");
 		String distance = request.getParameter("distance");
 		String address = request.getParameter("address");
 		String tabaco = request.getParameter("tabaco");
 		String sheet_table = request.getParameter("sheet_table");
 		String sheet_tatami = request.getParameter("sheet_tatami");
-		String sheet_other_text = request.getParameter("sheet_other_text");
+		String sheet_other = request.getParameter("sheet_other_text");
 		String capacity = request.getParameter("capacity");
 		String eat_drink = request.getParameter("eat_drink");
 		String score = request.getParameter("score");
 		String tel = request.getParameter("tel");
 		String homepage = request.getParameter("homepage");
-		String other_tel = request.getParameter("other_tel");
+		String other = request.getParameter("other_tel");
 		String photo = request.getParameter("photo");
 		String remarks_shop = request.getParameter("remarks_shop");
 
 
-
-
-
-
-		String name=request.getParameter("name");
-		String word=request.getParameter("word");
 
 		//name属性がpictのファイルをPartオブジェクトとして取得
 
 		Part part=request.getPart("photo");
 
 		//ファイル名を取得
-		//String filename=part.getSubmittedFileName();//ie対応が不要な場合
-		String filename=Paths.get(part.getSubmittedFileName()).getFileName().toString();
+		String photo2= part.getSubmittedFileName();
 
 		//アップロードするフォルダ
 		String path=getServletContext().getRealPath("/upload");
 
-		//実際にファイルが保存されるパス確認
-		System.out.println(path);
-		//書き込み
-		part.write(path+File.separator+filename);
-		request.setAttribute("name",name);
-		request.setAttribute("word", word);
-		request.setAttribute("filename", filename);
-		RequestDispatcher rd=request.getRequestDispatcher("/WEB-INF/jsp/result2.jsp");
-		rd.forward(request, response);
+		System.out.println("画像パス"+path);
+		System.out.println("画像パス２photo；"+photo2);
+
+
+			part.write(path+File.separator+photo2);
+
+		System.out.println("画像パス２photo；"+photo2);
+
+
+
+
+
+
+
+
+
+
 
 }
 }

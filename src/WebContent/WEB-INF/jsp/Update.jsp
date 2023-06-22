@@ -10,7 +10,7 @@
 <head>
     <meta charset="UTF-8">
     <title>幹事サポート</title>
-    <link rel="stylesheet" href="//hydrangea/css/menu.css">
+    <link rel="stylesheet" href="/hydrangea/css/menu.css">
 
     <style>
         .sheet_list li {=Z
@@ -313,11 +313,10 @@
 
                     <tr>
                         <td>
-                            <label>画像
-                                <input type="file" name="photo" id="photo" value="" multiple="multiple" alt=""
-                                    accept="image/*">
-
-
+                             <label>画像
+                                <input type="file" name="photo" id="photo"  multiple="multiple"
+                                 onchange="previewImage(this);" accept="image/*">
+                                    <img id="preview" src="" style = "max-width:150px;">
                             </label>
                         </td>
                     </tr>
@@ -394,8 +393,9 @@
                 <p id="remarks_shopResult"></p>
 
                 <button type="button" onclick="editInfo()">訂正</button>
-                <button type="button" onclick="update()">更新</button>
-                 <button type="submit">送信</button>
+               <!--  <button type="button" onclick="update()">更新</button> -->
+                <input type="submit" name="update" value="更新"></input>
+
             </div>
 </form>
 
