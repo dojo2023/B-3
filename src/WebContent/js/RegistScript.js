@@ -102,3 +102,15 @@ function register() {
 
 
 
+
+		function previewImage(obj) {
+			var fileReader = new FileReader();
+			fileReader.onload = (function() {
+				document.getElementById('preview').src = fileReader.result;
+			});
+			//指定したfile型のファイルを読み込む
+			fileReader.readAsDataURL(obj.files[0]);
+		}
+
+
+

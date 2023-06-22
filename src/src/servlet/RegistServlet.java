@@ -129,19 +129,19 @@ public class RegistServlet extends HttpServlet {
 		//part.write(path+File.separator+filename);
 
 //		request.setAttribute("filename", filename);
-//		RequestDispatcher rd=request.getRequestDispatcher("/WEB-INF/jsp/result.jsp");
+//	RequestDispatcher rd=request.getRequestDispatcher("/WEB-INF/jsp/result.jsp");
 //		rd.forward(request, response);
 	}
 	// 登録処理を行う
-//		ShopDao bDao = new ShopDao();
-//			if (bDao.insert(new Shops("shop_name,genre,genre_form,price_max,price_min,"
+//		ShopDao bDao = new ShopDao();{
+//	if (bDao.insert(new Shops("shop_name,genre,genre_form,price_max,price_min,"
 //					+ "open_hei,lose_hei,open_kyu,close_kyu,"
 //					+ "holiday_mon,holiday_tue,holiday_wed,holiday_thu,holiday_fri,holiday_sat,holiday_sun,holiday_syuku,"
-//					+ "holiday_nenmatsu,holiday_other,distance,address,tabaco,sheet_table,sheet_tatami,sheet_other,"
-//					+ "capacity,eat_drink,score,tel,homepage,other,photo,remarks_shop")) ==1){
+//			+ "holiday_nenmatsu,holiday_other,distance,address,tabaco,sheet_table,sheet_tatami,sheet_other,"
+//		+ "capacity,eat_drink,score,tel,homepage,other,photo,remarks_shop")) ==1){
 //					// 登録成功
-//				     request.setAttribute("result",
-///		              new Result("登録成功！", "レコードを登録しました。", "/hydrangea/ResultServlet"));
+//			     request.setAttribute("result",
+//		              new Result("登録成功！", "レコードを登録しました。", "/hydrangea/ResultServlet"));
 //		}
 //			else {												// 登録失敗
 //				request.setAttribute("result",

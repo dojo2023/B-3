@@ -314,10 +314,10 @@
                     <tr>
                         <td>
                             <label>画像
-                                <input type="file" name="photo" id="photo" value="" multiple="multiple" alt=""
+                                <input type="file" name="photo" id="photo"  multiple="multiple"
+                                    onchange="previewImage(this);"
                                     accept="image/*">
-
-
+                                    <img id="preview" src="" style = "max-width:150px;">
                             </label>
                         </td>
                     </tr>
@@ -395,8 +395,8 @@
                 <p id="remarks_shopResult"></p>
 
                 <button type="button" onclick="editInfo()">訂正</button>
-               <button type="button" onclick="register()">登録</button>
-               <button type="submit">送信</button>
+               <!--  <button type="button" onclick="register()">登録</button>-->
+               <button type="submit" name="regist">登録</button>
             </div>
 
         </form>
