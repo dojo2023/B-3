@@ -5,7 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>問い合わせ結果 | Hydrangea</title>
-<link rel="stylesheet" href="css/menu.css"><!--cssのリンク-->
+<link rel="stylesheet" href="css/menu.css"><!-- ハンバーガーメニュー用css -->
 
 <!--サーブレットのリンク--><!--削除の申請結果コメント-->
 </head>
