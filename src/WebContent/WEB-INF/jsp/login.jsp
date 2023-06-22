@@ -9,6 +9,7 @@
 <body>
 <h1>ログイン</h1>
 <form method="POST" action="/hydrangea/LoginServlet" style="border: solid 3px; height: 40%;">
+${message}
 <p style="margin-top: 10px; margin-bottom: 3px;">ID・メールアドレス</p>
 <input type="text" name="id" style="width: 50%;"><br>
 パスワード<br>
