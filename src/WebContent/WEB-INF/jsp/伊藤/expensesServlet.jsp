@@ -43,163 +43,95 @@
             </ul>
         </div>
         <!--ここまでメニュー-->
-    </div>
-    <style>
-        .menu-btn {
-        position: fixed;
-        top: 10px;
-        right: 10px;
-        display: flex;
-        height: 60px;
-        width: 60px;
-        justify-content: center;
-        align-items: center;
-        z-index: 90;
-        background-color: #eeece9;
-    }
-    .menu-btn span,
-    .menu-btn span:before,
-    .menu-btn span:after {
-        content: '';
-        display: block;
-        height: 3px;
-        width: 25px;
-        border-radius: 3px;
-        background-color: black;
-        position: absolute;
-    }
-    .menu-btn span:before {
-        bottom: 8px;
-    }
-    .menu-btn span:after{
-        top: 8px;
-    }
-    #menu-btn-check:checked ~ .menu-btn span {
-        background-color: rgba(255, 255, 255, 0);/*メニューオープン時は真ん中の線を透明にする*/
-    }
-    #menu-btn-check:checked ~ .menu-btn span::before {
-        bottom: 0;
-        transform: rotate(45deg);
-    }
-    #menu-btn-check:checked ~ .menu-btn span::after {
-        top: 0;
-        transform: rotate(-45deg);
-    }
-    #menu-btn-check {
-        display: none;
-    }
-    .menu-content {
-        width: 25%;
-        height: 100%;
-        position: fixed;
-        top: 0;
-        right: 100%;/*leftの値を変更してメニューを画面外へ*/
-        z-index: 80;
-        background-color: #c0c0c0;
-        transition: all 0.5s;/*アニメーション設定*/
-    }
-    .menu-content ul {
-        padding: 70px 10px 0;
-    }
-    .menu-content ul li {
-        border-bottom: solid 1px #000000;
-        list-style: none;
-    }
-    .menu-content ul li a {
-        display: block;
-        width: 100%;
-        font-size: 15px;
-        box-sizing: border-box;
-        color:#000000;
-        text-decoration: none;
-        padding: 9px 15px 10px 0;
-        position: relative;
-    }
-    .menu-content ul li a::before {
-        content: "";
-        width: 7px;
-        height: 7px;
-        border-top: solid 2px #000000;
-        border-right: solid 2px #000000;
-        transform: rotate(45deg);
-        position: absolute;
-        right: 11px;
-        top: 16px;
-    }
-    #menu-btn-check:checked ~ .menu-content {
-        right: 0;/*メニューを画面内へ*/
-    }
-    .menu-content a:hover {
-        /*color: #e3937a;*/
-        font-weight:800;
-    }
-    .menu-content a:active {
-        color: blue;
-    }
 
-
-    </style>
 </header>
 <body>
+	<form method="POST" action="/hydrangea/ExpensesServlet">
+    <div id="result" style="display: none;">
+        <h2>入力結果:</h2>
+
+        <p id="startResult"></p>
+        <p id="applicantResult"></p>
+        <p id="start2Result"></p>
+        <p id="contentResult"></p>
+        <p id="payResult"></p>
+        <p id="feeResult"></p>
+        <p id="remarksResult"></p>
+        <p id="photoResult"></p>
+
+
+        <button type="button" onclick="correct2Info()">訂正</button>
+        <a href="/hydrangea/ExpensesServlet"><button type="button" onclick="back2Form()">戻る</button></a>
+    </div>
+
+<div id="expenseTemplate">
 <h1>経費申請書テンプレート</h1>
 <hr>
-<form method="POST" action="">
-<table id="">
-
+<table>
 
     <p>経費申請書</p>
 
     <tr>
         <td>
-            <label>更新日：
-                <input type="date" id="start" name="trip-start"
-                value="2023-06-01"
-                min="2023-01-01" max="2100-12-31"><br>
-            </label>
+            <input type="date" id="expenseTemplate_start" name="trip-start"
+                value="2023-06-20"
+                min="2023-01-01" max="2200-12-31">
         </td>
     </tr>
 
     <tr>
         <td>
-            <label>申請者：
-                <input type="text" name="APPLICANT" value=""><br>
-            </label>
+            <input type="text" id="expenseTemplate_applicant" required placeholder="申請者">
         </td>
     </tr>
-</table>
-<table>
-<tr><th>日付</th><th>内容</th><th>支払先</th><th>金額</th><th>備考</th></tr>
 
-<tr><td><input type="text" name="DATE"></td>
-
-<td><input type="text" name="CONTENT"></td>
-
-<td><input type="text" name="PAYABLE"></td>
-
-
-<td><input type="text" name="MONEY"></td>
-
-<td><input type="text" name="REMARKS"></td></tr>
-
-</table>
-
-<table>
-
-<tr><th>領収書添付欄</th></tr>
     <tr>
         <td>
-            <textarea cols="50" rows="10"></textarea>
+            <input type="date" id="expenseTemplate_start2" name="trip-start"
+                value="2023-06-20"
+                min="2023-01-01" max="2200-12-31">
         </td>
     </tr>
 
     <tr>
-		<td><input type="submit" name="SUBMIT" value="作成"><br></td>
-		<td><input type="submit" name="SUBMIT" value="戻る"><br></td>
+        <td>
+            <input type="text" id="expenseTemplate_content" required placeholder="内容">
+        </td>
     </tr>
 
-</table>
+    <tr>
+        <td>
+            <input type="text" id="expenseTemplate_pay" required placeholder="支払先">
+        </td>
+    </tr>
 
-</form>
+    <tr>
+        <td>
+            <input type="text" id="expenseTemplate_fee" required placeholder="金額">
+        </td>
+    </tr>
+
+    <tr>
+        <td>
+            <input type="text" id="expenseTemplate_remarks" required placeholder="備考">
+        </td>
+    </tr>
+
+    <tr>
+        <td>
+            <input type="file" id="expenseTemplate_photo">
+        </td>
+    </tr>
+
+    <tr>
+        <td>
+            <button type="button" onclick="expenseTemplateInfo()">作成</button>
+        </td>
+    </tr>
+</div>
+
+</table>
+<script src="script.js"></script>
 </body>
 <footer>
     <p>Copyright &copy; 2023 Hydrangea All Rights Reserved.</p>

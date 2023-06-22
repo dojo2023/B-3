@@ -46,7 +46,7 @@
                     <a href="/hydrangea/ExpensesServlet">経費申請書テンプレート</a>
                 </li>
         <li>
-                    <a href="/hydrangea/LoginServlet">ログアウト</a>
+                    <a href="/hydrangea/LogoutServlet">ログアウト</a>
                 </li>
             </ul>
             </div>
