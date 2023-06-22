@@ -1,18 +1,15 @@
 @charset "UTF-8";
 
-body {
-    margin:0 0 0 0;                 /*ウィンドウの余白*/
-    background-color: #ffffff;    /*背景色*/
-}
-
 .contents{
 	display: flex;
-	
 }
 
 /*検索ウィンドウまわりのcss*/
 .search_window{
     background-color: #ababab;
+}
+.search_window_top{
+    background-color: #ffffff;
 }
 #pop-up {
 	display: none; /* label でコントロールするので input は非表示に */
