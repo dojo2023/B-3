@@ -201,9 +201,14 @@ public class RegistServlet extends HttpServlet {
 		sh.setSheet_other(sheet_other);
 
 
+		if(sheet_table!=null) {
+		sh.setSheet_table(true);
+		}
 
-		sh.setSheet_table(sheet_table);
-		sh.setSheet_tatami(sheet_tatami);
+		if(sheet_tatami!=null) {
+		sh.setSheet_tatami(true);
+		}
+
 
 
 
@@ -233,7 +238,7 @@ public class RegistServlet extends HttpServlet {
 
 	//移動先のサーブレットへリダイレクトするようにする。
 
-	response.sendRedirect("/hydrangea/LoginServlet");
+	response.sendRedirect("/hydrangea/ResultServlet");
 
 //	}else {
 

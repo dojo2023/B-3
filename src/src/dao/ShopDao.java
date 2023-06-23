@@ -111,9 +111,9 @@ public boolean insert(Shops card) {
 
 			pStmt.setString(22, card.getTabaco());
 
-			pStmt.setString(23, card.getSheet_table());
+			pStmt.setBoolean(23, card.getSheet_table());
 
-			pStmt.setString(24, card.getSheet_tatami());
+			pStmt.setBoolean(24, card.getSheet_tatami());
 
 			pStmt.setString(25, card.getSheet_other());
 

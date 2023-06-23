@@ -25,8 +25,8 @@ public class Shops implements Serializable {
 	private int distance;
 	private String address;
 	private String tabaco;
-	private String sheet_table;
-	private String sheet_tatami;
+	private Boolean sheet_table;
+	private Boolean sheet_tatami;
 	private String sheet_other;
 	private int capacity;
 	private String eat_drink;
@@ -62,8 +62,8 @@ public class Shops implements Serializable {
 			 int distance,
 			 String address,
 			 String tabaco,
-			 String sheet_table,
-			 String sheet_tatami,
+			 Boolean sheet_table,
+			 Boolean sheet_tatami,
 			 String sheet_other,
 			 int capacity,
 			 String eat_drink,
@@ -136,8 +136,8 @@ public class Shops implements Serializable {
 		this.distance = 0;
 		this.address = "";
 		this.tabaco = "";
-		this.sheet_table = "";
-		this.sheet_tatami = "";
+		this.sheet_table = false;
+		this.sheet_tatami = false;
 		this.sheet_other = "";
 		this.capacity = 0;
 		this.eat_drink = "";
@@ -372,22 +372,22 @@ public class Shops implements Serializable {
 	}
 
 
-	public String getSheet_table() {
+	public Boolean getSheet_table() {
 		return sheet_table;
 	}
 
 
-	public void setSheet_table(String sheet_table) {
+	public void setSheet_table(Boolean sheet_table) {
 		this.sheet_table = sheet_table;
 	}
 
 
-	public String getSheet_tatami() {
+	public Boolean getSheet_tatami() {
 		return sheet_tatami;
 	}
 
 
-	public void setSheet_tatami(String sheet_tatami) {
+	public void setSheet_tatami(Boolean sheet_tatami) {
 		this.sheet_tatami = sheet_tatami;
 	}
 
@@ -490,5 +490,8 @@ public class Shops implements Serializable {
 	public void setId_users(int id_users) {
 		this.id_users = id_users;
 	}
+
+
+
 
 }
