@@ -226,7 +226,7 @@ td.is-disabled {
 <div id="calendar"  style="margin-left: 5%; margin-right: 5%;"></div>
 <br><br><br><br><br>
 <script>
-  const weeks = ['日', '月', '火', '水', '木', '金', '土']
+const weeks = ['日', '月', '火', '水', '木', '金', '土']
 const date = new Date()
 let year = date.getFullYear()
 let month = date.getMonth() + 1
@@ -289,7 +289,7 @@ function createCalendar(year, month) {
     }
     calendarHtml += '</table>'
 
-    return calendarHtml
+    return calendarHtmlshowCalendar(year, month);
 }
 
 
