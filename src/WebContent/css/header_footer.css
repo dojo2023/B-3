@@ -1,0 +1,28 @@
+@charset "UTF-8";
+@charset "UTF-8";
+/* ヘッダー(ロゴ)フッター用 */
+
+h1{
+    text-align: center;
+    vertical-align: middle;
+    margin: 0;
+    height:80px;
+    background-color: rgb(255, 149, 0, 0.8);   /*カラーコードだと#ff9500*/
+
+}
+
+
+footer{
+    text-align: right;
+    margin: 0;
+    height:60px;
+    background-color: #565045;
+
+}
+
+footer p{
+    margin: 0;
+    padding-top: 20px;
+    color: #ffffff;
+    vertical-align: middle;
+}
