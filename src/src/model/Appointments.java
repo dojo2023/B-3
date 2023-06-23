@@ -4,22 +4,22 @@ import java.io.Serializable;
 public class  Appointments implements Serializable {
 
 	//他テーブルから引っ張ってくるもの
-	private String  id_users;
-	private String  id_shops;
+	private int  id_users;
+	private int  id_shops;
 
 
-	private String  id_appointments;
+	private int  id_appointments;
 	private String  created_at;
 	private String  updated_at;
 	private String  appointment_date;
 	private String  appointment_time;
 	private String  department;
-	private String  people;
+	private int  people;
 	private String  remarks_reserve
 ;
 	//入力された値を引数とするメソッド
-	public Appointments(String id_users, String id_shops, String id_appointments, String created_at, String updated_at, String appointment_date, String appointment_time, String department,
-			 String people, String remarks_reserve) {
+	public Appointments(int id_users, int id_shops, int id_appointments, String created_at, String updated_at, String appointment_date, String appointment_time, String department,
+			 int people, String remarks_reserve) {
 
 		super();
 		this.id_users = id_users;
@@ -37,36 +37,36 @@ public class  Appointments implements Serializable {
 	//引数がない場合は空欄にするメソッド
 	public Appointments() {
 		super();
-		this.id_users = "";
-		this.id_shops = "";
-		this.id_appointments = "";
+		this.id_users = 0;
+		this.id_shops = 0;
+		this.id_appointments = 0;
 		this.created_at = "";
 		this.updated_at = "";
 		this.appointment_date = "";
 		this.appointment_time = "";
 		this.department = "";
-		this.people ="";
+		this.people = 0;
 		this.remarks_reserve = "";
 
 }
-	public String getIdUsers() {
+	public int getIdUsers() {
 		return id_users;
 	}
-	public void setIdUsers(String id_users) {
+	public void setIdUsers(int id_users) {
 		this.id_users = id_users;
 	}
 
-	public String getIdShops() {
+	public int getIdShops() {
 		return id_shops;
 	}
-	public void setIdShops(String id_shops) {
+	public void setIdShops(int id_shops) {
 		this.id_shops = id_shops;
 	}
 
-	public String getIdAppointments() {
+	public int getIdAppointments() {
 		return id_appointments;
 	}
-	public void setIdAppointments(String id_appointments) {
+	public void setIdAppointments(int id_appointments) {
 		this.id_appointments = id_appointments;
 	}
 
@@ -109,10 +109,10 @@ public class  Appointments implements Serializable {
 	}
 
 
-	public String getPeoplel() {
+	public int getPeoplel() {
 		return people;
 	}
-	public void setPeople(String people) {
+	public void setPeople(int people) {
 		this.people = people;
 	}
 
