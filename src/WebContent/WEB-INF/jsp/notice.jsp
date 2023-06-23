@@ -106,7 +106,7 @@
                 <hr>
                 <p>
                  ・
-                 <a href="">2023/6/6<br>「居酒屋のんべえ」</a>
+                 <a href="/hydrangea/NewShopServlet?id_shops=1">2023/6/6<br>「居酒屋のんべえ」</a>
                 </p>
                 <p>
                 ・
@@ -186,11 +186,7 @@
 
         </main>
         <!--メインここまで-->
-        <!--フッター-->
-        <footer>
-            <p>Copyright &copy; 2023 Hydrangea All Rights Reserved.</p>
-        </footer>
-        <!--フッターここまで-->
+
     </body>
     <footer>
         <p>Copyright &copy; 2023 Hydrangea All Rights Reserved.</p>
