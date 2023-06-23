@@ -51,15 +51,42 @@ public boolean insert(Shops card) {
 
 			pStmt.setInt(5, card.getPrice_min());
 
+
+			if (card.getOpen_hei() != null && !card.getOpen_hei().equals("")) {
 			pStmt.setString(6, card.getOpen_hei());
+	        }
+	        else {
+		    pStmt.setString(6, null);
+	        }
 
+
+			if (card.getClose_hei() != null && !card.getClose_hei().equals("")) {
 			pStmt.setString(7, card.getClose_hei());
+			 }
+	        else {
+		    pStmt.setString(7, null);
+	        }
 
+
+
+			if (card.getOpen_kyu() != null && !card.getOpen_kyu().equals("")) {
 			pStmt.setString(8, card.getOpen_kyu());
+	         }
+            else {
+            pStmt.setString(8, null);
+             }
 
+
+			if (card.getClose_kyu() != null && !card.getClose_kyu().equals("")) {
 			pStmt.setString(9, card.getClose_kyu());
+            }
+            else {
+            pStmt.setString(9, null);
+            }
+
 
 			pStmt.setString(10, card.getHoliday_mon());
+
 
 			pStmt.setString(11, card.getHoliday_tue());
 
