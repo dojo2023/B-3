@@ -237,7 +237,7 @@ public class RegistServlet extends HttpServlet {
 
 //if (request.getParameter("regist").equals("登録")) {
  if (bDao.insert(sh)) {
-//		System.out.println("画像ＩＦphoto；"+photo);
+//
 //		request.setAttribute("result",
 //				new Result("登録成功！", "レコードを登録しました。", "/simpleBC/ResultServlet"));
 //			}
@@ -247,6 +247,7 @@ public class RegistServlet extends HttpServlet {
 	response.sendRedirect("/hydrangea/ResultServlet");
 
 	}else {//登録失敗時の処理
+//		response.sendRedirect("/hydrangea/ResultMissServlet");
 
 //	}
 	}

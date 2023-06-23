@@ -39,7 +39,7 @@
   if (shop_name === "") {
     alert("名前は必須です。");
     return;
-  } else if (genre === "選択してください") {
+  } else if (photo !== "") {
     alert("ジャンルは必須です。");
     return;
   }

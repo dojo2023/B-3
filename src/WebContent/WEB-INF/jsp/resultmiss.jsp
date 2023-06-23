@@ -84,10 +84,11 @@
                 </ol>
                 </h2>
 
-<h1>完了しました</h1>
+<h1>失敗しました。</h1>
 
 
-<a href="/hydrangea/MenuServlet">メニューへ戻る</a>
+<input type=submit href="/hydrangea/MenuServlet" >メニューに戻る
+
 
 </body>
 </html>

@@ -12,6 +12,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.Part;
 
+import dao.ShopDao;
+import model.Shops;
+
 /**
  * Servlet implementation class UpdateServlet
  */
@@ -102,24 +105,138 @@ public class UpdateServlet extends HttpServlet {
 
 
 
-		//name属性がpictのファイルをPartオブジェクトとして取得
-
-		Part part=request.getPart("photo");
-
-		//ファイル名を取得
-		String photo2= part.getSubmittedFileName();
-
-		//アップロードするフォルダ
-		String path=getServletContext().getRealPath("/upload");
-
-		System.out.println("画像パス"+path);
-		System.out.println("画像パス２photo；"+photo2);
+				if (request.getParameter("SUBMIT").equals("更新")) {
 
 
-			part.write(path+File.separator+photo2);
+		// 更新処理を行う
+				ShopDao bDao = new ShopDao();
 
-		System.out.println("画像パス２photo；"+photo2);
+				Shops sh = new Shops();
+
+				sh.setAddress(address);
+
+				if(capacity != "") {
+				sh.setCapacity(Integer.parseInt(capacity));
+				}
+				sh.setClose_hei(close_hei);
+				sh.setClose_kyu(close_kyu);
+				if(distance != "") {
+				sh.setDistance(Integer.parseInt(distance));
+				}
+				sh.setEat_drink(eat_drink);
+				sh.setGenre(genre);
+				sh.setGenre_form(genre_form);
 
 
+				if(holiday_fri!=null) {
+					sh.setHoliday_fri(true);
+				}
+
+				if(holiday_mon!=null) {
+					sh.setHoliday_mon(true);
+				}
+
+				if(holiday_nenmatsu!=null) {
+					sh.setHoliday_nenmatsu(true);
+				}
+
+				sh.setHoliday_other(holiday_other);
+
+
+				if(holiday_sat!=null) {
+					sh.setHoliday_sat(true);
+				}
+
+				if(holiday_sun!=null) {
+					sh.setHoliday_sun(true);
+				}
+
+				if(holiday_syuku!=null) {
+					sh.setHoliday_syuku(true);
+				}
+
+				if(holiday_thu!=null) {
+					sh.setHoliday_thu(true);
+				}
+
+				if(holiday_tue!=null) {
+					sh.setHoliday_tue(true);
+				}
+
+				if(holiday_wed!=null) {
+					sh.setHoliday_wed(true);
+				}
+				sh.setHomepage(homepage);
+				sh.setOpen_hei(open_hei);
+				sh.setOpen_kyu(open_kyu);
+				sh.setOther(other);
+
+				//name属性がpictのファイルをPartオブジェクトとして取得
+
+				Part part=request.getPart("photo");
+				System.out.println("part"+part);
+				if(part != null) {
+					//ファイル名を取得
+					String filename = part.getSubmittedFileName();
+					//アップロードするフォルダ
+					String path=getServletContext().getRealPath("/upload");
+//					System.out.println("画像パス"+path);
+//					System.out.println("画像パス２photo；"+filename);
+
+
+					part.write(path+File.separator+filename);
+
+
+				sh.setFilename(filename);
+				}
+
+				if(price_max != "") {
+				sh.setPrice_max(Integer.parseInt(price_max));
+				}
+				if(price_min != "") {
+				sh.setPrice_min(Integer.parseInt(price_min));
+				}
+				sh.setRemarks_shop(remarks_shop);
+				if(score != "") {
+				sh.setScore(Integer.parseInt(score));
+				}
+				sh.setSheet_other(sheet_other);
+
+
+				if(sheet_table!=null) {
+				sh.setSheet_table(true);
+				}
+
+				if(sheet_tatami!=null) {
+				sh.setSheet_tatami(true);
+				}
+
+
+
+
+
+				sh.setShop_name(shop_name);
+				sh.setTabaco(tabaco);
+				sh.setTel(tel);
+				//セッションスコープからとってくる
+				sh.setId_users(1);
+
+
+
+		//if (request.getParameter("regist").equals("登録")) {
+				if (bDao.update(sh)) {
+		//
+//				request.setAttribute("result",
+//						new Result("登録成功！", "レコードを登録しました。", "/simpleBC/ResultServlet"));
+//					}
+
+		//
+
+			response.sendRedirect("/hydrangea/ResultServlet");
+
+			}else {//登録失敗時の処理
+//				response.sendRedirect("/hydrangea/ResultMissServlet");
+}
+}
 }
 }

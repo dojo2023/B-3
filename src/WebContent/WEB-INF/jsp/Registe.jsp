@@ -103,7 +103,7 @@
 
                     <tr>
                         <td>
-                            <label>ジャンル（必須）
+                            <label>ジャンル
                                 <select type="text" name="genre" id="genre" value="" placeholder="ジャンル" required>
                                     <option hidden>選択して下さい</option>
                                     <option value="和食">和食</option>
@@ -118,7 +118,7 @@
 
                     <tr>
                         <td>
-                            <label>形態（必須）
+                            <label>形態ｖ
                                 <select type="text" name="genre_form" id="genre_form" value="" placeholder="形態"
                                     required>
                                     <option hidden>選択して下さい</option>
@@ -138,10 +138,10 @@
                     <tr>
                         <td>
                             <label>価格
-                                <input type="text" name="price_min" id="price_min" value="0" placeholder="下限">～
+                                <input type="number" name="price_min" id="price_min" value="0" placeholder="下限">～
                             </label>
                             <label>
-                                <input type="text" name="price_max" id="price_max" value="0" placeholder="上限">円<br>
+                                <input type="number" name="price_max" id="price_max" value="0" placeholder="上限">円<br>
                             </label>
                         </td>
                     </tr>
@@ -209,7 +209,7 @@
                     <tr>
                         <td>
                             <label>会社からの距離
-                                <input type="text" name="distance" id="distance" value="0" placeholder="">M<br>
+                                <input type="number" name="distance" id="distance" value="0" placeholder="">M<br>
                             </label>
                         </td>
                     </tr>
@@ -247,7 +247,7 @@
                     <tr>
                         <td>
                             <label>規模
-                                <input type="text" name="capacity" id="capacity" value="0" placeholder="">人<br>
+                                <input type="number" name="capacity" id="capacity" value="0" placeholder="">人<br>
                             </label>
                         </td>
                     </tr>
@@ -286,7 +286,7 @@
                     <tr>
                         <td>
                             <label>電話番号
-                                <input type="text" name="tel" id="tel" value="" placeholder=""><br>
+                                <input type="number" name="tel" id="tel" value="" placeholder=""><br>
                             </label>
                         </td>
                     </tr>
@@ -309,7 +309,7 @@
 
                     <tr>
                         <td>
-                            <label>画像
+                            <label>画像(必須)
                                 <input type="file" name="photo" id="photo"  multiple="multiple"
                                     onchange="previewImage(this);"
                                     accept="image/*">
