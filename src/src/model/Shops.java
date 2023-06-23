@@ -6,8 +6,8 @@ public class Shops implements Serializable {
 	private String shop_name;
 	private String genre;
 	private String genre_form;
-	private String price_max;
-	private String price_min;
+	private int price_max;
+	private int price_min;
 	private String open_hei;
 	private String close_hei;
 	private String open_kyu;
@@ -22,29 +22,29 @@ public class Shops implements Serializable {
 	private String holiday_syuku;
 	private String holiday_nenmatsu;
 	private String holiday_other;
-	private String distance;
+	private int distance;
 	private String address;
 	private String tabaco;
 	private String sheet_table;
 	private String sheet_tatami;
 	private String sheet_other;
-	private String capacity;
+	private int capacity;
 	private String eat_drink;
-	private String score;
+	private int score;
 	private String tel;
 	private String homepage;
 	private String other;
 	private String photo;
 	private String remarks_shop;
-	private String id_users;
+	private int id_users;
 
 
 
 	public Shops(String shop_name,
 			 String genre,
 			 String genre_form,
-			 String price_max,
-			 String price_min,
+			 int price_max,
+			 int price_min,
 			 String open_hei,
 			 String close_hei,
 			 String open_kyu,
@@ -59,21 +59,21 @@ public class Shops implements Serializable {
 			 String holiday_syuku,
 			 String holiday_nenmatsu,
 			 String holiday_other,
-			 String distance,
+			 int distance,
 			 String address,
 			 String tabaco,
 			 String sheet_table,
 			 String sheet_tatami,
 			 String sheet_other,
-			 String capacity,
+			 int capacity,
 			 String eat_drink,
-			 String score,
+			 int score,
 			 String tel,
 			 String homepage,
 			 String other,
 			 String photo,
 			 String remarks_shop,
-			 String id_users) {
+			 int id_users) {
 		super();
 		this.shop_name =shop_name;
 		this.genre = genre;
@@ -117,8 +117,8 @@ public class Shops implements Serializable {
 		this.shop_name ="";
 		this.genre = "";
 		this.genre_form = "";
-		this.price_max = "";
-		this.price_min = "";
+		this.price_max = 0;
+		this.price_min = 0;
 		this.open_hei= "";
 		this.close_hei = "";
 		this.open_kyu = "";
@@ -133,21 +133,21 @@ public class Shops implements Serializable {
 		this.holiday_syuku = "";
 		this.holiday_nenmatsu = "";
 		this.holiday_other = "";
-		this.distance = "";
+		this.distance = 0;
 		this.address = "";
 		this.tabaco = "";
 		this.sheet_table = "";
 		this.sheet_tatami = "";
 		this.sheet_other = "";
-		this.capacity = "";
+		this.capacity = 0;
 		this.eat_drink = "";
-		this.score = "";
+		this.score = 0;
 		this.tel = "";
 		this.homepage = "";
 		this.other = "";
 		this.photo = "";
 		this.remarks_shop = "";
-		this.id_users = "";
+		this.id_users = 0;
 
 	}
 
@@ -182,22 +182,22 @@ public class Shops implements Serializable {
 	}
 
 
-	public String getPrice_max() {
+	public int getPrice_max() {
 		return price_max;
 	}
 
 
-	public void setPrice_max(String price_max) {
+	public void setPrice_max(int price_max) {
 		this.price_max = price_max;
 	}
 
 
-	public String getPrice_min() {
+	public int getPrice_min() {
 		return price_min;
 	}
 
 
-	public void setPrice_min(String price_min) {
+	public void setPrice_min(int price_min) {
 		this.price_min = price_min;
 	}
 
@@ -342,12 +342,12 @@ public class Shops implements Serializable {
 	}
 
 
-	public String getDistance() {
+	public int getDistance() {
 		return distance;
 	}
 
 
-	public void setDistance(String distance) {
+	public void setDistance(int distance) {
 		this.distance = distance;
 	}
 
@@ -402,12 +402,12 @@ public class Shops implements Serializable {
 	}
 
 
-	public String getCapacity() {
+	public int getCapacity() {
 		return capacity;
 	}
 
 
-	public void setCapacity(String capacity) {
+	public void setCapacity(int capacity) {
 		this.capacity = capacity;
 	}
 
@@ -422,12 +422,12 @@ public class Shops implements Serializable {
 	}
 
 
-	public String getScore() {
+	public int getScore() {
 		return score;
 	}
 
 
-	public void setScore(String score) {
+	public void setScore(int score) {
 		this.score = score;
 	}
 
@@ -482,14 +482,16 @@ public class Shops implements Serializable {
 	}
 
 
-	public String getId_users() {
+	public int getId_users() {
 		return id_users;
 	}
 
 
-	public void setId_users(String id_users) {
+	public void setId_users(int id_users) {
 		this.id_users = id_users;
 	}
+
+
 
 
 }

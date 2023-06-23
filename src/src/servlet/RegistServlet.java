@@ -1,6 +1,5 @@
 package servlet;
 
-import java.io.File;
 import java.io.IOException;
 
 import javax.servlet.RequestDispatcher;
@@ -122,7 +121,7 @@ public class RegistServlet extends HttpServlet {
 		System.out.println("画像パス２photo；"+photo1);
 
 
-			part.write(path+File.separator+photo1);
+			//part.write(path+File.separator+photo1);
 
 		System.out.println("画像パス２photo；"+photo1);
 
@@ -141,10 +140,10 @@ public class RegistServlet extends HttpServlet {
 		Shops sh = new Shops();
 
 		sh.setAddress(address);
-		sh.setCapacity(capacity);
+		sh.setCapacity(0);
 		sh.setClose_hei(close_hei);
 		sh.setClose_kyu(close_kyu);
-		sh.setDistance(distance);
+		sh.setDistance(0);
 		sh.setEat_drink(eat_drink);
 		sh.setGenre(genre);
 		sh.setGenre_form(genre_form);
@@ -163,16 +162,17 @@ public class RegistServlet extends HttpServlet {
 		sh.setOpen_kyu(open_kyu);
 		sh.setOther(other);
 		sh.setPhoto(photo);
-		sh.setPrice_max(price_max);
-		sh.setPrice_min(price_min);
+		sh.setPrice_max(0);
+		sh.setPrice_min(0);
 		sh.setRemarks_shop(remarks_shop);
-		sh.setScore(score);
+		sh.setScore(0);
 		sh.setSheet_other(sheet_other);
 		sh.setSheet_table(sheet_table);
 		sh.setSheet_tatami(sheet_tatami);
 		sh.setShop_name(shop_name);
 		sh.setTabaco(tabaco);
 		sh.setTel(tel);
+		sh.setId_users(1);
 
 
 

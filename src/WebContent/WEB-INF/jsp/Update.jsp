@@ -1,9 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
-<%
-	String name=(String)request.getAttribute("name");
-	String word=(String)request.getAttribute("word");
-	String filename=(String)request.getAttribute("filename");
-%>
+
 <!DOCTYPE html>
 <html>
 
@@ -317,7 +313,9 @@
                                 <input type="file" name="photo" id="photo"  multiple="multiple"
                                  onchange="previewImage(this);" accept="image/*">
                                     <img id="preview" src="" style = "max-width:150px;">
+
                             </label>
+
                         </td>
                     </tr>
 
@@ -398,6 +396,7 @@
 
             </div>
 </form>
+
 
             <div id="success" style="display: none;">
                 <h2>

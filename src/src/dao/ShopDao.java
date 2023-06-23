@@ -24,13 +24,13 @@ public boolean insert(Shops card) {
 		conn = DriverManager.getConnection("jdbc:h2:file:C:/dojo6Data/B3", "sa", "");
 
 		// SQL文を準備する・(created_at,updated_atを含めて３６こ
-		String sql ="INSERT INTO "
+		String sql ="INSERT INTO SHOPS "
 				+ "(created_at,updated_at,shop_name,genre,genre_form,price_max,price_min,"
-				+ "open_hei,lose_hei,open_kyu,close_kyu,"
+				+ "open_hei,close_hei,open_kyu,close_kyu,"
 				+ "holiday_mon,holiday_tue,holiday_wed,holiday_thu,holiday_fri,holiday_sat,holiday_sun,holiday_syuku,"
 				+ "holiday_nenmatsu,holiday_other,distance,address,tabaco,sheet_table,sheet_tatami,sheet_other,"
 				+ "capacity,eat_drink,score,tel,homepage,other,photo,remarks_shop,id_users) "
-				+ "VALES"
+				+ "VALUES "
 				+ "(CURRENT_TIMESTAMP,CURRENT_TIMESTAMP,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
 
 
@@ -47,9 +47,9 @@ public boolean insert(Shops card) {
 
 			pStmt.setString(3, card.getGenre_form());
 
-			pStmt.setString(4, card.getPrice_max());
+			pStmt.setInt(4, card.getPrice_max());
 
-			pStmt.setString(5, card.getPrice_min());
+			pStmt.setInt(5, card.getPrice_min());
 
 			pStmt.setString(6, card.getOpen_hei());
 
@@ -79,7 +79,7 @@ public boolean insert(Shops card) {
 
 			pStmt.setString(19, card.getHoliday_other());
 
-			pStmt.setString(20, card.getDistance());
+			pStmt.setInt(20, card.getDistance());
 
 			pStmt.setString(21, card.getAddress());
 
@@ -91,11 +91,11 @@ public boolean insert(Shops card) {
 
 			pStmt.setString(25, card.getSheet_other());
 
-			pStmt.setString(26, card.getCapacity());
+			pStmt.setInt(26, card.getCapacity());
 
 			pStmt.setString(27, card.getEat_drink());
 
-			pStmt.setString(28, card.getScore());
+			pStmt.setInt(28, card.getScore());
 
 			pStmt.setString(29, card.getTel());
 
@@ -107,7 +107,7 @@ public boolean insert(Shops card) {
 
 			pStmt.setString(33, card.getRemarks_shop());
 
-			pStmt.setString(34, card.getId_users());
+			pStmt.setInt(34, card.getId_users());
 
 		// SQL文を実行する
 		if (pStmt.executeUpdate() == 1) {
