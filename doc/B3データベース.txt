@@ -58,6 +58,7 @@ other		varchar(100),
 photo		varchar(50),
 remarks_shop	varchar(200),
 id_users	int,
+flag		int,
 FOREIGN KEY(id_users) REFERENCES users(id_users)
 );
 
