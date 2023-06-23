@@ -85,8 +85,7 @@ public boolean insert(Shops card) {
             }
 
 
-			pStmt.setString(10, card.getHoliday_mon());
-
+			pStmt.setBoolean(10, card.getHoliday_mon());
 
 			pStmt.setString(11, card.getHoliday_tue());
 

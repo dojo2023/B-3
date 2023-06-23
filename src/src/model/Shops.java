@@ -12,15 +12,15 @@ public class Shops implements Serializable {
 	private String close_hei;
 	private String open_kyu;
 	private String close_kyu;
-	private String holiday_mon;
-	private String holiday_tue;
-	private String holiday_wed;
-	private String holiday_thu;
-	private String holiday_fri;
-	private String holiday_sat;
-	private String holiday_sun;
-	private String holiday_syuku;
-	private String holiday_nenmatsu;
+	private Boolean holiday_mon;
+	private Boolean holiday_tue;
+	private Boolean holiday_wed;
+	private Boolean holiday_thu;
+	private Boolean holiday_fri;
+	private Boolean holiday_sat;
+	private Boolean holiday_sun;
+	private Boolean holiday_syuku;
+	private Boolean holiday_nenmatsu;
 	private String holiday_other;
 	private int distance;
 	private String address;
@@ -49,15 +49,15 @@ public class Shops implements Serializable {
 			 String close_hei,
 			 String open_kyu,
 			 String close_kyu,
-			 String holiday_mon,
-			 String holiday_tue,
-			 String holiday_wed,
-			 String holiday_thu,
-			 String holiday_fri,
-			 String holiday_sat,
-			 String holiday_sun,
-			 String holiday_syuku,
-			 String holiday_nenmatsu,
+			 Boolean holiday_mon,
+			 Boolean holiday_tue,
+			 Boolean holiday_wed,
+			 Boolean holiday_thu,
+			 Boolean holiday_fri,
+			 Boolean holiday_sat,
+			 Boolean holiday_sun,
+			 Boolean holiday_syuku,
+			 Boolean holiday_nenmatsu,
 			 String holiday_other,
 			 int distance,
 			 String address,
@@ -123,15 +123,15 @@ public class Shops implements Serializable {
 		this.close_hei = "";
 		this.open_kyu = "";
 		this.close_kyu = "";
-		this.holiday_mon = "";
-		this.holiday_tue = "";
-		this.holiday_wed = "";
-		this.holiday_thu = "";
-		this.holiday_fri = "";
-		this.holiday_sat = "";
-		this.holiday_sun = "";
-		this.holiday_syuku = "";
-		this.holiday_nenmatsu = "";
+		this.holiday_mon = false;
+		this.holiday_tue = false;
+		this.holiday_wed = false;
+		this.holiday_thu = false;
+		this.holiday_fri = false;
+		this.holiday_sat = false;
+		this.holiday_sun = false;
+		this.holiday_syuku = false;
+		this.holiday_nenmatsu = false;
 		this.holiday_other = "";
 		this.distance = 0;
 		this.address = "";
@@ -242,92 +242,92 @@ public class Shops implements Serializable {
 	}
 
 
-	public String getHoliday_mon() {
+	public Boolean getHoliday_mon() {
 		return holiday_mon;
 	}
 
 
-	public void setHoliday_mon(String holiday_mon) {
+	public void setHoliday_mon(Boolean holiday_mon) {
 		this.holiday_mon = holiday_mon;
 	}
 
 
-	public String getHoliday_tue() {
+	public Boolean getHoliday_tue() {
 		return holiday_tue;
 	}
 
 
-	public void setHoliday_tue(String holiday_tue) {
+	public void setHoliday_tue(Boolean holiday_tue) {
 		this.holiday_tue = holiday_tue;
 	}
 
 
-	public String getHoliday_wed() {
+	public Boolean getHoliday_wed() {
 		return holiday_wed;
 	}
 
 
-	public void setHoliday_wed(String holiday_wed) {
+	public void setHoliday_wed(Boolean holiday_wed) {
 		this.holiday_wed = holiday_wed;
 	}
 
 
-	public String getHoliday_thu() {
+	public Boolean getHoliday_thu() {
 		return holiday_thu;
 	}
 
 
-	public void setHoliday_thu(String holiday_thu) {
+	public void setHoliday_thu(Boolean holiday_thu) {
 		this.holiday_thu = holiday_thu;
 	}
 
 
-	public String getHoliday_fri() {
+	public Boolean getHoliday_fri() {
 		return holiday_fri;
 	}
 
 
-	public void setHoliday_fri(String holiday_fri) {
+	public void setHoliday_fri(Boolean holiday_fri) {
 		this.holiday_fri = holiday_fri;
 	}
 
 
-	public String getHoliday_sat() {
+	public Boolean getHoliday_sat() {
 		return holiday_sat;
 	}
 
 
-	public void setHoliday_sat(String holiday_sat) {
+	public void setHoliday_sat(Boolean holiday_sat) {
 		this.holiday_sat = holiday_sat;
 	}
 
 
-	public String getHoliday_sun() {
+	public Boolean getHoliday_sun() {
 		return holiday_sun;
 	}
 
 
-	public void setHoliday_sun(String holiday_sun) {
+	public void setHoliday_sun(Boolean holiday_sun) {
 		this.holiday_sun = holiday_sun;
 	}
 
 
-	public String getHoliday_syuku() {
+	public Boolean getHoliday_syuku() {
 		return holiday_syuku;
 	}
 
 
-	public void setHoliday_syuku(String holiday_syuku) {
+	public void setHoliday_syuku(Boolean holiday_syuku) {
 		this.holiday_syuku = holiday_syuku;
 	}
 
 
-	public String getHoliday_nenmatsu() {
+	public Boolean getHoliday_nenmatsu() {
 		return holiday_nenmatsu;
 	}
 
 
-	public void setHoliday_nenmatsu(String holiday_nenmatsu) {
+	public void setHoliday_nenmatsu(Boolean holiday_nenmatsu) {
 		this.holiday_nenmatsu = holiday_nenmatsu;
 	}
 
@@ -490,7 +490,6 @@ public class Shops implements Serializable {
 	public void setId_users(int id_users) {
 		this.id_users = id_users;
 	}
-
 
 
 

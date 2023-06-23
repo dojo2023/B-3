@@ -147,8 +147,20 @@ public class RegistServlet extends HttpServlet {
 		sh.setEat_drink(eat_drink);
 		sh.setGenre(genre);
 		sh.setGenre_form(genre_form);
-		sh.setHoliday_fri(holiday_fri);
-		sh.setHoliday_mon(holiday_mon);
+
+		if(holiday_fri.equals("on")) {
+		    sh.setHoliday_fri(true);
+		}else {
+			sh.setHoliday_fri(false);
+		}
+
+
+		if(holiday_mon.equals("on")) {
+			sh.setHoliday_mon(true);
+		}else {
+			sh.setHoliday_mon(false);
+		}
+
 		sh.setHoliday_nenmatsu(holiday_nenmatsu);
 		sh.setHoliday_other(holiday_other);
 		sh.setHoliday_sat(holiday_sat);
