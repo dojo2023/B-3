@@ -103,27 +103,13 @@ public class RegistServlet extends HttpServlet {
 		String photo = request.getParameter("photo");
 		String remarks_shop = request.getParameter("remarks_shop");
 
-		System.out.println(holiday_fri);
 
 
 
 
-		//name属性がpictのファイルをPartオブジェクトとして取得
-
-		Part part=request.getPart("photo");
-
-		//ファイル名を取得
-		String filename = part.getSubmittedFileName();
-		//アップロードするフォルダ
-		String path=getServletContext().getRealPath("/upload");
-
-		System.out.println("画像パス"+path);
-		System.out.println("画像パス２photo；"+filename);
 
 
-			part.write(path+File.separator+filename);
-
-		System.out.println("画像パス２photo；"+filename);
+//		System.out.println("画像パス２photo；"+filename);
 
 		//実際にファイルが保存されるパス確認
 		//System.out.println(path);
@@ -140,10 +126,15 @@ public class RegistServlet extends HttpServlet {
 		Shops sh = new Shops();
 
 		sh.setAddress(address);
-		sh.setCapacity(0);
+
+		if(capacity != "") {
+		sh.setCapacity(Integer.parseInt(capacity));
+		}
 		sh.setClose_hei(close_hei);
 		sh.setClose_kyu(close_kyu);
-		sh.setDistance(0);
+		if(distance != "") {
+		sh.setDistance(Integer.parseInt(distance));
+		}
 		sh.setEat_drink(eat_drink);
 		sh.setGenre(genre);
 		sh.setGenre_form(genre_form);
@@ -187,17 +178,40 @@ public class RegistServlet extends HttpServlet {
 		if(holiday_wed!=null) {
 			sh.setHoliday_wed(true);
 		}
-
-
 		sh.setHomepage(homepage);
 		sh.setOpen_hei(open_hei);
 		sh.setOpen_kyu(open_kyu);
 		sh.setOther(other);
+
+		//name属性がpictのファイルをPartオブジェクトとして取得
+
+		Part part=request.getPart("photo");
+		System.out.println("part"+part);
+		if(part != null) {
+			//ファイル名を取得
+			String filename = part.getSubmittedFileName();
+			//アップロードするフォルダ
+			String path=getServletContext().getRealPath("/upload");
+//			System.out.println("画像パス"+path);
+//			System.out.println("画像パス２photo；"+filename);
+
+
+			part.write(path+File.separator+filename);
+
+
 		sh.setFilename(filename);
-		sh.setPrice_max(0);
-		sh.setPrice_min(0);
+		}
+
+		if(price_max != "") {
+		sh.setPrice_max(Integer.parseInt(price_max));
+		}
+		if(price_min != "") {
+		sh.setPrice_min(Integer.parseInt(price_min));
+		}
 		sh.setRemarks_shop(remarks_shop);
-		sh.setScore(0);
+		if(score != "") {
+		sh.setScore(Integer.parseInt(score));
+		}
 		sh.setSheet_other(sheet_other);
 
 
@@ -216,6 +230,7 @@ public class RegistServlet extends HttpServlet {
 		sh.setShop_name(shop_name);
 		sh.setTabaco(tabaco);
 		sh.setTel(tel);
+		//セッションスコープからとってくる
 		sh.setId_users(1);
 
 
@@ -227,20 +242,11 @@ public class RegistServlet extends HttpServlet {
 //				new Result("登録成功！", "レコードを登録しました。", "/simpleBC/ResultServlet"));
 //			}
 
-//			else {												// 登録失敗
-//		request.setAttribute("result",
-//			new Result("登録失敗！", "レコードを登録できませんでした。", "/hydrangea/ResultServlet"));
-
 //
-			// 結果ページにフォワードする
-//			RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/result.jsp");
-//			dispatcher.forward(request, response);
-
-	//移動先のサーブレットへリダイレクトするようにする。
 
 	response.sendRedirect("/hydrangea/ResultServlet");
 
-//	}else {
+	}else {//登録失敗時の処理
 
 //	}
 	}

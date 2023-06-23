@@ -138,10 +138,10 @@
                     <tr>
                         <td>
                             <label>価格
-                                <input type="text" name="price_min" id="price_min" value="" placeholder="下限">～
+                                <input type="text" name="price_min" id="price_min" value="0" placeholder="下限">～
                             </label>
                             <label>
-                                <input type="text" name="price_max" id="price_max" value="" placeholder="上限">円<br>
+                                <input type="text" name="price_max" id="price_max" value="0" placeholder="上限">円<br>
                             </label>
                         </td>
                     </tr>
@@ -149,10 +149,10 @@
                     <tr>
                         <td>
                             <label>平日営業時間
-                                <input type="time" name="open_hei" id="open_hei" value="" placeholder="">～
+                                <input type="time" name="open_hei" id="open_hei" value="0" placeholder="">～
                             </label>
                             <label>
-                                <input type="time" name="close_hei" id="close_hei" value="" placeholder=""><br>
+                                <input type="time" name="close_hei" id="close_hei" value="0" placeholder=""><br>
                             </label>
                         </td>
                     </tr>
@@ -160,10 +160,10 @@
                     <tr>
                         <td>
                             <label>休日営業時間
-                                <input type="time" name="open_kyu" id="open_kyu" value="" placeholder="">～
+                                <input type="time" name="open_kyu" id="open_kyu" value="0" placeholder="">～
                             </label>
                             <label>
-                                <input type="time" name="close_kyu" id="close_kyu" value="" placeholder=""><br>
+                                <input type="time" name="close_kyu" id="close_kyu" value="0" placeholder=""><br>
                             </label>
                         </td>
                     </tr>
@@ -209,7 +209,7 @@
                     <tr>
                         <td>
                             <label>会社からの距離
-                                <input type="text" name="distance" id="distance" value="" placeholder="">M<br>
+                                <input type="text" name="distance" id="distance" value="0" placeholder="">M<br>
                             </label>
                         </td>
                     </tr>
@@ -247,7 +247,7 @@
                     <tr>
                         <td>
                             <label>規模
-                                <input type="text" name="capacity" id="capacity" value="" placeholder="">人<br>
+                                <input type="text" name="capacity" id="capacity" value="0" placeholder="">人<br>
                             </label>
                         </td>
                     </tr>
@@ -266,18 +266,18 @@
                     <tr>
                         <td>
                             <label>評価
-                                <select type="text" name="score" id="score" >
-                                    <option hidden>選択して下さい</option>
-                                    <option name="score_10" value="10:殿堂入り">10:殿堂入り</option>
-                                    <option name="score_9" value="9:名店">9:名店</option>
-                                    <option name="score_8" value="8:優良">8:優良</option>
-                                    <option name="score_7" value="7:おすすめ">7:おすすめ</option>
-                                    <option name="score_6" value="6:それなり">6:それなり</option>
-                                    <option name="score_5" value="5:普通">5:普通</option>
-                                    <option name="score_4" value="4:いまいち">4:いまいち</option>
-                                    <option name="score_3" value="3:おすすめしない">3:おすすめしない</option>
-                                    <option name="score_2" value="2:まずい">2:まずい</option>
-                                    <option name="score_1" value="1:地雷">1:地雷</option>
+                                <select name="score" id="score" >
+                                    <option value=0>選択して下さい</option>
+                                    <option  value="10">10:殿堂入り</option>
+                                    <option value="9">9:名店</option>
+                                    <option value="8">8:優良</option>
+                                    <option  value="7">7:おすすめ</option>
+                                    <option value="6">6:それなり</option>
+                                    <option  value="5">5:普通</option>
+                                    <option  value="4">4:いまいち</option>
+                                    <option  value="3">3:おすすめしない</option>
+                                    <option  value="2">2:まずい</option>
+                                    <option  value="1">1:地雷</option>
                                 </select> /10点<br>
                             </label>
                         </td>
