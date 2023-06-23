@@ -3,10 +3,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>ホームページ</title>
+	<title>TOP|hydrangea</title>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/header_footer.css"><!-- 検索ウィンドウ用css -->
     <link rel="stylesheet" href="css/search_result.css"><!-- 検索ウィンドウ用css -->
 	<link rel="stylesheet" href="css/menu.css"><!-- ハンバーガーメニュー用css -->
+    <!-- <link rel="stylesheet" href="css/calendar.css">カレンダーcss -->
     <link rel="stylesheet" href="css/top.css"><!-- 専用css -->
 
 </head>
@@ -50,14 +52,15 @@
             <!--ここまでメニュー-->
         </div>
  </header>
-<div class="menu_contents">
-<h1>ホームページ</h1>
+<div class="menu_contents" style="background-image:url(img/izakaya.jpg)";>
+<h1>ロゴ</h1>
 
 <!-- 上半分 -->
 <div class="top">
 
 <!-- ランキング -->
     <div class="ranking">
+        <div class="con">
         <p>ランキング</p>
         <table>
         <tr><th>第１位</th><td><a href="/hydrangea/ShopDetailServlet">居屋酒々井</a></td></tr>
@@ -65,10 +68,12 @@
         <tr><th>第３位</th><td><a href="/hydrangea/ShopDetailServlet">パンロマガジン</a></td></tr>
         <tr><th>第４位</th><td><a href="/hydrangea/ShopDetailServlet">Knight&amp;Witch</a></td></tr>
         </table>
+        </div>
     </div>
 
     <!-- コマンド -->
     <div class="command">
+        <div class="con">
         <p>店登録状況</p>
         <table>
         <tr><th>2023/6/15</th><td><a href="">データ削除</a></td></tr>
@@ -76,12 +81,14 @@
         <tr><th>2023/5/28</th><td><a href="">新規登録</a></td></tr>
         <tr><th>2023/5/25</th><td><a href="">データ更新</a></td></tr>
         </table>
+        </div>
     </div>
 
     <!-- カレンダー -->
     <div class="calendar">
-       <p><a href="/hydrangea/CalendarServlet" id="calend">カレンダー</a></p>
-
+        <div class="con">
+        <p><a href="/hydrangea/CalendarServlet">カレンダー</a></p>
+        </div>
     </div>
 
 </div>
@@ -90,6 +97,7 @@
 
 <!-- お知らせ -->
     <div class="information">
+        <div class="con">
         <p>お知らせ</p>
         <table>
         <tr><th>2023/6/18</th><td><a href="">7月の飲み会開催決定のお知らせ</a></td></tr>
@@ -97,10 +105,12 @@
         <tr><th>2023/6/8</th><td><a href="">7月飲み会申し込み開始です！</a></td></tr>
         <tr><th>2023/5/25</th><td><a href="">飲み会参加ありがとうございました！</a></td></tr>
         </table>
+        </div>
     </div>
 
     <!-- 検索機構 -->
     <div class="search">
+    <div class="con">
      <form action="/hydrangea/SearchResultServlet" id="form" style="text-align: right;">
         <input type="text" placeholder="フリーワード検索" style="width: 50%; margin-right: 3px;">
         <button>検索</button>
@@ -212,13 +222,13 @@
                   </div>
         </div>
     </div>
-
+</div>
+</div>
 </div>
 
 <footer>
     <p>Copyright &copy; 2023 Hydrangea All Rights Reserved.</p>
 </footer>
-</div>
-<script href="/js/calendar.js"></script>
+
 </body>
 </html>
