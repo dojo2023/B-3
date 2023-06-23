@@ -51,31 +51,57 @@ public boolean insert(Shops card) {
 
 			pStmt.setInt(5, card.getPrice_min());
 
+
+			if (card.getOpen_hei() != null && !card.getOpen_hei().equals("")) {
 			pStmt.setString(6, card.getOpen_hei());
+	        }
+	        else {
+		    pStmt.setString(6, null);
+	        }
 
+
+			if (card.getClose_hei() != null && !card.getClose_hei().equals("")) {
 			pStmt.setString(7, card.getClose_hei());
+			 }
+	        else {
+		    pStmt.setString(7, null);
+	        }
 
+
+
+			if (card.getOpen_kyu() != null && !card.getOpen_kyu().equals("")) {
 			pStmt.setString(8, card.getOpen_kyu());
+	         }
+            else {
+            pStmt.setString(8, null);
+             }
 
+
+			if (card.getClose_kyu() != null && !card.getClose_kyu().equals("")) {
 			pStmt.setString(9, card.getClose_kyu());
+            }
+            else {
+            pStmt.setString(9, null);
+            }
 
-			pStmt.setString(10, card.getHoliday_mon());
 
-			pStmt.setString(11, card.getHoliday_tue());
+			pStmt.setBoolean(10, card.getHoliday_mon());
 
-			pStmt.setString(12, card.getHoliday_wed());
+			pStmt.setBoolean(11, card.getHoliday_tue());
 
-			pStmt.setString(13, card.getHoliday_thu());
+			pStmt.setBoolean(12, card.getHoliday_wed());
 
-			pStmt.setString(14, card.getHoliday_fri());
+			pStmt.setBoolean(13, card.getHoliday_thu());
 
-			pStmt.setString(15, card.getHoliday_sat());
+			pStmt.setBoolean(14, card.getHoliday_fri());
 
-			pStmt.setString(16, card.getHoliday_sun());
+			pStmt.setBoolean(15, card.getHoliday_sat());
 
-			pStmt.setString(17, card.getHoliday_syuku());
+			pStmt.setBoolean(16, card.getHoliday_sun());
 
-			pStmt.setString(18, card.getHoliday_nenmatsu());
+			pStmt.setBoolean(17, card.getHoliday_syuku());
+
+			pStmt.setBoolean(18, card.getHoliday_nenmatsu());
 
 			pStmt.setString(19, card.getHoliday_other());
 
@@ -85,9 +111,9 @@ public boolean insert(Shops card) {
 
 			pStmt.setString(22, card.getTabaco());
 
-			pStmt.setString(23, card.getSheet_table());
+			pStmt.setBoolean(23, card.getSheet_table());
 
-			pStmt.setString(24, card.getSheet_tatami());
+			pStmt.setBoolean(24, card.getSheet_tatami());
 
 			pStmt.setString(25, card.getSheet_other());
 
@@ -103,7 +129,7 @@ public boolean insert(Shops card) {
 
 			pStmt.setString(31, card.getOther());
 
-			pStmt.setString(32, card.getPhoto());
+			pStmt.setString(32, card.getFilename());
 
 			pStmt.setString(33, card.getRemarks_shop());
 

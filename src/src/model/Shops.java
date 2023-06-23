@@ -12,21 +12,21 @@ public class Shops implements Serializable {
 	private String close_hei;
 	private String open_kyu;
 	private String close_kyu;
-	private String holiday_mon;
-	private String holiday_tue;
-	private String holiday_wed;
-	private String holiday_thu;
-	private String holiday_fri;
-	private String holiday_sat;
-	private String holiday_sun;
-	private String holiday_syuku;
-	private String holiday_nenmatsu;
+	private Boolean holiday_mon;
+	private Boolean holiday_tue;
+	private Boolean holiday_wed;
+	private Boolean holiday_thu;
+	private Boolean holiday_fri;
+	private Boolean holiday_sat;
+	private Boolean holiday_sun;
+	private Boolean holiday_syuku;
+	private Boolean holiday_nenmatsu;
 	private String holiday_other;
 	private int distance;
 	private String address;
 	private String tabaco;
-	private String sheet_table;
-	private String sheet_tatami;
+	private Boolean sheet_table;
+	private Boolean sheet_tatami;
 	private String sheet_other;
 	private int capacity;
 	private String eat_drink;
@@ -34,7 +34,7 @@ public class Shops implements Serializable {
 	private String tel;
 	private String homepage;
 	private String other;
-	private String photo;
+	private String filename;
 	private String remarks_shop;
 	private int id_users;
 
@@ -49,21 +49,21 @@ public class Shops implements Serializable {
 			 String close_hei,
 			 String open_kyu,
 			 String close_kyu,
-			 String holiday_mon,
-			 String holiday_tue,
-			 String holiday_wed,
-			 String holiday_thu,
-			 String holiday_fri,
-			 String holiday_sat,
-			 String holiday_sun,
-			 String holiday_syuku,
-			 String holiday_nenmatsu,
+			 Boolean holiday_mon,
+			 Boolean holiday_tue,
+			 Boolean holiday_wed,
+			 Boolean holiday_thu,
+			 Boolean holiday_fri,
+			 Boolean holiday_sat,
+			 Boolean holiday_sun,
+			 Boolean holiday_syuku,
+			 Boolean holiday_nenmatsu,
 			 String holiday_other,
 			 int distance,
 			 String address,
 			 String tabaco,
-			 String sheet_table,
-			 String sheet_tatami,
+			 Boolean sheet_table,
+			 Boolean sheet_tatami,
 			 String sheet_other,
 			 int capacity,
 			 String eat_drink,
@@ -71,7 +71,7 @@ public class Shops implements Serializable {
 			 String tel,
 			 String homepage,
 			 String other,
-			 String photo,
+			 String filename,
 			 String remarks_shop,
 			 int id_users)
 
@@ -108,7 +108,7 @@ public class Shops implements Serializable {
 		this.tel = tel;
 		this.homepage = homepage;
 		this.other = other;
-		this.photo = photo;
+		this.filename = filename;
 		this.remarks_shop = remarks_shop;
 		this.id_users = id_users;
 
@@ -125,21 +125,21 @@ public class Shops implements Serializable {
 		this.close_hei = "";
 		this.open_kyu = "";
 		this.close_kyu = "";
-		this.holiday_mon = "";
-		this.holiday_tue = "";
-		this.holiday_wed = "";
-		this.holiday_thu = "";
-		this.holiday_fri = "";
-		this.holiday_sat = "";
-		this.holiday_sun = "";
-		this.holiday_syuku = "";
-		this.holiday_nenmatsu = "";
+		this.holiday_mon = false;
+		this.holiday_tue = false;
+		this.holiday_wed = false;
+		this.holiday_thu = false;
+		this.holiday_fri = false;
+		this.holiday_sat = false;
+		this.holiday_sun = false;
+		this.holiday_syuku = false;
+		this.holiday_nenmatsu = false;
 		this.holiday_other = "";
 		this.distance = 0;
 		this.address = "";
 		this.tabaco = "";
-		this.sheet_table = "";
-		this.sheet_tatami = "";
+		this.sheet_table = false;
+		this.sheet_tatami = false;
 		this.sheet_other = "";
 		this.capacity = 0;
 		this.eat_drink = "";
@@ -147,7 +147,7 @@ public class Shops implements Serializable {
 		this.tel = "";
 		this.homepage = "";
 		this.other = "";
-		this.photo = "";
+		this.filename = "";
 		this.remarks_shop = "";
 		this.id_users = 0;
 
@@ -244,92 +244,92 @@ public class Shops implements Serializable {
 	}
 
 
-	public String getHoliday_mon() {
+	public Boolean getHoliday_mon() {
 		return holiday_mon;
 	}
 
 
-	public void setHoliday_mon(String holiday_mon) {
+	public void setHoliday_mon(Boolean holiday_mon) {
 		this.holiday_mon = holiday_mon;
 	}
 
 
-	public String getHoliday_tue() {
+	public Boolean getHoliday_tue() {
 		return holiday_tue;
 	}
 
 
-	public void setHoliday_tue(String holiday_tue) {
+	public void setHoliday_tue(Boolean holiday_tue) {
 		this.holiday_tue = holiday_tue;
 	}
 
 
-	public String getHoliday_wed() {
+	public Boolean getHoliday_wed() {
 		return holiday_wed;
 	}
 
 
-	public void setHoliday_wed(String holiday_wed) {
+	public void setHoliday_wed(Boolean holiday_wed) {
 		this.holiday_wed = holiday_wed;
 	}
 
 
-	public String getHoliday_thu() {
+	public Boolean getHoliday_thu() {
 		return holiday_thu;
 	}
 
 
-	public void setHoliday_thu(String holiday_thu) {
+	public void setHoliday_thu(Boolean holiday_thu) {
 		this.holiday_thu = holiday_thu;
 	}
 
 
-	public String getHoliday_fri() {
+	public Boolean getHoliday_fri() {
 		return holiday_fri;
 	}
 
 
-	public void setHoliday_fri(String holiday_fri) {
+	public void setHoliday_fri(Boolean holiday_fri) {
 		this.holiday_fri = holiday_fri;
 	}
 
 
-	public String getHoliday_sat() {
+	public Boolean getHoliday_sat() {
 		return holiday_sat;
 	}
 
 
-	public void setHoliday_sat(String holiday_sat) {
+	public void setHoliday_sat(Boolean holiday_sat) {
 		this.holiday_sat = holiday_sat;
 	}
 
 
-	public String getHoliday_sun() {
+	public Boolean getHoliday_sun() {
 		return holiday_sun;
 	}
 
 
-	public void setHoliday_sun(String holiday_sun) {
+	public void setHoliday_sun(Boolean holiday_sun) {
 		this.holiday_sun = holiday_sun;
 	}
 
 
-	public String getHoliday_syuku() {
+	public Boolean getHoliday_syuku() {
 		return holiday_syuku;
 	}
 
 
-	public void setHoliday_syuku(String holiday_syuku) {
+	public void setHoliday_syuku(Boolean holiday_syuku) {
 		this.holiday_syuku = holiday_syuku;
 	}
 
 
-	public String getHoliday_nenmatsu() {
+	public Boolean getHoliday_nenmatsu() {
 		return holiday_nenmatsu;
 	}
 
 
-	public void setHoliday_nenmatsu(String holiday_nenmatsu) {
+	public void setHoliday_nenmatsu(Boolean holiday_nenmatsu) {
 		this.holiday_nenmatsu = holiday_nenmatsu;
 	}
 
@@ -374,22 +374,22 @@ public class Shops implements Serializable {
 	}
 
 
-	public String getSheet_table() {
+	public Boolean getSheet_table() {
 		return sheet_table;
 	}
 
 
-	public void setSheet_table(String sheet_table) {
+	public void setSheet_table(Boolean sheet_table) {
 		this.sheet_table = sheet_table;
 	}
 
 
-	public String getSheet_tatami() {
+	public Boolean getSheet_tatami() {
 		return sheet_tatami;
 	}
 
 
-	public void setSheet_tatami(String sheet_tatami) {
+	public void setSheet_tatami(Boolean sheet_tatami) {
 		this.sheet_tatami = sheet_tatami;
 	}
 
@@ -464,13 +464,13 @@ public class Shops implements Serializable {
 	}
 
 
-	public String getPhoto() {
-		return photo;
+	public String getFilename() {
+		return filename;
 	}
 
 
-	public void setPhoto(String photo) {
-		this.photo = photo;
+	public void setFilename(String filename) {
+		this.filename = filename;
 	}
 
 
