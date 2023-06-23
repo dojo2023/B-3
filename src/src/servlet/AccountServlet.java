@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import dao.UserDao;
 /**
  * Servlet implementation class AccountServlet
  */
@@ -38,8 +39,14 @@ public class AccountServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
+		request.setCharacterEncoding("UTF-8");
+		String id = request.getParameter("mail");
+		String name = request.getParameter("name");
+		String pass = request.getParameter("pass");
+		String department = request.getParameter("department");
+
+		UserDao udao = new UserDao();
+		udao.insert(name, id, pass, department);
+		}
 	}
 
-}

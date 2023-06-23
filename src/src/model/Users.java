@@ -3,22 +3,44 @@
 	import java.io.Serializable;
 
 	public class Users implements Serializable {
-		private String id;	// ログイン時のID
+		private String mail;	// ログイン時のID
+		private String pass;	// ログイン時のパスワード
+		private String name;	// 名前
+		private String department;	// 部署
 
-		public Users() {
-			this(null);
+		public String getMail() {
+			return mail;
 		}
 
-		public Users(String id) {
-			this.id = id;
+		public void setMail(String mail) {
+			this.mail = mail;
 		}
 
-		public String getId() {
-			return id;
+		public String getDepartment() {
+			return department;
 		}
 
-		public void setUserId(String id) {
-			this.id = id;
+		public void setDepartment(String department) {
+			this.department = department;
 		}
+
+
+		public String getPass() {
+			return pass;
+		}
+
+		public void setPass(String pass) {
+			this.pass = pass;
+		}
+
+		public String getName() {
+			return name;
+		}
+
+		public void setName(String name) {
+			this.name = name;
+		}
+
+
 	}
 
