@@ -129,7 +129,7 @@ public boolean insert(Shops card) {
 
 			pStmt.setString(31, card.getOther());
 
-			pStmt.setString(32, card.getPhoto());
+			pStmt.setString(32, card.getFilename());
 
 			pStmt.setString(33, card.getRemarks_shop());
 

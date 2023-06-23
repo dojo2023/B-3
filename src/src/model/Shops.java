@@ -34,7 +34,7 @@ public class Shops implements Serializable {
 	private String tel;
 	private String homepage;
 	private String other;
-	private String photo;
+	private String filename;
 	private String remarks_shop;
 	private int id_users;
 
@@ -71,7 +71,7 @@ public class Shops implements Serializable {
 			 String tel,
 			 String homepage,
 			 String other,
-			 String photo,
+			 String filename,
 			 String remarks_shop,
 			 int id_users) {
 		super();
@@ -106,7 +106,7 @@ public class Shops implements Serializable {
 		this.tel = tel;
 		this.homepage = homepage;
 		this.other = other;
-		this.photo = photo;
+		this.filename = filename;
 		this.remarks_shop = remarks_shop;
 		this.id_users = id_users;
 
@@ -145,7 +145,7 @@ public class Shops implements Serializable {
 		this.tel = "";
 		this.homepage = "";
 		this.other = "";
-		this.photo = "";
+		this.filename = "";
 		this.remarks_shop = "";
 		this.id_users = 0;
 
@@ -462,13 +462,13 @@ public class Shops implements Serializable {
 	}
 
 
-	public String getPhoto() {
-		return photo;
+	public String getFilename() {
+		return filename;
 	}
 
 
-	public void setPhoto(String photo) {
-		this.photo = photo;
+	public void setFilename(String filename) {
+		this.filename = filename;
 	}
 
 
@@ -490,7 +490,5 @@ public class Shops implements Serializable {
 	public void setId_users(int id_users) {
 		this.id_users = id_users;
 	}
-
-
 
 }

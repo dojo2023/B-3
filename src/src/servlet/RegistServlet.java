@@ -1,5 +1,6 @@
 package servlet;
 
+import java.io.File;
 import java.io.IOException;
 
 import javax.servlet.RequestDispatcher;
@@ -102,7 +103,7 @@ public class RegistServlet extends HttpServlet {
 		String photo = request.getParameter("photo");
 		String remarks_shop = request.getParameter("remarks_shop");
 
-
+		System.out.println(holiday_fri);
 
 
 
@@ -112,18 +113,17 @@ public class RegistServlet extends HttpServlet {
 		Part part=request.getPart("photo");
 
 		//ファイル名を取得
-		String photo1= part.getSubmittedFileName();
-
+		String filename = part.getSubmittedFileName();
 		//アップロードするフォルダ
 		String path=getServletContext().getRealPath("/upload");
 
 		System.out.println("画像パス"+path);
-		System.out.println("画像パス２photo；"+photo1);
+		System.out.println("画像パス２photo；"+filename);
 
 
-			//part.write(path+File.separator+photo1);
+			part.write(path+File.separator+filename);
 
-		System.out.println("画像パス２photo；"+photo1);
+		System.out.println("画像パス２photo；"+filename);
 
 		//実際にファイルが保存されるパス確認
 		//System.out.println(path);
@@ -148,77 +148,52 @@ public class RegistServlet extends HttpServlet {
 		sh.setGenre(genre);
 		sh.setGenre_form(genre_form);
 
-		if(holiday_fri.equals("on")) {
-		    sh.setHoliday_fri(true);
-		}else {
-			sh.setHoliday_fri(false);
+
+		if(holiday_fri!=null) {
+			sh.setHoliday_fri(true);
 		}
 
-
-		if(holiday_mon.equals("on")) {
+		if(holiday_mon!=null) {
 			sh.setHoliday_mon(true);
-		}else {
-			sh.setHoliday_mon(false);
 		}
 
-		if(holiday_nenmatsu.equals("on")) {
-		sh.setHoliday_nenmatsu(true);
-		}else {
-			sh.setHoliday_nenmatsu(false);
+		if(holiday_nenmatsu!=null) {
+			sh.setHoliday_nenmatsu(true);
 		}
-
 
 		sh.setHoliday_other(holiday_other);
 
 
-		if(holiday_sat.equals("on")) {
-		sh.setHoliday_sat(true);
-		}else {
-			sh.setHoliday_sat(false);
+		if(holiday_sat!=null) {
+			sh.setHoliday_sat(true);
 		}
 
-
-		if(holiday_sun.equals("on")) {
-		sh.setHoliday_sun(true);
-		}else {
-			sh.setHoliday_sun(false);
+		if(holiday_sun!=null) {
+			sh.setHoliday_sun(true);
 		}
 
-
-		if(holiday_syuku.equals("on")) {
-		sh.setHoliday_syuku(true);
-		}else {
-			sh.setHoliday_syuku(false);
+		if(holiday_syuku!=null) {
+			sh.setHoliday_syuku(true);
 		}
 
-
-		if(holiday_thu.equals("on")) {
-		sh.setHoliday_thu(true);
-		}else {
-			sh.setHoliday_thu(false);
+		if(holiday_thu!=null) {
+			sh.setHoliday_thu(true);
 		}
 
-
-		if(holiday_tue.equals("on")) {
-		sh.setHoliday_tue(true);
-		}else {
-			sh.setHoliday_tue(false);
+		if(holiday_tue!=null) {
+			sh.setHoliday_tue(true);
 		}
 
-
-		if(holiday_wed.equals("on")) {
-		sh.setHoliday_wed(true);
-		}else {
-			sh.setHoliday_wed(false);
+		if(holiday_wed!=null) {
+			sh.setHoliday_wed(true);
 		}
-
 
 
 		sh.setHomepage(homepage);
 		sh.setOpen_hei(open_hei);
 		sh.setOpen_kyu(open_kyu);
 		sh.setOther(other);
-		sh.setPhoto(photo);
+		sh.setFilename(filename);
 		sh.setPrice_max(0);
 		sh.setPrice_min(0);
 		sh.setRemarks_shop(remarks_shop);
