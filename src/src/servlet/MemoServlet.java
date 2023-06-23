@@ -33,12 +33,13 @@ public class MemoServlet extends HttpServlet {
 
 		// リクエストパラメータを取得する
 				request.setCharacterEncoding("UTF-8");
-				String mail = request.getParameter("MAIL");
+				String id_memos = request.getParameter("ID_MEMOS");
 				String memo_title = request.getParameter("MEMO_TITLE");
+				String id_users = request.getParameter("ID_USERS");
 
 				// 検索処理を行う
-				//BcDAO bDao = new BcDAO();
-				//List<Bc> cardList = bDao.select(date,title));
+				//MemoDAO bDao = new MemoDAO();
+				//List<Memos> cardList = bDao.select(id_memos,memo_title,id_users));
 
 
 		// メモ詳細ページにフォワードする
