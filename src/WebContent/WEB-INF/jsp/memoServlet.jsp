@@ -54,14 +54,16 @@
 <form method="POST" action="/hydrangea/DetailmemoServlet">
 
 
-<table class="memo">
-    <tr><th>日付</th><th>タイトル</th></tr>
+<table>
 
-    <tr><td><input type="text" name="DATE"></td>
-
-        <td><input type="text" name="TITLE" size="100"></td></tr>
-	<tr><td><input type="submit" name="detail" value="詳細"></td></tr>
-
+			<tr>
+                  <td>
+                    <label>題名<br>
+                    <input type="text" name="MEMO_TITLE" >
+                    </label>
+                  </td>
+           </tr>
+           <tr><td><input type="submit" name="detail" value="詳細"></td></tr>
 
 
 </table>

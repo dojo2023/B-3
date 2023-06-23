@@ -52,21 +52,19 @@
 <hr>
 <form method="POST" action="/hydrangea/MemoServlet">
 <a href="/hydrangea/MemoServlet">＜メモ一覧</a><br>
-  <table id="">
-<tr>
-    <tr>
-        <td>
-                <input type="text" size="40"><br>
-        </td>
-    </tr>
+  <table>
 
 
-    <tr>
-        <td>
-            <textarea cols="100" rows="10"></textarea><br>
-        </td>
-    </tr>
-
+                  <td>
+                    <label>題名<br>
+                    <input type="text" name="MEMO_TITLE">
+                    </label>
+                  </td>
+                  <td>
+                    <label>メモ内容<br>
+                    <input type="text" name="MEMO">
+                    </label>
+                  </td>
 
 
 </table>

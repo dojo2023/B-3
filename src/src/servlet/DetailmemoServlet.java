@@ -30,6 +30,26 @@ public class DetailmemoServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		doGet(request, response);
+
+		// もしもログインしていなかったらログインサーブレットにリダイレクトする
+				//HttpSession session = request.getSession();
+				//if (session.getAttribute("id") == null) {
+					//response.sendRedirect("/hydrangea/LoginServlet");
+					//return;
+				//}
+		// リクエストパラメータを取得する
+		request.setCharacterEncoding("UTF-8");
+		String mail = request.getParameter("MAIL");
+		String memo_title = request.getParameter("MEMO_TITLE");
+		String memo = request.getParameter("MEMO");
+
+		// 検索処理を行う
+		//BcDAO bDao = new BcDAO();
+		//List<Bc> cardList = bDao.select(date,title));
+
+
+
+
 	}
 
 }

@@ -37,13 +37,14 @@ public class PositionmemoServlet extends HttpServlet {
 
 		// リクエストパラメータを取得する
 		request.setCharacterEncoding("UTF-8");
-		String name = request.getParameter("NAME");
+		String mail = request.getParameter("MAIL");
+		String name_position = request.getParameter("NAME_POSITION");
 		String position = request.getParameter("POSITION");
-		String smoking = request.getParameter("SMOKING");
+		String tabaco_position = request.getParameter("TABACO_POSITION");
 		String favorite1 = request.getParameter("FAVORITE1");
 		String favorite2 = request.getParameter("FAVORITE2");
 		String ng = request.getParameter("NG");
-		String remarks = request.getParameter("REMARKS");
+		String remarks_position = request.getParameter("REMARKS_POSITION");
 
 		// 追加、更新または削除を行う
 		//BcDAO bDao = new BcDAO();

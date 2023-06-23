@@ -5,6 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>幹事サポート</title>
+<link rel="stylesheet" href="menu/common.css">
 </head>
 <header>
     <div class="hamburger-menu">
@@ -14,36 +15,37 @@
         <div class="menu-content">
             <ul>
                 <li>
-                    <a href="">トップ</a>
+                    <a href="/hydrangea/MenuServlet">トップ</a>
                 </li>
                 <li>
-                    <a href="">登録</a>
+                    <a href="/hydrangea/RegistServlet">登録</a>
                 </li>
                 <li>
-                    <a href="">履歴</a>
+                    <a href="/hydrangea/HistoryServlet">履歴</a>
                 </li>
                 <li>
-                    <a href="">役職メモ</a>
+                    <a href="/hydrangea/PositionmemoServlet">役職メモ</a>
                 </li>
                 <li>
-                    <a href="">メモ</a>
+                    <a href="/hydrangea/MemoServlet">メモ</a>
                 </li>
                 <li>
-                    <a href="">カレンダー</a>
+                    <a href="/hydrangea/CalenderServlet">カレンダー</a>
                 </li>
         <li>
-                    <a href="">通知文テンプレート</a>
+                    <a href="/hydrangea/NotificationServlet">通知文テンプレート</a>
                 </li>
         <li>
-                    <a href="">経費申請書テンプレート</a>
+                    <a href="/hydrangea/ExpensesServlet">経費申請書テンプレート</a>
                 </li>
         <li>
-                    <a href="">ログアウト</a>
+                    <a href="/hydrangea/LoginServlet">ログアウト</a>
                 </li>
             </ul>
         </div>
+        </div>
         <!--ここまでメニュー-->
-    </div>
+
 </header>
 
 <body>
