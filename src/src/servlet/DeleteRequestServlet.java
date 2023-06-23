@@ -27,7 +27,7 @@ public class DeleteRequestServlet extends HttpServlet {
 			response.sendRedirect("/hydrangea/LoginServlet");
 			return;
 		}
-		// 管理者用通知ページにフォワードする
+		// 削除依頼通知ページにフォワードする
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/delete_request.jsp");
 		dispatcher.forward(request, response);
 	}
