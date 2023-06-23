@@ -6,7 +6,6 @@ public class  Position_memos implements Serializable {
 	//他テーブルから引っ張ってくるもの
 	private int id_users;
 
-
 	private String created_at;
 	private String updated_at;
 	private int id_position_memos;

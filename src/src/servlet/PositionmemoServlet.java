@@ -37,7 +37,10 @@ public class PositionmemoServlet extends HttpServlet {
 
 		// リクエストパラメータを取得する
 		request.setCharacterEncoding("UTF-8");
-		String mail = request.getParameter("MAIL");
+		String id_position_memos = request.getParameter("id_position_memos");
+		String id_users = request.getParameter("id_users");
+		String created_at = request.getParameter("created_at");
+		String updated_at = request.getParameter("updated_at");
 		String name_position = request.getParameter("NAME_POSITION");
 		String position = request.getParameter("POSITION");
 		String tabaco_position = request.getParameter("TABACO_POSITION");
@@ -46,15 +49,25 @@ public class PositionmemoServlet extends HttpServlet {
 		String ng = request.getParameter("NG");
 		String remarks_position = request.getParameter("REMARKS_POSITION");
 
+
+
 		// 追加、更新または削除を行う
 		//BcDAO bDao = new BcDAO();
 		if (request.getParameter("SUBMIT").equals("更新")) {
+
+			//更新処理を行う
+
+
 			// 結果ページにフォワードする
 			System.out.println(request.getParameter("SUBMIT"));
 			RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/positionmemoServlet.jsp");
 			dispatcher.forward(request, response);
 		}
 		else if (request.getParameter("SUBMIT").equals("追加")) {
+
+			//追加処理を行う
+
+
 			// 結果ページにフォワードする
 			System.out.println(request.getParameter("SUBMIT"));
 			RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/newpositionmemo.jsp");
@@ -62,6 +75,10 @@ public class PositionmemoServlet extends HttpServlet {
 
 			}
 		else if (request.getParameter("SUBMIT").equals("削除")){
+
+			//削除処理を行う
+
+
 			// 結果ページにフォワードする
 			System.out.println(request.getParameter("SUBMIT"));
 			RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/positionmemoServlet.jsp");
