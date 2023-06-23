@@ -31,7 +31,15 @@ public class MemoServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-		request.setCharacterEncoding("UTF-8");
+		// リクエストパラメータを取得する
+				request.setCharacterEncoding("UTF-8");
+				String mail = request.getParameter("MAIL");
+				String memo_title = request.getParameter("MEMO_TITLE");
+
+				// 検索処理を行う
+				//BcDAO bDao = new BcDAO();
+				//List<Bc> cardList = bDao.select(date,title));
+
 
 		// メモ詳細ページにフォワードする
 		if(request.getParameter("detail").equals("詳細")){
