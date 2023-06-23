@@ -161,14 +161,59 @@ public class RegistServlet extends HttpServlet {
 			sh.setHoliday_mon(false);
 		}
 
-		sh.setHoliday_nenmatsu(holiday_nenmatsu);
+		if(holiday_nenmatsu.equals("on")) {
+		sh.setHoliday_nenmatsu(true);
+		}else {
+			sh.setHoliday_nenmatsu(false);
+		}
+
+
 		sh.setHoliday_other(holiday_other);
-		sh.setHoliday_sat(holiday_sat);
-		sh.setHoliday_sun(holiday_sun);
-		sh.setHoliday_syuku(holiday_syuku);
-		sh.setHoliday_thu(holiday_thu);
-		sh.setHoliday_tue(holiday_tue);
-		sh.setHoliday_wed(holiday_wed);
+
+
+		if(holiday_sat.equals("on")) {
+		sh.setHoliday_sat(true);
+		}else {
+			sh.setHoliday_sat(false);
+		}
+
+
+		if(holiday_sun.equals("on")) {
+		sh.setHoliday_sun(true);
+		}else {
+			sh.setHoliday_sun(false);
+		}
+
+
+		if(holiday_syuku.equals("on")) {
+		sh.setHoliday_syuku(true);
+		}else {
+			sh.setHoliday_syuku(false);
+		}
+
+
+		if(holiday_thu.equals("on")) {
+		sh.setHoliday_thu(true);
+		}else {
+			sh.setHoliday_thu(false);
+		}
+
+
+		if(holiday_tue.equals("on")) {
+		sh.setHoliday_tue(true);
+		}else {
+			sh.setHoliday_tue(false);
+		}
+
+
+		if(holiday_wed.equals("on")) {
+		sh.setHoliday_wed(true);
+		}else {
+			sh.setHoliday_wed(false);
+		}
+
+
+
 		sh.setHomepage(homepage);
 		sh.setOpen_hei(open_hei);
 		sh.setOpen_kyu(open_kyu);
@@ -179,8 +224,15 @@ public class RegistServlet extends HttpServlet {
 		sh.setRemarks_shop(remarks_shop);
 		sh.setScore(0);
 		sh.setSheet_other(sheet_other);
+
+
+
 		sh.setSheet_table(sheet_table);
 		sh.setSheet_tatami(sheet_tatami);
+
+
+
+
 		sh.setShop_name(shop_name);
 		sh.setTabaco(tabaco);
 		sh.setTel(tel);

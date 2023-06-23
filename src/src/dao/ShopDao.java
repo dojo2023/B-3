@@ -87,21 +87,21 @@ public boolean insert(Shops card) {
 
 			pStmt.setBoolean(10, card.getHoliday_mon());
 
-			pStmt.setString(11, card.getHoliday_tue());
+			pStmt.setBoolean(11, card.getHoliday_tue());
 
-			pStmt.setString(12, card.getHoliday_wed());
+			pStmt.setBoolean(12, card.getHoliday_wed());
 
-			pStmt.setString(13, card.getHoliday_thu());
+			pStmt.setBoolean(13, card.getHoliday_thu());
 
-			pStmt.setString(14, card.getHoliday_fri());
+			pStmt.setBoolean(14, card.getHoliday_fri());
 
-			pStmt.setString(15, card.getHoliday_sat());
+			pStmt.setBoolean(15, card.getHoliday_sat());
 
-			pStmt.setString(16, card.getHoliday_sun());
+			pStmt.setBoolean(16, card.getHoliday_sun());
 
-			pStmt.setString(17, card.getHoliday_syuku());
+			pStmt.setBoolean(17, card.getHoliday_syuku());
 
-			pStmt.setString(18, card.getHoliday_nenmatsu());
+			pStmt.setBoolean(18, card.getHoliday_nenmatsu());
 
 			pStmt.setString(19, card.getHoliday_other());
 
