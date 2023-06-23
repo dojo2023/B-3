@@ -73,7 +73,9 @@ public class Shops implements Serializable {
 			 String other,
 			 String filename,
 			 String remarks_shop,
-			 int id_users) {
+			 int id_users)
+
+	{
 		super();
 		this.shop_name =shop_name;
 		this.genre = genre;
