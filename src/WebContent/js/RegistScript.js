@@ -36,11 +36,9 @@
   var photo = document.getElementById("photo").value;
   var remarks_shop = document.getElementById("remarks_shop").value;
   //var = document.getElementById("").value;
-  if (shop_name === "") {
-    alert("名前は必須です。");
-    return;
-  } else if (photo !== "") {
-    alert("ジャンルは必須です。");
+
+  if (shop_name === "" || photo ==="") {
+    alert("必須項目が未入力です。");
     return;
   }
   // 入力結果を表示
