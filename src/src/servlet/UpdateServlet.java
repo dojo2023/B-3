@@ -121,14 +121,5 @@ public class UpdateServlet extends HttpServlet {
 		System.out.println("画像パス２photo；"+photo2);
 
 
-
-
-
-
-
-
-
-
-
 }
 }

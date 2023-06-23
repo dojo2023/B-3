@@ -14,7 +14,7 @@ id_users 	int auto_increment primary key,
 created_at 	timestamp,
 updated_at 	timestamp,
 name 		varchar(20) not null,
-mail 		varchar(30) not null,
+mail 		varchar(30) not null unique,
 pass 		varchar(20) not null,
 department 	varchar(10) not null
 );
