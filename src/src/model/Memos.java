@@ -4,125 +4,48 @@ import java.io.Serializable;
 public class  Memos implements Serializable {
 
 	//他テーブルから引っ張ってくるもの
-	private String  ;
-	private String  ;
+	private String mail;
+	private String memo_title;
+	private String memo;
 
 
-	private String  ;
-	private String  ;
-	private String  ;
-	private String  ;
-	private String  ;
-	private String  ;
-	private String  ;
-	private String  ;
-	
-	
 	//入力された値を引数とするメソッド
-	public Appointments(String id_users, String id_shops, String id_appointments, String created_at, String updated_at, String appointment_date, String appointment_time, String department,
-			 String people, String remarks_reserve) {
+	public Memos(String mail, String memo_title, String memo) {
 
 		super();
-		this.id_users = id_users;
-		this.id_shops = id_shops;
-		this.id_appointments = id_appointments;
-		this.created_at = created_at;
-		this.updated_at = updated_at;
-		this.appointment_date = appointment_date;
-		this.appointment_time = appointment_time;
-		this.department = department;
-		this.people = people;
-		this.remarks_reserve = remarks_reserve;
+		this.mail = mail;
+		this.memo_title = memo_title;
+		this.memo = memo;
+
 	}
 
 	//引数がない場合は空欄にするメソッド
-	public Appointments() {
+	public Memos() {
 		super();
-		this.id_users = "";
-		this.id_shops = "";
-		this.id_appointments = "";
-		this.created_at = "";
-		this.updated_at = "";
-		this.appointment_date = "";
-		this.appointment_time = "";
-		this.department = "";
-		this.people ="";
-		this.remarks_reserve = "";
+		this.mail = "";
+		this.memo_title = "";
+		this.memo = "";
 
 }
-	public String getIdUsers() {
-		return id_users;
+	public String getmail() {
+		return mail;
 	}
-	public void setIdUsers(String id_users) {
-		this.id_users = id_users;
-	}
-
-	public String getIdShops() {
-		return id_shops;
-	}
-	public void setIdShops(String id_shops) {
-		this.id_shops = id_shops;
+	public void setmail(String mail) {
+		this.mail = mail;
 	}
 
-	public String getIdAppointments() {
-		return id_appointments;
+	public String getmemo_title() {
+		return memo_title;
 	}
-	public void setIdAppointments(String id_appointments) {
-		this.id_appointments = id_appointments;
-	}
-
-	public String getCreatedAt() {
-		return created_at;
-	}
-	public void setCreatedAt(String created_at) {
-		this.created_at = created_at;
+	public void setmemo_title(String memo_title) {
+		this.memo_title = memo_title;
 	}
 
-	public String getUpdatedAt() {
-		return updated_at;
+	public String getmemo() {
+		return memo;
 	}
-	public void setUpdatedAt(String updated_at) {
-		this.updated_at = updated_at;
-	}
-
-
-	public String getAppointmentDate() {
-		return appointment_date;
-	}
-	public void setAppointmentDate(String appointment_date) {
-		this.appointment_date = appointment_date;
-	}
-
-
-	public String getAppointmentTime() {
-		return appointment_time;
-	}
-	public void setAppointmentTime(String appointment_time) {
-		this.appointment_time = appointment_time;
-	}
-
-
-	public String getDepartment() {
-		return department;
-	}
-	public void  setDepartment(String department) {
-		this.department = department;
-	}
-
-
-	public String getPeoplel() {
-		return people;
-	}
-	public void setPeople(String people) {
-		this.people = people;
-	}
-
-
-	public String getRemarks() {
-		return remarks_reserve;
-	}
-	public void setRemarks(String remarks_reserve) {
-		this.remarks_reserve = remarks_reserve;
+	public void setmemo(String memo) {
+		this.memo = memo;
 	}
 
 }
