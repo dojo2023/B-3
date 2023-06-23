@@ -1,5 +1,6 @@
 package servlet;
 
+import java.io.File;
 import java.io.IOException;
 
 import javax.servlet.RequestDispatcher;
@@ -102,7 +103,7 @@ public class RegistServlet extends HttpServlet {
 		String photo = request.getParameter("photo");
 		String remarks_shop = request.getParameter("remarks_shop");
 
-
+		System.out.println(holiday_fri);
 
 
 
@@ -112,18 +113,17 @@ public class RegistServlet extends HttpServlet {
 		Part part=request.getPart("photo");
 
 		//ファイル名を取得
-		String photo1= part.getSubmittedFileName();
-
+		String filename = part.getSubmittedFileName();
 		//アップロードするフォルダ
 		String path=getServletContext().getRealPath("/upload");
 
 		System.out.println("画像パス"+path);
-		System.out.println("画像パス２photo；"+photo1);
+		System.out.println("画像パス２photo；"+filename);
 
 
-			//part.write(path+File.separator+photo1);
+			part.write(path+File.separator+filename);
 
-		System.out.println("画像パス２photo；"+photo1);
+		System.out.println("画像パス２photo；"+filename);
 
 		//実際にファイルが保存されるパス確認
 		//System.out.println(path);
@@ -147,28 +147,72 @@ public class RegistServlet extends HttpServlet {
 		sh.setEat_drink(eat_drink);
 		sh.setGenre(genre);
 		sh.setGenre_form(genre_form);
-		sh.setHoliday_fri(holiday_fri);
-		sh.setHoliday_mon(holiday_mon);
-		sh.setHoliday_nenmatsu(holiday_nenmatsu);
+
+
+		if(holiday_fri!=null) {
+			sh.setHoliday_fri(true);
+		}
+
+		if(holiday_mon!=null) {
+			sh.setHoliday_mon(true);
+		}
+
+		if(holiday_nenmatsu!=null) {
+			sh.setHoliday_nenmatsu(true);
+		}
+
 		sh.setHoliday_other(holiday_other);
-		sh.setHoliday_sat(holiday_sat);
-		sh.setHoliday_sun(holiday_sun);
-		sh.setHoliday_syuku(holiday_syuku);
-		sh.setHoliday_thu(holiday_thu);
-		sh.setHoliday_tue(holiday_tue);
-		sh.setHoliday_wed(holiday_wed);
+
+
+		if(holiday_sat!=null) {
+			sh.setHoliday_sat(true);
+		}
+
+		if(holiday_sun!=null) {
+			sh.setHoliday_sun(true);
+		}
+
+		if(holiday_syuku!=null) {
+			sh.setHoliday_syuku(true);
+		}
+
+		if(holiday_thu!=null) {
+			sh.setHoliday_thu(true);
+		}
+
+		if(holiday_tue!=null) {
+			sh.setHoliday_tue(true);
+		}
+
+		if(holiday_wed!=null) {
+			sh.setHoliday_wed(true);
+		}
+
+
 		sh.setHomepage(homepage);
 		sh.setOpen_hei(open_hei);
 		sh.setOpen_kyu(open_kyu);
 		sh.setOther(other);
-		sh.setPhoto(photo);
+		sh.setFilename(filename);
 		sh.setPrice_max(0);
 		sh.setPrice_min(0);
 		sh.setRemarks_shop(remarks_shop);
 		sh.setScore(0);
 		sh.setSheet_other(sheet_other);
-		sh.setSheet_table(sheet_table);
-		sh.setSheet_tatami(sheet_tatami);
+
+
+		if(sheet_table!=null) {
+		sh.setSheet_table(true);
+		}
+
+		if(sheet_tatami!=null) {
+		sh.setSheet_tatami(true);
+		}
+
+
+
+
+
 		sh.setShop_name(shop_name);
 		sh.setTabaco(tabaco);
 		sh.setTel(tel);
@@ -194,7 +238,7 @@ public class RegistServlet extends HttpServlet {
 
 	//移動先のサーブレットへリダイレクトするようにする。
 
-	response.sendRedirect("/hydrangea/LoginServlet");
+	response.sendRedirect("/hydrangea/ResultServlet");
 
 //	}else {
 
