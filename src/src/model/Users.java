@@ -8,6 +8,14 @@
 		private String name;	// 名前
 		private String department;	// 部署
 
+		public Users() {
+			this(null);
+		}
+
+		public Users(String mail) {
+			this.mail = mail;
+		}
+
 		public String getMail() {
 			return mail;
 		}

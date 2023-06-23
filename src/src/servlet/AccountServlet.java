@@ -46,7 +46,11 @@ public class AccountServlet extends HttpServlet {
 		String department = request.getParameter("department");
 
 		UserDao udao = new UserDao();
-		udao.insert(name, id, pass, department);
+		if(udao.insert(name, id, pass, department)) {
+			request.setAttribute("sac", udao);
+		}else {
+
+		}
 		}
 	}
 

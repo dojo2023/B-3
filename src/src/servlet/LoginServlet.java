@@ -43,15 +43,15 @@ public class LoginServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
 		request.setCharacterEncoding("UTF-8");
-		String id = request.getParameter("id");
+		String mail = request.getParameter("mail");
 		String pw = request.getParameter("pass");
-		System.out.println(id);
+		System.out.println(mail);
 		System.out.println(pw);
 		UserDao uDao = new UserDao();
-		if(uDao.isLoginOK(id,pw)) {
+		if(uDao.isLoginOK(mail,pw)) {
 			//成功したときセッションスコープにIDを格納する//
 			HttpSession session = request.getSession();
-			session.setAttribute("id", new Users(id));
+			session.setAttribute("mail", new Users(mail));
 			//model Usersに格納↑
 
 			response.sendRedirect("/hydrangea/MenuServlet");

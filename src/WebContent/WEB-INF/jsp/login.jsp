@@ -11,7 +11,7 @@
 <form method="POST" action="/hydrangea/LoginServlet" style="border: solid 3px; height: 40%;">
 ${message}
 <p style="margin-top: 10px; margin-bottom: 3px;">ID・メールアドレス</p>
-<input type="text" name="id" style="width: 50%;"><br>
+<input type="text" name="mail" style="width: 50%;"><br>
 パスワード<br>
 <input type="password" name="pass" style="width: 50%;"><br><br>
 <a href="/hydrangea/AccountServlet">アカウント登録はこちら</a><br>
