@@ -8,16 +8,20 @@ public class  Memos implements Serializable {
 	private int id_users;
 	private String memo_title;
 	private String memo;
+	private String created_at;
+	private String updated_at;
 
 
 	//入力された値を引数とするメソッド
-	public Memos(int id_memos,int id_users, String memo_title, String memo) {
+	public Memos(int id_memos,int id_users, String memo_title, String memo, String created_at, String updated_at) {
 
 		super();
 		this.id_memos = id_memos;
 		this.id_users = id_users;
 		this.memo_title = memo_title;
 		this.memo = memo;
+		this.created_at = created_at;
+		this.updated_at = updated_at;
 
 	}
 
@@ -28,6 +32,8 @@ public class  Memos implements Serializable {
 		this.id_users = 0;
 		this.memo_title = "";
 		this.memo = "";
+		this.created_at = "";
+		this.updated_at = "";
 
 }
 
@@ -56,6 +62,18 @@ public class  Memos implements Serializable {
 	}
 	public void setmemo(String memo) {
 		this.memo = memo;
+	}
+	public String getcreated_at() {
+		return created_at;
+	}
+	public void setcreated_at(String created_at) {
+		this.created_at = created_at;
+	}
+	public String getupdated_at() {
+		return updated_at;
+	}
+	public void setupdated_at(String updated_at) {
+		this.updated_at = updated_at;
 	}
 
 }
