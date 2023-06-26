@@ -13,7 +13,7 @@
         <label for="menu-btn-check" class="menu-btn"><span></span></label>
         <!--ここからメニュー-->
         <div class="menu-content">
-            <ul>
+                  <ul>
                 <li>
                     <a href="/hydrangea/MenuServlet">トップ</a>
                 </li>
@@ -32,17 +32,17 @@
                 <li>
                     <a href="/hydrangea/CalenderServlet">カレンダー</a>
                 </li>
-        <li>
+        		<li>
                     <a href="/hydrangea/NotificationServlet">通知文テンプレート</a>
                 </li>
-        <li>
+        		<li>
                     <a href="/hydrangea/ExpensesServlet">経費申請書テンプレート</a>
                 </li>
-        <li>
-                    <a href="/hydrangea/LoginServlet">ログアウト</a>
+        		<li>
+                    <a href="/hydrangea/LogoutServlet">ログアウト</a>
                 </li>
             </ul>
-        </div>
+            </div>
         </div>
         <!--ここまでメニュー-->
 
@@ -65,7 +65,7 @@
         <button type="button" onclick="correct2Info()">訂正</button>
         <a href="/hydrangea/ExpensesServlet"><button type="button" onclick="back2Form()">戻る</button></a>
     </div>
-
+	</form>
 <div id="expenseTemplate">
 <h1>経費申請書テンプレート</h1>
 <hr>
@@ -130,9 +130,9 @@
             <button type="button" onclick="expenseTemplateInfo()">作成</button>
         </td>
     </tr>
-</div>
 
 </table>
+</div>
 <script src="script.js"></script>
 </body>
 <footer>

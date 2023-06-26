@@ -5,8 +5,8 @@
 <head>
 	<title>TOP|hydrangea</title>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="css/header_footer.css"><!-- 検索ウィンドウ用css -->
-    <link rel="stylesheet" href="css/search_result.css"><!-- 検索ウィンドウ用css -->
+    <link rel="stylesheet" href="css/header_footer.css"><!-- ヘッダーフッター用css -->
+    <link rel="stylesheet" href="css/searchwindow.css"><!-- 検索ウィンドウ用css -->
 	<link rel="stylesheet" href="css/menu.css"><!-- ハンバーガーメニュー用css -->
     <!-- <link rel="stylesheet" href="css/calendar.css">カレンダーcss -->
     <link rel="stylesheet" href="css/top.css"><!-- 専用css -->
@@ -14,12 +14,13 @@
 </head>
 <body>
  <header>
-        <div class="hamburger-menu">
+ 	   <h1 class="logo"><a href="/hydrangea/MenuServlet"><img src="img/logo.png" alt="アプリロゴ" width="100"></a></h1><!-- メニュー画面に戻る -->
+       <div class="hamburger-menu"> <!--ハンバーガーメニュー-->
             <input type="checkbox" id="menu-btn-check">
             <label for="menu-btn-check" class="menu-btn"><span></span></label>
             <!--ここからメニュー-->
             <div class="menu-content">
-                <ul>
+                  <ul>
                 <li>
                     <a href="/hydrangea/MenuServlet">トップ</a>
                 </li>
@@ -38,13 +39,13 @@
                 <li>
                     <a href="/hydrangea/CalenderServlet">カレンダー</a>
                 </li>
-        <li>
+        		<li>
                     <a href="/hydrangea/NotificationServlet">通知文テンプレート</a>
                 </li>
-        <li>
+        		<li>
                     <a href="/hydrangea/ExpensesServlet">経費申請書テンプレート</a>
                 </li>
-        <li>
+        		<li>
                     <a href="/hydrangea/LogoutServlet">ログアウト</a>
                 </li>
             </ul>
@@ -52,9 +53,8 @@
             <!--ここまでメニュー-->
         </div>
  </header>
-<div class="menu_contents" style="background-image:url(img/izakaya.jpg)";>
-<h1>ロゴ</h1>
-
+<div class="menu_contents" style="background-image:url(img/izakaya.jpg);">
+<
 <!-- 上半分 -->
 <div class="top">
 

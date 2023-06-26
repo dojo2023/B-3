@@ -7,7 +7,7 @@
 <head>
 <meta charset="UTF-8">
 <title>検索結果 | Hydrangea</title>
-<link rel="stylesheet" href="css/search_result.css">
+<link rel="stylesheet" href="css/searchwindow.css">
 <link rel="stylesheet" href="css/menu.css"><!-- ハンバーガーメニュー用css -->
 </head>
 <body>
@@ -38,14 +38,14 @@
                 <li>
                     <a href="/hydrangea/CalenderServlet">カレンダー</a>
                 </li>
-        <li>
+        		<li>
                     <a href="/hydrangea/NotificationServlet">通知文テンプレート</a>
                 </li>
-        <li>
+        		<li>
                     <a href="/hydrangea/ExpensesServlet">経費申請書テンプレート</a>
                 </li>
-        <li>
-                    <a href="/hydrangea/LoginServlet">ログアウト</a>
+        		<li>
+                    <a href="/hydrangea/LogoutServlet">ログアウト</a>
                 </li>
             </ul>
             </div>

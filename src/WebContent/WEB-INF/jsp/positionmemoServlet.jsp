@@ -9,12 +9,12 @@
    <link rel="stylesheet" href="menu/common.css">
 </head>
 <header>
-    <div class="hamburger-menu">
-        <input type="checkbox" id="menu-btn-check">
-        <label for="menu-btn-check" class="menu-btn"><span></span></label>
-        <!--ここからメニュー-->
-        <div class="menu-content">
-            <ul>
+<div class="hamburger-menu"> <!--ハンバーガーメニュー-->
+            <input type="checkbox" id="menu-btn-check">
+            <label for="menu-btn-check" class="menu-btn"><span></span></label>
+            <!--ここからメニュー-->
+            <div class="menu-content">
+                  <ul>
                 <li>
                     <a href="/hydrangea/MenuServlet">トップ</a>
                 </li>
@@ -33,20 +33,19 @@
                 <li>
                     <a href="/hydrangea/CalenderServlet">カレンダー</a>
                 </li>
-        <li>
+        		<li>
                     <a href="/hydrangea/NotificationServlet">通知文テンプレート</a>
                 </li>
-        <li>
+        		<li>
                     <a href="/hydrangea/ExpensesServlet">経費申請書テンプレート</a>
                 </li>
-        <li>
-                    <a href="/hydrangea/LoginServlet">ログアウト</a>
+        		<li>
+                    <a href="/hydrangea/LogoutServlet">ログアウト</a>
                 </li>
             </ul>
+            </div>
+            <!--ここまでメニュー-->
         </div>
-        </div>
-        <!--ここまでメニュー-->
-
 </header>
 <body>
 

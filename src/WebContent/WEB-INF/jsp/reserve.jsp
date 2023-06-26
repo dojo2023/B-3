@@ -37,14 +37,14 @@
                 <li>
                     <a href="/hydrangea/CalenderServlet">カレンダー</a>
                 </li>
-        <li>
+        		<li>
                     <a href="/hydrangea/NotificationServlet">通知文テンプレート</a>
                 </li>
-        <li>
+        		<li>
                     <a href="/hydrangea/ExpensesServlet">経費申請書テンプレート</a>
                 </li>
-        <li>
-                    <a href="/hydrangea/LoginServlet">ログアウト</a>
+        		<li>
+                    <a href="/hydrangea/LogoutServlet">ログアウト</a>
                 </li>
             </ul>
             </div>
