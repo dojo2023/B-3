@@ -29,19 +29,42 @@ public class ShopDao {
 			conn = DriverManager.getConnection("jdbc:h2:file:C:/dojo6Data/B3", "sa", "");
 
 			// SQL文を準備する・(created_at,updated_atを含めて３６こ
-			String sql ="SELECT * FROM SHOPS WHERE shop_name LIKE ? or genre like ?　LIKE ? or genre_form"
-					+ " like ?  LIKE ? or remarks_shop  like ?"
-					+ "ORDER BY id_shops";
-
-
-			// SQL文を完成させる
+			String sql ="SELECT * FROM SHOPS WHERE shop_name LIKE ? or remarks_shop like ?  price_min>=?"
+					+ " price_max<=?  capacity<=?  ORDER BY id_shops";
 
 			PreparedStatement pStmt = conn.prepareStatement(sql);
-
 			// SQL文を完成させる
 
-		//	pStmt.setString(1, card.getShop_name());
-		//	pStmt.setString(2, card.getGenre());
+			if (card.getShop_name() != null) {
+				pStmt.setString(1, "%" + card.getShop_name() + "%");
+			}
+			else {
+				pStmt.setString(1, "%");
+			}
+			if (card.getRemarks_shop() != null) {
+				pStmt.setString(2, "%" + card.getRemarks_shop() + "%");
+			}
+			else {
+				pStmt.setString(2, "%");
+			}
+			if (card.getPrice_min() != 0) {
+				pStmt.setString(3, "%" + card.getPrice_min() + "%");
+			}
+			else {
+				pStmt.setString(3, "%");
+			}
+			if (card.getPrice_max() != 0) {
+				pStmt.setString(4, "%" + card.getPrice_max() + "%");
+			}
+			else {
+				pStmt.setString(4, "%");
+			}
+			if (card.getCapacity() != 0) {
+				pStmt.setString(5, "%" + card.getCapacity() + "%");
+			}
+			else {
+				pStmt.setString(5, "%");
+			}
 
 
 
@@ -51,10 +74,45 @@ public class ShopDao {
 				// 結果表をコレクションにコピーする
 				while (sh.next()) {
 
-
-					cardList.add(card);
-				}
-			}
+					Shops card = new Shops(
+							sh.getString("shop_name"),
+							sh.getString ("genre"),
+							sh.getString ("genre_form"),
+							sh.getInt ("price_max"),
+							sh.getInt ("price_min"),
+							sh.getString ("open_hei"),
+							sh.getString ("close_hei"),
+							sh.getString ("open_kyu"),
+							sh.getString ("close_kyu"),
+							sh.getBoolean ("holiday_mon"),
+							sh.getBoolean ("holiday_tue"),
+							sh.getBoolean ("holiday_wed"),
+							sh.getBoolean ("holiday_thu"),
+							sh.getBoolean ("holiday_fri"),
+							sh.getBoolean ("holiday_sat"),
+							sh.getBoolean ("holiday_sun"),
+							sh.getBoolean ("holiday_syuku"),
+							sh.getBoolean ("holiday_nenmatsu"),
+							sh.getString ("holiday_other"),
+							sh.getInt ("distance"),
+							sh.getString ("address"),
+							sh.getString ("tabaco"),
+							sh.getBoolean ("sheet_table"),
+							sh.getBoolean ("sheet_tatami"),
+							sh.getString ("sheet_other"),
+							sh.getInt ("capacity"),
+							sh.getString ("eat_drink"),
+							sh.getInt ("score"),
+							sh.getString ("tel"),
+							sh.getString ("homepage"),
+							sh.getString ("other"),
+							sh.getString ("filename"),
+							sh.getString ("remarks_shop"),
+							 .getInt id_("users")
+							);
+							cardList.add(card);
+						}
+					}
 			catch (SQLException e) {
 				e.printStackTrace();
 				cardList = null;
