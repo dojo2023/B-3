@@ -45,6 +45,8 @@ public class NewShopServlet extends HttpServlet {
 
 		// リクエストパラメータを取得する
 		request.setCharacterEncoding("UTF-8");
+		String id = request.getParameter("id_shops");
+		String str = request.getQueryString();
 //		String id = request.getParameter("ID");
 //		String name = request.getParameter("NAME");
 //		String zipcode = request.getParameter("ZIPCODE");
@@ -56,23 +58,30 @@ public class NewShopServlet extends HttpServlet {
 //		String dept = request.getParameter("DEPT");
 //		String memo = request.getParameter("MEMO");
 
+		request.setAttribute("test", str);
+		// 結果ページにフォワードする
+		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/sekitestyou.jsp");
+	    dispatcher.forward(request, response);
+
+
 
 
 		// 登録処理を行う
-		BcDAO bDao = new BcDAO();
-		if (bDao.insert(new Bc(id,name, zipcode,address,tel,mail,company,position,dept,memo))) {	// 登録成功
-			request.setAttribute("result",
-			new Result("登録成功！", "名刺情報を登録しました。", "/simpleBC/MenuServlet"));
-		}
-		else {												// 登録失敗
-			request.setAttribute("result",
-			new Result("登録失敗！", "名刺情報を登録できませんでした。", "/simpleBC/MenuServlet"));
-		}
-
-		// 結果ページにフォワードする
-		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/result.jsp");
-		dispatcher.forward(request, response);
-
+//		BcDAO bDao = new BcDAO();
+//		if (bDao.insert(new Bc(id,name, zipcode,address,tel,mail,company,position,dept,memo))) {	// 登録成功
+//			request.setAttribute("result",
+//			new Result("登録成功！", "名刺情報を登録しました。", "/simpleBC/MenuServlet"));
+//		}
+//		else {												// 登録失敗
+//			request.setAttribute("result",
+//			new Result("登録失敗！", "名刺情報を登録できませんでした。", "/simpleBC/MenuServlet"));
+//		}
+//
+//		// 結果ページにフォワードする
+//		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/result.jsp");
+//		dispatcher.forward(request, response);
+//
+//	}
 	}
 }
 
