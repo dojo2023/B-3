@@ -6,9 +6,12 @@ h1{
     text-align: center;
     vertical-align: middle;
     margin: 0;
-    height:80px;
+    height:125px;
     background-color: rgb(255, 149, 0, 0.8);   /*カラーコードだと#ff9500*/
 
+}
+.logo{
+	height:125;
 }
 
 
