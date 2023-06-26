@@ -110,13 +110,9 @@
                                 <option value="contact">営業1課4班</option>
                              </select>
                                 </label></td>
-                            </tr>
-
-
-
-                <tr>
-               <td>
-                            <label>ジャンル<br>
+                			<tr>
+              				 <td>
+                             <label>ジャンル<br>
                                 <select type="text" name="genre" id="genre" value="" placeholder="ジャンル" required>
                                     <option >選択して下さい</option>
                                     <option value="和食">和食</option>
@@ -126,11 +122,10 @@
                                     <option value="その他">その他</option>
                                 </select>
                             </label>
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td>
+                        	</td>
+                    	   </tr>
+                    	   <tr>
+                            <td>
                             <label>形態<br>
                                 <select type="text" name="genre_form" id="genre_form" value="" placeholder="形態"
                                     required>
@@ -145,22 +140,8 @@
                                     <option value="その他">その他</option>
                                 </select>
                             </label><br>
-                        </td>
-                    </tr>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+                            </td>
+                            </tr>
                             <tr>
                              <td><label>価格帯<br>
                              <input type="text" name="price_max" value="${e.price_max}">～<input type="text" name="price_min" value="${e.price_min}">

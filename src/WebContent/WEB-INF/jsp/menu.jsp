@@ -164,6 +164,39 @@
                          </select>
                          </label></td>
                         </tr>
+                			<tr>
+              				 <td>
+                             <label>ジャンル<br>
+                                <select type="text" name="genre" id="genre" value="" placeholder="ジャンル" required>
+                                    <option >選択して下さい</option>
+                                    <option value="和食">和食</option>
+                                    <option value="中華">中華</option>
+                                    <option value="フレンチ・イタリアン">フレンチ・イタリアン</option>
+                                    <option value="洋食">洋食</option>
+                                    <option value="その他">その他</option>
+                                </select>
+                            </label>
+                        	</td>
+                    	   </tr>
+                    	   <tr>
+                            <td>
+                            <label>形態<br>
+                                <select type="text" name="genre_form" id="genre_form" value="" placeholder="形態"
+                                    required>
+                                    <option >選択して下さい</option>
+                                    <option value="居酒屋">居酒屋</option>
+                                    <option value="レストラン">レストラン</option>
+                                    <option value="寿司屋">寿司屋</option>
+                                    <option value="焼肉">焼肉</option>
+                                    <option value="バイキング">バイキング</option>
+                                    <option value="カフェ">カフェ</option>
+                                    <option value="バー">バー</option>
+                                    <option value="その他">その他</option>
+                                </select>
+                            </label><br>
+                            </td>
+                            </tr>
+                            <tr>
                         <tr>
                           <td><label>価格帯<br>
                           <input type="text" name="price_max" value="${e.price_max}">～<input type="text" name="price_min" value="${e.price_min}">
