@@ -18,7 +18,7 @@ public class ShopDao {
 	// 引数paramで検索項目を指定し、検索結果のリストを返す
 
 
-	public boolean select(Shops card) {
+	public List<Shops> select(Shops card) {
 		Connection conn = null;
 		List<Shops> cardList = new ArrayList<Shops>();
 		try {
@@ -74,7 +74,8 @@ public class ShopDao {
 				// 結果表をコレクションにコピーする
 				while (sh.next()) {
 
-					Shops card = new Shops(
+					Shops card1 = new Shops(
+							sh.getInt("shop_id"),
 							sh.getString("shop_name"),
 							sh.getString ("genre"),
 							sh.getString ("genre_form"),
@@ -108,9 +109,9 @@ public class ShopDao {
 							sh.getString ("other"),
 							sh.getString ("filename"),
 							sh.getString ("remarks_shop"),
-							 .getInt id_("users")
+							sh.getInt ("id_users")
 							);
-							cardList.add(card);
+							cardList.add(card1);
 						}
 					}
 			catch (SQLException e) {

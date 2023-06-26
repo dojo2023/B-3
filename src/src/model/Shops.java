@@ -3,6 +3,7 @@ package model;
 import java.io.Serializable;
 
 public class Shops implements Serializable {
+	private int shop_id;
 	private String shop_name;
 	private String genre;
 	private String genre_form;
@@ -40,7 +41,9 @@ public class Shops implements Serializable {
 
 
 
-	public Shops(String shop_name,
+	public Shops(
+			int shop_id,
+			 String shop_name,
 			 String genre,
 			 String genre_form,
 			 int price_max,
@@ -77,6 +80,7 @@ public class Shops implements Serializable {
 
 	{
 		super();
+		this.shop_id=shop_id;
 		this.shop_name =shop_name;
 		this.genre = genre;
 		this.genre_form = genre_form;
@@ -116,6 +120,7 @@ public class Shops implements Serializable {
 
 
 	public Shops() {
+		this.shop_id=0;
 		this.shop_name ="";
 		this.genre = "";
 		this.genre_form = "";
@@ -151,6 +156,16 @@ public class Shops implements Serializable {
 		this.remarks_shop = "";
 		this.id_users = 0;
 
+	}
+
+
+	public int getShop_id() {
+		return shop_id;
+	}
+
+
+	public void setShop_id(int shop_id) {
+		this.shop_id = shop_id;
 	}
 
 
