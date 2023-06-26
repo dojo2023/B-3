@@ -10,7 +10,7 @@ import java.util.List;
 
 import model.Memos;
 
-public class MemoDAO {
+public class MemoDao {
 	// 引数paramで検索項目を指定し、検索結果のリストを返す
 	public List<Memos> select(String id_memos, String memo_title, String memo, String id_users) {
 		Connection conn = null;
@@ -24,7 +24,7 @@ public class MemoDAO {
 			conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/data/hydrangea", "sa", "");
 
 			// SQL文を準備する
-			String sql = "select * from MEMO WHERE ID_USERS LIKE ? AND MEMO_TITLE LIKE ? AND MEMO LIKE ? ORDER BY ID_MEMOS";
+			String sql = "select * from MEMO WHERE ID_MEMOS ? ID_USERS LIKE ? AND MEMO_TITLE LIKE ? AND MEMO LIKE ? ORDER BY ID_MEMOS";
 			PreparedStatement pStmt = conn.prepareStatement(sql);
 
 			// SQL文を完成させる
@@ -69,17 +69,17 @@ public class MemoDAO {
 			// 結果表をコレクションにコピーする
 			while (rs.next()) {
 
-				Memo card = new Memo();
-				card.setID_MEMOS(rs.getString("ID_MEMOS"));
-				card.setID_USERS(rs.getString("ID_USERS"));
-				card.setMEMO_TITLE(rs.getString("MEMO_TITLE"));
-				card.setMEMO(rs.getString("MEMO"));
+				Memos card = new Memos();
+				card.setid_memos(rs.getInt("id_memos"));
+				card.setid_users(rs.getInt("id_users"));
+				card.setmemo_title(rs.getString("memo_title"));
+				card.setmemo(rs.getString("memo"));
 
 
 
 //				Memo card = new Memo(
 //				rs.getString("ID_MEMOS"),
-//				rs.getString("MAIL"),
+//				rs.getString("ID_USERS"),
 //				rs.getString("MEMO_TITLE"),
 //				rs.getString("MEMO")
 //				);
@@ -112,7 +112,7 @@ public class MemoDAO {
 	}
 
 	// 引数cardで指定されたレコードを登録し、成功したらtrueを返す
-	public boolean insert(Memo card) {
+	public boolean insert(Memos card) {
 		Connection conn = null;
 		boolean result = false;
 
@@ -124,86 +124,26 @@ public class MemoDAO {
 			conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/data/hydrangea", "sa", "");
 
 			// SQL文を準備する
-			String sql = "insert into MEMO values (?, ?, ?, ?, ?, ?, ?, ?, ?, ? ,?)";
+			String sql = "insert into MEMO values (id_memos ?, id_users ?, ?, ?)";
 			PreparedStatement pStmt = conn.prepareStatement(sql);
 
 			// SQL文を完成させる
-			if (card.getNumber() != null && !card.getNumber().equals("")) {
-				pStmt.setString(1, card.getNumber());
+
+			if (card.getmemo_title() != null && !card.getmemo_title().equals("")) {
+				pStmt.setString(1, card.getmemo_title());
 			}
 			else {
 				pStmt.setString(1, null);
 			}
 
-			if (card.getCompany() != null && !card.getCompany().equals("")) {
-				pStmt.setString(2, card.getCompany());
+			if (card.getmemo() != null && !card.getmemo().equals("")) {
+				pStmt.setString(2, card.getmemo());
 			}
 			else {
 				pStmt.setString(2, null);
 			}
 
-			if (card.getDepartment() != null && !card.getDepartment().equals("")) {
-				pStmt.setString(3, card.getDepartment());
-			}
-			else {
-				pStmt.setString(3, null);
-			}
 
-			if (card.getPosition() != null && !card.getPosition().equals("")) {
-				pStmt.setString(4, card.getPosition());
-			}
-			else {
-				pStmt.setString(4, null);
-			}
-
-			if (card.getName() != null && !card.getName().equals("")) {
-				pStmt.setString(5, card.getName());
-			}
-			else {
-				pStmt.setString(5, null);
-			}
-
-			if (card.getZipcode() != null && !card.getZipcode().equals("")) {
-				pStmt.setString(6, card.getZipcode());
-			}
-			else {
-				pStmt.setString(6, null);
-			}
-
-			if (card.getAddress() != null && !card.getAddress().equals("")) {
-				pStmt.setString(7, card.getAddress());
-			}
-			else {
-				pStmt.setString(7, null);
-			}
-
-			if (card.getPhone() != null && !card.getPhone().equals("")) {
-				pStmt.setString(8, card.getPhone());
-			}
-			else {
-				pStmt.setString(8, null);
-			}
-
-			if (card.getFax() != null && !card.getFax().equals("")) {
-				pStmt.setString(9, card.getFax());
-			}
-			else {
-				pStmt.setString(9, null);
-			}
-
-			if (card.getEmail() != null && !card.getEmail().equals("")) {
-				pStmt.setString(10, card.getEmail());
-			}
-			else {
-				pStmt.setString(10, null);
-			}
-
-			if (card.getRemarks() != null && !card.getRemarks().equals("")) {
-				pStmt.setString(11, card.getRemarks());
-			}
-			else {
-				pStmt.setString(11, null);
-			}
 
 
 			// SQL文を実行する
@@ -234,7 +174,7 @@ public class MemoDAO {
 	}
 
 	// 引数cardで指定されたレコードを更新し、成功したらtrueを返す
-	public boolean update(Bc card) {
+	public boolean update(Memos card) {
 		Connection conn = null;
 		boolean result = false;
 
@@ -243,85 +183,30 @@ public class MemoDAO {
 			Class.forName("org.h2.Driver");
 
 			// データベースに接続する
-			conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/data/simpleBC", "sa", "");
+			conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/data/hydrangea", "sa", "");
 
 			// SQL文を準備する
-			String sql = "update BC set COMPANY=?, DEPARTMENT=?, POSITION=?, NAME=?, ZIPCODE=?, ADDRESS=?, PHONE=?, FAX=?, EMAIL=?, REMARKS=? where NUMBER=?";
+			String sql = "update MEMO set ID_USERS=?, MEMO_TITLE=?, MEMO=? where ID_MEMOS=?";
 			PreparedStatement pStmt = conn.prepareStatement(sql);
 
 			// SQL文を完成させる
 
-			if (card.getCompany() != null && !card.getCompany().equals("")) {
-				pStmt.setString(1, card.getCompany());
-			}
-			else {
-				pStmt.setString(1, null);
-			}
 
-			if (card.getDepartment() != null && !card.getDepartment().equals("")) {
-				pStmt.setString(2, card.getDepartment());
+			if (card.getmemo_title() != null && !card.getmemo_title().equals("")) {
+				pStmt.setString(2, card.getmemo_title());
 			}
 			else {
 				pStmt.setString(2, null);
 			}
 
-			if (card.getPosition() != null && !card.getPosition().equals("")) {
-				pStmt.setString(3, card.getPosition());
+			if (card.getmemo() != null && !card.getmemo().equals("")) {
+				pStmt.setString(3, card.getmemo());
 			}
 			else {
 				pStmt.setString(3, null);
 			}
 
-			if (card.getName() != null && !card.getName().equals("")) {
-				pStmt.setString(4, card.getName());
-			}
-			else {
-				pStmt.setString(4, null);
-			}
-
-			if (card.getZipcode() != null && !card.getZipcode().equals("")) {
-				pStmt.setString(5, card.getZipcode());
-			}
-			else {
-				pStmt.setString(5, null);
-			}
-
-			if (card.getAddress() != null && !card.getAddress().equals("")) {
-				pStmt.setString(6, card.getAddress());
-			}
-			else {
-				pStmt.setString(6, null);
-			}
-
-			if (card.getPhone() != null && !card.getPhone().equals("")) {
-				pStmt.setString(7, card.getPhone());
-			}
-			else {
-				pStmt.setString(7, null);
-			}
-
-			if (card.getFax() != null && !card.getFax().equals("")) {
-				pStmt.setString(8, card.getFax());
-			}
-			else {
-				pStmt.setString(8, null);
-			}
-
-			if (card.getEmail() != null && !card.getEmail().equals("")) {
-				pStmt.setString(9, card.getEmail());
-			}
-			else {
-				pStmt.setString(9, null);
-			}
-
-			if (card.getRemarks() != null && !card.getRemarks().equals("")) {
-				pStmt.setString(10, card.getRemarks());
-			}
-			else {
-				pStmt.setString(10, null);
-			}
-
-			pStmt.setString(11, card.getNumber());
+			pStmt.setInt(4, card.getid_memos());
 
 			// SQL文を実行する
 			if (pStmt.executeUpdate() == 1) {
@@ -360,10 +245,10 @@ public class MemoDAO {
 			Class.forName("org.h2.Driver");
 
 			// データベースに接続する
-			conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/data/simpleBC", "sa", "");
+			conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/data/hydrangea", "sa", "");
 
 			// SQL文を準備する
-			String sql = "delete from BC where NUMBER=?";
+			String sql = "delete from MEMO where ID_MEMOS=?";
 			PreparedStatement pStmt = conn.prepareStatement(sql);
 
 			// SQL文を完成させる
