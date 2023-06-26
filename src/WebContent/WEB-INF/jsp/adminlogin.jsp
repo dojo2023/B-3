@@ -7,8 +7,8 @@
 <title>ログイン</title>
 </head>
 <body>
-<h1>ログイン</h1>
-<form method="POST" action="/hydrangea/LoginServlet" >
+<h1>管理者ログイン</h1>
+<form method="POST" action="/hydrangea/AdminLoginServlet" >
 ${message}
 <p>ID・メールアドレス</p>
 <input type="text" name="mail" ><br>
@@ -18,7 +18,7 @@ ${message}
 <button>ログイン</button><br>
 </form>
 
-<!--  <a href="/hydrangea/AccountServlet">アカウント登録はこちら</a>-->
+<a href="/hydrangea/AccountServlet">アカウント登録はこちら</a>
 </body>
 <footer>
     <p>Copyright &copy; 2023 Hydrangea All Rights Reserved.</p>
