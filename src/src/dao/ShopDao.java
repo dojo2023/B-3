@@ -7,8 +7,87 @@ import java.sql.SQLException;
 
 import model.Shops;
 
+
+
+
+
 public class ShopDao {
 	// 引数paramで検索項目を指定し、検索結果のリストを返す
+
+
+/*
+
+	public boolean select(Shops card) {
+		Connection conn = null;
+		List<Shops> cardList = new ArrayList<Shops>();
+		try {
+			// JDBCドライバを読み込む
+			Class.forName("org.h2.Driver");
+
+			// データベースに接続する
+			conn = DriverManager.getConnection("jdbc:h2:file:C:/dojo6Data/B3", "sa", "");
+
+			// SQL文を準備する・(created_at,updated_atを含めて３６こ
+			String sql ="SELECT * FROM SHOPS ORDER BY id_shops;
+
+
+			// SQL文を完成させる
+
+			PreparedStatement pStmt = conn.prepareStatement(sql);
+
+			// SQL文を完成させる
+
+			pStmt.setString(1, card.getShop_name());
+			pStmt.setString(2, card.getGenre());
+
+
+
+				// SQL文を実行し、結果表を取得する
+				ResultSet rs = pStmt.executeQuery();
+
+				// 結果表をコレクションにコピーする
+				while (rs.next()) {
+					Shops card = new Shops(
+					rs.getString("id_shops"),
+
+					cardList.add(card);
+				}
+			}
+			catch (SQLException e) {
+				e.printStackTrace();
+				cardList = null;
+			}
+			catch (ClassNotFoundException e) {
+				e.printStackTrace();
+				cardList = null;
+			}
+			finally {
+				// データベースを切断
+				if (conn != null) {
+					try {
+						conn.close();
+					}
+					catch (SQLException e) {
+						e.printStackTrace();
+						cardList = null;
+					}
+				}
+			}
+
+			// 結果を返す
+			return cardList;
+		}
+
+*/
+
+
+
+
+
+
+
+
+
 
 
 
@@ -164,6 +243,21 @@ public boolean insert(Shops card) {
 	// 結果を返す
 	return result;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // 引数cardで指定されたレコードを更新し、成功したらtrueを返す
 public boolean update(Shops card) {
 	Connection conn = null;

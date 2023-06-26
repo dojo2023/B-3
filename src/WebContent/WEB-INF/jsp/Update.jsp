@@ -96,7 +96,7 @@
                     <tr>
                         <td>
                             <label>店名(必須)
-                                <input type="text" name="shop_name" id="shop_name" value="" required><br>
+                                <input type="text" name="shop_name" id="shop_name" value="${e.shop_name}" required><br>
                             </label>
                         </td>
                     </tr>
@@ -104,7 +104,7 @@
                     <tr>
                         <td>
                             <label>ジャンル（必須）
-                                <select type="text" name="genre" id="genre" value="" placeholder="ジャンル" required>
+                                <select type="text" name="genre" id="genre"  value="${e.gerne}" placeholder="ジャンル" required>
                                     <option hidden>選択して下さい</option>
                                     <option value="和食">和食</option>
                                     <option value="中華">中華</option>
@@ -138,10 +138,10 @@
                     <tr>
                         <td>
                             <label>価格
-                                <input type="text" name="price_min" id="price_min" value="" placeholder="下限">～
+                                <input type="number" name="price_min" id="price_min" value="" placeholder="下限">～
                             </label>
                             <label>
-                                <input type="text" name="price_max" id="price_max" value="" placeholder="上限">円<br>
+                                <input type="number" name="price_max" id="price_max" value="" placeholder="上限">円<br>
                             </label>
                         </td>
                     </tr>
@@ -209,7 +209,7 @@
                     <tr>
                         <td>
                             <label>会社からの距離
-                                <input type="text" name="distance" id="distance" value="" placeholder="">M<br>
+                                <input type="number" name="distance" id="distance" value="" placeholder="">M<br>
                             </label>
                         </td>
                     </tr>
@@ -247,7 +247,7 @@
                     <tr>
                         <td>
                             <label>規模
-                                <input type="text" name="capacity" id="capacity" value="" placeholder="">人<br>
+                                <input type="number" name="capacity" id="capacity" value="" placeholder="">人<br>
                             </label>
                         </td>
                     </tr>
@@ -286,7 +286,7 @@
                     <tr>
                         <td>
                             <label>電話番号
-                                <input type="text" name="tel" id="tel" value="" placeholder=""><br>
+                                <input type="number" name="tel" id="tel" value="" placeholder=""><br>
                             </label>
                         </td>
                     </tr>
@@ -332,7 +332,7 @@
                         <td>
 
                             <button type="button" onclick="displayConfirmation()" name="register_confir_b"
-                                id="register_confir_b">登録確認</button><br>
+                                id="register_confir_b">更新確認</button><br>
 
                         </td>
                     </tr>
@@ -345,8 +345,8 @@
                 <h2>
                     <ol class="open_page">
                         <li >店舗情報入力</li>
-                        <li class="current">登録情報確認</li>
-                        <li>登録完了</li>
+                        <li class="current">更新情報確認</li>
+                        <li>更新完了</li>
                     </ol>
                 </h2>
                 <p id="shop_nameResult"></p>
