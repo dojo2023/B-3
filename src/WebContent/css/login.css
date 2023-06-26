@@ -1,0 +1,68 @@
+@charset "UTF-8";
+/*ログイン用画面*/
+/*アイコン色は#E1542F　文字色は#442209*/
+
+body{
+	margin: 0 ;
+	max-height:530px;
+
+}
+
+.back-img{
+	text-align: center;
+	width: 500px;
+	height:508px;
+	margin: 0 auto 0 auto;
+	margin-top: 20px ;
+	background-color:#ffffff;
+	border-radius: 5%;/*角丸*/
+}
+h1{
+	margin: 0 ;
+	height:245px;
+}
+
+img{
+	width: 242px;
+	height:242px;
+	border-radius: 50%;/*角丸*/
+
+}
+
+.logintext{
+
+	color: #442209;
+	vertical-align: top;
+}
+
+.logintext,p{
+	margin: 0 ;
+	margin-bottom: 7px;
+}
+
+.loginMessage{
+
+	color:#E1542F;
+}
+
+input{
+	margin-bottom: 15px;
+}
+
+.input{
+	width: 75px;/*幅*/
+	height: 45px;/*高さ*/
+	border-radius: 50%;/*角丸*/
+	border:none;
+	background-color: #E1542F;
+	color:#ffffff;
+}
+
+footer{
+	margin: 0;
+	padding-bottom: 2px;
+	margin-right:15px;
+	color: #FFFFFF;
+	text-align:right;
+	font-size:13px;
+}

@@ -8,13 +8,13 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-import model.Memos;
+import model.Messages;
 
-public class MemoDao {
+public class MessageDao {
 	// 引数paramで検索項目を指定し、検索結果のリストを返す
-	public List<Memos> select(String id_memos, String memo_title, String memo, String id_users) {
+	public List<Messages> select(String id_users, String id_messages, String created_at, String updated_at, String date, String title, String message) {
 		Connection conn = null;
-		List<Memos> cardList = new ArrayList<Memos>();
+		List<Messages> cardList = new ArrayList<Messages>();
 
 		try {
 			// JDBCドライバを読み込む
@@ -24,48 +24,26 @@ public class MemoDao {
 			conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/data/hydrangea", "sa", "");
 
 			// SQL文を準備する
-			String sql = "select * from MEMO WHERE ID_MEMOS ? ID_USERS LIKE ? AND MEMO_TITLE LIKE ? AND MEMO LIKE ? AND UPDATED_AT LIKE ? AND CREATED_AT LIKE ? ORDER BY ID_MEMOS";
+			String sql = "select * from MESSAGE WHERE ID_USERS ? AND ID_MESSAGES LIKE ? AND CREATED_AT LIKE ? AND UPDATED_AT LIKE ? AND DATE LIKE ? AND TITLE LIKE ? AND MESSAGE LIKE ? ORDER BY ID_MESSAGES";
 			PreparedStatement pStmt = conn.prepareStatement(sql);
 
 			// SQL文を完成させる
 
-				pStmt.setString(1, "%" + id_memos + "%");
+				pStmt.setString(1, "%" + id_users + "%");
 
-				pStmt.setString(2, "%" + id_users + "%");
+				pStmt.setString(2, "%" + id_messages + "%");
 
-				pStmt.setString(3, "%" + memo_title + "%");
+				pStmt.setString(3, "%" + created_at + "%");
 
-				pStmt.setString(4, "%" + memo + "%");
+				pStmt.setString(4, "%" + updated_at + "%");
 
-//				pStmt.setString(4, "%" + created_at + "%");
+				pStmt.setString(5, "%" + date + "%");
 
-//				pStmt.setString(4, "%" + updated_at + "%");
+				pStmt.setString(6, "%" + title + "%");
+
+				pStmt.setString(7, "%" + message + "%");
 
 
-//			if (param.getID_MEMOS() != null) {
-//				pStmt.setString(1, "%" + param.getID_MEMOS() + "%");
-//			}
-//			else {
-//				pStmt.setString(1, "%");
-//			}
-//			if (param.getID_USERS() != null) {
-//				pStmt.setString(2, "%" + param.getID_USERS() + "%");
-//			}
-//			else {
-//				pStmt.setString(2, "%");
-//			}
-//			if (param.getMEMO_TITLE() != null) {
-//				pStmt.setString(3, "%" + param.getMEMO_TITLE() + "%");
-//			}
-//			else {
-//				pStmt.setString(3, "%");
-//			}
-//			if (param.getMEMO() != null) {
-//				pStmt.setString(4, "%" + param.getMEMO() + "%");
-//			}
-//			else {
-//				pStmt.setString(4, "%");
-//			}
 
 			// SQL文を実行し、結果表を取得する
 			ResultSet rs = pStmt.executeQuery();
@@ -73,22 +51,16 @@ public class MemoDao {
 			// 結果表をコレクションにコピーする
 			while (rs.next()) {
 
-				Memos card = new Memos();
-				card.setid_memos(rs.getInt("id_memos"));
-				card.setid_users(rs.getInt("id_users"));
-				card.setmemo_title(rs.getString("memo_title"));
-				card.setmemo(rs.getString("memo"));
-				card.setmemo(rs.getString("created_at"));
-				card.setmemo(rs.getString("updated_at"));
+				Messages card = new Messages();
+				card.setIdUsers(rs.getString("IdUsers"));
+				card.setIdMessages(rs.getString("IdMessages"));
+				card.setCreatedAt(rs.getString("CreatedAt"));
+				card.setUpdatedAt(rs.getString("UpdatedAt"));
+				card.setDate(rs.getString("Date"));
+				card.setTitle(rs.getString("Title"));
+				card.setMessage(rs.getString("Message"));
 
 
-
-//				Memo card = new Memo(
-//				rs.getString("ID_MEMOS"),
-//				rs.getString("ID_USERS"),
-//				rs.getString("MEMO_TITLE"),
-//				rs.getString("MEMO")
-//				);
 				cardList.add(card);
 			}
 		}
@@ -118,7 +90,7 @@ public class MemoDao {
 	}
 
 	// 引数cardで指定されたレコードを登録し、成功したらtrueを返す
-	public boolean insert(Memos card) {
+	public boolean insert(Messages card) {
 		Connection conn = null;
 		boolean result = false;
 
@@ -130,23 +102,53 @@ public class MemoDao {
 			conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/data/hydrangea", "sa", "");
 
 			// SQL文を準備する
-			String sql = "insert into MEMO values (id_memos ?, id_users ?, ?, ?)";
+			String sql = "insert into MESSAGE values (?. ?. ?, ?, ?, ?, ?)";
 			PreparedStatement pStmt = conn.prepareStatement(sql);
 
 			// SQL文を完成させる
 
-			if (card.getmemo_title() != null && !card.getmemo_title().equals("")) {
-				pStmt.setString(1, card.getmemo_title());
+			if (card.getIdUsers() != null && !card.getIdUsers().equals("")) {
+				pStmt.setString(1, card.getIdUsers());
 			}
 			else {
 				pStmt.setString(1, null);
 			}
 
-			if (card.getmemo() != null && !card.getmemo().equals("")) {
-				pStmt.setString(2, card.getmemo());
+			if (card.getIdMessages() != null && !card.getIdMessages().equals("")) {
+				pStmt.setString(2, card.getIdMessages());
 			}
 			else {
 				pStmt.setString(2, null);
+			}
+			if (card.getCreatedAt() != null && !card.getCreatedAt().equals("")) {
+				pStmt.setString(3, card.getCreatedAt());
+			}
+			else {
+				pStmt.setString(3, null);
+			}
+			if (card.getUpdatedAt() != null && !card.getUpdatedAt().equals("")) {
+				pStmt.setString(4, card.getUpdatedAt());
+			}
+			else {
+				pStmt.setString(4, null);
+			}
+			if (card.getDate() != null && !card.getDate().equals("")) {
+				pStmt.setString(5, card.getDate());
+			}
+			else {
+				pStmt.setString(5, null);
+			}
+			if (card.getTitle() != null && !card.getTitle().equals("")) {
+				pStmt.setString(6, card.getTitle());
+			}
+			else {
+				pStmt.setString(6, null);
+			}
+			if (card.getMessage() != null && !card.getMessage().equals("")) {
+				pStmt.setString(7, card.getMessage());
+			}
+			else {
+				pStmt.setString(7, null);
 			}
 
 
@@ -180,7 +182,7 @@ public class MemoDao {
 	}
 
 	// 引数cardで指定されたレコードを更新し、成功したらtrueを返す
-	public boolean update(Memos card) {
+	public boolean update(Messages card) {
 		Connection conn = null;
 		boolean result = false;
 
@@ -192,27 +194,55 @@ public class MemoDao {
 			conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/data/hydrangea", "sa", "");
 
 			// SQL文を準備する
-			String sql = "update MEMO set ID_USERS=?, MEMO_TITLE=?, MEMO=? where ID_MEMOS=?";
+			String sql = "update MESSAGE set ID_USERS=?, ID_MESSAGES=?, CREATED?AT=? UPDATED_AT=?, DATE=?, TITLE=?, MESSAGE=?, where ID_MESSAGES=?";
 			PreparedStatement pStmt = conn.prepareStatement(sql);
 
 			// SQL文を完成させる
 
-
-			if (card.getmemo_title() != null && !card.getmemo_title().equals("")) {
-				pStmt.setString(1, card.getmemo_title());
+			if (card.getIdUsers() != null && !card.getIdUsers().equals("")) {
+				pStmt.setString(1, card.getIdUsers());
 			}
 			else {
 				pStmt.setString(1, null);
 			}
-
-			if (card.getmemo() != null && !card.getmemo().equals("")) {
-				pStmt.setString(2, card.getmemo());
+			if (card.getIdMessages() != null && !card.getIdMessages().equals("")) {
+				pStmt.setString(2, card.getIdMessages());
 			}
 			else {
 				pStmt.setString(2, null);
 			}
 
-			pStmt.setInt(3, card.getid_memos());
+			if (card.getCreatedAt() != null && !card.getCreatedAt().equals("")) {
+				pStmt.setString(3, card.getCreatedAt());
+			}
+			else {
+				pStmt.setString(3, null);
+			}
+			if (card.getUpdatedAt() != null && !card.getUpdatedAt().equals("")) {
+				pStmt.setString(4, card.getUpdatedAt());
+			}
+			else {
+				pStmt.setString(4, null);
+			}
+			if (card.getDate() != null && !card.getDate().equals("")) {
+				pStmt.setString(5, card.getDate());
+			}
+			else {
+				pStmt.setString(5, null);
+			}
+			if (card.getTitle() != null && !card.getTitle().equals("")) {
+				pStmt.setString(6, card.getTitle());
+			}
+			else {
+				pStmt.setString(6, null);
+			}
+			if (card.getMessage() != null && !card.getMessage().equals("")) {
+				pStmt.setString(7, card.getMessage());
+			}
+			else {
+				pStmt.setString(7, null);
+			}
+			pStmt.setString(8, card.getIdMessages());
 
 			// SQL文を実行する
 			if (pStmt.executeUpdate() == 1) {
@@ -254,7 +284,7 @@ public class MemoDao {
 			conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/data/hydrangea", "sa", "");
 
 			// SQL文を準備する
-			String sql = "delete from MEMO where ID_MEMOS=?";
+			String sql = "delete from MESSAGE where ID_MESSAGES=?";
 			PreparedStatement pStmt = conn.prepareStatement(sql);
 
 			// SQL文を完成させる
