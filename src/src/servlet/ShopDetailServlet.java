@@ -70,13 +70,13 @@ public class ShopDetailServlet extends HttpServlet {
 		String remarks_shop = request.getParameter("remarks_shop");
 
 		// 検索処理を行う
-		if (request.getParameter("SUBMIT").equals("検索")) {
+		//if (request.getParameter("SUBMIT").equals("検索")) {
 		ShopDao bDao = new ShopDao(); //DB,listしてね 確認6/16
 		List<Shops> cardList =
 			bDao.select(new Shops(shop_name, genre, genre_form, price_max,price_min, open_hei, close_hei, open_kyu, close_kyu,
 				holiday_mon,holiday_tue, holiday_wed, holiday_thu, holiday_fri, holiday_sat, holiday_sun, holiday_syuku, holiday_nenmatsu, holiday_other,
 				distance, address, tabaco, sheet_table, sheet_tatami, sheet_other, capacity, eat_drink, score, tel, homepage, other, photo, remarks_shop));
-				}
+
 						// 検索結果をリクエストスコープに格納する
 						request.setAttribute("cardList", cardList);//リスト名確認
 

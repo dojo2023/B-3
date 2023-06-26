@@ -159,6 +159,17 @@ public class Shops implements Serializable {
 	}
 
 
+	public Shops(String shop_name2, String genre2, String genre_form2, String price_max2, String price_min2,
+			String open_hei2, String close_hei2, String open_kyu2, String close_kyu2, String holiday_mon2,
+			String holiday_tue2, String holiday_wed2, String holiday_thu2, String holiday_fri2, String holiday_sat2,
+			String holiday_sun2, String holiday_syuku2, String holiday_nenmatsu2, String holiday_other2,
+			String distance2, String address2, String tabaco2, String sheet_table2, String sheet_tatami2,
+			String sheet_other2, String capacity2, String eat_drink2, String score2, String tel2, String homepage2,
+			String other2, String photo, String remarks_shop2) {
+		// TODO 自動生成されたコンストラクター・スタブ
+	}
+
+
 	public int getShop_id() {
 		return shop_id;
 	}
