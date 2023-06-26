@@ -43,7 +43,7 @@ public class  Admin_messages implements Serializable {
 	public int getid_admin_messages() {
 		return id_admin_messages;
 	}
-	public void setmail(int id_admin_messages) {
+	public void setid_admin_messages(int id_admin_messages) {
 		this.id_admin_messages = id_admin_messages;
 	}
 
