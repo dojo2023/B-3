@@ -43,15 +43,15 @@ public class AdminLoginServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
 		request.setCharacterEncoding("UTF-8");
-		String mail = request.getParameter("mail");
-		String pw = request.getParameter("pass");
-		System.out.println(mail);
-		System.out.println(pw);
+		String admin_id = request.getParameter("admin_id");
+		String admin_pass = request.getParameter("admin_pass");
+		System.out.println(admin_id);
+		System.out.println(admin_pass);
 		UserDao uDao = new UserDao();
-		if(uDao.isLoginOK(mail,pw)) {
+		if(uDao.isLoginOK(admin_id,admin_pass)) {
 			//成功したときセッションスコープにIDを格納する//
 			HttpSession session = request.getSession();
-			session.setAttribute("mail", new Users(mail));
+			session.setAttribute("admin_id", new Users(admin_id));
 			//model Usersに格納↑
 
 			response.sendRedirect("/hydrangea/AdminmenuServlet");

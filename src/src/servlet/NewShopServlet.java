@@ -24,7 +24,7 @@ public class NewShopServlet extends HttpServlet {
 		// もしもログインしていなかったらログインサーブレットにリダイレクトする
 		HttpSession session = request.getSession();
 		if (session.getAttribute("id_users") == null) {
-			response.sendRedirect("/hydrangea/LoginServlet");
+			response.sendRedirect("/hydrangea/AdminLoginServlet");
 			return;
 		}
 		// 管理者用通知ページにフォワードする
