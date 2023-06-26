@@ -3,7 +3,10 @@ package dao;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 import model.Shops;
 
@@ -14,8 +17,6 @@ import model.Shops;
 public class ShopDao {
 	// 引数paramで検索項目を指定し、検索結果のリストを返す
 
-
-/*
 
 	public boolean select(Shops card) {
 		Connection conn = null;
@@ -28,7 +29,9 @@ public class ShopDao {
 			conn = DriverManager.getConnection("jdbc:h2:file:C:/dojo6Data/B3", "sa", "");
 
 			// SQL文を準備する・(created_at,updated_atを含めて３６こ
-			String sql ="SELECT * FROM SHOPS ORDER BY id_shops;
+			String sql ="SELECT * FROM SHOPS WHERE shop_name LIKE ? or genre like ?　LIKE ? or genre_form"
+					+ " like ?  LIKE ? or remarks_shop  like ?"
+					+ "ORDER BY id_shops";
 
 
 			// SQL文を完成させる
@@ -37,18 +40,17 @@ public class ShopDao {
 
 			// SQL文を完成させる
 
-			pStmt.setString(1, card.getShop_name());
-			pStmt.setString(2, card.getGenre());
+		//	pStmt.setString(1, card.getShop_name());
+		//	pStmt.setString(2, card.getGenre());
 
 
 
 				// SQL文を実行し、結果表を取得する
-				ResultSet rs = pStmt.executeQuery();
+				ResultSet sh = pStmt.executeQuery();
 
 				// 結果表をコレクションにコピーする
-				while (rs.next()) {
-					Shops card = new Shops(
-					rs.getString("id_shops"),
+				while (sh.next()) {
+
 
 					cardList.add(card);
 				}
@@ -78,7 +80,7 @@ public class ShopDao {
 			return cardList;
 		}
 
-*/
+
 
 
 

@@ -227,8 +227,8 @@
                         <td>
 
                             <label>喫煙:</label>
-                            <input type="radio" name="tabaco" value="可">可
-                            <input type="radio" name="tabaco" value="不可">不可<br>
+                            <input type="radio" name="tabaco" value="喫煙">可
+                            <input type="radio" name="tabaco" value="禁煙">不可<br>
 
                         </td>
                     </tr>
