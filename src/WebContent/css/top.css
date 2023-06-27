@@ -25,6 +25,7 @@ header{
 
 .search input{
     margin: 1.2px;
+    margin-right:5px;
 }
 
 .con{
@@ -57,10 +58,7 @@ header{
 
 }
 
- table{
-    text-align: center;
-    margin: 0 auto 0 auto;
-}
+
 
 .command{
 	background-color: rgb(255, 255, 255,0.5);
