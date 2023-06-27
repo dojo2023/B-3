@@ -81,6 +81,7 @@
                 <!-- <input type="email" id="email" required> -->
                 <br>
                 <button type="button" onclick="displayInfo()">確認</button>
+
             </div>
             <div id="result" style="display: none;">
                 <h2>入力結果:</h2>
@@ -114,6 +115,6 @@
 
         </footer>
         <!--フッターここまで-->
-        <script src="/hydrangea/js/script.js"></script>
+        <script src="/hydrangea/js/infomation_create.js"></script>
     </body>
 </html>
