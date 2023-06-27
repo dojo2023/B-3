@@ -6,12 +6,13 @@
    <title>管理者ホーム</title>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="css/menu.css"><!-- ハンバーガーメニュー用css -->
-    <link rel="stylesheet" href="css/header_footer.css"><!-- ハンバーガーメニュー用css -->
-    <link rel="stylesheet" href="css/calendar.css"><!-- ハンバーガーメニュー用css -->
+    <link rel="stylesheet" href="css/header_footer.css"><!-- ヘッダーフッター用css -->
+    <link rel="stylesheet" href="css/calendar.css"><!-- カレンダー用css -->
 
 </head>
 <body>
    <header>
+   		<h1><a href="/hydrangea/MenuServlet"><img src="img/logo.png" alt="アプリロゴ" ></a></h1><!-- メニュー画面に戻る -->
         <div class="hamburger-menu">
             <input type="checkbox" id="menu-btn-check">
             <label for="menu-btn-check" class="menu-btn"><span></span></label>

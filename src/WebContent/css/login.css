@@ -1,12 +1,13 @@
 @charset "UTF-8";
 /*ログイン用画面*/
-/*アイコン色は#E1542F　文字色は#442209*/
+/*ロゴのアイコン色は#E1542F　文字色は#442209*/
 
 body{
 	margin: 0 ;
 	max-height:530px;
-
+    background-color:#ffffff;
 }
+
 
 .back-img{
 	text-align: center;
@@ -16,6 +17,7 @@ body{
 	margin-top: 20px ;
 	background-color:#ffffff;
 	border-radius: 5%;/*角丸*/
+    border: dotted 4px #E1542F;
 }
 h1{
 	margin: 0 ;
@@ -62,7 +64,7 @@ footer{
 	margin: 0;
 	padding-bottom: 2px;
 	margin-right:15px;
-	color: #FFFFFF;
+	color: #E1542F;
 	text-align:right;
 	font-size:13px;
 }

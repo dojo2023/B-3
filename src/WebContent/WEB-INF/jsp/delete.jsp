@@ -5,12 +5,13 @@
 <head>
 <meta charset="UTF-8">
 <title>削除申請 | Hydrangea</title>
+<link rel="stylesheet" href="css/header_footer.css"><!-- ヘッダーフッター用css -->
 <link rel="stylesheet" href="css/menu.css"><!-- ハンバーガーメニュー用css -->
 </head>
 <body>
 <!--ここからヘッダー-->
 <header class = header>
-    <h1 class="logo"><a href="/hydrangea/MenuServlet"><img src="img/logo.png" alt="アプリロゴ" width="100"></a></h1><!-- メニュー画面に戻る -->
+   <h1><a href="/hydrangea/MenuServlet"><img src="img/logo.png" alt="アプリロゴ" ></a></h1><!-- メニュー画面に戻る -->
    <div class="hamburger-menu"> <!--ハンバーガーメニュー-->
             <input type="checkbox" id="menu-btn-check">
             <label for="menu-btn-check" class="menu-btn"><span></span></label>

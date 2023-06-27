@@ -10,13 +10,15 @@
             white-space: pre-wrap;
             }
         </style>
-        <link rel="stylesheet" href="/hydrangea/WebContent/css/menu.css">
+        <link rel="stylesheet" href="css/header_footer.css"><!-- ヘッダーフッター用css -->
+        <link rel="stylesheet" href="css/menu.css"><!-- ハンバーガーメニュー用css -->
 
     </head>
     <body>
         <!--ヘッダー-->
             <header>
-              <div class="hamburger-menu"> <!--ハンバーガーメニュー-->
+            <h1><a href="/hydrangea/MenuServlet"><img src="img/logo.png" alt="アプリロゴ" ></a></h1><!-- メニュー画面に戻る -->
+            <div class="hamburger-menu"> <!--ハンバーガーメニュー-->
             <input type="checkbox" id="menu-btn-check">
             <label for="menu-btn-check" class="menu-btn"><span></span></label>
             <!--ここからメニュー-->

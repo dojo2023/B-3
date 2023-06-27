@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html style="background-image:url(img/izakaya.jpg); background-size: cover;">
+<html><!--  style="background-image:url(img/izakaya.jpg); background-size: cover;" -->
 <head>
 <meta charset="UTF-8">
 <title>ログイン</title>
@@ -17,7 +17,6 @@
 <p class="loginMessage">${message}<p>
 
 ID・メールアドレス<br>
-
 <input type="text" name="mail" ><br>
 
 パスワード<br>

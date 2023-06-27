@@ -1,10 +1,30 @@
 @charset "UTF-8";
 /* メニュー画面用 */
 
+header{
+	display: flex;
+}
 .menu_contents{
-    width: 1200px;
-    margin: 0 auto 0 auto;
+
+    margin: 0;
    /* background-image: url('dojo/img/izakaya.jpg'); */
+}
+
+.search{
+    flex-direction: row;
+    text-align: left;
+	background-color:rgb(255, 255, 255);
+	height:10%;
+	width:50%;
+	margin-left: 20px;
+	margin-top: 25px;
+ 	padding: 0.7%;
+
+}
+
+
+.search input{
+    margin: 1.2px;
 }
 
 .con{
@@ -19,8 +39,8 @@
 }
 .top{
 	display: flex;
-	margin: 0,auto,0,auto ;
-    height: 250px;
+	margin: 0 auto 0 auto ;
+    height: 200px;
     margin-bottom: 1%;
 }
 
@@ -29,8 +49,9 @@
 	background-color: rgb(255, 255, 255,0.5);
 	float: left;
 	text-align: center;
-	width: 30%;
+	width: 55%;
     margin-left: 2.5%;
+    margin-right: 2.5%;
     padding-left: 1.2%;
     padding-right: 1.2%;
 
@@ -44,7 +65,7 @@
 .command{
 	background-color: rgb(255, 255, 255,0.5);
 	flex-direction: row;
-	width: 30%;
+	width: 35%;
 	vertical-align: middle;
 	text-align: center;
     float: center;
@@ -64,8 +85,12 @@
         padding-right: 1.2%;
         text-align: center;
         vertical-align: middle;
+	    margin-left: 2.5%;
+  	    margin-right: 2.5%;
 
 }
+
+
 
 .bottom{
 	display:flex;
@@ -75,23 +100,11 @@
     flex-direction: row;
 	background-color: rgb(255, 255, 255,0.5);
     text-align: center;
-    width: 60%;
+    width: 55%;
     padding-left: 1.2%;
     padding-right: 1.2%;
+    margin-left: 2.5%;
     margin-right: 2.5%;
 
 }
 
-.search{
-    flex-direction: row;
-	background-color:rgb(255, 255, 255,0.5);
-	width: 40%;
-	height:50%;
-
-    padding: 1.2%;
-    padding-top: 0;
-}
-
-.search table{
-    text-align: left;
-}
