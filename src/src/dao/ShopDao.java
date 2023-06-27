@@ -68,6 +68,7 @@ public class ShopDao {
 
 
 
+
 				// SQL文を実行し、結果表を取得する
 				ResultSet sh = pStmt.executeQuery();
 
@@ -137,17 +138,9 @@ public class ShopDao {
 
 			// 結果を返す
 			return cardList;
+
+
 		}
-
-
-
-
-
-
-
-
-
-
 
 
 

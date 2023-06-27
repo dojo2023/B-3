@@ -161,9 +161,32 @@ public class Shops implements Serializable {
 
 
 
-	public Shops(String shop_name, String remarks_shop) {
 
+
+/*
+	public Shops(String shop_name, String remarks_shop //,int capacity, int distance, int price_max,int price_min
+			) {
+		super();
+		this.shop_name = shop_name;
+		this.remarks_shop = remarks_shop;
 	}
+
+	public Shops() {
+		super();
+		this.shop_name = "";
+		this.remarks_shop = "";
+	}
+*/
+
+
+
+
+
+
+
+
+
+
 
 
 	public int getShop_id() {

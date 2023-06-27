@@ -232,7 +232,7 @@
                     <td><label><h3>
                         <c:out value="${e.shop_name}" /><!--店名-->
                      </h3></label></td>
-                    <td><label>
+                    <td><label>sho
                         <c:out value="${e.shop_name}" /><c:out value="${e.genre}"/><!--ジャンル-->
                      </label></td>
                     <td><label>
