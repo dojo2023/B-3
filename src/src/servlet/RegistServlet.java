@@ -189,7 +189,7 @@ public class RegistServlet extends HttpServlet {
 		System.out.println("part"+part);
 		if(part != null) {
 			//ファイル名を取得
-			String filename = part.getSubmittedFileName();
+			String filename1 = part.getSubmittedFileName();
 			//アップロードするフォルダ
 			String path=getServletContext().getRealPath("/upload");
 //			System.out.println("画像パス"+path);
@@ -199,7 +199,7 @@ public class RegistServlet extends HttpServlet {
 			part.write(path+File.separator+filename);
 
 
-		sh.setFilename(filename);
+		sh.setFilename(filename1);
 		}
 
 		if(price_max != "") {
