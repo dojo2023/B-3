@@ -8,13 +8,14 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-import model.Messages;
+import model.Appointments;
 
-public class MessageDao {
+public class AppointmentDao {
 	// 引数paramで検索項目を指定し、検索結果のリストを返す
-	public List<Messages> select(String id_users, String id_messages, String created_at, String updated_at, String date, String title, String message) {
+	public List<Appointments> select(String id_users, String id_shops, String id_appointments, String created_at, String updated_at,
+			String appointment_date, String appointment_time, String department, String people, String remarks_reserve) {
 		Connection conn = null;
-		List<Messages> cardList = new ArrayList<Messages>();
+		List<Appointments> cardList = new ArrayList<Appointments>();
 
 		try {
 			// JDBCドライバを読み込む
@@ -24,24 +25,31 @@ public class MessageDao {
 			conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/data/hydrangea", "sa", "");
 
 			// SQL文を準備する
-			String sql = "select * from MESSAGE WHERE ID_USERS LIKE ? AND ID_MESSAGES LIKE ? AND CREATED_AT LIKE ? AND UPDATED_AT LIKE ? AND DATE LIKE ? AND TITLE LIKE ? AND MESSAGE LIKE ? ORDER BY ID_MESSAGES";
+			String sql = "select * from APPOINTMENT WHERE ID_USERS LIKE ? AND ID_SHOPS LIKE ? ID_APPOINTMENTS LIKE ? AND CREATED_AT LIKE ? AND UPDATED_AT LIKE ? AND "
+					+ "APPOINTMENT_DATE LIKE ? AND APPOINTMENT_TIME LIKE ? AND DEPARTMENT LIKE ? AND PEOPLE LIKE ? AND REMARKS_RESERVE ORDER BY ID_APPOINTMENTS";
 			PreparedStatement pStmt = conn.prepareStatement(sql);
 
 			// SQL文を完成させる
 
 				pStmt.setString(1, "%" + id_users + "%");
 
-				pStmt.setString(2, "%" + id_messages + "%");
+				pStmt.setString(2, "%" + id_shops + "%");
 
-				pStmt.setString(3, "%" + created_at + "%");
+				pStmt.setString(3, "%" + id_appointments + "%");
 
-				pStmt.setString(4, "%" + updated_at + "%");
+				pStmt.setString(4, "%" + created_at + "%");
 
-				pStmt.setString(5, "%" + date + "%");
+				pStmt.setString(5, "%" + updated_at + "%");
 
-				pStmt.setString(6, "%" + title + "%");
+				pStmt.setString(6, "%" + appointment_date + "%");
 
-				pStmt.setString(7, "%" + message + "%");
+				pStmt.setString(7, "%" + appointment_time + "%");
+
+				pStmt.setString(8, "%" + department + "%");
+
+				pStmt.setString(9, "%" + people + "%");
+
+				pStmt.setString(10, "%" + remarks_reserve + "%");
 
 
 
@@ -51,14 +59,17 @@ public class MessageDao {
 			// 結果表をコレクションにコピーする
 			while (rs.next()) {
 
-				Messages card = new Messages();
-				card.setIdUsers(rs.getString("IdUsers"));
-				card.setIdMessages(rs.getString("IdMessages"));
+				Appointments card = new Appointments();
+				card.setIdUsers(rs.getInt("IdUsers"));
+				card.setIdShops(rs.getInt("IdShops"));
+				card.setIdAppointments(rs.getInt("IdAppointments"));
 				card.setCreatedAt(rs.getString("CreatedAt"));
 				card.setUpdatedAt(rs.getString("UpdatedAt"));
-				card.setDate(rs.getString("Date"));
-				card.setTitle(rs.getString("Title"));
-				card.setMessage(rs.getString("Message"));
+				card.setAppointmentDate(rs.getString("AppointmentDate"));
+				card.setAppointmentTime(rs.getString("AppointmentTime"));
+				card.setDepartment(rs.getString("Department"));
+				card.setPeople(rs.getInt("People"));
+				card.setRemarks(rs.getString("Remarkst"));
 
 
 				cardList.add(card);
@@ -90,7 +101,7 @@ public class MessageDao {
 	}
 
 	// 引数cardで指定されたレコードを登録し、成功したらtrueを返す
-	public boolean insert(Messages card) {
+	public boolean insert(Appointments card) {
 		Connection conn = null;
 		boolean result = false;
 
@@ -102,53 +113,47 @@ public class MessageDao {
 			conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/data/hydrangea", "sa", "");
 
 			// SQL文を準備する
-			String sql = "insert into MESSAGE values (?. ?. ?, ?, ?, ?, ?)";
+			String sql = "insert into APPOINTMENT(created_at, updated_at, appointment_date, appointment_time, department, remarks_reserve) values (?, ?, ?, ?, ?, ?)";
 			PreparedStatement pStmt = conn.prepareStatement(sql);
 
 			// SQL文を完成させる
 
-			if (card.getIdUsers() != null && !card.getIdUsers().equals("")) {
-				pStmt.setString(1, card.getIdUsers());
+
+			if (card.getCreatedAt() != null && !card.getCreatedAt().equals("")) {
+				pStmt.setString(1, card.getCreatedAt());
 			}
 			else {
 				pStmt.setString(1, null);
 			}
-
-			if (card.getIdMessages() != null && !card.getIdMessages().equals("")) {
-				pStmt.setString(2, card.getIdMessages());
+			if (card.getUpdatedAt() != null && !card.getUpdatedAt().equals("")) {
+				pStmt.setString(2, card.getUpdatedAt());
 			}
 			else {
 				pStmt.setString(2, null);
 			}
-			if (card.getCreatedAt() != null && !card.getCreatedAt().equals("")) {
-				pStmt.setString(3, card.getCreatedAt());
+			if (card.getAppointmentDate() != null && !card.getAppointmentDate().equals("")) {
+				pStmt.setString(3, card.getAppointmentDate());
 			}
 			else {
 				pStmt.setString(3, null);
 			}
-			if (card.getUpdatedAt() != null && !card.getUpdatedAt().equals("")) {
-				pStmt.setString(4, card.getUpdatedAt());
+			if (card.getAppointmentTime() != null && !card.getAppointmentTime().equals("")) {
+				pStmt.setString(4, card.getAppointmentTime());
 			}
 			else {
 				pStmt.setString(4, null);
 			}
-			if (card.getDate() != null && !card.getDate().equals("")) {
-				pStmt.setString(5, card.getDate());
+			if (card.getDepartment() != null && !card.getDepartment().equals("")) {
+				pStmt.setString(5, card.getDepartment());
 			}
 			else {
 				pStmt.setString(5, null);
 			}
-			if (card.getTitle() != null && !card.getTitle().equals("")) {
-				pStmt.setString(6, card.getTitle());
+			if (card.getRemarks() != null && !card.getRemarks().equals("")) {
+				pStmt.setString(6, card.getRemarks());
 			}
 			else {
 				pStmt.setString(6, null);
-			}
-			if (card.getMessage() != null && !card.getMessage().equals("")) {
-				pStmt.setString(7, card.getMessage());
-			}
-			else {
-				pStmt.setString(7, null);
 			}
 
 
@@ -182,7 +187,7 @@ public class MessageDao {
 	}
 
 	// 引数cardで指定されたレコードを更新し、成功したらtrueを返す
-	public boolean update(Messages card) {
+	public boolean update(Appointments card) {
 		Connection conn = null;
 		boolean result = false;
 
@@ -194,55 +199,49 @@ public class MessageDao {
 			conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/data/hydrangea", "sa", "");
 
 			// SQL文を準備する
-			String sql = "update MESSAGE set ID_USERS=?, ID_MESSAGES=?, CREATED_AT=? UPDATED_AT=?, DATE=?, TITLE=?, MESSAGE=?, where ID_MESSAGES=?";
+			String sql = "update APPOINTMENT(created_at, updated_at, appointment_date, appointment_time, department, remarks_reserve) set CREATED_AT=? UPDATED_AT=?, APPOINTMENTDATE=?, APPOINTMENTTIME=?, DEPARTMENT=?, REMARKS=? where ID_MESSAGES=?";
 			PreparedStatement pStmt = conn.prepareStatement(sql);
 
 			// SQL文を完成させる
 
-			if (card.getIdUsers() != null && !card.getIdUsers().equals("")) {
-				pStmt.setString(1, card.getIdUsers());
+
+			if (card.getCreatedAt() != null && !card.getCreatedAt().equals("")) {
+				pStmt.setString(1, card.getCreatedAt());
 			}
 			else {
 				pStmt.setString(1, null);
 			}
-			if (card.getIdMessages() != null && !card.getIdMessages().equals("")) {
-				pStmt.setString(2, card.getIdMessages());
+			if (card.getUpdatedAt() != null && !card.getUpdatedAt().equals("")) {
+				pStmt.setString(2, card.getUpdatedAt());
 			}
 			else {
 				pStmt.setString(2, null);
 			}
-
-			if (card.getCreatedAt() != null && !card.getCreatedAt().equals("")) {
-				pStmt.setString(3, card.getCreatedAt());
+			if (card.getAppointmentDate() != null && !card.getAppointmentDate().equals("")) {
+				pStmt.setString(3, card.getAppointmentDate());
 			}
 			else {
 				pStmt.setString(3, null);
 			}
-			if (card.getUpdatedAt() != null && !card.getUpdatedAt().equals("")) {
-				pStmt.setString(4, card.getUpdatedAt());
+			if (card.getAppointmentTime() != null && !card.getAppointmentTime().equals("")) {
+				pStmt.setString(4, card.getAppointmentTime());
 			}
 			else {
 				pStmt.setString(4, null);
 			}
-			if (card.getDate() != null && !card.getDate().equals("")) {
-				pStmt.setString(5, card.getDate());
+			if (card.getDepartment() != null && !card.getDepartment().equals("")) {
+				pStmt.setString(5, card.getDepartment());
 			}
 			else {
 				pStmt.setString(5, null);
 			}
-			if (card.getTitle() != null && !card.getTitle().equals("")) {
-				pStmt.setString(6, card.getTitle());
+			if (card.getRemarks() != null && !card.getRemarks().equals("")) {
+				pStmt.setString(6, card.getRemarks());
 			}
 			else {
 				pStmt.setString(6, null);
 			}
-			if (card.getMessage() != null && !card.getMessage().equals("")) {
-				pStmt.setString(7, card.getMessage());
-			}
-			else {
-				pStmt.setString(7, null);
-			}
-			pStmt.setString(8, card.getIdMessages());
+
 
 			// SQL文を実行する
 			if (pStmt.executeUpdate() == 1) {
@@ -284,7 +283,7 @@ public class MessageDao {
 			conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/data/hydrangea", "sa", "");
 
 			// SQL文を準備する
-			String sql = "delete from messages where id_messages=?";
+			String sql = "delete from appointments where id_appointments=?";
 			PreparedStatement pStmt = conn.prepareStatement(sql);
 
 			// SQL文を完成させる
