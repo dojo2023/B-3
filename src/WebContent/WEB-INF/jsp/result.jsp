@@ -34,6 +34,7 @@
 <body>
 <header>
 	<h1><a href="/hydrangea/MenuServlet"><img src="img/logo.png" alt="アプリロゴ" ></a></h1><!-- メニュー画面に戻る -->
+    <p id="title">更新完了</p>
     <div class="hamburger-menu"> <!--ハンバーガーメニュー-->
             <input type="checkbox" id="menu-btn-check">
             <label for="menu-btn-check" class="menu-btn"><span></span></label>
@@ -56,7 +57,7 @@
                     <a href="/hydrangea/MemoServlet">メモ</a>
                 </li>
                 <li>
-                    <a href="/hydrangea/CalenderServlet">カレンダー</a>
+                    <a href="/hydrangea/CalendarServlet">カレンダー</a>
                 </li>
         		<li>
                     <a href="/hydrangea/NotificationServlet">通知文テンプレート</a>

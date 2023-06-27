@@ -12,7 +12,7 @@
 <body>
 <header>
 	<h1><a href="/hydrangea/MenuServlet"><img src="img/logo.png" alt="アプリロゴ" id="mamo_logo" ></a></h1><!-- メニュー画面に戻る -->
-    <p id="memolist">メモ一覧</p>
+    <p id="title">メモ一覧</p>
     <div class="hamburger-menu"> <!--ハンバーガーメニュー-->
             <input type="checkbox" id="menu-btn-check">
             <label for="menu-btn-check" class="menu-btn"><span></span></label>
@@ -35,7 +35,7 @@
                     <a href="/hydrangea/MemoServlet">メモ</a>
                 </li>
                 <li>
-                    <a href="/hydrangea/CalenderServlet">カレンダー</a>
+                    <a href="/hydrangea/CalendarServlet">カレンダー</a>
                 </li>
         		<li>
                     <a href="/hydrangea/NotificationServlet">通知文テンプレート</a>
@@ -55,29 +55,22 @@
 <div class="contents">
 
 
-<a href="/hydrangea/NewcreatememoServlet"><button id="createMemo">+</button></a>
+
 
 <form method="POST" action="/hydrangea/DetailmemoServlet">
 
 
-<table>
+<table class="memo_table">
 		<tr>
-           <th>
-                <label>題名</label><th>
-           </th>
-        </tr>
-        <tr>
-           <td>
-                <input type="text" name="MEMO_TITLE" >
-                </label>
-           </td>
+           <td><input type="text" name="MEMO_TITLE" value="題名" size="20"></td>
            <td><input type="submit" name="detail" value="詳細"></td>
         </tr>
-
-
 </table>
 
 </form>
+
+<a href="/hydrangea/NewcreatememoServlet"><button id="createMemo" >+</button></a>
+
 </div>
 <footer>
     <p>Copyright &copy; 2023 Hydrangea All Rights Reserved.</p>

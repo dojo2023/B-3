@@ -1,26 +1,28 @@
 @charset "UTF-8";
 
-header{
-	display: flex;
-}
-
-
-
-img #memo_logo{
+#memo_logo img{
 	height:95px;
     width:95px;
 }
 
+.memo_table{
 
-#memolist{
-
-	height: 30px;
-	width: 77%;
-	margin-top: 90px;
-	margin-left: 17px;
-	border-bottom: dotted 3px #E1542F;
+	margin-left: 20px;
+	background-color:#ec8655;
 }
+
+tr{
+	border: solid 3px #000000;
+	margin:5px;
+}
+
+input{
+	margin-left: 5px;
+	margin-right: 5px;
+}
+
 .contents{
+	height: 225px;
 	margin:0 auto 0 auto;
 	margin-left: 2.5%;
     margin-right: 2.5%;
@@ -28,14 +30,15 @@ img #memo_logo{
 
 #createMemo{
 	margin-top: 15px;
+	margin-left: 23%;
 	color:#ffffff;
 	background-color:#ec8655;
 	padding : 4px;
-	height:45px;
-	width:45px;
+	height:40px;
+	width:40px;
 	border-radius: 50%;/*角丸*/
 	border-color:#ea763e;
-	font-weight:400;
+	font-size: 20px;
 }
 
 

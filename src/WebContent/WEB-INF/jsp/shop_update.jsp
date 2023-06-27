@@ -4,7 +4,7 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>新規登録確認画面</title>
+        <title>店舗情報更新画面</title>
 		<link rel="stylesheet" href="css/header_footer.css"><!-- ヘッダーフッター用css -->
 		<link rel="stylesheet" href="css/menu.css"><!-- ハンバーガーメニュー用css -->
 
@@ -13,6 +13,7 @@
         <!--ヘッダー-->
         <header>
         	<h1><a href="/hydrangea/MenuServlet"><img src="img/logo.png" alt="アプリロゴ" ></a></h1><!-- メニュー画面に戻る -->
+            <p id="title">店舗情報更新</p>
             <div class="hamburger-menu"> <!--ハンバーガーメニュー-->
             <input type="checkbox" id="menu-btn-check">
             <label for="menu-btn-check" class="menu-btn"><span></span></label>
