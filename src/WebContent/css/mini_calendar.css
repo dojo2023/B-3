@@ -1,40 +1,29 @@
+@charset "UTF-8";
 #calendar {
-	margin : 0 auto 0 auto;
+	margin-left : 27px;
+    display: flex;
     flex-wrap: wrap;
 
 }
 
 section {
-    margin: 10px;
+    margin: 5px;
 }
 
 h1 {
-    font-size: 18px;
+    font-size: 16px;
 }
 
 .calendartable {
-	width: 600px;
-	height: 400px;
 	margin: 0 auto 0 auto;
     border-spacing: 0;
     border-collapse: collapse;
 }
 
-p{
-	margin: 0;
-}
-
-.button{
-	text-align: center;
-}
-
-button{
-	margin: 10px;
-}
 
 #calendar td {
-
-	font-size: 15px;
+	width: 30px;
+	font-size: 5px;
     border: 1px solid #ddd;
     padding: 5px;
     text-align: left;
@@ -54,7 +43,8 @@ td.is-disabled {
     color: #ccc;
 }
 td.youbi {
-
+	padding: 3px;
 	color: green;
-
+	height: 10px;
+	font-size: 8px;
 }

@@ -32,14 +32,14 @@ function createCalendar(year, month) {
     let calendarHtml = '' // HTMLを組み立てる変数
 
     calendarHtml += '<h1>' + year  + '/' + month + '</h1>'
-    calendarHtml += '<table>'
+    calendarHtml += '<table class="calendartable">'
 
     // 曜日の行を作成
     for (let i = 0; i < weeks.length; i++) {
         calendarHtml += '<td class="youbi">' + weeks[i] + '</td>'
     }
 
-    for (let w = 0; w < 6; w++) {
+    for (let w = 0; w < 5; w++) {
         calendarHtml += '<tr>'
 
         for (let d = 0; d < 7; d++) {
@@ -50,8 +50,8 @@ function createCalendar(year, month) {
             } else if (dayCount > endDayCount) {
                 // 末尾の日数を超えた
                 let num = dayCount - endDayCount
-                calendarHtml += '<td class="is-disabled">' + num + '</td>'
-                dayCount++
+                calendarHtml += '<td class="is-disabled">' + num  + '</td>'
+               dayCount++
             } else {
                 calendarHtml += `<td class="calendar_td" data-date="${year}/${month}/${dayCount}">${dayCount}</td>`
                 dayCount++
@@ -63,6 +63,7 @@ function createCalendar(year, month) {
 
     return calendarHtml
 }
+
 
 document.addEventListener("click", function(e) {
     if(e.target.classList.contains("calendar_td")) {
