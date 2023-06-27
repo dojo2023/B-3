@@ -10,8 +10,9 @@
 	<link rel="stylesheet" href="css/calendar.css"><!-- カレンダー用css -->
 </head>
 <body>
-<head>
+<header>
 	<h1><a href="/hydrangea/MenuServlet"><img src="img/logo.png" alt="アプリロゴ" ></a></h1><!-- メニュー画面に戻る -->
+    <p id="title">カレンダー</p>
     <div class="hamburger-menu">
         <input type="checkbox" id="menu-btn-check">
         <label for="menu-btn-check" class="menu-btn"><span></span></label>
@@ -49,11 +50,11 @@
             </div>
         <!--ここまでメニュー-->
     </div>
-</head>
+</header>
 
-<h1>カレンダー</h1>
-<button id="prev" type="button">前の月</button>
-<button id="next" type="button">次の月</button>
+
+<div class="button"><button id="prev" type="button" >前の月</button>
+<button id="next" type="button" >次の月</button></div>
 <div id="calendar"></div>
 <br><br><br><br><br>
 

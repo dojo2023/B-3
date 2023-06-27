@@ -7,9 +7,12 @@
 <title>幹事サポート</title>
 <link rel="stylesheet" href="css/header_footer.css"><!-- ヘッダーフッター用css -->
 <link rel="stylesheet" href="css/menu.css"><!-- ハンバーガーメニュー用css -->
+<link rel="stylesheet" href="css/memo.css"><!-- メモ専用css -->
 </head>
+<body>
 <header>
 	<h1><a href="/hydrangea/MenuServlet"><img src="img/logo.png" alt="アプリロゴ" ></a></h1><!-- メニュー画面に戻る -->
+    <p id="memolist">メモ新規作成</p>
     <div class="hamburger-menu"> <!--ハンバーガーメニュー-->
             <input type="checkbox" id="menu-btn-check">
             <label for="menu-btn-check" class="menu-btn"><span></span></label>
@@ -47,105 +50,10 @@
             </div>
             <!--ここまでメニュー-->
         </div>
-    <style>
-        .menu-btn {
-        position: fixed;
-        top: 10px;
-        right: 10px;
-        display: flex;
-        height: 60px;
-        width: 60px;
-        justify-content: center;
-        align-items: center;
-        z-index: 90;
-        background-color: #eeece9;
-    }
-    .menu-btn span,
-    .menu-btn span:before,
-    .menu-btn span:after {
-        content: '';
-        display: block;
-        height: 3px;
-        width: 25px;
-        border-radius: 3px;
-        background-color: black;
-        position: absolute;
-    }
-    .menu-btn span:before {
-        bottom: 8px;
-    }
-    .menu-btn span:after{
-        top: 8px;
-    }
-    #menu-btn-check:checked ~ .menu-btn span {
-        background-color: rgba(255, 255, 255, 0);/*メニューオープン時は真ん中の線を透明にする*/
-    }
-    #menu-btn-check:checked ~ .menu-btn span::before {
-        bottom: 0;
-        transform: rotate(45deg);
-    }
-    #menu-btn-check:checked ~ .menu-btn span::after {
-        top: 0;
-        transform: rotate(-45deg);
-    }
-    #menu-btn-check {
-        display: none;
-    }
-    .menu-content {
-        width: 25%;
-        height: 100%;
-        position: fixed;
-        top: 0;
-        right: 100%;/*leftの値を変更してメニューを画面外へ*/
-        z-index: 80;
-        background-color: #c0c0c0;
-        transition: all 0.5s;/*アニメーション設定*/
-    }
-    .menu-content ul {
-        padding: 70px 10px 0;
-    }
-    .menu-content ul li {
-        border-bottom: solid 1px #000000;
-        list-style: none;
-    }
-    .menu-content ul li a {
-        display: block;
-        width: 100%;
-        font-size: 15px;
-        box-sizing: border-box;
-        color:#000000;
-        text-decoration: none;
-        padding: 9px 15px 10px 0;
-        position: relative;
-    }
-    .menu-content ul li a::before {
-        content: "";
-        width: 7px;
-        height: 7px;
-        border-top: solid 2px #000000;
-        border-right: solid 2px #000000;
-        transform: rotate(45deg);
-        position: absolute;
-        right: 11px;
-        top: 16px;
-    }
-    #menu-btn-check:checked ~ .menu-content {
-        right: 0;/*メニューを画面内へ*/
-    }
-    .menu-content a:hover {
-        /*color: #e3937a;*/
-        font-weight:800;
-    }
-    .menu-content a:active {
-        color: blue;
-    }
-
-    </style>
 </header>
-<body>
+<div class="contents">
 
-<h1>メモ新規作成</h1>
-<hr>
+
 <form method="POST" action="/hydrangea/NewcreatememoServlet">
 
     <nav>
@@ -157,27 +65,26 @@
 <table>
     <tr>
         <td>
-                <input type="text" size="40"><br>
+                <input type="text" size="20"><br>
         </td>
     </tr>
 
 
     <tr>
         <td>
-            <textarea cols="100" rows="10"></textarea><br>
+            <textarea cols="50" rows="8"></textarea><br>
         </td>
-    </tr>
 
-    <tr>
         <td><input type="submit" name="SUBMIT" value="保存"><br></td>
-
     </tr>
 
 </table>
 
 </form>
-</body>
+</div>
+
 <footer>
     <p>Copyright &copy; 2023 Hydrangea All Rights Reserved.</p>
 </footer>
+</body>
 </html>

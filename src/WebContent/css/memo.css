@@ -1,0 +1,41 @@
+@charset "UTF-8";
+
+header{
+	display: flex;
+}
+
+
+
+img #memo_logo{
+	height:95px;
+    width:95px;
+}
+
+
+#memolist{
+
+	height: 30px;
+	width: 77%;
+	margin-top: 90px;
+	margin-left: 17px;
+	border-bottom: dotted 3px #E1542F;
+}
+.contents{
+	margin:0 auto 0 auto;
+	margin-left: 2.5%;
+    margin-right: 2.5%;
+}
+
+#createMemo{
+	margin-top: 15px;
+	color:#ffffff;
+	background-color:#ec8655;
+	padding : 4px;
+	height:45px;
+	width:45px;
+	border-radius: 50%;/*角丸*/
+	border-color:#ea763e;
+	font-weight:400;
+}
+
+

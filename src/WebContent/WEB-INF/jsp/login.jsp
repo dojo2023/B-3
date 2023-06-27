@@ -26,7 +26,8 @@ ID・メールアドレス<br>
 
 </form>
 </div>
-<a href="/hydrangea/AccountServlet" class="registAccount">アカウント登録はこちら</a>
+<a href="/hydrangea/AccountServlet" class="registAccount">アカウント登録はこちら</a><br>
+<a href="/hydrangea/AdminLoginServlet">管理者ログインはこちら</a>
 </div>
 
 <footer>

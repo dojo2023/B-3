@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>ログイン</title>
+<title>管理者ログイン</title>
 <link rel="stylesheet" href="css/login.css"><!-- ログイン画面用css -->
 </head>
 <body>
@@ -16,7 +16,7 @@
 
 <p class="loginMessage">${message}<p>
 
-<p>管理者用ID・メールアドレス</p>
+<p>管理者用ID</p>
 <input type="text" name="admin_id" ><br>
 
 パスワード<br>
@@ -26,6 +26,7 @@
 
 </form>
 </div>
+<a href="/hydrangea/LoginServlet">幹事ログインはこちら</a>
 <!--  <a href="/hydrangea/AccountServlet">アカウント登録はこちら</a>-->
 </div>
 

@@ -20,7 +20,7 @@ public class NoticeServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// もしもログインしていなかったらログインサーブレットにリダイレクトする
 		HttpSession session = request.getSession();
-		if (session.getAttribute("id_users") == null) {
+		if (session.getAttribute("admin_id") == null) {
 			response.sendRedirect("/hydrangea/AdminLoginServlet");
 			return;
 		}
