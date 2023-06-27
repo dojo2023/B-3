@@ -7,9 +7,12 @@
 <title>幹事サポート</title>
 <link rel="stylesheet" href="css/header_footer.css"><!-- ヘッダーフッター用css -->
 <link rel="stylesheet" href="css/menu.css"><!-- ハンバーガーメニュー用css -->
+<link rel="stylesheet" href="css/memo.css"><!-- メモ専用css -->
 </head>
+<body>
 <header>
 <h1><a href="/hydrangea/MenuServlet"><img src="img/logo.png" alt="アプリロゴ" ></a></h1><!-- メニュー画面に戻る -->
+<p id="memolist">メモ内容</p>
 <div class="hamburger-menu"> <!--ハンバーガーメニュー-->
             <input type="checkbox" id="menu-btn-check">
             <label for="menu-btn-check" class="menu-btn"><span></span></label>
@@ -48,9 +51,9 @@
             <!--ここまでメニュー-->
         </div>
 </header>
-<body>
-<h1>メモ内容</h1>
-<hr>
+<div class="contents">
+
+
 <form method="POST" action="/hydrangea/MemoServlet">
 <a href="/hydrangea/MemoServlet">＜メモ一覧</a><br>
   <table>
@@ -66,13 +69,11 @@
                     <input type="text" name="MEMO">
                     </label>
                   </td>
-
-
 </table>
-
 </form>
-</body>
+</div>
 <footer>
     <p>Copyright &copy; 2023 Hydrangea All Rights Reserved.</p>
 </footer>
+</body>
 </html>

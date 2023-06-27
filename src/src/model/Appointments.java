@@ -109,7 +109,7 @@ public class  Appointments implements Serializable {
 	}
 
 
-	public int getPeoplel() {
+	public int getPeople() {
 		return people;
 	}
 	public void setPeople(int people) {
