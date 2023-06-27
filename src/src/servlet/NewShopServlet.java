@@ -23,7 +23,7 @@ public class NewShopServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// もしもログインしていなかったらログインサーブレットにリダイレクトする
 		HttpSession session = request.getSession();
-		if (session.getAttribute("id_users") == null) {
+		if (session.getAttribute("admin_id") == null) {
 			response.sendRedirect("/hydrangea/AdminLoginServlet");
 			return;
 		}
@@ -57,6 +57,8 @@ public class NewShopServlet extends HttpServlet {
 //		String position = request.getParameter("POSITION");
 //		String dept = request.getParameter("DEPT");
 //		String memo = request.getParameter("MEMO");
+
+		System.out.println(str);
 
 		request.setAttribute("test", str);
 		// 結果ページにフォワードする
