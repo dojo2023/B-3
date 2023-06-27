@@ -57,60 +57,58 @@
 <div class="contents">
 <div class="page_left">
      <!--プチ検索窓-->
-    <div class ="search_window">
-        <form method="POST" action="/hydrangea/SearchResultServlet" autocomplete="off"> <!--servlet名、要チェック-->
-        <table class="koumoku">
-            <tr>
-             <td><label>ジャンル・店名・フリーワード<br>
-             <input type="text" name="shop_name" value="">
-             </label></td>
-            </tr>
-
-            <tr>
-
-
-            <tr>
-             <td><label>価格帯<br>
-             <input type="text" name="price_max" value="">～
-             <input type="text" name="price_min" value="">
-             </label></td>
-            </tr>
-            <tr>
-             <td><label>人数<br>
-             <input type="text" name="capacity" value="">
-             </label></td>
-            </tr>
-            <tr>
-             <td><label>会社からの距離<br>
-             <input type="text" name="distance" value="">
-             </label></td>
-            </tr>
-            <tr>
-             <td>
-             <input type="submit" name="REGIST" value="検索">
-             </td>
-             </tr>
-        </table>
-        </form>
-<button class="open"> <label  for="pop-up">詳細検索</label></button>
-        <input type="checkbox" id="pop-up">
-            <div class="overlay">
-              <div class="search_pop-up">
-                <label class="close" for="pop-up">×</label>
-                <p class="detail_search"><!--ポップアップの中身-->
-                    <form method="POST" action="/hydrangea/SearchResultServlet" autocomplete="off"> <!--servlet名、要チェック-->
-                        <table class="koumoku">
-                            <tr>
-                             <td><label>店名・フリーワード<br>
-                             <input type="text" name="NUMBER" value="${e.shop_name}">
-                             </label></td>
-                             <td><label>プリセット<br>
-                             <select name="NUMBER" id="プリセット">
-                                <option value="reservation">営業部</option>
-                                <option value="event">営業1課</option>
-                                <option value="contact">営業1課4班</option>
-                             </select>
+       <div class ="search_window">
+           <form method="POST" action="/hydrangea/SearchResultServlet" autocomplete="off"> <!--servlet名、要チェック-->
+           <table class="koumoku">
+               <tr>
+                <td><label>店名・フリーワード<br>
+                <input type="text" name="NUMBER" value="">
+                </label></td>
+               </tr>
+               <tr>
+                <td><label>価格帯<br>
+                <input type="text" name="price_max" value="" size="3">～
+                <input type="text" name="price_min" value="" size="3">
+                </label></td>
+               </tr>
+               <tr>
+                <td><label>人数<br>
+                <input type="text" name="capacity" value="">
+                </label></td>
+               </tr>
+               <tr>
+                <td><label>会社からの距離<br>
+                <input type="text" name="distance" value="">
+                </label></td>
+               </tr>
+               <tr>
+                <td>
+                <input type="submit" name="REGIST" value="検索">
+                </td>
+                </tr>
+           </table>
+           </form>
+           <!--検索ウィンドウの表示-->
+           <div><button class="open"><label  for="pop-up">詳細検索</label></button>
+           <input type="checkbox" id="pop-up">
+               <div class="overlay">
+                 <div class="search_pop-up">
+                   <label class="close" for="pop-up">×</label>
+                   <div class="detail_search"><!--ポップアップの中身-->
+                       <form method="POST" action="/hydrangea/SearchResultServlet" autocomplete="off"> <!--servlet名、要チェック-->
+                           <table class="koumoku">
+                               <tr>
+                                <td><label>店名・フリーワード<br>
+                                <input type="text" name="shop_name" value="${e.shop_name}">
                                 </label></td>
+                                <td><label>プリセット<br>
+                                <select name="" value="${e.preset}">
+                                   <option >選択して下さい</option>
+                                   <option value="reservation">営業部</option>
+                                   <option value="event">営業1課</option>
+                                   <option value="contact">営業1課4班</option>
+                                </select>
+                                   </label></td>
                 			<tr>
               				 <td>
                              <label>ジャンル<br>
@@ -124,8 +122,7 @@
                                 </select>
                             </label>
                         	</td>
-                    	   </tr>
-                    	   <tr>
+
                             <td>
                             <label>形態<br>
                                 <select type="text" name="genre_form" id="genre_form" value="" placeholder="形態"
@@ -144,62 +141,65 @@
                             </td>
                             </tr>
                             <tr>
-                             <td><label>価格帯<br>
-                             <input type="text" name="price_max" value="${e.price_max}">～<input type="text" name="price_min" value="${e.price_min}">
-                             </label></td>
-                             <td><label>座席
-                             <select name="sheet" id="sheet">
-                                <option value="reservation">飲み放題のみ</option>
-                                <option value="event">食べ放題のみ</option>
-                                <option value="contact">両方用意あり</option>
-                            </select>
-                             </label></td>
-                            <tr>
-                             <td><label>人数<br>
-                             <input type="text" name="capacity" value="${e.capacity}">
-                             </label></td>
+                               </tr>
+                               <tr>
+                                <td><label>価格帯<br>
+                                <input type="text" name="price_max" value="${e.price_max}" size="4">～<input type="text" name="price_min" value="${e.price_min}" size="4">
+                                </label></td>
+                                <td><label>座席
 
-                             <td><label>たばこ
-                             <select name="tabaco" id="tabaco">
-                                <option value="reservation">喫煙</option>
-                                <option value="event">禁煙</option>
-                            </select>
-                             </label></td>
-                            </tr>
-                            <tr>
-                             <td><label>会社からの距離<br>
-                             <input type="text" name="distance" value="${e.distance}">
-                             </label></td>
-                             <td><label>放題メニュー
-                             <select name="hodai" id="hodai" >
-                                <option value="reservation">飲み放題のみ</option>
-                                <option value="event">食べ放題のみ</option>
-                                <option value="contact">両方用意あり</option>
-                             </select>
-                             </label></td>
-                            </tr>
-                            <tr>
-                             <td><label>
-                             <input type="text" name="genre_form" value="営業時間(平日)">～<input type="text" name="genre_form" value="営業時間(平日)">
-                             </label></td>
-                            </tr>
-                            <tr>
-                             <td class="preset"><label>
-                             <input type="checkbox" name="keep_preset" value="keep">現在の条件を保存する<br>
-                             プリセット名<input type="text" name="preset_name" value="記入してください">
-                             </label></td>
-                            </tr>
-                            <tr>
-                             <td>
-                             <input type="submit" name="REGIST" value="検索">
-                             </td>
-                             </tr>
-                        </table>
-                        </form>
+                                   <input type="checkbox" value="sheet_table">テーブル席</option>
+                                   <input type="checkbox" value="sheet_tatami">座敷</option>
+                                   <input type="checkbox" value="sheet_other">その他</option>
 
-              </div>
+                                </label></td>
+                               <tr>
+                                <td><label>人数<br>
+                                <input type="text" name="capacity" value="">
+                                </label></td>
+
+                                <td><label>たばこ
+                                <input type="radio" name="tabaco" value="喫煙" checked>喫煙
+                            	<input type="radio" name="tabaco" value="禁煙">禁煙<br>
+                                </label></td>
+                               </tr>
+
+                               <tr>
+                                <td><label>会社からの距離<br>
+                                <input type="text" name="distance" value="" size="8">
+                                </label></td>
+
+                                <td><label>放題メニュー
+                                <select name="sheet" value="e.shop_name">
+                                   <option value="reservation">飲み放題のみ</option>
+                                   <option value="event">食べ放題のみ</option>
+                                   <option value="contact">両方用意あり</option>
+                                </select>
+                                </label></td>
+                               </tr>
+                               <tr>
+                                <td><label>
+                                <input type="text" name="genre_form" value="営業時間" size="8">～<input type="text" name="genre_form" value="営業時間" size="8">
+                                </label></td>
+                               </tr>
+                               <tr>
+                                <td class="preset"><label>
+                                <input type="checkbox" name="keep_preset" value="keep">現在の条件を保存する<br>
+                                プリセット名<input type="text" name="preset_name" value="記入してください">
+                                </label></td>
+                               </tr>
+                               <tr>
+                                <td>
+                                <input type="submit" name="search" value="詳細検索">
+                                </td>
+                               </tr>
+                           </table>
+                           </form>
+                   </div>
+                 </div>
+               </div>
             </div>
-	</div>
+       </div>
 	</div>
 <div class="page_right">
     <!--デフォルト部分-->
