@@ -1,7 +1,6 @@
 package servlet;
 
 import java.io.IOException;
-import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -9,9 +8,6 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
-import dao.ShopDao;
-import model.Shops;
 
 /**
  * Servlet implementation class ShopDetailServlet
@@ -70,15 +66,9 @@ public class ShopDetailServlet extends HttpServlet {
 		String remarks_shop = request.getParameter("remarks_shop");
 
 		// 検索処理を行う
-		//if (request.getParameter("SUBMIT").equals("検索")) {
-		ShopDao bDao = new ShopDao(); //DB,listしてね 確認6/16
-		List<Shops> cardList =
-			bDao.select(new Shops(shop_name, genre, genre_form, price_max,price_min, open_hei, close_hei, open_kyu, close_kyu,
-				holiday_mon,holiday_tue, holiday_wed, holiday_thu, holiday_fri, holiday_sat, holiday_sun, holiday_syuku, holiday_nenmatsu, holiday_other,
-				distance, address, tabaco, sheet_table, sheet_tatami, sheet_other, capacity, eat_drink, score, tel, homepage, other, photo, remarks_shop));
 
 						// 検索結果をリクエストスコープに格納する
-						request.setAttribute("cardList", cardList);//リスト名確認
+//						request.setAttribute("cardList", cardList);//リスト名確認
 
 
 		// 店舗詳細ページにフォワードする
@@ -91,7 +81,13 @@ public class ShopDetailServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		/*	// もしもログインしていなかったらログインサーブレットにリダイレクトする
-		HttpSession session = request.getSession();
+		HttpSession//if (request.getParameter("SUBMIT").equals("検索")) {
+		ShopDao bDao = new ShopDao(); //DB,listしてね 確認6/16
+		List<Shops> cardList =
+			bDao.select(new Shops(shop_name, genre, genre_form, price_max,price_min, open_hei, close_hei, open_kyu, close_kyu,
+				holiday_mon,holiday_tue, holiday_wed, holiday_thu, holiday_fri, holiday_sat, holiday_sun, holiday_syuku, holiday_nenmatsu, holiday_other,
+				distance, address, tabaco, sheet_table, sheet_tatami, sheet_other, capacity, eat_drink, score, tel, homepage, other, photo, remarks_shop));
+ session = request.getSession();
 		if (session.getAttribute("id") == null) {
 			response.sendRedirect("/hydrangea/LoginServlet");
 			return;

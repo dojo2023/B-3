@@ -25,7 +25,7 @@
 
             <input type="text" placeholder="店名・フリーワード検索" style="width: 60%; margin-right: 3px;">
 
-            <input type="submit" name="REGIST" value="検索"><br>
+            <input type="submit" name="seach" value="検索"><br>
 
             <input type="text" name="price_max" value="" size="4"  placeholder="最高予算">～<input type="text" name="price_min" value="" size="4" placeholder="最低予算">
 
