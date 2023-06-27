@@ -3,9 +3,11 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<title>fileupload</title>
     <meta charset="UTF-8">
     <title>幹事サポート</title>
-    <link rel="stylesheet" href="/hydrangea/css/menu.css">
+	<link rel="stylesheet" href="css/header_footer.css"><!-- ヘッダーフッター用css -->
+	<link rel="stylesheet" href="css/menu.css"><!-- ハンバーガーメニュー用css -->
 
     <style>
         .sheet_list li {
@@ -30,8 +32,9 @@
     </style>
 
 </head>
-
+<body>
 <header>
+	<h1><a href="/hydrangea/MenuServlet"><img src="img/logo.png" alt="アプリロゴ" ></a></h1><!-- メニュー画面に戻る -->
     <div class="hamburger-menu">
         <input type="checkbox" id="menu-btn-check">
         <label for="menu-btn-check" class="menu-btn"><span></span></label>
@@ -70,10 +73,7 @@
         <!--ここまでメニュー-->
     </div>
 </header>
-<meta charset="UTF-8">
-<title>fileupload</title>
 
-<body>
    <h1><label>店舗情報登録</label></h1><br>
 <h2>
 

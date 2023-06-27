@@ -5,6 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>問い合わせ結果 | Hydrangea</title>
+<link rel="stylesheet" href="css/header_footer.css"><!-- ヘッダーフッター用css -->
 <link rel="stylesheet" href="css/menu.css"><!-- ハンバーガーメニュー用css -->
 
 <!--サーブレットのリンク--><!--削除の申請結果コメント-->
@@ -12,7 +13,7 @@
 <body>
 <!--ここからヘッダー-->
 <header class = header>
-    <h1 class="logo"><a href="menu.html"><img src="img/logo.png" alt="アプリロゴ" width="100"></a></h1>
+   <h1><a href="/hydrangea/MenuServlet"><img src="img/logo.png" alt="アプリロゴ" ></a></h1><!-- メニュー画面に戻る -->
    <div class="hamburger-menu"> <!--ハンバーガーメニュー-->
             <input type="checkbox" id="menu-btn-check">
             <label for="menu-btn-check" class="menu-btn"><span></span></label>

@@ -6,7 +6,8 @@
 <head>
     <meta charset="UTF-8">
     <title>幹事サポート</title>
-    <link rel="stylesheet" href="/hydrangea/css/menu.css">
+    <link rel="stylesheet" href="css/header_footer.css"><!-- ヘッダーフッター用css -->
+    <link rel="stylesheet" href="css/menu.css"><!-- ハンバーガーメニュー用css -->
 
     <style>
         .sheet_list li {=Z
@@ -31,9 +32,9 @@
     </style>
 
 </head>
-
-<header class = header>
-    <h1 class="logo"><a href="/hydrangea/MenuServlet"><img src="img/logo.png" alt="アプリロゴ" width="100"></a></h1><!-- メニュー画面に戻る -->
+<body>
+<header>
+   <h1><a href="/hydrangea/MenuServlet"><img src="img/logo.png" alt="アプリロゴ" ></a></h1><!-- メニュー画面に戻る -->
    <div class="hamburger-menu"> <!--ハンバーガーメニュー-->
             <input type="checkbox" id="menu-btn-check">
             <label for="menu-btn-check" class="menu-btn"><span></span></label>
@@ -73,7 +74,6 @@
         </div>
 </header>
 
-<body>
     <main>
         <h1><label>店舗情報更新</label></h1><br>
 
@@ -240,6 +240,7 @@
                             <label><input type="checkbox" name="sheet_table" id="sheet_table">テーブル</label>
                             <label><input type="checkbox" name="sheet_tatami" id="sheet_tatami">座敷</label>
                             <label>その他</label>
+                            <label>
                             <input type="text" name="sheet_other_text" id="sheet_other_text"><br>
                             </label>
                         </td>
@@ -397,7 +398,7 @@
 
             </div>
 </form>
-
+<form>
 
             <div id="success" style="display: none;">
                 <h2>

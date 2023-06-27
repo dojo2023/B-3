@@ -2,7 +2,16 @@
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
+<head>
+	<title>カレンダー</title>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="css/header_footer.css"><!-- ヘッダーフッター用css -->
+	<link rel="stylesheet" href="css/menu.css"><!-- ハンバーガーメニュー用css -->
+	<link rel="stylesheet" href="css/calendar.css"><!-- カレンダー用css -->
+</head>
+<body>
 <header>
+	<h1><a href="/hydrangea/MenuServlet"><img src="img/logo.png" alt="アプリロゴ" ></a></h1><!-- メニュー画面に戻る -->
     <div class="hamburger-menu">
         <input type="checkbox" id="menu-btn-check">
         <label for="menu-btn-check" class="menu-btn"><span></span></label>
@@ -40,190 +49,16 @@
             </div>
         <!--ここまでメニュー-->
     </div>
-<meta charset="UTF-8">
-<title>カレンダー</title>
-<style>
-    .menu-btn {
-    position: fixed;
-    top: 10px;
-    right: 10px;
-    display: flex;
-    height: 60px;
-    width: 60px;
-    justify-content: center;
-    align-items: center;
-    z-index: 90;
-    background-color: #eeece9;
-}
-.menu-btn span,
-.menu-btn span:before,
-.menu-btn span:after {
-    content: '';
-    display: block;
-    height: 3px;
-    width: 25px;
-    border-radius: 3px;
-    background-color: black;
-    position: absolute;
-}
-.menu-btn span:before {
-    bottom: 8px;
-}
-.menu-btn span:after{
-    top: 8px;
-}
-#menu-btn-check:checked ~ .menu-btn span {
-    background-color: rgba(255, 255, 255, 0);/*メニューオープン時は真ん中の線を透明にする*/
-}
-#menu-btn-check:checked ~ .menu-btn span::before {
-    bottom: 0;
-    transform: rotate(45deg);
-}
-#menu-btn-check:checked ~ .menu-btn span::after {
-    top: 0;
-    transform: rotate(-45deg);
-}
-#menu-btn-check {
-    display: none;
-}
-.menu-content {
-    width: 25%;
-    height: 100%;
-    position: fixed;
-    top: 0;
-    right: 100%;/*leftの値を変更してメニューを画面外へ*/
-    z-index: 80;
-    background-color: #c0c0c0;
-    transition: all 0.5s;/*アニメーション設定*/
-}
-.menu-content ul {
-    padding: 70px 10px 0;
-}
-.menu-content ul li {
-    border-bottom: solid 1px #000000;
-    list-style: none;
-}
-.menu-content ul li a {
-    display: block;
-    width: 100%;
-    font-size: 15px;
-    box-sizing: border-box;
-    color:#000000;
-    text-decoration: none;
-    padding: 9px 15px 10px 0;
-    position: relative;
-}
-.menu-content ul li a::before {
-    content: "";
-    width: 7px;
-    height: 7px;
-    border-top: solid 2px #000000;
-    border-right: solid 2px #000000;
-    transform: rotate(45deg);
-    position: absolute;
-    right: 11px;
-    top: 16px;
-}
-#menu-btn-check:checked ~ .menu-content {
-    right: 0;/*メニューを画面内へ*/
-}
-.menu-content a:hover {
-    /*color: #e3937a;*/
-    font-weight:800;
-}
-.menu-content a:active {
-    color: blue;
-}
-
-
-
-
-
-
-
-
-
-.calendar-container {
-  width: 500px;
-  margin: 0 auto;
-  border-radius: 5px;
-  background: #f6f5f4;
-  color: #1a1a1a;
-}
-h1 {
-  height: 80px;
-  line-height: 80px;
-  text-align: center;
-  font-size: 24px;
-  margin: 0;
-}
-.calendar {
-  padding: 0 30px 30px 30px;
-}
-table {
-  width: 500%;
-  height: 100%;
-}
-th, td {
-  text-align: center;
-  padding: 10px;
-}
-th {
-  font-weight: normal;
-  font-size: 14px;
-}
-td {
-  font-weight: bold;
-}
-.day *:first-child {
-  color: #ff838b;
-}
-.day *:last-child {
-  color: #6fb5ff;
-}
-
-#calendar {
-    display: flex;
-    flex-wrap: wrap;
-}
-
-section {
-    margin: 10px;
-}
-
-h1 {
-    font-size: 18px;
-}
-
-table {
-    border-spacing: 0;
-    border-collapse: collapse;
-}
-
-td {
-    border: 1px solid #ddd;
-    padding: 5px;
-    text-align: center;
-}
-
-td:first-child {
-    color: red;
-}
-
-td:last-child {
-    color: royalblue;
-}
-
-td.is-disabled {
-    color: #ccc;
-}
-
-</style>
 </header>
-<body>
+
 <h1>カレンダー</h1>
 <div id="calendar"  style="margin-left: 5%; margin-right: 5%;"></div>
 <br><br><br><br><br>
+
+<footer>
+  <p>Copyright &copy; 2023 Hydrangea All Rights Reserved.</p>
+</footer>
+
 <script>
 const weeks = ['日', '月', '火', '水', '木', '金', '土']
 const date = new Date()
@@ -300,9 +135,6 @@ document.addEventListener("click", function(e) {
 
 showCalendar(year, month)
 </script>
-</body>
 
-<footer>
-  <p>Copyright &copy; 2023 Hydrangea All Rights Reserved.</p>
-</footer>
+</body>
 </html>

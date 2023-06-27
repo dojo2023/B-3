@@ -6,7 +6,8 @@
 <head>
 <meta charset="UTF-8">
 <title>店詳細 | Hydrangea</title>
-<link rel="stylesheet" href="css/searchwindow.css">
+<link rel="stylesheet" href="css/searchwindow.css"><!-- 検索ウィンドウ用css -->
+<link rel="stylesheet" href="css/header_footer.css"><!-- ヘッダーフッター用css -->
 <link rel="stylesheet" href="css/menu.css"><!-- ハンバーガーメニュー用css -->
 
 
@@ -14,7 +15,7 @@
 <body>
 <!--ここからヘッダー-->
 <header class = header>
-        <h1 class="logo"><a href="menu.html"><img src="img/logo.png" alt="アプリロゴ" width="100"></a></h1>
+        <h1><a href="/hydrangea/MenuServlet"><img src="img/logo.png" alt="アプリロゴ" ></a></h1><!-- メニュー画面に戻る -->
         <div class="hamburger-menu"> <!--ハンバーガーメニュー-->
             <input type="checkbox" id="menu-btn-check">
             <label for="menu-btn-check" class="menu-btn"><span></span></label>
@@ -61,7 +62,7 @@
            <form method="POST" action="/hydrangea/SearchResultServlet" autocomplete="off"> <!--servlet名、要チェック-->
            <table class="koumoku">
                <tr>
-                <td><label>ジャンル・店名・フリーワード<br>
+                <td><label>店名・フリーワード<br>
                 <input type="text" name="NUMBER" value="">
                 </label></td>
                </tr>
@@ -98,11 +99,12 @@
                        <form method="POST" action="/hydrangea/SearchResultServlet" autocomplete="off"> <!--servlet名、要チェック-->
                            <table class="koumoku">
                                <tr>
-                                <td><label>ジャンル・店名・フリーワード<br>
+                                <td><label>店名・フリーワード<br>
                                 <input type="text" name="shop_name" value="${e.shop_name}">
                                 </label></td>
                                 <td><label>プリセット<br>
                                 <select name="" value="${e.preset}">
+                                   <option >選択して下さい</option>
                                    <option value="reservation">営業部</option>
                                    <option value="event">営業1課</option>
                                    <option value="contact">営業1課4班</option>
@@ -121,8 +123,7 @@
                                 </select>
                             </label>
                         	</td>
-                    	   </tr>
-                    	   <tr>
+
                             <td>
                             <label>形態<br>
                                 <select type="text" name="genre_form" id="genre_form" value="" placeholder="形態"
@@ -144,31 +145,31 @@
                                </tr>
                                <tr>
                                 <td><label>価格帯<br>
-                                <input type="text" name="price_max" value="${e.price_max}">～<input type="text" name="price_min" value="${e.price_min}">
+                                <input type="text" name="price_max" value="${e.price_max}" size="4">～<input type="text" name="price_min" value="${e.price_min}" size="4">
                                 </label></td>
                                 <td><label>座席
-                                <select name="sheet" value="${e.sheet}">
-                                   <option value="reservation">飲み放題のみ</option>
-                                   <option value="event">食べ放題のみ</option>
-                                   <option value="contact">両方用意あり</option>
-                                </select>
+
+                                   <input type="checkbox" value="sheet_table">テーブル席</option>
+                                   <input type="checkbox" value="sheet_tatami">座敷</option>
+                                   <input type="checkbox" value="sheet_other">その他</option>
+
                                 </label></td>
                                <tr>
                                 <td><label>人数<br>
-                                <input type="text" name="capacity" value="e.capacity">
+                                <input type="text" name="capacity" value="">
                                 </label></td>
 
                                 <td><label>たばこ
-                                <select name="sheet" value="e.shop_name">
-                                   <option value="reservation">喫煙</option>
-                                   <option value="event">禁煙</option>
-                                </select>
+                                <input type="radio" name="tabaco" value="喫煙" checked>喫煙
+                            	<input type="radio" name="tabaco" value="禁煙">禁煙<br>
                                 </label></td>
                                </tr>
+
                                <tr>
                                 <td><label>会社からの距離<br>
-                                <input type="text" name="distance" value="distance">
+                                <input type="text" name="distance" value="" size="8">
                                 </label></td>
+
                                 <td><label>放題メニュー
                                 <select name="sheet" value="e.shop_name">
                                    <option value="reservation">飲み放題のみ</option>
@@ -179,7 +180,7 @@
                                </tr>
                                <tr>
                                 <td><label>
-                                <input type="text" name="genre_form" value="営業時間(平日)">～<input type="text" name="genre_form" value="営業時間(平日)">
+                                <input type="text" name="genre_form" value="営業時間" size="8">～<input type="text" name="genre_form" value="営業時間" size="8">
                                 </label></td>
                                </tr>
                                <tr>
@@ -190,7 +191,7 @@
                                </tr>
                                <tr>
                                 <td>
-                                <input type="submit" name="search" value="検索">
+                                <input type="submit" name="search" value="詳細検索">
                                 </td>
                                </tr>
                            </table>

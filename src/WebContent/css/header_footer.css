@@ -1,23 +1,28 @@
 @charset "UTF-8";
-@charset "UTF-8";
 /* ヘッダー(ロゴ)フッター用 */
-
-h1{
-    text-align: center;
-    vertical-align: middle;
-    margin: 0;
-    height:125px;
-    background-color: rgb(255, 149, 0, 0.8);   /*カラーコードだと#ff9500*/
-
+/*ロゴのアイコン色は#E1542F　文字色は#442209*/
+body{
+	 margin: 0;
 }
-.logo{
-	height:125;
+
+header img{
+    text-align: left;
+    margin: 0;
+    margin-top: 17px;
+    margin-left: 17px;
+
+	height:105px;
+    width:105px;
+    border-radius: 8%;/*角丸*/
+    border: solid 5px rgb(255, 166, 0);
+
 }
 
 
 footer{
     text-align: right;
     margin: 0;
+    margin-top: 20px;;
     height:60px;
     background-color: #565045;
 
@@ -27,5 +32,6 @@ footer p{
     margin: 0;
     padding-top: 20px;
     color: #ffffff;
-    vertical-align: middle;
+    font-size: 14px;
+    margin-right:15px;
 }
