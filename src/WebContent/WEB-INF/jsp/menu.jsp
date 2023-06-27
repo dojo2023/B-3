@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="css/header_footer.css"><!-- ヘッダーフッター用css -->
     <link rel="stylesheet" href="css/searchwindow.css"><!-- 検索ウィンドウ用css -->
 	<link rel="stylesheet" href="css/menu.css"><!-- ハンバーガーメニュー用css -->
-    <!-- <link rel="stylesheet" href="css/calendar.css">カレンダーcss -->
+    <link rel="stylesheet" href="css/calendar.css">カレンダーcss
     <link rel="stylesheet" href="css/top.css"><!-- 専用css -->
 
 </head>
@@ -208,11 +208,11 @@
     </div>
 
     <!-- カレンダー -->
-    <div class="calendar">
+
         <div class="con">
-        <p><a href="/hydrangea/CalendarServlet">カレンダー</a></p>
-        </div>
+        <div id="calendar"></div>
     </div>
+
 
 </div>
 <!-- 下半分 -->
@@ -251,6 +251,6 @@
 <footer>
     <p>Copyright &copy; 2023 Hydrangea All Rights Reserved.</p>
 </footer>
-
+<script src="/hydrangea/js/calendar.js"></script>
 </body>
 </html>
