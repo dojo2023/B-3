@@ -209,16 +209,25 @@
 </div>
 <div class="page_right">
     <p><a href="/hydrangea/SearchResultServlet">前のページに戻る</a></p> <!--検索結果画面に戻る-->
-    <!-- <c:if test = "${empty detaList}">
+    <c:if test = "${empty cardList}">
         データが読み込めませんでした<br>
+<<<<<<< HEAD
      </c:if> -->
     <c:forEach var="e" items="${cardList}"> <!--list名、要チェック-->
+=======
+     </c:if>
+    <c:forEach var="e" items="${detaList}"> <!--list名、要チェック-->
+>>>>>>> 82fdfb475d623672f1a761326beae64a1ea2d876
     <label><a href="/hydrangea/ReserveServlet"><button>開催する</button></a></label>
         <form method="POST" action="/hydrangea/ShopDetailServlet">
 		<table class="syousai">
             <tr>
                 <td>
+<<<<<<< HEAD
                   <h2>店名<c:out value="${e.shop_name}"/></h2>
+=======
+                  <h2>${e.shop_name}</h2>
+>>>>>>> 82fdfb475d623672f1a761326beae64a1ea2d876
                 </td>
             </tr>
             <tr>
