@@ -29,8 +29,8 @@ public class ShopDao {
 			conn = DriverManager.getConnection("jdbc:h2:file:C:/dojo6Data/B3", "sa", "");
 
 			// SQL文を準備する・(created_at,updated_atを含めて３６こ
-			String sql ="SELECT * FROM SHOPS WHERE shop_name LIKE ? or remarks_shop like ?  price_min>=?"
-					+ " price_max<=?  capacity<=?  ORDER BY id_shops";
+			String sql ="SELECT * FROM SHOPS WHERE shop_name LIKE ? or remarks_shop like ? or price_min>=?"
+					+ "or price_max<=? or capacity<=?  ORDER BY id_shops";
 
 			PreparedStatement pStmt = conn.prepareStatement(sql);
 			// SQL文を完成させる
@@ -48,22 +48,22 @@ public class ShopDao {
 				pStmt.setString(2, "%");
 			}
 			if (card.getPrice_min() != 0) {
-				pStmt.setString(3, "%" + card.getPrice_min() + "%");
+				pStmt.setInt(3, card.getPrice_min());
 			}
 			else {
-				pStmt.setString(3, "%");
+				pStmt.setInt(3, 0);
 			}
 			if (card.getPrice_max() != 0) {
-				pStmt.setString(4, "%" + card.getPrice_max() + "%");
+				pStmt.setInt(4, card.getPrice_max());
 			}
 			else {
-				pStmt.setString(4, "%");
+				pStmt.setInt(4, 0);
 			}
 			if (card.getCapacity() != 0) {
-				pStmt.setString(5, "%" + card.getCapacity() + "%");
+				pStmt.setInt(5, card.getCapacity());
 			}
 			else {
-				pStmt.setString(5, "%");
+				pStmt.setInt(5, 0);
 			}
 
 
