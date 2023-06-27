@@ -8,7 +8,7 @@ alter table テーブル名 add unique(カラム名);
 //管理者ログインテーブル
 create table adminlogin(
 admin_id varchar(10),
-admin_id varchar(10));
+admin_pass varchar(10));
 
 //管理者ログインテーブルデータ
 insert into adminlogin values ('a','a');
