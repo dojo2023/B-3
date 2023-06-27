@@ -10,8 +10,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import dao.UserDao;
-import model.Users;
+import dao.AdminUserDao;
+import model.AdminUsers;
 
 /**
  * Servlet implementation class LoginServlet
@@ -45,13 +45,15 @@ public class AdminLoginServlet extends HttpServlet {
 		request.setCharacterEncoding("UTF-8");
 		String admin_id = request.getParameter("admin_id");
 		String admin_pass = request.getParameter("admin_pass");
+		
 		System.out.println(admin_id);
 		System.out.println(admin_pass);
-		UserDao uDao = new UserDao();
+
+		AdminUserDao uDao = new AdminUserDao();
 		if(uDao.isLoginOK(admin_id,admin_pass)) {
 			//成功したときセッションスコープにIDを格納する//
 			HttpSession session = request.getSession();
-			session.setAttribute("admin_id", new Users(admin_id));
+			session.setAttribute("admin_id", new AdminUsers(admin_id));
 			//model Usersに格納↑
 
 			response.sendRedirect("/hydrangea/AdminmenuServlet");

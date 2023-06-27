@@ -17,16 +17,16 @@
 <p class="loginMessage">${message}<p>
 
 <p>管理者用ID・メールアドレス</p>
-<input type="text" name="mail" ><br>
+<input type="text" name="admin_id" ><br>
 
 パスワード<br>
-<input type="password" name="pass"><br>
+<input type="password" name="admin_pass"><br>
 
 <input type="submit" name="login" value="ログイン" class="input" ><br>
 
 </form>
 </div>
-<a href="/hydrangea/AccountServlet">アカウント登録はこちら</a>
+<!--  <a href="/hydrangea/AccountServlet">アカウント登録はこちら</a>-->
 </div>
 
 
