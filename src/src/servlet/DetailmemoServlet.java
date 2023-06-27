@@ -8,6 +8,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  * Servlet implementation class DetailmemoServlet
@@ -31,12 +32,12 @@ public class DetailmemoServlet extends HttpServlet {
 		// TODO Auto-generated method stub
 		doGet(request, response);
 
-		// もしもログインしていなかったらログインサーブレットにリダイレクトする
-				//HttpSession session = request.getSession();
-				//if (session.getAttribute("id") == null) {
-					//response.sendRedirect("/hydrangea/LoginServlet");
-					//return;
-				//}
+//		 もしもログインしていなかったらログインサーブレットにリダイレクトする
+				HttpSession session = request.getSession();
+				if (session.getAttribute("id_users") == null) {
+					response.sendRedirect("/hydrangea/LoginServlet");
+					return;
+				}
 		// リクエストパラメータを取得する
 		request.setCharacterEncoding("UTF-8");
 		String id_memos = request.getParameter("ID_MEMOS");
