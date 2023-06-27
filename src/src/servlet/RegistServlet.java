@@ -100,7 +100,7 @@ public class RegistServlet extends HttpServlet {
 		String tel = request.getParameter("tel");
 		String homepage = request.getParameter("homepage");
 		String other = request.getParameter("other_tel");
-		String photo = request.getParameter("photo");
+		String filename = request.getParameter("filename");
 		String remarks_shop = request.getParameter("remarks_shop");
 
 
@@ -185,7 +185,7 @@ public class RegistServlet extends HttpServlet {
 
 		//name属性がpictのファイルをPartオブジェクトとして取得
 
-		Part part=request.getPart("photo");
+		Part part=request.getPart("filename");
 		System.out.println("part"+part);
 		if(part != null) {
 			//ファイル名を取得

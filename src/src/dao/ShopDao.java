@@ -29,8 +29,7 @@ public class ShopDao {
 			conn = DriverManager.getConnection("jdbc:h2:file:C:/dojo6Data/B3", "sa", "");
 
 			// SQL文を準備する・(created_at,updated_atを含めて３６こ
-			String sql ="SELECT * FROM SHOPS WHERE shop_name LIKE ? or remarks_shop like ? or price_min>=?"
-					+ "or price_max<=? or capacity<=?  ORDER BY id_shops";
+			String sql ="SELECT * FROM SHOPS WHERE (shop_name LIKE ?   or remarks_shop like ?)  and price_min>=?  and price_max<=? and capacity<=? ORDER BY id_shops;";
 
 			PreparedStatement pStmt = conn.prepareStatement(sql);
 			// SQL文を完成させる
@@ -42,7 +41,7 @@ public class ShopDao {
 				pStmt.setString(1, "%");
 			}
 			if (card.getRemarks_shop() != null) {
-				pStmt.setString(2, "%" + card.getRemarks_shop() + "%");
+				pStmt.setString(2, "%" + card.getShop_name() + "%");
 			}
 			else {
 				pStmt.setString(2, "%");
@@ -57,13 +56,13 @@ public class ShopDao {
 				pStmt.setInt(4, card.getPrice_max());
 			}
 			else {
-				pStmt.setInt(4, 0);
+				pStmt.setInt(4, 10000000);
 			}
 			if (card.getCapacity() != 0) {
 				pStmt.setInt(5, card.getCapacity());
 			}
 			else {
-				pStmt.setInt(5, 0);
+				pStmt.setInt(5, 10000000);
 			}
 
 
@@ -76,7 +75,7 @@ public class ShopDao {
 				while (sh.next()) {
 
 					Shops card1 = new Shops(
-							sh.getInt("shop_id"),
+							sh.getInt("id_shops"),
 							sh.getString("shop_name"),
 							sh.getString ("genre"),
 							sh.getString ("genre_form"),
@@ -162,7 +161,7 @@ public boolean insert(Shops card) {
 				+ "open_hei,close_hei,open_kyu,close_kyu,"
 				+ "holiday_mon,holiday_tue,holiday_wed,holiday_thu,holiday_fri,holiday_sat,holiday_sun,holiday_syuku,"
 				+ "holiday_nenmatsu,holiday_other,distance,address,tabaco,sheet_table,sheet_tatami,sheet_other,"
-				+ "capacity,eat_drink,score,tel,homepage,other,photo,remarks_shop,id_users) "
+				+ "capacity,eat_drink,score,tel,homepage,other,filename,remarks_shop,id_users) "
 				+ "VALUES "
 				+ "(CURRENT_TIMESTAMP,CURRENT_TIMESTAMP,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
 

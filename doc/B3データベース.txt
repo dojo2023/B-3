@@ -2,20 +2,20 @@
 JDBC URL　　　：jdbc:h2:file:C:/dojo6Data/B3
 
 
-//あとからユニーク制約つける
+-- あとからユニーク制約つける
 alter table テーブル名 add unique(カラム名);
 
-//管理者ログインテーブル
+-- 管理者ログインテーブル
 create table adminlogin(
 admin_id varchar(10),
 admin_id varchar(10));
 
-//管理者ログインテーブルデータ
+-- 管理者ログインテーブルデータ
 insert into adminlogin values ('a','a');
 insert into adminlogin values ('admin','login');
 
 
-//ユーザーテーブル作成
+-- ユーザーテーブル作成
 CREATE TABLE USERS (
 id_users 	int auto_increment primary key,
 created_at 	timestamp,
@@ -26,7 +26,7 @@ pass 		varchar(20) not null,
 department 	varchar(10) not null
 );
 
-//店情報テーブル
+-- 店情報テーブル
 CREATE TABLE SHOPS (
 id_shops	int auto_increment primary key,	
 created_at	timestamp,	
@@ -62,7 +62,7 @@ score		int,
 tel		varchar(20),
 homepage	varchar(100),
 other		varchar(100),
-photo		varchar(50),
+filename	varchar(50),
 remarks_shop	varchar(200),
 id_users	int,
 flag		int,
@@ -70,7 +70,7 @@ FOREIGN KEY(id_users) REFERENCES users(id_users)
 );
 
 
-//履歴予約テーブル
+-- 履歴予約テーブル
 CREATE TABLE APPOINTMENTS (
 id_appointments	int auto_increment primary key,	
 created_at	timestamp,	
@@ -87,7 +87,7 @@ FOREIGN KEY(id_shops) REFERENCES shops(id_shops)
 );
 
 
-//管理者向けメッセージ
+-- 管理者向けメッセージ
 CREATE TABLE MESSAGES ( 
 id_messages	int auto_increment primary key,	
 created_at	timestamp,	
@@ -100,7 +100,7 @@ FOREIGN KEY(id_users) REFERENCES users(id_users)
 );
 
 
-//幹事用個別メモ
+-- 幹事用個別メモ
 CREATE TABLE MEMOS (
 id_memos	int auto_increment primary key,
 created_at	timestamp,
@@ -112,7 +112,7 @@ FOREIGN KEY(id_users) REFERENCES users(id_users)
 );
 
 
-//役職メモ
+-- 役職メモ
 CREATE TABLE POSITION_MEMOS (
 id_position_memos	int auto_increment primary key,
 created_at		timestamp,
@@ -130,19 +130,19 @@ FOREIGN KEY(id_users) REFERENCES users(id_users)
 
 
 
-//管理者からのメッセージテーブル
+-- 管理者からのメッセージテーブル
 CREATE TABLE ADMIN_MESSAGES (
 id_admin_messages	int auto_increment primary key,
 created_at		timestamp,	
 updated_at		timestamp,	
 information_title	varchar(15) not null,
 information_subtitle	varchar(15),
-information_photo	varchar(50),
+information_filename	varchar(50),
 information		varchar(500) not null
 );
 
 
-//プリセット
+-- プリセット
 CREATE TABLE PRESETS (
 id_presets	int auto_increment primary key,
 created_at	timestamp,
@@ -164,7 +164,7 @@ FOREIGN KEY(id_users) REFERENCES users(id_users)
 
 
 
-//評価
+-- 評価
 CREATE TABLE SCORES (
 id_scores	int auto_increment primary key,
 id_shops	int,
@@ -175,7 +175,7 @@ FOREIGN KEY(id_users) REFERENCES users(id_users)
 );
 
 
-//ユーザーテーブルダミーデータ
+-- ユーザーテーブルダミーデータ
 INSERT INTO users(created_at,updated_at,name,mail,pass,department) VALUES (
 CURRENT_TIMESTAMP,
 CURRENT_TIMESTAMP,
@@ -184,7 +184,7 @@ CURRENT_TIMESTAMP,
 'chaohpa',
 '営業課'
 );
-//ユーザーテーブルダミーデータ
+-- ユーザーテーブルダミーデータ
 INSERT INTO users(created_at,updated_at,name,mail,pass,department) VALUES (
 CURRENT_TIMESTAMP,
 CURRENT_TIMESTAMP,
@@ -193,7 +193,7 @@ CURRENT_TIMESTAMP,
 'a32o239i3',
 '営業課'
 );
-//テストログイン用
+-- テストログイン用
 INSERT INTO users(created_at,updated_at,name,mail,pass,department) VALUES (
 CURRENT_TIMESTAMP,
 CURRENT_TIMESTAMP,
@@ -207,7 +207,7 @@ CURRENT_TIMESTAMP,
 
 
 
-//店情報テーブルダミーデータ
+-- 店情報テーブルダミーデータ
 INSERT INTO shops(
 created_at,
 updated_at,
@@ -242,7 +242,7 @@ score,
 tel,
 homepage,
 other,
-photo,
+filename,
 remarks_shop,
 id_users
 ) 
@@ -278,13 +278,13 @@ CURRENT_TIMESTAMP,
 '飲み放題有',
 '10',
 '123-456-7890',
-'https://sisui.sake.com',
+'https:-- sisui.sake.com',
 'a',
 'gazou',
 '注文はパネルで操作',
 '1'
 );
-//店情報テーブルダミーデータ
+-- 店情報テーブルダミーデータ
 INSERT INTO shops(
 created_at,
 updated_at,
@@ -319,7 +319,7 @@ score,
 tel,
 homepage,
 other,
-photo,
+filename,
 remarks_shop,
 id_users
 ) 
@@ -356,7 +356,7 @@ CURRENT_TIMESTAMP,
 '飲み放題有',
 '10',
 '111-222-3333',
-'https://addfood.com',
+'https:-- addfood.com',
 'a',
 'gazou',
 '10人以上で割引有',
@@ -371,7 +371,7 @@ CURRENT_TIMESTAMP,
 
 
 
-//履歴予約テーブルダミーデータ
+-- 履歴予約テーブルダミーデータ
 INSERT INTO appointments(
 created_at,
 updated_at,
@@ -424,7 +424,7 @@ CURRENT_TIMESTAMP,
 
 
 
-//管理者向けメッセージテーブルダミーデータ
+-- 管理者向けメッセージテーブルダミーデータ
 INSERT INTO messages(
 created_at,
 updated_at,
@@ -443,7 +443,7 @@ CURRENT_TIMESTAMP,
 '居酒屋酒々井が一週間後に閉店するためデータの更削除をお願いします。'
 );
 
-//管理者向けメッセージテーブルダミーデータ
+-- 管理者向けメッセージテーブルダミーデータ
 INSERT INTO messages(
 created_at,
 updated_at,
@@ -468,7 +468,7 @@ CURRENT_TIMESTAMP,
 
 
 
-//メモテーブルダミーデータ
+-- メモテーブルダミーデータ
 INSERT INTO memos(
 created_at,
 updated_at,
@@ -485,7 +485,7 @@ CURRENT_TIMESTAMP,
 '魚介類は毎朝市場から直送された素材を使用しているそう。'
 );
 
-//メモテーブルダミーデータ
+-- メモテーブルダミーデータ
 INSERT INTO memos(
 created_at,
 updated_at,
@@ -506,7 +506,7 @@ CURRENT_TIMESTAMP,
 
 
 
-//役職メモテーブルダミーデータ
+-- 役職メモテーブルダミーデータ
 INSERT INTO position_memos(
 created_at,
 updated_at,
@@ -533,7 +533,7 @@ CURRENT_TIMESTAMP,
 '飲みの席で仕事の話は嫌い'
 );
 
-//役職メモテーブルダミーデータ
+-- 役職メモテーブルダミーデータ
 INSERT INTO position_memos(
 created_at,
 updated_at,
@@ -563,13 +563,13 @@ CURRENT_TIMESTAMP,
 
 
 
-//管理者お知らせテーブルダミーデータ
+-- 管理者お知らせテーブルダミーデータ
 INSERT INTO ADMIN_MESSAGES(
 created_at,
 updated_at,
 information_title,
 information_subtitle,
-information_photo,
+information_filename,
 information
 ) 
 
@@ -584,13 +584,13 @@ CURRENT_TIMESTAMP,
 部署を問わず参加できるので希望の方は営業課の橘までご連絡ください。'
 );
 
-//管理者お知らせテーブルダミーデータ
+-- 管理者お知らせテーブルダミーデータ
 INSERT INTO ADMIN_MESSAGES(
 created_at,
 updated_at,
 information_title,
 information_subtitle,
-information_photo,
+information_filename,
 information
 ) 
 
@@ -609,7 +609,7 @@ CURRENT_TIMESTAMP,
 
 
 
-//プリセットテーブルダミーデータ
+-- プリセットテーブルダミーデータ
 INSERT INTO presets(
 created_at,
 updated_at,
@@ -644,7 +644,7 @@ CURRENT_TIMESTAMP,
 '1'
 );
 
-//プリセットテーブルダミーデータ
+-- プリセットテーブルダミーデータ
 INSERT INTO presets(
 created_at,
 updated_at,
@@ -681,7 +681,7 @@ CURRENT_TIMESTAMP,
 
 
 
-//評価テーブルダミーデータ
+-- 評価テーブルダミーデータ
 INSERT INTO scores(
 id_shops,
 score,
@@ -694,7 +694,7 @@ VALUES (
 '1'
 );
 
-//評価テーブルダミーデータ
+-- 評価テーブルダミーデータ
 INSERT INTO scores(
 id_shops,
 score,

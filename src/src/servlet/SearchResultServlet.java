@@ -9,6 +9,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import dao.ShopDao;
 import model.Shops;
@@ -56,27 +57,30 @@ public class SearchResultServlet extends HttpServlet {
 				}*/
 
 				// リクエストパラメータを取得する
-				request.setCharacterEncoding("UTF-8");
-				String shop_name = request.getParameter("shop_name");
-				String remarks_shop = request.getParameter("remarks_shop");
-				String capacity = request.getParameter("capacity");
-				String distance = request.getParameter("distance");
-				String price_max = request.getParameter("price_max");
-				String price_min = request.getParameter("price_min");
+		request.setCharacterEncoding("UTF-8");
 
 
 				if (request.getParameter("search").equals("検索")) {
+
+					request.setCharacterEncoding("UTF-8");
+					String shop_name = request.getParameter("shop_name");
+					//String remarks_shop = request.getParameter("remarks_shop");
+					String capacity = request.getParameter("capacity");
+					String distance = request.getParameter("distance");
+					String price_max = request.getParameter("price_max");
+					String price_min = request.getParameter("price_min");
+
 				ShopDao bDao = new ShopDao();
 
 				Shops sh = new Shops();
 
 				sh.setShop_name(shop_name);
-				sh.setRemarks_shop(remarks_shop);
+				//sh.setRemarks_shop(remarks_shop);
 
 				List<Shops> cardList =
 						bDao.select((sh));
-
-				request.setAttribute("cardList", cardList);
+				HttpSession session = request.getSession();
+				session.setAttribute("cardList", cardList);
 
 
 
@@ -94,7 +98,6 @@ public class SearchResultServlet extends HttpServlet {
 					String close_hei = request.getParameter("close_hei");
 					String open_kyu = request.getParameter("open_kyu");
 					String close_kyu = request.getParameter("close_kyu");
-
 					String distance = request.getParameter("distance");
 					String tabaco = request.getParameter("tabaco");
 					String sheet_table = request.getParameter("sheet_table");
