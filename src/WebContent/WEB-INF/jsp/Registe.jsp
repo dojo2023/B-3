@@ -309,7 +309,7 @@
                     <tr>
                         <td>
                             <label>画像(必須)
-                                <input type="file" name="photo" id="photo"  multiple="multiple"
+                                <input type="file" name="filename" id="photo"  multiple="multiple"
                                     onchange="previewImage(this);"
                                     accept="image/*">
                                     <img id="preview" src="" style = "max-width:150px;">
