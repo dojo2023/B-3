@@ -5,37 +5,23 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>幹事サポート</title>
+    <title>登録|hydrangea</title>
+    <link rel="stylesheet" href="css/regist.css"><!-- 登録用css -->
     <link rel="stylesheet" href="css/header_footer.css"><!-- ヘッダーフッター用css -->
     <link rel="stylesheet" href="css/menu.css"><!-- ハンバーガーメニュー用css -->
-
-    <style>
-        .sheet_list li {
-            display: inline;
-        }
-
-        .holiday_list li {
-            display: inline;
-        }
-
-
-        .open_page li {
-            display: inline;
-        }
-
-        .current {
-            color: #DB7093;
-            text-decoration-line: underline;
-            text-underline-offset: 2px;
-            text-decoration-thickness: 10px;
-        }
-    </style>
 
 </head>
 <body>
 <header>
 	<h1><a href="/hydrangea/MenuServlet"><img src="img/logo.png" alt="アプリロゴ" ></a></h1><!-- メニュー画面に戻る -->
-    <p id="title">店舗登録</p>
+    	<label id="title">
+    				<ol class="open_page">
+                        <li class="current">店舗情報入力</li>
+                        <li>登録情報確認</li>
+                        <li>登録完了</li>
+                    </ol>
+                    </label>
+
     <div class="hamburger-menu"> <!--ハンバーガーメニュー-->
             <input type="checkbox" id="menu-btn-check">
             <label for="menu-btn-check" class="menu-btn"><span></span></label>
@@ -74,32 +60,27 @@
             <!--ここまでメニュー-->
         </div>
 </header>
+<main>
 
-    <main>
-        <h1><label>店舗情報登録</label></h1><br>
 
 <!--  -->
 
         <form action="/hydrangea/RegistServlet" method="post" enctype="multipart/form-data">
             <div id="registForm">
-                <h2>
-                    <ol class="open_page">
-                        <li class="current">店舗情報入力</li>
-                        <li>登録情報確認</li>
-                        <li>登録完了</li>
-                    </ol>
-                </h2>
+
                 <table class="">
-
-
+					<tr>
+						<td>
+						<a class=markar>*は必須項目です</a>
+						</td>
+					</tr>
                     <tr>
                         <td>
-                            <label>店名(必須)
-                                <input type="text" name="shop_name" id="shop_name" value="" required><br>
+                            <label><a class=markar>* </a>店名
+                                <input type="text" name="shop_name" id="shop_name" value="" ><br>
                             </label>
                         </td>
                     </tr>
-
                     <tr>
                         <td>
                             <label>ジャンル
@@ -117,10 +98,9 @@
 
                     <tr>
                         <td>
-                            <label>形態ｖ
-                                <select type="text" name="genre_form" id="genre_form" value="" placeholder="形態"
-                                    required>
-                                    <option hidden>選択して下さい</option>
+                            <label>形態
+                                <select  name="genre_form" id="genre_form" value="" placeholder="形態" required>
+                                    <option hidden >選択して下さい</option>
                                     <option value="居酒屋">居酒屋</option>
                                     <option value="レストラン">レストラン</option>
                                     <option value="寿司屋">寿司屋</option>
@@ -148,10 +128,10 @@
                     <tr>
                         <td>
                             <label>平日営業時間
-                                <input type="time" name="open_hei" id="open_hei" value="0" placeholder="">～
+                                <input type="time" name="open_hei" id="open_hei" value="" placeholder="">～
                             </label>
                             <label>
-                                <input type="time" name="close_hei" id="close_hei" value="0" placeholder=""><br>
+                                <input type="time" name="close_hei" id="close_hei" value="" placeholder=""><br>
                             </label>
                         </td>
                     </tr>
@@ -159,10 +139,10 @@
                     <tr>
                         <td>
                             <label>休日営業時間
-                                <input type="time" name="open_kyu" id="open_kyu" value="0" placeholder="">～
+                                <input type="time" name="open_kyu" id="open_kyu" value="" placeholder="">～
                             </label>
                             <label>
-                                <input type="time" name="close_kyu" id="close_kyu" value="0" placeholder=""><br>
+                                <input type="time" name="close_kyu" id="close_kyu" value="" placeholder=""><br>
                             </label>
                         </td>
                     </tr>
@@ -204,7 +184,6 @@
 
                         </td>
                     </tr>
-
                     <tr>
                         <td>
                             <label>会社からの距離
@@ -308,7 +287,7 @@
 
                     <tr>
                         <td>
-                            <label>画像(必須)
+                            <label><a class=markar>* </a>画像
                                 <input type="file" name="filename" id="photo"  multiple="multiple"
                                     onchange="previewImage(this);"
                                     accept="image/*">

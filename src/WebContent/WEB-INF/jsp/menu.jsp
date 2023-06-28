@@ -92,13 +92,13 @@
                                 <td><label>価格帯<br>
                                 <input type="text" name="price_max" value="${e.price_max}" size="4">～<input type="text" name="price_min" value="${e.price_min}" size="4">
                                 </label></td>
-                                <td><label>座席
+                                <td>座席
 
-                                   <input type="checkbox" value="sheet_table">テーブル席</option>
-                                   <input type="checkbox" value="sheet_tatami">座敷</option>
-                                   <input type="checkbox" value="sheet_other">その他</option>
+                             <label>  <input type="checkbox" name="sheet_table">テーブル席</option> </label>
+                             <label>       <input type="checkbox" name="sheet_tatami">座敷</option> </label>
+                             <label>    その他<input type="text" name="sheet_other"></option> </label>
 
-                                </label></td>
+                                </td>
                                <tr>
                                 <td><label>人数<br>
                                 <input type="text" name="capacity" value="">
@@ -125,7 +125,7 @@
                                </tr>
                                <tr>
                                 <td><label>
-                                <input type="text" name="genre_form" value="営業時間" size="8">～<input type="text" name="genre_form" value="営業時間" size="8">
+                                <input type="time" name="open_hei" value="営業時間" size="8">～<input type="time" name="close_hei" value="営業時間" size="8">
                                 </label></td>
                                </tr>
                                <tr>

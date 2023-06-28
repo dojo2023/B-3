@@ -1,0 +1,35 @@
+@charset "UTF-8";
+
+.sheet_list li {
+      display: inline;
+}
+
+.holiday_list li {
+      display: inline;
+}
+
+.open_page{
+	margin: 0;
+
+}
+
+.open_page li {
+      display: inline;
+
+}
+
+.current{
+     color: #E1542F;
+     font-weight: bold;
+
+}
+
+main{
+	width: 800px;
+	margin: 0 auto 0 auto;
+}
+
+.markar{
+	color:#E1542F;
+
+}

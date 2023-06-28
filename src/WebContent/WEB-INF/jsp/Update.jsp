@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
-
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 
@@ -106,7 +106,7 @@
                         <td>
                             <label>ジャンル（必須）
                                 <select type="text" name="genre" id="genre"  value="${e.gerne}" placeholder="ジャンル" required>
-                                    <option hidden>選択して下さい</option>
+                                    <option >選択して下さい</option>
                                     <option value="和食">和食</option>
                                     <option value="中華">中華</option>
                                     <option value="フレンチ・イタリアン">フレンチ・イタリアン</option>

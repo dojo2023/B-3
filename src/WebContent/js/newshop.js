@@ -8,7 +8,7 @@ function showConfirmation() {
 
 // 修正ボタン用、修正画面に遷移
 function redirectToServlet() {
-  window.location.href = "別のサーブレットのURL";
+  window.location.href = "/hydrangea/AdminUpdateServlet";
 }
 
 
@@ -18,7 +18,7 @@ function redirectToServlet() {
     document.getElementById('check-button').style.display = 'block';
   }
 
-  
+
 
   function registItem() {
     // 登録処理を実行するためのコードをここに追加します
@@ -35,4 +35,3 @@ function redirectToServlet() {
     hideConfirmation();
   }
 
- 

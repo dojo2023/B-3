@@ -149,9 +149,9 @@
                                 </label></td>
                                 <td><label>座席
 
-                                   <input type="checkbox" value="sheet_table">テーブル席</option>
-                                   <input type="checkbox" value="sheet_tatami">座敷</option>
-                                   <input type="checkbox" value="sheet_other">その他</option>
+                                   <input type="checkbox" name="sheet_table">テーブル席</option>
+                                   <input type="checkbox" name="sheet_tatami">座敷</option>
+                                   <input type="text" name="sheet_other">その他</option>
 
                                 </label></td>
                                <tr>
@@ -230,8 +230,7 @@
             </tr>
             <tr>
                 <td>
-                   value="${e.filename}"/>写真
-                    <img src="./upload/${e.filename}">
+                    <img src="/hydrangea/upload/${e.filename}" style="width:200px;">
                 </td>
             </tr>
             <tr>
