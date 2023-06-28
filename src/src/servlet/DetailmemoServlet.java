@@ -51,8 +51,8 @@ public class DetailmemoServlet extends HttpServlet {
 
 
 		// 検索処理を行う
-		//MemoDAO bDao = new MemoDAO();
-		//List<Memos> cardList = bDao.select(id_memos,memo_title,memo,id_users));
+		MemoDao bDao = new MemoDao();
+		List<Memos> cardList = bDao.select(id_memos,memo_title,memo,id_users));
 
 
 

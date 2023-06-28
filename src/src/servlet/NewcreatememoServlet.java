@@ -10,8 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import dao.BcDAO;
-import model.Bc;
+import dao.MemoDao;
 
 /**
  * Servlet implementation class NewcreatememoServlet
@@ -44,9 +43,13 @@ public class NewcreatememoServlet extends HttpServlet {
 
 		// メモ一覧ページにフォワードする
 				if(request.getParameter("SUBMIT").equals("保存")){
+
+					String memo_title = request.getParameter("memo_title");
+					String memo = request.getParameter("memo");
 					//内容保存(=登録)処理を行う
-				MemoDAO bDao = new MemoDAO();
-				bDao.insert(new Bc(id_messages, created_at, date, id_users, title, message
+				MemoDao mDao = new MemoDao();
+				mDao.insert(memo_title, memo);
+
 
 
 				RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/memoServlet.jsp");
