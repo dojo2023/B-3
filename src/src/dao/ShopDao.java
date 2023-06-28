@@ -18,6 +18,7 @@ public class ShopDao {
 	// 引数paramで検索項目を指定し、検索結果のリストを返す
 
 
+
 	public List<Shops> select(Shops card) {
 		Connection conn = null;
 		List<Shops> cardList = new ArrayList<Shops>();
@@ -30,10 +31,10 @@ public class ShopDao {
 
 			// SQL文を準備する・(created_at,updated_atを含めて３６こ
 			String sql ="SELECT * FROM SHOPS WHERE (shop_name LIKE ?   or remarks_shop like ?)  and price_min>=?  and price_max<=? and capacity<=? and distance<=? "
-					+ "and genre like ? and genre_form like ? ORDER BY id_shops;";
+					+ "and genre like ? and genre_form like ?   ORDER BY id_shops;";
 
 			PreparedStatement pStmt = conn.prepareStatement(sql);
-			// SQL文を完成させる and genre_form like ?
+			// SQL文を完成させる  and sheet_tatami like ? and sheet_table like ?
 
 			if (card.getShop_name() != null) {
 				pStmt.setString(1, "%" + card.getShop_name() + "%");
@@ -86,6 +87,68 @@ public class ShopDao {
 			else {
 				pStmt.setString(8, "%" + card.getGenre_form() + "%");
 			}
+/*
+			if (card.getSheet_table().equals("on")) {
+				pStmt.setString(9, "TURE");
+
+			}
+			else {
+				pStmt.setString(9, "FALSE");
+			}
+/*
+			if (card.getSheet_tatami().equals("TURE")) {
+				pStmt.setString(10, "TURE");
+
+			}
+			else {
+				pStmt.setString(10, "FALSE");
+			}
+
+
+
+			/*
+			 pStmt.setBoolean(23, card.getSheet_table());
+
+			pStmt.setBoolean(24, card.getSheet_tatami());
+
+			pStmt.setString(25, card.getSheet_other());
+
+			if (card.getOpen_hei() != null && !card.getOpen_hei().equals("")) {
+			pStmt.setString(6, card.getOpen_hei());
+	        }
+	        else {
+		    pStmt.setString(6, null);
+	        }
+
+
+			if (card.getClose_hei() != null && !card.getClose_hei().equals("")) {
+			pStmt.setString(7, card.getClose_hei());
+			 }
+	        else {
+		    pStmt.setString(7, null);
+	        }
+
+
+
+			if (card.getOpen_kyu() != null && !card.getOpen_kyu().equals("")) {
+			pStmt.setString(8, card.getOpen_kyu());
+	         }
+            else {
+            pStmt.setString(8, null);
+             }
+
+
+			if (card.getClose_kyu() != null && !card.getClose_kyu().equals("")) {
+			pStmt.setString(9, card.getClose_kyu());
+            }
+            else {
+            pStmt.setString(9, null);
+            }
+
+
+
+
+			 */
 
 
 

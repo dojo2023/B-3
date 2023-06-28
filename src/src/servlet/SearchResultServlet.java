@@ -113,6 +113,10 @@ public class SearchResultServlet extends HttpServlet {
 					String genre = request.getParameter("genre");
 					String genre_form = request.getParameter("genre_form");
 
+					String sheet_table = request.getParameter("sheet_table");
+					System.out.println("sheet_table;"+sheet_table);
+//					String sheet_tatami = request.getParameter("sheet_tatami");
+
 /*
 
 
@@ -163,6 +167,17 @@ public class SearchResultServlet extends HttpServlet {
 
 				sh.setGenre(genre);
 				sh.setGenre_form(genre_form);
+
+
+				if(sheet_table!=null) {
+					sh.setSheet_table(true);
+					}
+/*				if(sheet_tatami!=null) {
+					sh.setSheet_table(true);
+					}
+*/
+
+
 
 				List<Shops> cardList =
 						bDao.select(sh);

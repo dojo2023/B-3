@@ -149,9 +149,9 @@
                                 </label></td>
                                 <td><label>座席
 
-                                   <input type="checkbox" value="sheet_table">テーブル席</option>
-                                   <input type="checkbox" value="sheet_tatami">座敷</option>
-                                   <input type="checkbox" value="sheet_other">その他</option>
+                                   <input type="checkbox" name="sheet_table">テーブル席</option>
+                                   <input type="checkbox" name="sheet_tatami">座敷</option>
+                                   <input type="text" name="sheet_other">その他</option>
 
                                 </label></td>
                                <tr>
