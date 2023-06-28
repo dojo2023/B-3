@@ -19,6 +19,7 @@ public class ShopDao {
 
 
 
+
 	public List<Shops> select(Shops card) {
 		Connection conn = null;
 		List<Shops> cardList = new ArrayList<Shops>();
@@ -33,8 +34,10 @@ public class ShopDao {
 			String sql ="SELECT * FROM SHOPS WHERE (shop_name LIKE ?   or remarks_shop like ?)  and price_min>=?  and price_max<=? and capacity<=? and distance<=? "
 					+ "and genre like ? and genre_form like ?   ORDER BY id_shops;";
 
+			//　SQL実験　　 and sheet_table like ? and sheet_table like ?
+
 			PreparedStatement pStmt = conn.prepareStatement(sql);
-			// SQL文を完成させる  and sheet_tatami like ? and sheet_table like ?
+			// SQL文を完成させる  and sheet_tatami like ?
 
 			if (card.getShop_name() != null) {
 				pStmt.setString(1, "%" + card.getShop_name() + "%");
@@ -87,6 +90,7 @@ public class ShopDao {
 			else {
 				pStmt.setString(8, "%" + card.getGenre_form() + "%");
 			}
+
 /*
 			if (card.getSheet_table().equals("on")) {
 				pStmt.setString(9, "TURE");
@@ -96,6 +100,7 @@ public class ShopDao {
 				pStmt.setString(9, "FALSE");
 			}
 /*
+
 			if (card.getSheet_tatami().equals("TURE")) {
 				pStmt.setString(10, "TURE");
 

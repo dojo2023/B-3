@@ -12,6 +12,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import javax.servlet.http.Part;
+import javax.servlet.annotation.MultipartConfig;
+import javax.servlet.annotation.WebServlet;
 
 import dao.ShopDao;
 import model.Shops;
@@ -192,9 +194,8 @@ public class RegistServlet extends HttpServlet {
 			String filename1 = part.getSubmittedFileName();
 			//アップロードするフォルダ
 			String path=getServletContext().getRealPath("/upload");
-//			System.out.println("画像パス"+path);
-//			System.out.println("画像パス２photo；"+filename);
 
+			System.out.println(path);
 
 			part.write(path+File.separator+filename);
 

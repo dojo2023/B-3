@@ -222,7 +222,7 @@
 					<form method="GET" action="/hydrangea/ShopDetailServlet">
 						<table class="koumoku">
 							<tr class="shop_photo">
-								<td><img src="./upload/${e.filename}" style="width:120px;">
+								<td><img src="/hydrangea/upload/${e.filename}" style="width:120px;">
 								</td>
 							</tr>
 							<tr>
