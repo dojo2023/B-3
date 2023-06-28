@@ -111,6 +111,7 @@ public class SearchResultServlet extends HttpServlet {
 					String price_max = request.getParameter("price_max");
 					String price_min = request.getParameter("price_min");
 					String genre = request.getParameter("genre");
+					String genre_form = request.getParameter("genre_form");
 
 /*
 
@@ -161,10 +162,10 @@ public class SearchResultServlet extends HttpServlet {
 
 
 				sh.setGenre(genre);
-				//sh.setGenre(genre_form);
+				sh.setGenre_form(genre_form);
 
 				List<Shops> cardList =
-						bDao.select((sh));
+						bDao.select(sh);
 				HttpSession session = request.getSession();
 				session.setAttribute("cardList", cardList);
 
