@@ -1,4 +1,6 @@
  function displayConfirmation() {
+ console.log("powari");
+
   var shop_name = document.getElementById("shop_name").value;
   var genre = document.getElementById("genre").value;
   var genre_form = document.getElementById("genre_form").value;
@@ -41,6 +43,7 @@
     alert("必須項目が未入力です。");
     return;
   }
+
   // 入力結果を表示
   document.getElementById("shop_nameResult").textContent = "店名: " + shop_name;
   document.getElementById("genreResult").innerHTML = "ジャンル " + genre;
