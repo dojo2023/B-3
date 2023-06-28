@@ -65,7 +65,8 @@
             <button id="check-button" onclick="showConfirmation()" >確認</button>
             <!-- 修正ページに飛ぶボタン -->
             <!-- そもそも店の情報を通知ごとにもってきてそのまま修正にとぶのって可能なのか-->
-            <button  onclick="redirectToServlet()" >修正</button>
+            <!-- <button  onclick="redirectToServlet()" >修正</button>-->
+            <button  onclick="location.href = '/hydrangea/AdminUpdateServlet'" >修正(更新)</button>
             <!-- 登録確認画面 -->
             <div id="confirmation" style="display: none;">
             <h2>登録の確認</h2>
@@ -79,10 +80,10 @@
                 <!-- サーブレットで、ここは表示を変更するイメージ -->
                 <!-- でもここは確認だけだから確認しましただけでもいいのかもしれない -->
             <h2>確認完了しました。</h2>
-            <a href="/hydrangea/NoticeServlet">通知欄へ戻る</a>
+
 
             </div>
-
+			<br><a href="/hydrangea/NoticeServlet">通知欄へ戻る</a>
 
         </main>
         <!--メインここまで-->

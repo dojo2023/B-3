@@ -102,10 +102,10 @@
         <!--ヘッダーここまで-->
         <!--メイン-->
         <main>
-            <!-- ロゴ画像表示されない・・・・・・！！ -->
+            <!-- ロゴ画像表示されない・・・・・・！！
 
         <a href="/hydrangea/HomeServlet"><img class="logo" src="../flower_ajisai5_blue_720.png" alt="飲み会幹事アプリ" ></a>
-
+-->
         <h3>管理者通知</h3>
             <div class="notice">
             <div class="newshop">
@@ -133,7 +133,7 @@
                 <hr>
                 <p>
                  ・
-                 <a href="">2023/6/6<br>「居酒屋のんべえ」</a>
+                 <a href="/hydrangea/NewShopServlet?id_shops=1">2023/6/6<br>「居酒屋のんべえ」</a>
                 </p>
                 <p>
                 ・
@@ -153,7 +153,7 @@
                 <hr>
                 <p>
                  ・
-                 <a href="">2023/6/6<br>「居酒屋のんべえ」</a>
+                 <a href="/hydrangea/NewShopServlet?id_shops=1">2023/6/6<br>「居酒屋のんべえ」</a>
                 </p>
                 <p>
                 ・
@@ -173,19 +173,19 @@
                 <hr>
                 <p>
                  ・
-                 <a href="">2023/6/6<br>「居酒屋のんべえ」</a>
+                 <a href="/hydrangea/NewShopServlet?id_shops=1">2023/6/6<br>「削除依頼確認のお願い」</a>
                 </p>
                 <p>
                 ・
-                <a href="">2023/6/3<br>「のみたろう」</a>
+                <a href="">2023/6/3<br>「削除依頼確認のお願い」</a>
                 </p>
                 <p>
                 ・
-                <a href="">2023/5/29<br>「とりまる」</a>
+                <a href="">2023/5/29<br>「削除依頼確認のお願い」</a>
                 </p>
                 <p>
                 ・
-                <a href="">2023/4/30<br>「肉どり」</a>
+                <a href="">2023/4/30<br>「削除依頼確認のお願い」</a>
                 </p>
             </div>
             </div>

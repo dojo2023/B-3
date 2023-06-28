@@ -58,7 +58,7 @@
 		<a href="/hydrangea/InformationCreateServlet">ページ作成<br>編集</a>
 		<a href="/hydrangea/RegistServlet">登録</a>
 
-		<form action="submit" class="retu" id="form" >
+		<form methpd="POST" action="/hydrangea/SearchResultServelt" class="retu" id="form" >
 
         <input type="text"  placeholder="フリーワード検索">
 
@@ -78,6 +78,7 @@
 
         <a href="/hydrangea/MemoServlet">メモ</a>
 
+<!--
         <button onclick="/hydrangea/NewShopServlet'" id="button1" class="retu" >ページ作成<br>編集</button>
 
 
@@ -88,23 +89,23 @@
 
         <button onclick="/hydrangea/RegistServlet" id="button1" class="retu">登録</button>
 
+<button >検索</button>
 
-
-
-
-        <button >検索</button>
-
-
-
-        <br>
-        <div id="yoko"></div>
-        <button onclick="/hydrangea/CalendarServlet'" id="button2">カレンダー</button>
+ <button onclick="/hydrangea/CalendarServlet'" id="button2">カレンダー</button>
 
 
         <button onclick="/hydrangea/HistoryServlet'" id="button2">履歴</button>
 
 
         <button onclick="/hydrangea/MemoServlet'" id="button2">メモ</button>
+
+
+
+-->
+
+        <br>
+        <div id="yoko"></div>
+
 
 </body>
 <footer>
