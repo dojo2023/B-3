@@ -14,7 +14,14 @@
 <body>
 <header>
 	<h1><a href="/hydrangea/MenuServlet"><img src="img/logo.png" alt="アプリロゴ" ></a></h1><!-- メニュー画面に戻る -->
-    <p id="title">店舗登録</p>
+    	<label id="title">
+    				<ol class="open_page">
+                        <li class="current">店舗情報入力</li>
+                        <li>登録情報確認</li>
+                        <li>登録完了</li>
+                    </ol>
+                    </label>
+
     <div class="hamburger-menu"> <!--ハンバーガーメニュー-->
             <input type="checkbox" id="menu-btn-check">
             <label for="menu-btn-check" class="menu-btn"><span></span></label>
@@ -60,13 +67,7 @@
 
         <form action="/hydrangea/RegistServlet" method="post" enctype="multipart/form-data">
             <div id="registForm">
-                <h2>
-                    <ol class="open_page">
-                        <li class="current">店舗情報入力</li>
-                        <li>登録情報確認</li>
-                        <li>登録完了</li>
-                    </ol>
-                </h2>
+
                 <table class="">
 					<tr>
 						<td>
