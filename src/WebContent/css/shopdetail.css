@@ -1,0 +1,70 @@
+@charset "UTF-8";
+
+#position_memo{
+	margin-top: 8px;
+}
+
+.page_right{
+	margin-left: 25px;
+}
+
+.shop_photo img{
+	width: 420px;
+	height: 260px;
+	margin-top: 1%;
+	margin-bottom: 3%;
+
+}
+
+.syousai{
+	margin-bottom: 20px;
+	padding: 10px;
+	padding-top: 5px;
+}
+
+.syousai p{
+	margin: 0;
+	margin-bottom: 1px;
+	color:#442209;
+	font-size: 16px;
+}
+
+.text{
+	font-size: 14px;
+	vertical-align :middle;
+	color: #766152;
+	padding:3px;
+	text-align: center;
+}
+
+.shop_name{
+	font-weight: 560;
+	font-size: 24px;
+}
+
+.genre{
+	font-size: 14px;
+	margin-left: 8px;
+}
+
+#score{
+	font-size: 22px;
+	font-weight: 600;
+}
+
+.kyugyo{
+	display:flex;
+}
+
+#holiday_mon,#holiday_tue,#holiday_wed,#holiday_thu,#holiday_fri,#holiday_sat,#holiday_sun,
+#holiday_syuku,#holiday_nenmatsu,#holiday_other{
+	padding: 3px;
+}
+
+.zaseki{
+	display: flex;
+}
+
+#sheet_table,#sheet_tatami,#sheet_other{
+	padding: 3px;
+}
