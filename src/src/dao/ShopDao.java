@@ -29,10 +29,10 @@ public class ShopDao {
 			conn = DriverManager.getConnection("jdbc:h2:file:C:/dojo6Data/B3", "sa", "");
 
 			// SQL文を準備する・(created_at,updated_atを含めて３６こ
-			String sql ="SELECT * FROM SHOPS WHERE (shop_name LIKE ?   or remarks_shop like ?)  and price_min>=?  and price_max<=? and capacity<=? ORDER BY id_shops;";
+			String sql ="SELECT * FROM SHOPS WHERE (shop_name LIKE ?   or remarks_shop like ?)  and price_min>=?  and price_max<=? and capacity<=? and distance<=? and genre like ?  ORDER BY id_shops;";
 
 			PreparedStatement pStmt = conn.prepareStatement(sql);
-			// SQL文を完成させる
+			// SQL文を完成させる and genre_form like ?
 
 			if (card.getShop_name() != null) {
 				pStmt.setString(1, "%" + card.getShop_name() + "%");
@@ -63,6 +63,18 @@ public class ShopDao {
 			}
 			else {
 				pStmt.setInt(5, 10000000);
+			}
+			if (card.getDistance() != 0) {
+				pStmt.setInt(6, card.getDistance());
+			}
+			else {
+				pStmt.setInt(6, 10000000);
+			}
+			if (card.getGenre() != null) {
+				pStmt.setString(7, "%" + card.getGenre() + "%");
+			}
+			else {
+				pStmt.setString(7, "%");
 			}
 
 

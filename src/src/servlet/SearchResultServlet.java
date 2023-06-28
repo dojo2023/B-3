@@ -32,13 +32,12 @@ public class SearchResultServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-	/*	// もしもログインしていなかったらログインサーブレットにリダイレクトする
+		// もしもログインしていなかったらログインサーブレットにリダイレクトする
 				HttpSession session = request.getSession();
-				if (session.getAttribute("id") == null) {
+				if (session.getAttribute("id_users") == null) {
 					response.sendRedirect("/hydrangea/LoginServlet");
 					return;
-				}*/
-
+				}
 				// 検索ページにフォワードする
 				RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/searchresult.jsp");
 				dispatcher.forward(request, response);
@@ -77,6 +76,22 @@ public class SearchResultServlet extends HttpServlet {
 				sh.setShop_name(shop_name);
 				//sh.setRemarks_shop(remarks_shop);
 
+				if(capacity != "") {
+					sh.setCapacity(Integer.parseInt(capacity));
+					}
+
+				if(distance != "") {
+					sh.setDistance(Integer.parseInt(distance));
+					}
+
+				if(price_max != "") {
+					sh.setPrice_max(Integer.parseInt(price_max));
+					}
+
+				if(price_min != "") {
+					sh.setPrice_min(Integer.parseInt(price_min));
+					}
+
 				List<Shops> cardList =
 						bDao.select((sh));
 				HttpSession session = request.getSession();
@@ -88,26 +103,73 @@ public class SearchResultServlet extends HttpServlet {
 
 				else
 				{
-/*
+					request.setCharacterEncoding("UTF-8");
 					String shop_name = request.getParameter("shop_name");
-					String genre = request.getParameter("genre");
-					String genre_form = request.getParameter("genre_form");
+					//String remarks_shop = request.getParameter("remarks_shop");
+					String capacity = request.getParameter("capacity");
+					String distance = request.getParameter("distance");
 					String price_max = request.getParameter("price_max");
 					String price_min = request.getParameter("price_min");
+					String genre = request.getParameter("genre");
+					String genre_form = request.getParameter("genre_form");
+/*
+
+
+
+
 					String open_hei = request.getParameter("open_hei");
 					String close_hei = request.getParameter("close_hei");
 					String open_kyu = request.getParameter("open_kyu");
 					String close_kyu = request.getParameter("close_kyu");
-					String distance = request.getParameter("distance");
+
 					String tabaco = request.getParameter("tabaco");
 					String sheet_table = request.getParameter("sheet_table");
 					String sheet_tatami = request.getParameter("sheet_tatami");
 					String sheet_other = request.getParameter("sheet_other");
-					String capacity = request.getParameter("capacity");
+
 					String eat_drink = request.getParameter("eat_drink");
 
 					String remarks_shop = request.getParameter("remarks_shop");
+
 */
+
+
+
+					ShopDao bDao = new ShopDao();
+
+				Shops sh = new Shops();
+
+				sh.setShop_name(shop_name);
+				//sh.setRemarks_shop(remarks_shop);
+
+				if(capacity != "") {
+					sh.setCapacity(Integer.parseInt(capacity));
+					}
+
+				if(distance != "") {
+					sh.setDistance(Integer.parseInt(distance));
+					}
+
+				if(price_max != "") {
+					sh.setPrice_max(Integer.parseInt(price_max));
+					}
+
+				if(price_min != "") {
+					sh.setPrice_min(Integer.parseInt(price_min));
+					}
+
+
+
+				sh.setGenre(genre);
+				sh.setGenre(genre_form);
+
+				List<Shops> cardList =
+						bDao.select((sh));
+				HttpSession session = request.getSession();
+				session.setAttribute("cardList", cardList);
+
+
+
 
 				}
 

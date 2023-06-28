@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>幹事サポート</title>
+<title>メモ|hydrangea</title>
 <link rel="stylesheet" href="css/header_footer.css"><!-- ヘッダーフッター用css -->
 <link rel="stylesheet" href="css/menu.css"><!-- ハンバーガーメニュー用css -->
 <link rel="stylesheet" href="css/memo.css"><!-- メモ専用css -->

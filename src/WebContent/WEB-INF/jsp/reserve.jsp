@@ -56,9 +56,8 @@
 <!--ここから内容-->
 <div class="contents">
     <p><a href="/hydrangea/ShopDetailServlet">前のページに戻る</a></p><br> <!--店詳細画面に戻る-->
-    <h2>予約確認</h2>
 
-    <form method="POST" action="/hydrangea/CalenderServlet"><!--servlet名、要チェック-->
+   <form method="POST" action="/hydrangea/CalenderServlet"><!--servlet名、要チェック-->
     <table>
         <tr>
             <th>店名</th><!--履歴予約DB-->
@@ -89,7 +88,7 @@
         </tr>
     </table>
         <input type="reset" name="reset" value="クリア" ><br>
-        <input type="submit" name="REGIST_calendar" value="カレンダーに登録する">
+
     </form>
 </div>
 <!--ここからフッター-->

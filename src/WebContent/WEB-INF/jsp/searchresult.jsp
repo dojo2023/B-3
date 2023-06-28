@@ -23,6 +23,7 @@
 			<a href="/hydrangea/MenuServlet"><img src="img/logo.png"
 				alt="アプリロゴ"></a>
 		</h1>
+		 <p id="title">検索</p>
 		<!-- メニュー画面に戻る -->
 		<div class="hamburger-menu">
 			<!--ハンバーガーメニュー-->
@@ -56,7 +57,7 @@
 					<table class="koumoku">
 						<tr>
 							<td><label>店名・フリーワード<br> <input type="text"
-									name="NUMBER" value="">
+									name="shop_name" value="">
 							</label></td>
 						</tr>
 						<tr>
@@ -76,15 +77,17 @@
 							</label></td>
 						</tr>
 						<tr>
-							<td><input type="submit" name="REGIST" value="検索"></td>
+							<td><input type="submit" name="search" value="検索"></td>
 						</tr>
 					</table>
 				</form>
 				<!--検索ウィンドウの表示-->
 				<div>
-					<button class="open">
-						<label for="pop-up">詳細検索</label>
+				<div class="open">
+					<button>
+						<label for="pop-up">詳細</label>
 					</button>
+					</div>
 					<input type="checkbox" id="pop-up">
 					<div class="overlay">
 						<div class="search_pop-up">
@@ -206,7 +209,6 @@
 			</p>
 			<!--メニュー画面に戻る-->
 			<div>
-				<p>検索結果</p>
 				<p>oo件</p>
 				<!--shop DBのカウントアップで表示-->
 				<select id="sort" name="sort">
