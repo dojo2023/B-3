@@ -10,6 +10,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import dao.MemoDao;
+import model.Memos;
+
 /**
  * Servlet implementation class MemoServlet
  */
@@ -46,12 +49,17 @@ public class MemoServlet extends HttpServlet {
 				String memo = request.getParameter("MEMO");
 				String created_at = request.getParameter("CREATED_AT");
 				String updated_at = request.getParameter("UPDATED_AT");
-
+				
 				// 検索処理を行う
-				MemoDao bDao = new MemoDao();
-				List<Memos> cardList = bDao.select(id_memos,memo_title,id_users));
+				MemoDao mDao = new MemoDao();
+				List<Memos> cardList = mDao.select(id_memos,memo_title,id_users,memo,created_at, updated_at);
 
 
+				if(request.getParameter("SUBMIT").equals("保存")){
+				//内容保存(=登録)処理を行う
+				MemoDao mDao = new MemoDao();
+				mDao.insert(memo_title, memo);
+				}
 		// メモ詳細ページにフォワードする
 		if(request.getParameter("detail").equals("詳細")){
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/detailmemoServlet.jsp");

@@ -115,4 +115,55 @@ public class UserDao {
 			return result;
 		}
 
+		public int mailtoid(String mail) {
+			Connection conn = null;
+			int id = 0;
+
+			try {
+				// JDBCドライバを読み込む
+				Class.forName("org.h2.Driver");
+
+				// データベースに接続する
+				conn = DriverManager.getConnection("jdbc:h2:file:C:/dojo6Data/B3", "sa", "");
+
+				// SELECT文を準備する
+				String sql = "SELECT id_users FROM USERS  where mail=?";
+				PreparedStatement pStmt = conn.prepareStatement(sql);
+				pStmt.setString(1,mail);
+
+
+				// SELECT文を実行し、結果表を取得する
+				ResultSet rs = pStmt.executeQuery();
+
+				// ユーザーIDとパスワードが一致するユーザーがいたかどうかをチェックする
+				rs.next();
+				id = rs.getInt("id_users");
+
+
+			}
+			catch (SQLException e) {
+				e.printStackTrace();
+
+			}
+			catch (ClassNotFoundException e) {
+				e.printStackTrace();
+
+			}
+			finally {
+				// データベースを切断
+				if (conn != null) {
+					try {
+						conn.close();
+					}
+					catch (SQLException e) {
+						e.printStackTrace();
+
+					}
+				}
+			}
+
+			// 結果を返す
+			return id;
+		}
+
 }
