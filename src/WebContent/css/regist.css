@@ -8,16 +8,20 @@
       display: inline;
 }
 
+.open_page{
+	margin: 0;
+
+}
 
 .open_page li {
       display: inline;
+
 }
 
 .current{
-     color: #DB7093;
-     text-decoration-line: underline;
-     text-underline-offset: 2px;
-     text-decoration-thickness: 10px;
+     color: #E1542F;
+     font-weight: bold;
+
 }
 
 main{
