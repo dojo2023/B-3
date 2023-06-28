@@ -42,11 +42,11 @@ button{
 
 }
 
-td:first-child {
+td.first-child {
     color: red;
 }
 
-td:last-child {
+td.last-child {
     color: royalblue;
 }
 
