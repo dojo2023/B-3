@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>幹事サポート</title>
+<title>メモ詳細｜hydrangea</title>
 <link rel="stylesheet" href="css/header_footer.css"><!-- ヘッダーフッター用css -->
 <link rel="stylesheet" href="css/menu.css"><!-- ハンバーガーメニュー用css -->
 <link rel="stylesheet" href="css/memo.css"><!-- メモ専用css -->
@@ -56,21 +56,20 @@
 
 <form method="POST" action="/hydrangea/MemoServlet">
 <a href="/hydrangea/MemoServlet">＜メモ一覧</a><br>
-  <table>
-
-
-                  <td>
-                    <label>題名<br>
-                    <input type="text" name="MEMO_TITLE">
-                    </label>
-                  </td>
-                  <td>
-                    <label>メモ内容<br>
-                    <input type="text" name="MEMO">
-                    </label>
-                  </td>
+  <table class="detail_memo_table">
+  <tr>
+ 	<td>
+       <input type="text" name="MEMO_TITLE" value="題名" size="20">
+	</td>
+   </tr>
+   <tr>
+    <td>
+       <textarea name="MEMO"  cols="50" rows="8"> </textarea>
+	</td>
+   <tr>
 </table>
 </form>
+
 </div>
 <footer>
     <p>Copyright &copy; 2023 Hydrangea All Rights Reserved.</p>

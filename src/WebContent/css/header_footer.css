@@ -7,6 +7,7 @@ body{
 
 header{
 	display: flex;
+	margin-bottom: 0px;
 }
 
 #title{
@@ -23,8 +24,8 @@ header img{
     margin-top: 17px;
     margin-left: 17px;
 
-	height:105px;
-    width:105px;
+	height:97px;
+    width:97px;
     border-radius: 8%;/*角丸*/
     border: solid 5px rgb(255, 166, 0);
 
@@ -38,7 +39,7 @@ h1{
 
 
 footer{
-	position: absolute;
+
 
 	left:0;
 	right:0;

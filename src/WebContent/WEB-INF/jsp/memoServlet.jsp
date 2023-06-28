@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>メモ一覧 | Hydrangea</title>
+<title>メモ一覧 | hydrangea</title>
 <link rel="stylesheet" href="css/header_footer.css"><!-- ヘッダーフッター用css -->
 <link rel="stylesheet" href="css/menu.css"><!-- ハンバーガーメニュー用css -->
 <link rel="stylesheet" href="css/memo.css"><!-- メモ専用css -->
@@ -12,7 +12,7 @@
 <body>
 <header>
 	<h1><a href="/hydrangea/MenuServlet"><img src="img/logo.png" alt="アプリロゴ" id="mamo_logo" ></a></h1><!-- メニュー画面に戻る -->
-    <p id="title">メモ一覧</p>
+    <p id="title">メモ</p>
     <div class="hamburger-menu"> <!--ハンバーガーメニュー-->
             <input type="checkbox" id="menu-btn-check">
             <label for="menu-btn-check" class="menu-btn"><span></span></label>
@@ -54,26 +54,51 @@
 </header>
 <div class="contents">
 
-
-
-
+<div class="memolist">
 <form method="POST" action="/hydrangea/DetailmemoServlet">
-
-
 <table class="memo_table">
 		<tr>
            <td><input type="text" name="MEMO_TITLE" value="題名" size="20"></td>
            <td><input type="submit" name="detail" value="詳細"></td>
         </tr>
 </table>
-
 </form>
 
-<a href="/hydrangea/NewcreatememoServlet"><button id="createMemo" >+</button></a>
+<button id="createMemo" onclick="createMemo()" >+</button>
 
 </div>
+
+<div class="new_memo">
+<div id="create_memo" style="display: none;">
+<form method="POST" action="/hydrangea/NewcreatememoServlet">
+<table class="new_memo_table">
+	<tr style="text-align: right;">
+        <td>
+            <button onclick="close_newMemo()"  id="closenewMemo">×</button>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <input type="text" size="20" placeholder="タイトル"><br>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <textarea cols="40" rows="8" placeholder="メモ内容"></textarea><br>
+        </td>
+	<tr style="text-align: right;">
+        <td><input type="submit" name="SUBMIT" value="保存"><br></td>
+    </tr>
+
+</table>
+</form>
+</div>
+</div>
+</div>
+
 <footer>
     <p>Copyright &copy; 2023 Hydrangea All Rights Reserved.</p>
 </footer>
+<script src="/hydrangea/js/memo.js"></script>
 </body>
 </html>

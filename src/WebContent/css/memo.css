@@ -1,8 +1,7 @@
 @charset "UTF-8";
 
-#memo_logo img{
-	height:95px;
-    width:95px;
+.memolist{
+	margin-right: 20px;
 }
 
 .memo_table{
@@ -11,26 +10,32 @@
 	background-color:#ec8655;
 }
 
+.new_memo{
+	margin-left:20px;
+}
+
+.new_memo_table{
+	margin-left: 20px;
+	text-align:left;
+}
+
 tr{
 	border: solid 3px #000000;
 	margin:5px;
 }
 
-input{
-	margin-left: 5px;
-	margin-right: 5px;
-}
 
 .contents{
-	height: 225px;
+	display:flex;
+	height: 248px;
 	margin:0 auto 0 auto;
-	margin-left: 2.5%;
-    margin-right: 2.5%;
+	margin-left: 4%;
+    margin-right: 4%;
 }
 
 #createMemo{
 	margin-top: 15px;
-	margin-left: 23%;
+	margin-left: 83%;
 	color:#ffffff;
 	background-color:#ec8655;
 	padding : 4px;
@@ -41,4 +46,8 @@ input{
 	font-size: 20px;
 }
 
-
+#closenewMemo{
+	height:20px;
+	width:20px;
+	border-radius: 50%;/*角丸*/
+}

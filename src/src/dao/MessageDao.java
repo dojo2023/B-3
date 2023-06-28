@@ -24,7 +24,7 @@ public class MessageDao {
 			conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/data/hydrangea", "sa", "");
 
 			// SQL文を準備する
-			String sql = "select * from MESSAGE WHERE ID_USERS LIKE ? AND ID_MESSAGES LIKE ? AND CREATED_AT LIKE ? AND UPDATED_AT LIKE ? AND DATE LIKE ? AND TITLE LIKE ? AND MESSAGE LIKE ? ORDER BY ID_MESSAGES";
+			String sql = " SERECT * FROM messges ORDER BY id_messages";
 			PreparedStatement pStmt = conn.prepareStatement(sql);
 
 			// SQL文を完成させる
@@ -52,8 +52,8 @@ public class MessageDao {
 			while (rs.next()) {
 
 				Messages card = new Messages();
-				card.setIdUsers(rs.getString("IdUsers"));
-				card.setIdMessages(rs.getString("IdMessages"));
+				card.setIdUsers(rs.getInt("IdUsers"));
+				card.setIdMessages(rs.getInt("IdMessages"));
 				card.setCreatedAt(rs.getString("CreatedAt"));
 				card.setUpdatedAt(rs.getString("UpdatedAt"));
 				card.setDate(rs.getString("Date"));
@@ -102,56 +102,42 @@ public class MessageDao {
 			conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/data/hydrangea", "sa", "");
 
 			// SQL文を準備する
-			String sql = "insert into MESSAGE values (?. ?. ?, ?, ?, ?, ?)";
+			String sql = "insert into MESSAGE(created_at, updated_at, date, title, message) values (?. ?. ?, ?, ?)";
 			PreparedStatement pStmt = conn.prepareStatement(sql);
 
 			// SQL文を完成させる
 
-			if (card.getIdUsers() != null && !card.getIdUsers().equals("")) {
-				pStmt.setString(1, card.getIdUsers());
+			if (card.getCreatedAt() != null && !card.getCreatedAt().equals("")) {
+				pStmt.setString(1, card.getCreatedAt());
 			}
 			else {
 				pStmt.setString(1, null);
 			}
 
-			if (card.getIdMessages() != null && !card.getIdMessages().equals("")) {
-				pStmt.setString(2, card.getIdMessages());
+			if (card.getUpdatedAt() != null && !card.getUpdatedAt().equals("")) {
+				pStmt.setString(2, card.getUpdatedAt());
 			}
 			else {
 				pStmt.setString(2, null);
 			}
-			if (card.getCreatedAt() != null && !card.getCreatedAt().equals("")) {
-				pStmt.setString(3, card.getCreatedAt());
+			if (card.getDate() != null && !card.getDate().equals("")) {
+				pStmt.setString(3, card.getDate());
 			}
 			else {
 				pStmt.setString(3, null);
 			}
-			if (card.getUpdatedAt() != null && !card.getUpdatedAt().equals("")) {
-				pStmt.setString(4, card.getUpdatedAt());
+			if (card.getTitle() != null && !card.getTitle().equals("")) {
+				pStmt.setString(4, card.getTitle());
 			}
 			else {
 				pStmt.setString(4, null);
 			}
-			if (card.getDate() != null && !card.getDate().equals("")) {
-				pStmt.setString(5, card.getDate());
+			if (card.getMessage() != null && !card.getMessage().equals("")) {
+				pStmt.setString(5, card.getMessage());
 			}
 			else {
 				pStmt.setString(5, null);
 			}
-			if (card.getTitle() != null && !card.getTitle().equals("")) {
-				pStmt.setString(6, card.getTitle());
-			}
-			else {
-				pStmt.setString(6, null);
-			}
-			if (card.getMessage() != null && !card.getMessage().equals("")) {
-				pStmt.setString(7, card.getMessage());
-			}
-			else {
-				pStmt.setString(7, null);
-			}
-
-
 
 
 			// SQL文を実行する
@@ -194,55 +180,42 @@ public class MessageDao {
 			conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/data/hydrangea", "sa", "");
 
 			// SQL文を準備する
-			String sql = "update MESSAGE set ID_USERS=?, ID_MESSAGES=?, CREATED_AT=? UPDATED_AT=?, DATE=?, TITLE=?, MESSAGE=?, where ID_MESSAGES=?";
+			String sql = "update MESSAGE(created_at, updated_at, date, title, message) set CREATED_AT=?, UPDATED_AT=?, DATE=? TITLE=?, MESSAGE=? where ID_MESSAGES=?";
 			PreparedStatement pStmt = conn.prepareStatement(sql);
 
 			// SQL文を完成させる
 
-			if (card.getIdUsers() != null && !card.getIdUsers().equals("")) {
-				pStmt.setString(1, card.getIdUsers());
+			if (card.getCreatedAt() != null && !card.getCreatedAt().equals("")) {
+				pStmt.setString(1, card.getCreatedAt());
 			}
 			else {
 				pStmt.setString(1, null);
 			}
-			if (card.getIdMessages() != null && !card.getIdMessages().equals("")) {
-				pStmt.setString(2, card.getIdMessages());
+			if (card.getUpdatedAt() != null && !card.getUpdatedAt().equals("")) {
+				pStmt.setString(2, card.getUpdatedAt());
 			}
 			else {
 				pStmt.setString(2, null);
 			}
-
-			if (card.getCreatedAt() != null && !card.getCreatedAt().equals("")) {
-				pStmt.setString(3, card.getCreatedAt());
+			if (card.getDate() != null && !card.getDate().equals("")) {
+				pStmt.setString(3, card.getDate());
 			}
 			else {
 				pStmt.setString(3, null);
 			}
-			if (card.getUpdatedAt() != null && !card.getUpdatedAt().equals("")) {
-				pStmt.setString(4, card.getUpdatedAt());
+			if (card.getTitle() != null && !card.getTitle().equals("")) {
+				pStmt.setString(4, card.getTitle());
 			}
 			else {
 				pStmt.setString(4, null);
 			}
-			if (card.getDate() != null && !card.getDate().equals("")) {
-				pStmt.setString(5, card.getDate());
+			if (card.getMessage() != null && !card.getMessage().equals("")) {
+				pStmt.setString(5, card.getMessage());
 			}
 			else {
 				pStmt.setString(5, null);
 			}
-			if (card.getTitle() != null && !card.getTitle().equals("")) {
-				pStmt.setString(6, card.getTitle());
-			}
-			else {
-				pStmt.setString(6, null);
-			}
-			if (card.getMessage() != null && !card.getMessage().equals("")) {
-				pStmt.setString(7, card.getMessage());
-			}
-			else {
-				pStmt.setString(7, null);
-			}
-			pStmt.setString(8, card.getIdMessages());
+
 
 			// SQL文を実行する
 			if (pStmt.executeUpdate() == 1) {

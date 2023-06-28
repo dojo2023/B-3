@@ -8,6 +8,10 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
+import dao.BcDAO;
+import model.Bc;
 
 /**
  * Servlet implementation class NewcreatememoServlet
@@ -20,6 +24,12 @@ public class NewcreatememoServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// もしもログインしていなかったらログインサーブレットにリダイレクトする
+				HttpSession session = request.getSession();
+				if (session.getAttribute("id_users") == null) {
+					response.sendRedirect("/hydrangea/LoginServlet");
+					return;
+				}
 		// 新規メモページにフォワードする
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/newcreatememoServlet.jsp");
 		dispatcher.forward(request, response);
@@ -34,7 +44,10 @@ public class NewcreatememoServlet extends HttpServlet {
 
 		// メモ一覧ページにフォワードする
 				if(request.getParameter("SUBMIT").equals("保存")){
-					//内容保存処理を行う
+					//内容保存(=登録)処理を行う
+				MemoDAO bDao = new MemoDAO();
+				bDao.insert(new Bc(id_messages, created_at, date, id_users, title, message
+
 
 				RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/memoServlet.jsp");
 					dispatcher.forward(request, response);

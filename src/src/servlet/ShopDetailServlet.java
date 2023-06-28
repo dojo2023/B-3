@@ -8,6 +8,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  * Servlet implementation class ShopDetailServlet
@@ -21,13 +22,12 @@ public class ShopDetailServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-		/*	// もしもログインしていなかったらログインサーブレットにリダイレクトする
-		HttpSession session = request.getSession();
-		if (session.getAttribute("id") == null) {
-			response.sendRedirect("/hydrangea/LoginServlet");
-			return;
-		}
-*/
+		// もしもログインしていなかったらログインサーブレットにリダイレクトする
+				HttpSession session = request.getSession();
+				if (session.getAttribute("id_users") == null) {
+					response.sendRedirect("/hydrangea/LoginServlet");
+					return;
+				}
 		//リクエストパラメータの取得
 		request.setCharacterEncoding("UTF-8");
 //		String shop_id = request.getParameter("shop_id");
