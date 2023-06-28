@@ -56,7 +56,7 @@
 					<table class="koumoku">
 						<tr>
 							<td><label>店名・フリーワード<br> <input type="text"
-									name="NUMBER" value="">
+									name="shop_name" value="">
 							</label></td>
 						</tr>
 						<tr>
@@ -76,7 +76,7 @@
 							</label></td>
 						</tr>
 						<tr>
-							<td><input type="submit" name="REGIST" value="検索"></td>
+							<td><input type="submit" name="search" value="検索"></td>
 						</tr>
 					</table>
 				</form>
