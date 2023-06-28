@@ -36,10 +36,13 @@ public class MemoServlet extends HttpServlet {
 				String id_memos = request.getParameter("ID_MEMOS");
 				String memo_title = request.getParameter("MEMO_TITLE");
 				String id_users = request.getParameter("ID_USERS");
+				String memo = request.getParameter("MEMO");
+				String created_at = request.getParameter("CREATED_AT");
+				String updated_at = request.getParameter("UPDATED_AT");
 
 				// 検索処理を行う
-				//MemoDAO bDao = new MemoDAO();
-				//List<Memos> cardList = bDao.select(id_memos,memo_title,id_users));
+				MemoDao bDao = new MemoDao();
+				List<Memos> cardList = bDao.select(id_memos,memo_title,id_users));
 
 
 		// メモ詳細ページにフォワードする
