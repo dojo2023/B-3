@@ -25,7 +25,7 @@ public class ExpensesServlet extends HttpServlet {
 			//return;
 		//}
 
-		// 検索ページにフォワードする
+		// 経費申請書テンプレートページにフォワードする
 				RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/expensesServlet.jsp");
 				dispatcher.forward(request, response);
 	}
@@ -34,8 +34,12 @@ public class ExpensesServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
+
+		// 経費申請書テンプレートページにフォワードする
+		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/expensesServlet.jsp");
+		dispatcher.forward(request, response);
+
+
 
 
 		}

@@ -9,6 +9,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import dao.BcDAO;
+import model.Bc;
+
 /**
  * Servlet implementation class NewcreatememoServlet
  */
@@ -34,7 +37,10 @@ public class NewcreatememoServlet extends HttpServlet {
 
 		// メモ一覧ページにフォワードする
 				if(request.getParameter("SUBMIT").equals("保存")){
-					//内容保存処理を行う
+					//内容保存(=登録)処理を行う
+				MemoDAO bDao = new MemoDAO();
+				bDao.insert(new Bc(id_messages, created_at, date, id_users, title, message
+
 
 				RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/memoServlet.jsp");
 					dispatcher.forward(request, response);

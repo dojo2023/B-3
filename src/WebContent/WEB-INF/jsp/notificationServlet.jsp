@@ -4,10 +4,12 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>幹事サポート</title>
+<title>幹事サポート|hydrangea</title>
 <link rel="stylesheet" href="css/header_footer.css"><!-- ヘッダーフッター用css -->
 <link rel="stylesheet" href="css/menu.css"><!-- ハンバーガーメニュー用css -->
+<link rel="stylesheet" href="css/template.css"><!-- テンプレート用css -->
 </head>
+<body>
 <header>
 	<h1><a href="/hydrangea/MenuServlet"><img src="img/logo.png" alt="アプリロゴ" ></a></h1><!-- メニュー画面に戻る -->
     <p id="title">通知テンプレート</p>
@@ -33,7 +35,7 @@
                     <a href="/hydrangea/MemoServlet">メモ</a>
                 </li>
                 <li>
-                    <a href="/hydrangea/CalenderServlet">カレンダー</a>
+                    <a href="/hydrangea/CalendarServlet">カレンダー</a>
                 </li>
         		<li>
                     <a href="/hydrangea/NotificationServlet">通知文テンプレート</a>
@@ -46,109 +48,119 @@
                 </li>
             </ul>
             </div>
-            <!--ここまでメニュー-->
         </div>
+        <!--ここまでメニュー-->
+
 </header>
-
-<body>
-	<form method="POST" action="/hydrangea/NotificationServlet">
-    <div id="result" style="display: none;">
-        <h2>入力結果:</h2>
-
-        <p id="titleResult"></p>
-        <p id="kakuiResult"></p><p>各位</p>
-        <p>お疲れ様です。</p>
-        <p id="textareaResult"></p>
-        <p>飲み会の詳細</p>
-        <p id="meeting_timeResult"></p>
-        <p id="venueResult"></p>
-        <p id="addressResult"></p>
-        <p id="feeResult"></p>
-        <p id="textarea2Result"></p>
-
-        <button type="button" onclick="correctInfo()">訂正</button>
-        <a hirf="/hydrangea/NotificationServlet"><button type="button" onclick="backForm()">戻る</button></a>
-    </div>
-
-
-<div id="tuutitemplate">
-
-<table>
-
+<div class="contents">
+<!-- 入力欄 -->
+	<div id="tsuchitemplate">
+	<table>
+		<tr>
+			<td>
+			<a class=markar>*は必須項目です</a>
+			</td>
+		</tr>
 
         <tr>
             <td>
-                <input type="text" id="template_title" required placeholder="タイトル">
+                <a class=markar>* </a><input type="text" id="template_title" required placeholder="タイトル">
             </td>
         </tr>
+
         <tr>
             <td>
-                <select type="text" name="KAKUI" id="template_kakui" placeholder="各位">
-                    <option value="Humanresources">人事部</option>
-                    <option value="Accounting">経理部</option>
-                    <option value="Generalaffairs">総務部</option>
-                    <option value="Legal">法務部</option>
-                    <option value="Informationsystem">情報システム部</option>
-                    <option value="Sales">営業部</option>
-                    <option value="Engineering">技術部</option>
+                &nbsp;&nbsp;&nbsp;<select  name="KAKUI" id="template_kakui" >
+                    <option value="人事部">人事部</option>
+                    <option value="経理部<">経理部</option>
+                    <option value="総務部">総務部</option>
+                    <option value="法務部">法務部</option>
+                    <option value="情報システム部">情報システム部</option>
+                    <option value="営業部">営業部</option>
+                    <option value="技術部">技術部</option>
+                    <option value="Others">その他</option>
                 </select>
                 <label>各位</label>
             </td>
         </tr>
         <tr>
             <td>
-                <label>お疲れ様です。<br></label>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <input type="textarea" cols="100" rows="10" id="template_textarea" placeholder="テキスト入力"><br>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <label>飲み会の詳細<br></label>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <input type="datetime-local" id="meeting_time"
-                        name="meeting-time" value="2023-06-16T19:30"
-                        min="2023-06-01T00:00" max="2100-06-14T00:00"><br>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <input type="text" id="template_venue" required placeholder="会場">
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <input type="text" id="template_address" required placeholder="住所">
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <input type="text" id="template_fee" required placeholder="会費"><br>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <input type="textarea2" cols="100" rows="10" id="template_textarea2" placeholder="テキスト入力"><br>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <button type="button" onclick="templateInfo()">作成</button>
+                &nbsp;&nbsp;&nbsp;<textarea cols="30" rows="6" id="template_textarea" placeholder="メッセージ入力"></textarea><br>
             </td>
         </tr>
 
+        <tr>
+            <td>
+                &nbsp;&nbsp;&nbsp;<label class="koumoku">飲み会の詳細<br></label>
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                &nbsp;&nbsp;&nbsp;<input type="date" id="meeting_date">&nbsp;&nbsp;<input type="time" id="meeting_time">
+
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                &nbsp;&nbsp;&nbsp;<input type="text" id="template_venue" required placeholder="会場">
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                &nbsp;&nbsp;&nbsp;<input type="text" id="template_address" required placeholder="住所">
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                &nbsp;&nbsp;&nbsp;<input type="text" id="template_fee" required placeholder="会費"><br>
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                &nbsp;&nbsp;&nbsp;<textarea cols="30" rows="5" id="template_textarea2" placeholder="メッセージ入力"></textarea>
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                &nbsp;&nbsp;&nbsp;<button type="button" onclick="createNotemplate()">作成</button>
+            </td>
+        </tr>
+
+	</table>
     </div>
 
-</table>
-<script src="script.js"></script>
-</body>
+<!-- 入力結果 -->
+	<div id="result">
+	<a class="koumoku">入力内容</a>
+
+	<div class="koumoku" id="notemplate_content" style="display: none;">
+
+        <p id="titleResult"></p>
+        <p id="kakuiResult"></p>
+		<p id="textareaResult"></p>
+
+		<p id="informationResult"></p>
+
+        <p><a id="meeting_dateResult"></a>&nbsp;<a id="meeting_timeResult"></a></p>
+        <p id="venueResult"></p>
+        <p id="addressResult"></p>
+        <p id="feeResult"></p>
+        <p id="textarea2Result"></p>
+
+        <button type="button" onclick="clear_notemplate()">クリア</button>
+
+    </div>
+</div>
+</div>
 <footer>
     <p>Copyright &copy; 2023 Hydrangea All Rights Reserved.</p>
 </footer>
+<script src="/hydrangea/js/notification_template.js"></script>
+</body>
 </html>

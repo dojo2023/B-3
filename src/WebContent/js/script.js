@@ -9,6 +9,7 @@ function templateInfo() {
     var template_address = document.getElementById("template_address").value;
     var template_fee= document.getElementById("template_fee").value;
     var template_textarea2 = document.getElementById("template_textarea2").value;
+
     // 入力結果を表示
     document.getElementById("titleResult").innerHTML = template_title;
     document.getElementById("kakuiResult").innerHTML = template_kakui;
