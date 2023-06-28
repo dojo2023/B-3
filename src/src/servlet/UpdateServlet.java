@@ -108,12 +108,12 @@ public class UpdateServlet extends HttpServlet {
 		String tel = request.getParameter("tel");
 		String homepage = request.getParameter("homepage");
 		String other = request.getParameter("other_tel");
-		String photo = request.getParameter("photo");
+		String filename = request.getParameter("filename");
 		String remarks_shop = request.getParameter("remarks_shop");
 
 
 
-				if (request.getParameter("SUBMIT").equals("更新")) {
+				if (request.getParameter("submit").equals("更新")) {
 
 
 		// 更新処理を行う
@@ -185,14 +185,14 @@ public class UpdateServlet extends HttpServlet {
 				System.out.println("part"+part);
 				if(part != null) {
 					//ファイル名を取得
-					String filename = part.getSubmittedFileName();
+					String filename1 = part.getSubmittedFileName();
 					//アップロードするフォルダ
 					String path=getServletContext().getRealPath("/upload");
 //					System.out.println("画像パス"+path);
 //					System.out.println("画像パス２photo；"+filename);
 
 
-					part.write(path+File.separator+filename);
+					part.write(path+File.separator+filename1);
 
 
 				sh.setFilename(filename);

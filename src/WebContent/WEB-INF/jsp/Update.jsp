@@ -120,7 +120,7 @@
                     <tr>
                         <td>
                             <label>形態（必須）
-                                <select type="text" name="genre_form" id="genre_form" value="" placeholder="形態"
+                                <select type="text" name="genre_form" id="genre_form" value="${e.genre_form}" placeholder="形態"
                                     required>
                                     <option hidden>選択して下さい</option>
                                     <option value="居酒屋">居酒屋</option>
@@ -139,10 +139,10 @@
                     <tr>
                         <td>
                             <label>価格
-                                <input type="number" name="price_min" id="price_min" value="" placeholder="下限">～
+                                <input type="number" name="price_min" id="price_min" value="${e.price_min}" placeholder="下限">～
                             </label>
                             <label>
-                                <input type="number" name="price_max" id="price_max" value="" placeholder="上限">円<br>
+                                <input type="number" name="price_max" id="price_max" value="${e.price_max}" placeholder="上限">円<br>
                             </label>
                         </td>
                     </tr>
@@ -150,10 +150,10 @@
                     <tr>
                         <td>
                             <label>平日営業時間
-                                <input type="time" name="open_hei" id="open_hei" value="" placeholder="">～
+                                <input type="time" name="open_hei" id="open_hei" value="${e.open_hei}" placeholder="">～
                             </label>
                             <label>
-                                <input type="time" name="close_hei" id="close_hei" value="" placeholder=""><br>
+                                <input type="time" name="close_hei" id="close_hei" value="${e.close_hei}" placeholder=""><br>
                             </label>
                         </td>
                     </tr>
@@ -161,10 +161,10 @@
                     <tr>
                         <td>
                             <label>休日営業時間
-                                <input type="time" name="open_kyu" id="open_kyu" value="" placeholder="">～
+                                <input type="time" name="open_kyu" id="open_kyu" value="${e.open_kyu}" placeholder="">～
                             </label>
                             <label>
-                                <input type="time" name="close_kyu" id="close_kyu" value="" placeholder=""><br>
+                                <input type="time" name="close_kyu" id="close_kyu" value="${e.close_kyu}" placeholder=""><br>
                             </label>
                         </td>
                     </tr>
@@ -174,35 +174,35 @@
                             <label>休業日</label>
 
                             <label for="holiday_mon">:</label>
-                            <label><input type="checkbox" name="holiday_mon" id="holiday_mon">月</label>
+                            <label><input type="checkbox" name="holiday_mon" id="holiday_mon" value="${e.holiday_mon}">月</label>
 
                             <label for="holiday_tue">:</label>
-                            <label><input type="checkbox" name="holiday_tue" id="holiday_tue">火</label>
+                            <label><input type="checkbox" name="holiday_tue" id="holiday_tue" value="${e.holiday_tue}">火</label>
 
                             <label for="holiday_wed">:</label>
-                            <label><input type="checkbox" name="holiday_wed" id="holiday_wed">水</label>
+                            <label><input type="checkbox" name="holiday_wed" id="holiday_wed"  value="${e.holiday_wed}">水</label>
 
                             <label for="holiday_thu">:</label>
-                            <label><input type="checkbox" name="holiday_thu" id="holiday_thu">木</label>
+                            <label><input type="checkbox" name="holiday_thu" id="holiday_thu" value="${e.holiday_thu}">木</label>
 
                             <label for="holiday_fri">:</label>
-                            <label><input type="checkbox" name="holiday_fri" id="holiday_fri">金</label>
+                            <label><input type="checkbox" name="holiday_fri" id="holiday_fri"  value="${e.holiday_fri}">金</label>
 
                             <label for="holiday_sat">:</label>
-                            <label><input type="checkbox" name="holiday_sat" id="holiday_sat">土</label>
+                            <label><input type="checkbox" name="holiday_sat" id="holiday_sat" value="${e.holiday_sat}">土</label>
 
                             <label for="holiday_sun">:</label>
-                            <label><input type="checkbox" name="holiday_sun" id="holiday_sun">日</label>
+                            <label><input type="checkbox" name="holiday_sun" id="holiday_sun" value="${e.holiday_sun}">日</label>
 
                             <label for="holiday_syuku">:</label>
-                            <label><input type="checkbox" name="holiday_syuku" id="holiday_syuku">祝日</label>
+                            <label><input type="checkbox" name="holiday_syuku" id="holiday_syuku" value="${e.holiday_syuku}">祝日</label>
 
                             <label for="holiday_nenmatsu">:</label>
-                            <label><input type="checkbox" name="holiday_nenmatsu" id="holiday_nenmatsu">年末年始</label>
+                            <label><input type="checkbox" name="holiday_nenmatsu" id="holiday_nenmatsu" value="${e.holiday_nenmatsu}">年末年始</label>
 
                             <label for="holiday_other">:</label>
                             <label>その他</label>
-                            <input type="text" name="holiday_other_text" id="holiday_other_text"><br>
+                            <input type="text" name="holiday_other_text" id="holiday_other_text" value="${e.holiday_other}"><br>
 
                         </td>
                     </tr>
@@ -210,7 +210,7 @@
                     <tr>
                         <td>
                             <label>会社からの距離
-                                <input type="number" name="distance" id="distance" value="" placeholder="">M<br>
+                                <input type="number" name="distance" id="distance"  value="${e.distance}" placeholder="">M<br>
                             </label>
                         </td>
                     </tr>
@@ -218,7 +218,7 @@
                     <tr>
                         <td>
                             <label>住所
-                                <input type="text" name="address" id="address" value="" name="" value=""
+                                <input type="text" name="address" id="address"  value="${e.address}" name="" value=""
                                     placeholder=""><br>
                             </label>
                         </td>
@@ -249,7 +249,7 @@
                     <tr>
                         <td>
                             <label>規模
-                                <input type="number" name="capacity" id="capacity" value="" placeholder="">人<br>
+                                <input type="number" name="capacity" id="capacity" value="${e.capacity}" placeholder="">人<br>
                             </label>
                         </td>
                     </tr>
