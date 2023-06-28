@@ -208,19 +208,7 @@
 				<a href="/hydrangea/MenuServlet">前のページに戻る</a>
 			</p>
 			<!--メニュー画面に戻る-->
-			<div>
-				<p>oo件</p>
-				<!--shop DBのカウントアップで表示-->
-				<select id="sort" name="sort">
-					<option value="reservation">更新日順</option>
-					<option value="event">価格の安い順</option>
-					<option value="contact">価格の高い順</option>
-					<option value="event">会社から近い順</option>
-					<option value="contact">会社から遠い順</option>
-					<option value="event">評価の高い順</option>
-					<option value="contact">評価の低い順</option>
-				</select>
-			</div>
+
 			<!--結果の表示-->
 			<div class="search_result">
 
@@ -234,8 +222,8 @@
 					<form method="GET" action="/hydrangea/ShopDetailServlet">
 						<table class="koumoku">
 							<tr class="shop_photo">
-								<td><label> <c:out value="${e.filename}" /> <!--写真のインプットタイプってなんだ-->
-								</label></td>
+								<td><img src="./upload/${e.filename}" style="width:120px;">
+								</td>
 							</tr>
 							<tr>
 								<td><h3><label>
