@@ -41,9 +41,9 @@ public class DetailmemoServlet extends HttpServlet {
 //		// TODO Auto-generated method stub
 //		doGet(request, response);
 
-
+			request.setCharacterEncoding("UTF-8");
 		// リクエストパラメータを取得する
-		request.setCharacterEncoding("UTF-8");
+
 		String id_memos = request.getParameter("ID_MEMOS");
 		String memo_title = request.getParameter("MEMO_TITLE");
 		String memo = request.getParameter("MEMO");
@@ -54,6 +54,8 @@ public class DetailmemoServlet extends HttpServlet {
 		//MemoDAO bDao = new MemoDAO();
 		//List<Memos> cardList = bDao.select(id_memos,memo_title,memo,id_users));
 
+		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/detailmemoServlet.jsp");
+		dispatcher.forward(request, response);
 
 
 	}

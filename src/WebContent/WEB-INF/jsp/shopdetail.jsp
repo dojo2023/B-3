@@ -230,8 +230,7 @@
             </tr>
             <tr>
                 <td>
-                   value="${e.filename}"/>写真
-                    <img src="./upload/${e.filename}">
+                    <img src="./upload/${e.filename}" style="width:200px;">
                 </td>
             </tr>
             <tr>
