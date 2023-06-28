@@ -16,6 +16,7 @@
 <!--ここからヘッダー-->
 <header class = header>
         <h1><a href="/hydrangea/MenuServlet"><img src="img/logo.png" alt="アプリロゴ" ></a></h1><!-- メニュー画面に戻る -->
+        <p id="title">検索</p>
         <div class="hamburger-menu"> <!--ハンバーガーメニュー-->
             <input type="checkbox" id="menu-btn-check">
             <label for="menu-btn-check" class="menu-btn"><span></span></label>
@@ -38,7 +39,7 @@
                     <a href="/hydrangea/MemoServlet">メモ</a>
                 </li>
                 <li>
-                    <a href="/hydrangea/CalenderServlet">カレンダー</a>
+                    <a href="/hydrangea/CalendarServlet">カレンダー</a>
                 </li>
         		<li>
                     <a href="/hydrangea/NotificationServlet">通知文テンプレート</a>
@@ -94,7 +95,7 @@
            <input type="checkbox" id="pop-up">
                <div class="overlay">
                  <div class="search_pop-up">
-                   <label class="close" for="pop-up">×</label>
+                   <label class="close" for="pop-up">×&nbsp;</label>
                    <div class="detail_search"><!--ポップアップの中身-->
                        <form method="POST" action="/hydrangea/SearchResultServlet" autocomplete="off"> <!--servlet名、要チェック-->
                            <table class="koumoku">
@@ -208,8 +209,8 @@
        </div>
 </div>
 <div class="page_right">
-    <p><a href="/hydrangea/SearchResultServlet">前のページに戻る</a></p> <!--検索結果画面に戻る-->
-    <!-- <c:if test = "${empty detaList}">
+    <!--  <p><a href="/hydrangea/SearchResultServlet">前のページに戻る</a></p> <!--検索結果画面に戻る
+   <c:if test = "${empty detaList}">
         データが読み込めませんでした<br>
      </c:if> -->
     <c:forEach var="e" items="${cardList}"> <!--list名、要チェック-->
@@ -218,14 +219,12 @@
 		<table class="syousai">
             <tr>
                 <td>
-                  <h2>店名<c:out value="${e.shop_name}"/>
-
-                  </h2>
+                  <h2><c:out value="${e.shop_name}"/></h2>
                 </td>
             </tr>
             <tr>
                  <td>
-                    <c:out value="${e.homepage}"/>ホームページ
+                    <c:out value="${e.homepage}"/>
                  </td>
             </tr>
             <tr>
@@ -235,10 +234,10 @@
             </tr>
             <tr>
                 <td>
-                    <c:out value="${e.genre}"/>ジャンル ／
+                    <c:out value="${e.genre}"/> ／
                 </td>
                 <td>
-                    <c:out value="${e.genre_form}"/>形態
+                    <c:out value="${e.genre_form}"/>
                 </td>
             </tr>
             <tr>

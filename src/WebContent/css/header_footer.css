@@ -11,10 +11,13 @@ header{
 }
 
 #title{
+	color: #442209;
 	height: 30px;
 	width: 77%;
-	margin-top: 90px;
-	margin-left: 17px;
+	font-size: 28px;
+	padding-bottom: 5px;
+	margin-top: 83px;
+	margin-left: 20px;
 	border-bottom: dotted 3px #E1542F;
 }
 

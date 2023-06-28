@@ -1,16 +1,17 @@
 @charset "UTF-8";
-#calendar {
-	margin-left : 27px;
-    display: flex;
-    flex-wrap: wrap;
 
-}
+
+
 
 section {
-    margin: 5px;
+
+    margin-top: 4.5%;
+    margin-bottom: 4.5%;
 }
 
 h1 {
+	font-weight: 300;
+	padding-top: 12px;
     font-size: 16px;
 }
 
@@ -20,22 +21,29 @@ h1 {
     border-collapse: collapse;
 }
 
+/*#calendar {
+
+    display: flex;
+    flex-wrap: wrap;
+
+}*/
 
 #calendar td {
-	width: 30px;
-	font-size: 5px;
+	width: 40px;
+	height:26px;
+	font-size: 4px;
     border: 1px solid #ddd;
-    padding: 5px;
+    padding: 1px;
     text-align: left;
     vertical-align: top;
 
 }
 
-td.first-child {
+td:first-child {
     color: red;
 }
 
-td.last-child {
+td:last-child {
     color: royalblue;
 }
 

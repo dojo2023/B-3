@@ -50,14 +50,7 @@ public class UpdateServlet extends HttpServlet {
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/Update.jsp");
 		dispatcher.forward(request, response);
 
-		/*	// もしもログインしていなかったらログインサーブレットにリダイレクトする
-		HttpSession session = request.getSession();
-		if (session.getAttribute("id") == null) {
-			response.sendRedirect("/hydrangea/LoginServlet");
-			return;
 
-		}
-*/
 
 	}
 	/**
@@ -113,7 +106,7 @@ public class UpdateServlet extends HttpServlet {
 
 
 
-				if (request.getParameter("SUBMIT").equals("更新")) {
+				if (request.getParameter("update").equals("更新")) {
 
 
 		// 更新処理を行う

@@ -19,7 +19,6 @@ public class ShopDao {
 
 
 
-
 	public List<Shops> select(Shops card) {
 		Connection conn = null;
 		List<Shops> cardList = new ArrayList<Shops>();
@@ -233,7 +232,7 @@ public class ShopDao {
 
 
 
-
+//登録
 public boolean insert(Shops card) {
 	Connection conn = null;
 	boolean result=false;
