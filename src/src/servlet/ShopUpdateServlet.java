@@ -21,12 +21,12 @@ public class ShopUpdateServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// もしもログインしていなかったらログインサーブレットにリダイレクトする
-		HttpSession session = request.getSession();
-		if (session.getAttribute("id_users") == null) {
-			response.sendRedirect("/hydrangea/LoginServlet");
-			return;
-		}
+//		 もしもログインしていなかったらログインサーブレットにリダイレクトする
+				HttpSession session = request.getSession();
+				if (session.getAttribute("mail") == null) {
+					response.sendRedirect("/hydrangea/LoginServlet");
+					return;
+				}
 		// 店情報更新通知ページにフォワードする
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/shop_update.jsp");
 		dispatcher.forward(request, response);

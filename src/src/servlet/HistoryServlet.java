@@ -8,6 +8,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  * Servlet implementation class HistoryServlet
@@ -18,13 +19,13 @@ public class HistoryServlet extends HttpServlet {
 
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// もしもログインしていなかったらログインサーブレットにリダイレクトする
-		/*HttpSession session = request.getSession();
-		if (session.getAttribute("id_users") == null) {
-			response.sendRedirect("/hydrangea/LoginServlet");
-			return;
-		}
-*/
+//		 もしもログインしていなかったらログインサーブレットにリダイレクトする
+				HttpSession session = request.getSession();
+				if (session.getAttribute("mail") == null) {
+					response.sendRedirect("/hydrangea/LoginServlet");
+					return;
+				}
+
 		// 検索ページにフォワードする
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/historyServlet.jsp");
 		dispatcher.forward(request, response);

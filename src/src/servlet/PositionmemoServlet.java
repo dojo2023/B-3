@@ -22,9 +22,9 @@ public class PositionmemoServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-		// もしもログインしていなかったらログインサーブレットにリダイレクトする
+//		 もしもログインしていなかったらログインサーブレットにリダイレクトする
 				HttpSession session = request.getSession();
-				if (session.getAttribute("id_users") == null) {
+				if (session.getAttribute("mail") == null) {
 					response.sendRedirect("/hydrangea/LoginServlet");
 					return;
 				}

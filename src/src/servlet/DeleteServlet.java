@@ -25,7 +25,7 @@ public class DeleteServlet extends HttpServlet {
 
 		// もしもログインしていなかったらログインサーブレットにリダイレクトする
 				HttpSession session = request.getSession();
-				if (session.getAttribute("id_users") == null) {
+				if (session.getAttribute("mail") == null) {
 					response.sendRedirect("/hydrangea/LoginServlet");
 					return;
 				}
@@ -46,7 +46,7 @@ public class DeleteServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	/*	// もしもログインしていなかったらログインサーブレットにリダイレクトする
 				HttpSession session = request.getSession();
-				if (session.getAttribute("id") == null) {
+				if (session.getAttribute("mail") == null) {
 					response.sendRedirect("/hydrangea/LoginServlet");
 					return;
 				}*/

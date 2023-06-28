@@ -21,25 +21,27 @@ public class DetailmemoServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+//		 もしもログインしていなかったらログインサーブレットにリダイレクトする
+				HttpSession session = request.getSession();
+				if (session.getAttribute("mail") == null) {
+					response.sendRedirect("/hydrangea/LoginServlet");
+					return;
+				}
+
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/detailmemoServlet.jsp");
 		dispatcher.forward(request, response);
-		
-		
+
+
 	}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
+//		// TODO Auto-generated method stub
+//		doGet(request, response);
 
-//		 もしもログインしていなかったらログインサーブレットにリダイレクトする
-				HttpSession session = request.getSession();
-				if (session.getAttribute("id_users") == null) {
-					response.sendRedirect("/hydrangea/LoginServlet");
-					return;
-				}
+
 		// リクエストパラメータを取得する
 		request.setCharacterEncoding("UTF-8");
 		String id_memos = request.getParameter("ID_MEMOS");
