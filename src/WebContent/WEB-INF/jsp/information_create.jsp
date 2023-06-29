@@ -72,10 +72,10 @@
                 <h2>入力フォーム</h2>
                 <!-- <label for="name"></label> -->
                 <!-- <input type="text" id="name" required> -->
-                <input type="text" id="information_title" required placeholder="タイトル">
-                <input type="file" id="information_photo"> <br>
-                <input type="text" id="information_subtitle" placeholder="サブタイトル"><br>
-                <input type="text" id="information" required placeholder="本文">
+                <input type="text" id="information_title" required placeholder="タイトル" autocomplete="off">
+                <input type="file" id="information_photo" autocomplete="off"> <br>
+                <input type="text" id="information_subtitle" placeholder="サブタイトル" autocomplete="off"><br>
+                <input type="text" id="information" required placeholder="本文" autocomplete="off">
 
                 <!-- <label for="email">メールアドレス:</label> -->
                 <!-- <input type="email" id="email" required> -->
