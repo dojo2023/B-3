@@ -54,11 +54,13 @@
     </header>
 
 <h1>管理者用ページ</h1>
-
-		<a href="/hydrangea/NoticeServlet" class="btn">通知</a>
-		<a href="/hydrangea/InformationCreateServlet" class="btn">ページ作成<br>編集</a>
+<div class="menu">
+		<a href="/hydrangea/NoticeServlet" class="btn">通知</a></div>
+		<div class="menu">
+		<a href="/hydrangea/InformationCreateServlet" class="btn">ページ作成・編集</a></div>
+		<div class="menu">
 		<a href="/hydrangea/RegistServlet" class="btn">登録</a>
-
+</div>
 		<form method="POST" action="/hydrangea/SearchResultServelt" class="retu" id="form" >
 
         <input type="text"  placeholder="フリーワード検索">

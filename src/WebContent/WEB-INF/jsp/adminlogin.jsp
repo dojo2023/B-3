@@ -12,7 +12,7 @@
 <div class="back-img">
 <h1><img src="img/logo_cha.png" alt="アプリロゴ" height="242" ></h1>
 <div class=logintext>
-<form method="POST" action="/hydrangea/AdminLoginServlet" >
+<form method="POST" action="/hydrangea/AdminLoginServlet" autocomplete="off">
 
 <p class="loginMessage">${message}<p>
 
