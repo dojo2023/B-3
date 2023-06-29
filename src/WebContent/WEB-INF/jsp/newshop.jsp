@@ -57,6 +57,7 @@
         <!--ヘッダーここまで-->
         <!--メイン-->
         <main>
+        <div class="b">
             <p>2023/06/19</p>
             <p>「居酒屋のんべえ」</p>
             <p>登録者 橘 葵</p>
@@ -85,7 +86,7 @@
             </div>
 			<br><a href="/hydrangea/NoticeServlet">通知欄へ戻る</a>
 			<br><a href="/hydrangea/AdminmenuServlet">メニューへ戻る</a>
-
+</div>
 			<div class="contents">
 
     <!--  <p><a href="/hydrangea/SearchResultServlet">前のページに戻る</a></p> <!--検索結果画面に戻る
