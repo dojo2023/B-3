@@ -54,7 +54,7 @@
 
 <body>
 <div class="contents">
-  <form method="POST" action="/hydrangea/NewpositionmemoServlet">
+  <form method="POST" action="/hydrangea/NewpositionmemoServlet",method="post" action="/form" autocomplete="off">
     <table>
           <tr>
           <td>
