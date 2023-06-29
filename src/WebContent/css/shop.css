@@ -1,0 +1,56 @@
+@charset "UTF-8";
+
+.search_result{
+	padding-top:5px;
+	padding-right:10px;
+	overflow-y:scroll;
+	height: 400px;
+	width: 645px;
+}
+
+.shop{
+	display: flex;
+	border: solid 0.5px #808080;
+	height: 145px;
+}
+
+.shop p{
+	margin: 0;
+}
+
+.button{
+	text-align: right;
+}
+
+.shop_photo,img{
+	width: 160px;
+	height: 145px;
+	border-right: dotted 0.5px #a2a2a2;
+}
+
+
+.shop_sentense{
+	padding-top:12px;
+	padding-bottom:15px;
+	margin-left: 18px;
+	width: 430px;
+}
+
+p.shop_name{
+	color: #442209;
+	font-size: 22px;
+	font-weight: 700;
+	margin-bottom: 5px;
+}
+
+.genre, .genre_form{
+	font-size: 17px;
+	color: #9e8574;
+	font-weight: 500;
+}
+
+.price,.distance,.address{
+	font-size: 13px;
+	padding: 1px;
+	color: #442209;
+}

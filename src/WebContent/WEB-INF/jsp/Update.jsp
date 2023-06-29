@@ -57,7 +57,7 @@
                     <a href="/hydrangea/MemoServlet">メモ</a>
                 </li>
                 <li>
-                    <a href="/hydrangea/CalenderServlet">カレンダー</a>
+                    <a href="/hydrangea/CalendarServlet">カレンダー</a>
                 </li>
         		<li>
                     <a href="/hydrangea/NotificationServlet">通知文テンプレート</a>

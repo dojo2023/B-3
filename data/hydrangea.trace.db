@@ -13,7 +13,11 @@ CURRENT_TIMESTAMP,
 org.h2.jdbc.JdbcSQLSyntaxErrorException: SQLステートメントに文法エラーがあります "折りたたむ[*]"
 Syntax error in SQL statement "折りたたむ[*]"; SQL statement:
 折りたたむ [42000-200]
-2023-06-28 10:58:59 jdbc[3]: exception
-org.h2.jdbc.JdbcSQLSyntaxErrorException: テーブル "ID_USERS" が見つかりません
-Table "ID_USERS" not found; SQL statement:
-select* from ID_USERS [42102-200]
+2023-06-28 22:38:28 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: テーブル "POSITION_MEMOS" が見つかりません
+Table "POSITION_MEMOS" not found; SQL statement:
+insert into position_memos (created_at,updated_at ,id_users,name_position ,posision,tabaco_position,favorite1,favorite2,ng,remarks_position) values(current_timestamp,current_timestamp,?,'nameposi','tab','favorite1','favorite2','ng','remarks_position'); [42102-199]
+2023-06-28 22:44:18 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: テーブル "POSITION_MEMOS" が見つかりません
+Table "POSITION_MEMOS" not found; SQL statement:
+insert into position_memos (created_at,updated_at ,id_users,name_position ,posision,tabaco_position,favorite1,favorite2,ng,remarks_position) values(current_timestamp,current_timestamp,?,?,?,?,?,?,?); [42102-199]

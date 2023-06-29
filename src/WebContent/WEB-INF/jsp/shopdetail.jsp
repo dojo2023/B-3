@@ -9,6 +9,8 @@
 <link rel="stylesheet" href="css/searchwindow.css"><!-- 検索ウィンドウ用css -->
 <link rel="stylesheet" href="css/header_footer.css"><!-- ヘッダーフッター用css -->
 <link rel="stylesheet" href="css/menu.css"><!-- ハンバーガーメニュー用css -->
+<link rel="stylesheet" href="css/shopdetail.css">
+<!-- 専用css -->
 
 
 </head>
@@ -16,6 +18,7 @@
 <!--ここからヘッダー-->
 <header class = header>
         <h1><a href="/hydrangea/MenuServlet"><img src="img/logo.png" alt="アプリロゴ" ></a></h1><!-- メニュー画面に戻る -->
+        <p id="title">検索</p>
         <div class="hamburger-menu"> <!--ハンバーガーメニュー-->
             <input type="checkbox" id="menu-btn-check">
             <label for="menu-btn-check" class="menu-btn"><span></span></label>
@@ -38,7 +41,7 @@
                     <a href="/hydrangea/MemoServlet">メモ</a>
                 </li>
                 <li>
-                    <a href="/hydrangea/CalenderServlet">カレンダー</a>
+                    <a href="/hydrangea/CalendarServlet">カレンダー</a>
                 </li>
         		<li>
                     <a href="/hydrangea/NotificationServlet">通知文テンプレート</a>
@@ -94,7 +97,7 @@
            <input type="checkbox" id="pop-up">
                <div class="overlay">
                  <div class="search_pop-up">
-                   <label class="close" for="pop-up">×</label>
+                   <label class="close" for="pop-up">×&nbsp;</label>
                    <div class="detail_search"><!--ポップアップの中身-->
                        <form method="POST" action="/hydrangea/SearchResultServlet" autocomplete="off"> <!--servlet名、要チェック-->
                            <table class="koumoku">
@@ -204,178 +207,81 @@
 
        <!--役職メモ見る-->
        <div>
-       <a href="/hydrangea/PositionmemoServlet" target="_blank"><button>役職メモを見る</button></a>
+       <a href="/hydrangea/PositionmemoServlet" target="_blank"><button id="position_memo">役職メモを見る</button></a>
        </div>
 </div>
 <div class="page_right">
-    <p><a href="/hydrangea/SearchResultServlet">前のページに戻る</a></p> <!--検索結果画面に戻る-->
-    <!-- <c:if test = "${empty detaList}">
+    <!--  <p><a href="/hydrangea/SearchResultServlet">前のページに戻る</a></p> <!--検索結果画面に戻る
+   <c:if test = "${empty detaList}">
         データが読み込めませんでした<br>
      </c:if> -->
     <c:forEach var="e" items="${cardList}"> <!--list名、要チェック-->
-    <label><a href="/hydrangea/ReserveServlet"><button>開催する</button></a></label>
+    <!-- <label><a href="/hydrangea/ReserveServlet"><button>開催する</button></a></label> -->
         <form method="POST" action="/hydrangea/ShopDetailServlet">
-		<table class="syousai">
-            <tr>
-                <td>
-                  <h2>店名<c:out value="${e.shop_name}"/>
+		<div class="syousai">
+            <p><label class="shop_name"><c:out value="${e.shop_name}"/></label>
+            <label class="genre"><c:out value="${e.genre}"/> ／ <c:out value="${e.genre_form}"/></label></p>
+			<p class="homepage"><c:out value="${e.homepage}"/></p>
 
-                  </h2>
-                </td>
-            </tr>
-            <tr>
-                 <td>
-                    <c:out value="${e.homepage}"/>ホームページ
-                 </td>
-            </tr>
-            <tr>
-                <td>
-                    <img src="/hydrangea/upload/${e.filename}" style="width:200px;">
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <c:out value="${e.genre}"/>ジャンル ／
-                </td>
-                <td>
-                    <c:out value="${e.genre_form}"/>形態
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <c:out value="${e.score}"/>評価
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <c:out value="${e.open_hei}"/>平日オープン ～
-                </td>
-                <td>
-                    <c:out value="${e.close_hei}"/>平日クローズ
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <c:out value="${e.open_kyu}"/>休日オープン ～
-                </td>
-                <td>
-                    <c:out value="${e.close_kyu}"/>休日クローズ
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <c:out value="${e.holiday_mon}"/>休業日(月)
-                </td>
-                <td>
-                    <c:out value="${e.holiday_tue}"/>休業日(火)
-                </td>
-                <td>
-                    <c:out value="${e.holiday_wed}"/>休業日(水)
-                </td>
-                <td>
-                    <c:out value="${e.holiday_thu}"/>休業日(木)
-                </td>
-                <td>
-                    <c:out value="${e.holiday_fri}"/>休業日(金)
-                </td>
-                <td>
-                    <c:out value="${e.holiday_sat}"/>休業日(土)
-                </td>
-                <td>
-                    <c:out value="${e.holiday_sun}"/>休業日(日)
-                </td>
-                <td>
-                    <c:out value="${e.holiday_syuku}"/>休業日(祝日)
-                </td>
-                <td>
-                    <c:out value="${e.holiday_nenmatsu}"/>休業日(年末年始)
-                </td>
-                <td>
-                    <c:out value="${e.holiday_other}"/>休業日(その他)
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <c:out value="${e.address}"/>住所
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <c:out value="${e.distance}"/>会社からの距離
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <c:out value="${e.capacity}"/>人数規模
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <c:out value="${e.price_max}"/>価格帯（大） ～
-                </td><td>
-                    <c:out value="${e.price_min}"/>価格帯（小）
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <c:out value="${e.tabaco}"/>喫煙の可否 ／
-                </td>
-                <td>
-                    <c:out value="${e.sheet_table}"/>座席　テーブル
-                </td>
-                <td>
-                    <c:out value="${e.sheet_tatami}"/>座席　座敷
-                </td>
-                <td>
-                    <c:out value="${e.sheet_other}"/>座席　その他
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <c:out value="${e.eat_drink}"/>放題メニュー
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <c:out value="${e.homepage}"/>ホームページリンク
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <c:out value="${e.tel}"/>電話番号
-                </td>
-            </tr>
-            <tr>
-                <td><label>
-                    <c:out value="${e.other}"/>その他連絡先
-                </label></td>
-            </tr>
-            <tr>
-                <td>
-                    <c:out value="${e.remarks_shop}"/>備考
-                </td>
-            </tr>
-            </table>
+            <p class="shop_photo"><img src="/hydrangea/upload/${e.filename}"></p>
+
+			<p class="score"><label class="text">評価：</label><label id=score><c:out value="${e.score}"/></label>/10 点</p>
+			<p><label class="text">営業時間：&nbsp;&nbsp;</label><label class="hour_hei">(平日)<c:out value="${e.open_hei}"/>～<c:out value="${e.close_hei}"/></label>
+
+			&nbsp;&nbsp;<label class="hour_kyu">(休日)<c:out value="${e.open_kyu}"/>～<c:out value="${e.close_kyu}"/></label></p>
+
+
+					<div class="kyugyo">
+					<label class="text">休業日：</label>
+						  <div id="holiday_mon"><c:out value="${e.holiday_mon}"/></div>
+                    	  <div id="holiday_tue"><c:out value="${e.holiday_tue}"/></div>
+                    	  <div id="holiday_wed"><c:out value="${e.holiday_wed}"/></div>
+                    	  <div id="holiday_thu"><c:out value="${e.holiday_thu}"/></div>
+                   	      <div id="holiday_fri"><c:out value="${e.holiday_fri}"/></div>
+                   	      <div id="holiday_sat"><c:out value="${e.holiday_sat}"/></div>
+                   	      <div id="holiday_sun"><c:out value="${e.holiday_sun}"/></div>
+                   	      <div id="holiday_syuku"><c:out value="${e.holiday_syuku}"/></div>
+                   	      <div id="holiday_nenmatsu"><c:out value="${e.holiday_nenmatsu}"/></div>
+                    	  <div id="holiday_other"><c:out value="${e.holiday_other}"/></div>
+					</div>
+            <p class="address"><label class="text">住所：</label><c:out value="${e.address}"/></p>
+            <p class="distance"><label class="text">会社からの距離：</label><c:out value="${e.distance}"/>ｍ</p>
+            <p class="capacity"><label class="text">人数規模：</label><c:out value="${e.capacity}"/>人</p>
+            <p><label class="price_min"><label class="text">予算：￥</label><c:out value="${e.price_min}"/></label>～
+            <label class="price_max"><label class="text">￥</label><c:out value="${e.price_max}"/></label></p>
+
+            <p><label class="text">たばこ：</label><c:out value="${e.tabaco}"/></p>
+
+				<div class="zaseki">
+					<label class="text">座席：</label><div id="sheet_table"><c:out value="${e.sheet_table}"/></div>
+					<div id="sheet_tatami"><c:out value="${e.sheet_tatami}"/></div>
+					<div id="sheet_other"><c:out value="${e.sheet_other}"/></div>
+                </div>
+
+			<p><label class="text">放題メニュー：</label><c:out value="${e.eat_drink}"/></p>
+
+            <p class="homepage"><label class="text">ホームページ：</label><c:out value="${e.homepage}"/></p>
+			<p class="tel"><label class="text">電話番号：</label><c:out value="${e.tel}"/></p>
+			<p class="other"><label class="text">その他連絡先：</label><c:out value="${e.other}"/></p>
+			<p class="remarks_shop"><label class="text">備考：</label><c:out value="${e.remarks_shop}"/></p>
+
                     <input type="submit" name="SUBMIT" value="更新">
                     <input type="submit" name="SUBMIT" value="削除申請">
+         </div>
 		</form>
      </c:forEach>
-     <label><a href="/hydrangea/ReserveServlet"><button>開催する</button></a></label>
+     <!--<label><a href="/hydrangea/ReserveServlet"><button>開催する</button></a></label>-->
 </div>
 </div>
 <!--ここからフッター-->
 <footer class="footer">
-    <!--管理者へのメッセージ-->
-    <form class="contact">
-        <p>お問い合わせ</p>
-        <input type="text" value="問い合わせ内容を記入してください" name="otoiawase">
-        <input type="button" value="送信" name="send">
-    </form>
+
     <!--著作権-->
     <p>Copyright &copy; 2023 Hydrangea All Rights Reserved.</p>
 
-
 </footer>
+
+<script src="/hydrangea/js/shopdetail.js"></script>
 
 </body>
 </html>

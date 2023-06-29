@@ -6,9 +6,9 @@
 	<title>TOP|hydrangea</title>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="css/header_footer.css"><!-- ヘッダーフッター用css -->
-    <link rel="stylesheet" href="css/searchwindow.css"><!-- 検索ウィンドウ用css -->
 	<link rel="stylesheet" href="css/menu.css"><!-- ハンバーガーメニュー用css -->
-    <link rel="stylesheet" href="css/mini_calendar.css"><!-- カレンダーcss -->
+    <link rel="stylesheet" href="css/mini_calendar.css"><!-- ミニカレンダーcss -->
+    <link rel="stylesheet" href="css/searchwindow.css"><!-- 検索ウィンドウ用css -->
     <link rel="stylesheet" href="css/top.css"><!-- 専用css -->
 
 </head>
@@ -18,7 +18,7 @@
 
      <!-- 検索機構 -->
     <div class="search">
-    <div class="con">
+
     <div class ="search_window_top">
 
      <form method="POST" action="/hydrangea/SearchResultServlet" id="form" >
@@ -27,7 +27,7 @@
 
             <input type="submit" name="search" value="検索"><br>
 
-            <input type="text" name="price_max" value="" size="4"  placeholder="最高予算">～<input type="text" name="price_min" value="" size="4" placeholder="最低予算">
+       <label id=yosan><input type="text" name="price_max" value="" size="4"  placeholder="最高予算">～&nbsp;<input type="text" name="price_min" value="" size="4" placeholder="最低予算"></label>
 
             <input type="text" name="capacity" value="" size="5" placeholder="人数">
 
@@ -39,25 +39,25 @@
                <input type="checkbox" id="pop-up">
                <div class="overlay">
                  <div class="search_pop-up">
-                   <label class="close" for="pop-up">×</label>
+                   <label class="close" for="pop-up">×&nbsp;</label>
                    <div class="detail_search"><!--ポップアップの中身-->
                        <form method="POST" action="/hydrangea/SearchResultServlet" autocomplete="off"> <!--servlet名、要チェック-->
                            <table class="koumoku">
                                <tr>
-                                <td><label>店名・フリーワード<br>
+                                <td>店名・フリーワード<br>
                                 <input type="text" name="shop_name" value="${e.shop_name}">
-                                </label></td>
-                                <td><label>プリセット<br>
+                                </td>
+                                <td>プリセット<br>
                                 <select name="" value="${e.preset}">
                                    <option >選択して下さい</option>
                                    <option value="reservation">営業部</option>
                                    <option value="event">営業1課</option>
                                    <option value="contact">営業1課4班</option>
                                 </select>
-                                   </label></td>
+                                   </td>
                 			<tr>
               				 <td>
-                             <label>ジャンル<br>
+                             ジャンル<br>
                                 <select type="text" name="genre" id="genre" value="" placeholder="ジャンル" required>
                                     <option >選択して下さい</option>
                                     <option value="和食">和食</option>
@@ -66,11 +66,11 @@
                                     <option value="洋食">洋食</option>
                                     <option value="その他">その他</option>
                                 </select>
-                            </label>
+
                         	</td>
 
                             <td>
-                            <label>形態<br>
+                            形態<br>
                                 <select type="text" name="genre_form" id="genre_form" value="" placeholder="形態"
                                     required>
                                     <option >選択して下さい</option>
@@ -83,56 +83,57 @@
                                     <option value="バー">バー</option>
                                     <option value="その他">その他</option>
                                 </select>
-                            </label><br>
+                            <br>
                             </td>
                             </tr>
                             <tr>
                                </tr>
                                <tr>
-                                <td><label>価格帯<br>
-                                <input type="text" name="price_max" value="${e.price_max}" size="4">～<input type="text" name="price_min" value="${e.price_min}" size="4">
-                                </label></td>
+                                <td>価格帯<br>
+                                <input type="text" name="price_max" value="${e.price_max}" size="4">&nbsp;～&nbsp;<input type="text" name="price_min" value="${e.price_min}" size="4">
+                                </td>
                                 <td>座席
 
-                             <label>  <input type="checkbox" name="sheet_table">テーブル席</option> </label>
-                             <label>       <input type="checkbox" name="sheet_tatami">座敷</option> </label>
-                             <label>    その他<input type="text" name="sheet_other"></option> </label>
+                              <input type="checkbox" name="sheet_table">テーブル席
+                              <input type="checkbox" name="sheet_tatami">座敷
+                              その他<input type="text" name="sheet_other">
 
                                 </td>
                                <tr>
-                                <td><label>人数<br>
+                                <td>数<br>
                                 <input type="text" name="capacity" value="">
-                                </label></td>
+                                </td>
 
-                                <td><label>たばこ
+                                <td>たばこ
                                 <input type="radio" name="tabaco" value="喫煙" checked>喫煙
                             	<input type="radio" name="tabaco" value="禁煙">禁煙<br>
-                                </label></td>
+                                </td>
                                </tr>
 
                                <tr>
-                                <td><label>会社からの距離<br>
+                                <td>会社からの距離<br>
                                 <input type="text" name="distance" value="" size="8">
-                                </label></td>
+                                </td>
 
-                                <td><label>放題メニュー
+                                <td>放題メニュー
                                 <select name="sheet" value="e.shop_name">
                                    <option value="reservation">飲み放題のみ</option>
                                    <option value="event">食べ放題のみ</option>
                                    <option value="contact">両方用意あり</option>
                                 </select>
-                                </label></td>
+                                </td>
                                </tr>
                                <tr>
-                                <td><label>
-                                <input type="time" name="open_hei" value="営業時間" size="8">～<input type="time" name="close_hei" value="営業時間" size="8">
-                                </label></td>
+                                <td>営業時間
+                                <input type="time" name="open_hei" value="営業時間" size="8">&nbsp;～&nbsp;<input type="time" name="close_hei" value="営業時間" size="8">
+                                </td>
                                </tr>
+
                                <tr>
-                                <td class="preset"><label>
+                                <td class="preset">
                                 <input type="checkbox" name="keep_preset" value="keep">現在の条件を保存する<br>
                                 プリセット名<input type="text" name="preset_name" value="記入してください">
-                                </label></td>
+                               </td>
                                </tr>
                                <tr>
                                 <td>
@@ -147,7 +148,7 @@
             </div>
         </div>
     </div>
-</div>
+
 
        <div class="hamburger-menu"> <!--ハンバーガーメニュー-->
             <input type="checkbox" id="menu-btn-check">
@@ -197,24 +198,37 @@
 <!-- ランキング -->
     <div class="ranking">
         <div class="con">
-        <p>ランキング</p>
+        <p>評価ランキング</p>
+        <div class="rank_table">
         <table>
-        <tr><th>第１位</th><td><a href="/hydrangea/ShopDetailServlet">居屋酒々井</a></td></tr>
-        <tr><th>第２位</th><td><a href="/hydrangea/ShopDetailServlet">アードフッド</a></td></tr>
-        <tr><th>第３位</th><td><a href="/hydrangea/ShopDetailServlet">パンロマガジン</a></td></tr>
-        <tr><th>第４位</th><td><a href="/hydrangea/ShopDetailServlet">Knight&amp;Witch</a></td></tr>
+        <tr><th style="color:#e6b422;">第１位</th><th style="color:#b3b3b3;">第２位</th><th style="color: #b87333;">第３位</th><th style="color: #7e837f;">第４位</th><th style="color: #7e837f;">第５位</th><th style="color: #7e837f;">第６位</th></tr>
+        <tr><td id=photo><img src="img/izakaya_syusui.jpg" alt="居酒屋酒々井" ></td>
+        	<td id=photo><img src="img/izakaya-ardhud.jpg" alt="アードフッド" ></td>
+        	<td id=photo><img src="img/izakaya-ajisai.jpg" alt="あじさい" ></td>
+        	<td id=photo><img src="img/huruya.jpg" alt="古谷" ></td>
+        	<td id=photo><img src="img/panromagajin.jpg" alt="パンロマガジン" ></td>
+        	<td id=photo><img src="img/Knight&Witch.jpg" alt="Knight&amp;Witch" ></td>
+        </tr>
+        <tr><td><a href="/hydrangea/ShopDetailServlet" id="syusui">居酒屋酒々井</a></td>
+        	<td><a href="/hydrangea/ShopDetailServlet">アードフッド</a></td>
+        	<td><a href="/hydrangea/ShopDetailServlet">あじさい</a></td>
+        	<td><a href="/hydrangea/ShopDetailServlet">古谷</a></td>
+        	<td><a href="/hydrangea/ShopDetailServlet">パンロマガジン</a></td>
+        	<td><a href="/hydrangea/ShopDetailServlet">Knight&amp;Witch</a></td></tr>
         </table>
+        </div>
         </div>
     </div>
 
     <!-- カレンダー -->
-		<div class="calendar">
-        <div class="con">
-        <div id="calendar"></div>
-    </div>
-</div>
+	<div class="calendar">
+		<div class="con">
+        	<div id="calendar">
+        	</div>
+		</div>
+	</div>
 
-</div>
+	</div>
 <!-- 下半分 -->
 <div class="bottom">
 
@@ -222,7 +236,7 @@
     <div class="information">
         <div class="con">
         <p>お知らせ</p>
-        <table>
+        <table >
         <tr><th>2023/6/18</th><td><a href="">7月の飲み会開催決定のお知らせ</a></td></tr>
         <tr><th>2023/6/14</th><td><a href="">7月の飲み会参加申し込み期限間近です！</a></td></tr>
         <tr><th>2023/6/8</th><td><a href="">7月飲み会申し込み開始です！</a></td></tr>
