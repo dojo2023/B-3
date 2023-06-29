@@ -68,3 +68,6 @@
 #sheet_table,#sheet_tatami,#sheet_other{
 	padding: 3px;
 }
+.b{
+	float: left;
+}

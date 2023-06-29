@@ -12,7 +12,7 @@
     <body>
         <!--ヘッダー-->
         <header>
-           <h1><a href="/hydrangea/MenuServlet"><img src="img/logo.png" alt="アプリロゴ" ></a></h1><!-- メニュー画面に戻る -->
+           <h1><a href="/hydrangea/AdminmenuServlet"><img src="img/logo.png" alt="アプリロゴ" ></a></h1><!-- メニュー画面に戻る -->
            <div class="hamburger-menu"> <!--ハンバーガーメニュー-->
             <input type="checkbox" id="menu-btn-check">
             <label for="menu-btn-check" class="menu-btn"><span></span></label>
@@ -20,7 +20,7 @@
             <div class="menu-content">
                   <ul>
                 <li>
-                    <a href="/hydrangea/MenuServlet">トップ</a>
+                    <a href="/hydrangea/AdminmenuServlet">トップ</a>
                 </li>
                 <li>
                     <a href="/hydrangea/RegistServlet">登録</a>

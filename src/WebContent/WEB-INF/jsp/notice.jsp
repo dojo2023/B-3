@@ -69,7 +69,7 @@
             <div class="menu-content">
                   <ul>
                 <li>
-                    <a href="/hydrangea/MenuServlet">トップ</a>
+                    <a href="/hydrangea/AdminmenuServlet">トップ</a>
                 </li>
                 <li>
                     <a href="/hydrangea/RegistServlet">登録</a>
