@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="css/menu.css"><!-- ハンバーガーメニュー用css -->
     <link rel="stylesheet" href="css/header_footer.css"><!-- ヘッダーフッター用css -->
     <link rel="stylesheet" href="css/calendar.css"><!-- カレンダー用css -->
+    <link rel="stylesheet" href="css/adminMenu.css"><!-- 管理者メニュー用css -->
 
 </head>
 <body>
@@ -54,11 +55,11 @@
 
 <h1>管理者用ページ</h1>
 
-		<a href="/hydrangea/NoticeServlet">通知</a>
-		<a href="/hydrangea/InformationCreateServlet">ページ作成<br>編集</a>
-		<a href="/hydrangea/RegistServlet">登録</a>
+		<a href="/hydrangea/NoticeServlet" class="btn">通知</a>
+		<a href="/hydrangea/InformationCreateServlet" class="btn">ページ作成<br>編集</a>
+		<a href="/hydrangea/RegistServlet" class="btn">登録</a>
 
-		<form methpd="POST" action="/hydrangea/SearchResultServelt" class="retu" id="form" >
+		<form method="POST" action="/hydrangea/SearchResultServelt" class="retu" id="form" >
 
         <input type="text"  placeholder="フリーワード検索">
 
