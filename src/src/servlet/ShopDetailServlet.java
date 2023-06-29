@@ -30,6 +30,7 @@ public class ShopDetailServlet extends HttpServlet {
 				}
 		//リクエストパラメータの取得
 		request.setCharacterEncoding("UTF-8");
+
 //		String shop_id = request.getParameter("shop_id");
 //		String shop_name = request.getParameter("shop_name");
 //		String genre = request.getParameter("genre");

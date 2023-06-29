@@ -66,7 +66,7 @@
                 <tr>
                   <td>
                     <label>名前<br>
-                    <input type="text" name="NAME_POSITION" size="15" value="">
+                    <input type="text" name="NAME_POSITION" size="15" value="${e.namePosition}">
                     </label>
                   </td>
                   <td>
@@ -76,7 +76,7 @@
                   </td>
                   <td>
                     <label>喫煙<br>
-                    <input type="text" name="TABACO_POSITION"size="5" value="">
+                    <input type="text" name="TABACO_POSITION"size="5" value="${e.tabacoPosition}">
                     </label>
                   </td>
                   <td>

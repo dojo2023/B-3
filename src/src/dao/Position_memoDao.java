@@ -526,9 +526,10 @@ public class Position_memoDao {
 			// SQLの実行
 			ResultSet rs = pStmt.executeQuery();
 
-			Position_memos pm=new Position_memos();
+
 
 			while (rs.next()) {
+				Position_memos pm=new Position_memos();
 				pm.setNamePosition(rs.getString("name_position"));
 				pm.setPosition(rs.getString("position"));
 				pm.setTabacoPosition(rs.getString("tabaco_position"));

@@ -9,12 +9,15 @@
 <head>
 <meta charset="UTF-8">
 <title>検索結果 | Hydrangea</title>
+
 <link rel="stylesheet" href="css/searchwindow.css">
 <!-- 検索ウィンドウ用css -->
 <link rel="stylesheet" href="css/header_footer.css">
 <!-- ヘッダーフッター用css -->
 <link rel="stylesheet" href="css/menu.css">
 <!-- ハンバーガーメニュー用css -->
+<link rel="stylesheet" href="css/shop.css">
+<!-- 専用css -->
 </head>
 <body>
 	<!--ここからヘッダー-->
@@ -91,7 +94,7 @@
 					<input type="checkbox" id="pop-up">
 					<div class="overlay">
 						<div class="search_pop-up">
-							<label class="close" for="pop-up">×</label>
+							<label class="close" for="pop-up">×&nbsp;</label>
 							<div class="detail_search">
 								<!--ポップアップの中身-->
 								<form method="POST" action="/hydrangea/SearchResultServlet"
@@ -203,10 +206,10 @@
 			</div>
 		</div>
 		<div class="page_right">
-			<!--デフォルト部分-->
-			<p>
+
+		<!--	<p>
 				<a href="/hydrangea/MenuServlet">前のページに戻る</a>
-			</p>
+			</p>デフォルト部分-->
 			<!--メニュー画面に戻る-->
 
 			<!--結果の表示-->
@@ -219,7 +222,7 @@
 				<!--データ一個分-->
 				<c:forEach var="e" items="${cardList}">
 					<!--list名、要チェック-->
-					<form method="GET" action="/hydrangea/ShopDetailServlet">
+					<!--  <form method="GET" action="/hydrangea/ShopDetailServlet">
 						<table class="koumoku">
 							<tr class="shop_photo">
 								<td><img src="/hydrangea/upload/${e.filename}" style="width:120px;">
@@ -230,26 +233,42 @@
 
 											<c:out value="${e.shop_name}" />
 											<!--店名-->
-
+<!--
 								</label></h3></td>
 								<td><label> <c:out value="${e.shop_name}" /> <c:out
 											value="${e.genre}" /> <!--ジャンル-->
-								</label></td>
+							<!--  	</label></td>
 								<td><label> <c:out value="${e.shop_name}" /> <c:out
 											value="${e.genre_form}" /> <!--形態-->
-								</label></td>
+							<!--  	</label></td>
 							</tr>
-							<tr>
-								<td><c:out value="${e.price_max}" /> <!--価格帯（大）--> ～</td>
-								<td><c:out value="${e.price_min}" /> <!--価格帯（小）--></td>
-								<td><label> <c:out value="${e.distance}" /> <!--会社からの距離-->
-								</label></td>
-								<td><label> <c:out value="${e.address}" /> <!--住所-->
-								</label></td>
+							<tr>-->
+								<!--<td><c:out value="${e.price_max}" /> 価格帯（大） ～</td>-->
+								<!--<td><c:out value="${e.price_min}" /> 価格帯（小）</td>-->
+								<!--<td><label> <c:out value="${e.distance}" /> 会社からの距離-->
+								<!--</label></td>
+								<td><label> <c:out value="${e.address}" /> 住所-->
+								<!-- </label></td>
 							</tr>
 						</table>
 						<input type="submit" name="more_detail" value="もっと見る">
-					</form>
+					</form>-->
+
+<div class="shop">
+	<div class="shop_photo">
+		<img src="/hydrangea/upload/${e.filename}">
+	</div>
+	<div class="shop_sentense">
+		<p class="shop_name"><label><c:out value="${e.shop_name}" /></label>
+		<label class="genre"> <c:out value="${e.genre}" /><!--ジャンル--></label>
+		<label class="genre_form"> <c:out value="${e.genre_form}" /><!--形態--></label></p>
+		<p class="price"><label>\<c:out value="${e.price_min}"/> ～  \<c:out value="${e.price_max}" /></label></p>
+		<p class="distance"><label>会社から<c:out value="${e.distance}" />- m</label></p>
+		<p class="address"><label> <c:out value="${e.address}" />&nbsp;</label></p>
+		<p class="button"><a href="/hydrangea/ShopDetailServlet"><button  name="more_detail">もっと見る</button></a> </p>
+	</div>
+</div>
+
 				</c:forEach>
 			</div>
 		</div>

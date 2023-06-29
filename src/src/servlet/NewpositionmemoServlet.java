@@ -82,10 +82,12 @@ public class NewpositionmemoServlet extends HttpServlet {
 		Position_memoDao pDao = new Position_memoDao();
 		pDao.insertMemo(pmemo);
 
-		// 役職メモページにフォワードする
+		// PositionmemoServletにリダイレクトする
 		System.out.println(request.getParameter("SUBMIT"));
-		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/positionmemoServlet.jsp");
-		dispatcher.forward(request, response);
+//		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/positionmemoServlet.jsp");
+//		dispatcher.forward(request, response);
+		response.sendRedirect("/hydrangea/PositionmemoServlet");
+
 
 	}
 

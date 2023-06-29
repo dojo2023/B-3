@@ -13,9 +13,7 @@
     margin-right :30px;
     padding: 4px;
 }
-.search_window_top{
-    background-color: #ffffff;
-}
+
 
 #pop-up {
 	display: none; /* label でコントロールするので input は非表示に */

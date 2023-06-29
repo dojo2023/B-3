@@ -22,6 +22,7 @@ function showCalendar(year, month) {
 }
 
 function createCalendar(year, month) {
+
     const startDate = new Date(year, month - 1, 1) // 月の最初の日を取得
     const endDate = new Date(year, month,  0) // 月の最後の日を取得
     const endDayCount = endDate.getDate() // 月の末日
