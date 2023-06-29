@@ -109,8 +109,9 @@ public class PositionmemoServlet extends HttpServlet {
 
 			// 結果ページにフォワードする
 			//System.out.println(request.getParameter("SUBMIT"));
-			RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/newpositionmemo.jsp");
-			dispatcher.forward(request, response);
+//			RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/newpositionmemo.jsp");
+//			dispatcher.forward(request, response);
+			response.sendRedirect("/hydrangea/NewpositionmemoServlet");
 
 			}
 		else if (request.getParameter("SUBMIT").equals("削除")){
