@@ -96,7 +96,7 @@
             </div>
             <!-- ローディング表示 -->
             <div id="loading" class="loading" style="display: none;">
-            <img src="/hydrangea/WebContent/img/loading-37-1.gif" alt="ローディング">
+            <img src="/hydrangea/WebContent/img/1-1-loading.gif" alt="ローディング">
             <p>投稿中...</p>
             </div>
 
@@ -104,7 +104,7 @@
             <div id="thank-you" style="display: none;">
                 <!-- サーブレットで、ここは表示を変更するイメージ -->
             <h2>投稿が完了しました。</h2>
-            <a href="/hydrangea/NoticeServlet">通知欄へ戻る</a>
+            <a href="/hydrangea/AdminmenuServlet">メニューへ戻る</a>
             </div>
 
         </main>

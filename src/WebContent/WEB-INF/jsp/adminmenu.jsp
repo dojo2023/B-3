@@ -61,6 +61,7 @@
 		<div class="menu">
 		<a href="/hydrangea/RegistServlet" class="btn">登録</a>
 </div>
+<div class="a">
 		<form method="POST" action="/hydrangea/SearchResultServelt" class="retu" id="form" >
 
         <input type="text"  placeholder="フリーワード検索">
@@ -73,13 +74,14 @@
 
             <input type="radio" name="ke" value="">不可</p>
 
-        </form>
-
-        <a href="/hydrangea/CalendarServlet">カレンダー</a>
-
-        <a href="/hydrangea/HistoryServlet">履歴</a>
-
-        <a href="/hydrangea/MemoServlet">メモ</a>
+        </form></div>
+        <br>
+        <div class="menu">
+        <a href="/hydrangea/CalendarServlet"class="btn">カレンダー</a></div>
+<div class="menu">
+        <a href="/hydrangea/HistoryServlet"class="btn">履歴</a></div>
+<div class="menu">
+        <a href="/hydrangea/MemoServlet"class="btn">メモ</a></div>
 
 <!--
         <button onclick="/hydrangea/NewShopServlet'" id="button1" class="retu" >ページ作成<br>編集</button>
